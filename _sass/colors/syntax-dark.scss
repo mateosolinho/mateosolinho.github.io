@@ -5,7 +5,7 @@
 @mixin dark-syntax {
   --language-border-color: #2d2d2d;
   --highlight-bg-color: #151515;
-  --highlighter-rouge-color: #8361A9;
+  --highlighter-rouge-color: #7700ff;
   --highlight-lineno-color: #272822;
   --inline-code-bg: #323238;
   --code-color: #b0b0b0;
@@ -60,14 +60,14 @@
     color: #d0d0d0;
   }
   .highlight .gi {
-    color: #90a959;
+    color: #93c428;
   }
   .highlight .gd {
     color: #f08a8b;
     background-color: #320000;
   }
   .highlight .gh {
-    color: #6a9fb5;
+    color: #11a3e1;
     background-color: #151515;
     font-weight: bold;
   }
@@ -79,13 +79,13 @@
     color: #aa759f;
   }
   .highlight .kc {
-    color: #d28445;
+    color: #f08731;
   }
   .highlight .kt {
-    color: #d28445;
+    color: #f08731;
   }
   .highlight .kd {
-    color: #d28445;
+    color: #f08731;
   }
   .highlight .s,
   .highlight .sb,
@@ -96,7 +96,7 @@
   .highlight .sh,
   .highlight .sx,
   .highlight .s1 {
-    color: #90a959;
+    color: #93c428;
   }
   .highlight .sa {
     color: #aa759f;
@@ -111,16 +111,16 @@
     color: #b76d45;
   }
   .highlight .nn {
-    color: #f4bf75;
+    color: #ffae3d;
   }
   .highlight .nc {
-    color: #f4bf75;
+    color: #ffae3d;
   }
   .highlight .no {
-    color: #f4bf75;
+    color: #ffae3d;
   }
   .highlight .na {
-    color: #6a9fb5;
+    color: #11a3e1;
   }
   .highlight .m,
   .highlight .mb,
@@ -130,9 +130,9 @@
   .highlight .il,
   .highlight .mo,
   .highlight .mx {
-    color: #90a959;
+    color: #93c428;
   }
   .highlight .ss {
-    color: #90a959;
+    color: #93c428;
   }
 }
