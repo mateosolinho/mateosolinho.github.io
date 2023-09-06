@@ -13,7 +13,7 @@ baseurl: "https://mateosolinho.github.io/"
 lang: es
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone: Asia/Shanghai
+timezone: Europe/Madrid
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
@@ -22,7 +22,7 @@ title: M4teoo # the main title
 
 tagline: Ethical Hacking, Pentesting, Writeups and Cibersecurity articles # it will display as the sub-title
 
-description: >- # used by seo meta and the atom feed
+description: Ethical Hacking, Pentesting, Writeups and Cibersecurity articles # used by seo meta and the atom feed
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://mateosolinho.github.io/"
@@ -37,7 +37,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: M4teoo
-  email: example@domain.com # change to your email address
+  email: mateosolino1@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     #- https://twitter.com/mateosolinho # change to your twitter homepage
