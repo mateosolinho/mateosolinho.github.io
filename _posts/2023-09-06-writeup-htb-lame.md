@@ -21,7 +21,7 @@ Utilizaremos la herramienta ```nmap```, para enumerar los **puertos** **abiertos
 nmap -p- -sS --min-rate 5000 -vvv -n -Pn 10.10.10.3 -oG allPorts
 ```
 
-[img](assets/img/capturadepantalla2023-08-30012250.png)
+![img](assets/img/posts/lame/04698856-bddc-4448-a791-d1104017ce1c.png)
 
 
 Los puertos abiertos que nos reporta nmap son los siguientes: ```21, 22, 139, 445, 3632```
@@ -32,7 +32,7 @@ Continuaremos analizando los **servicios** y **versiones** que se ejecutan en lo
 nmap -sCV -p21,22,139,445,3632 10.10.10.3 -oN targeted
 ```
 
-[img](assets/img/Posts/f8e0e6a7-5272-4f67-8003-fd370c3fc23c.png)
+![img](assets/img/posts/lame/f8e0e6a7-5272-4f67-8003-fd370c3fc23c.png)
 
 ## Explotación
 
@@ -42,7 +42,7 @@ Como podemos observar en la imagen anterior, ```nmap``` detecta que podemos real
 ftp 10.10.10.3
 ```
 
-[img](assets/img/Posts/fa13380a-a002-4c6f-9700-d53ef320d03c.png)
+![img](assets/img/posts/lame/fa13380a-a002-4c6f-9700-d53ef320d03c.png)
 
 Y efectivamente, podemos **hacer el login** con el usuario ```anonymous``` dejando vacío el campo de la contraseña, pero, al realizar ```dir``` o ```ls``` para listar directorios y archivos, podremos observar que **no hay contenido**, por lo que está vacío.
 
@@ -52,7 +52,7 @@ De nuevo, observando la última imagen del escaneo utilizando ```nmap```, podemo
 > searchsploit samba 3.0.20
 ```
 
-[img](assets/img/Posts/83366d04-9d5b-4182-8510-143a338decd1.png)
+![img](assets/img/posts/lame/83366d04-9d5b-4182-8510-143a338decd1.png)
 
 Como podemos ver, existe un **exploit** para ```metasploit```. Podremos analizar dicho exploit para entender como funciona, y realizar el proceso nostros mismos.
 
@@ -62,7 +62,7 @@ Utilizando la herramienta ```smbmap``` podremos listar los **recursos compartido
 smbmap -H 10.10.10.3
 ```
 
-[img](assets/img/Posts/d6bdceb4-245b-4ce6-9473-e46e5cad2e9a.png)
+![img](assets/img/posts/lame/d6bdceb4-245b-4ce6-9473-e46e5cad2e9a.png)
 
 Continuaremos utilizando en este caso la herramienta ```smbclient``` con la cual trataremos de conectarnos al servicio para poder ver el recurso compartido ```tmp```
 
@@ -70,7 +70,7 @@ Continuaremos utilizando en este caso la herramienta ```smbclient``` con la cual
 smbclient //10.10.10.3/tmp -N --options 'client min protocol = NT1'
 ```
 
-[img](assets/img/Posts/07ed24e9-4362-4b59-825a-4edbbfcc4885.png)
+![img](assets/img/posts/lame/07ed24e9-4362-4b59-825a-4edbbfcc4885.png)
 
 Podemos ver que la conexión ha sido *exitosa*.
 
@@ -82,7 +82,7 @@ Observando el **exploit** mencionado anteriormente se puede observar que podemos
 nc -nlvp 443
 ```
 
-[img](assets/img/Posts/43db9817-b863-4050-9abf-45af8a4d2bd6.png)
+![img](assets/img/posts/lame/43db9817-b863-4050-9abf-45af8a4d2bd6.png)
 
 > Con la intrusión ya tendremos acceso como usuario privilegiado, por lo que no es necesario realizar una Escalada de Pivilegios
 
