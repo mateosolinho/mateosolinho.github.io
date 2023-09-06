@@ -5,7 +5,6 @@ categories: [Writeups, HTB]
 tags: [Easy, Linux]
 image:
   path: /assets/img/post/lame/luca-bravo-XJXWbfSo2f0-unsplash.jpg
-  alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
 **Lame** es la primera máquina publicada en la plataforma de **Hack The Box**, su nivel de dificultad es ```Easy``` en la plataforma, y cuenta con gran participación entre la gente que acaba de comenzar en **HTB**
@@ -48,7 +47,7 @@ Y efectivamente, podemos **hacer el login** con el usuario ```anonymous``` dejan
 De nuevo, observando la última imagen del escaneo utilizando ```nmap```, podemos ver, que tambien esta máquina esta ejecutando un servcio ```smb ```por el puerto ```445``` . Gracias a la **herramienta** ```searchsploit``` vamos a ver si existe alguna **vulnerabilidad** para la versión ```3.0.20``` de ```samba```.
 
 ```bash
-> searchsploit samba 3.0.20
+searchsploit samba 3.0.20
 ```
 
 ![img](/assets/img/post/lame/83366d04-9d5b-4182-8510-143a338decd1.png)
