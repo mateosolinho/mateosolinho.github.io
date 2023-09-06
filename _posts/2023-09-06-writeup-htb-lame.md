@@ -5,6 +5,7 @@ categories: [Writeups, HTB]
 tags: [Easy, Linux]
 image:
   path: _posts/img/img_posts/lame/luca-bravo-XJXWbfSo2f0-unsplash.jpg
+  alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
 **Lame** es la primera máquina publicada en la plataforma de **Hack The Box**, su nivel de dificultad es ```Easy``` en la plataforma, y cuenta con gran participación entre la gente que acaba de comenzar en **HTB**
