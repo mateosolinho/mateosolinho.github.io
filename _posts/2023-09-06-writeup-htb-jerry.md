@@ -5,6 +5,7 @@ categories: [Writeups, HTB]
 tags: [Easy, Windows]
 image:
   path: /assets/img/post/jerry/catherine-heath-i4W8OINLI_I-unsplash.jpg
+  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 **Jerry** es una máquina de dificultad ```Easy``` en la plataforma **Hack The Box**
