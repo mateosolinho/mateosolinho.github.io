@@ -1,10 +1,10 @@
 ---
-title: Lame - HTB Writeup
-author: M4teoo
-date: 2023-09-06 14:00:00
-categories: [Writeups, HTB]
-tags: [Easy, Linux]
-render_with_liquid: false
+title: Getting Started
+author: cotes
+date: 2019-08-09 20:55:00 +0800
+categories: [Blogging, Tutorial]
+tags: [getting started]
+pin: true
 ---
 
 **Lame** es la primera máquina publicada en la plataforma de **Hack The Box**, su nivel de dificultad es ```Easy``` en la plataforma, y cuenta con gran participación entre la gente que acaba de comenzar en **HTB**
