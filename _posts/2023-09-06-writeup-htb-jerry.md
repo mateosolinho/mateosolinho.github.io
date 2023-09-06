@@ -59,6 +59,6 @@ curl http://10.10.10.95:8000/rev_shell/mdeonxmbgy.jsp
 
 ![img](/assets/img/post/jerry/7bd0c1bc-d7de-4a35-b8df-496fc4bce938.png)
 
-De esta manera ya tendremos acceso completo a la máquina víctima, en donde podremos encontrar las flags en el ```Desktop``` del usuario ```administrator```.
+De esta manera ya tendremos acceso completo a la máquina víctima, en donde podremos encontrar las flags en el ```Desktop``` del usuario ```administrator```
 
 Espero que haya ayudado, se agradece cualquier tipo de comentario para mejorar poco a poco. Adios!
