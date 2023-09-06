@@ -5,6 +5,7 @@ categories: [Writeups, HTB]
 tags: [Easy, Linux]
 image:
   path: /assets/img/post/lame/luca-bravo-XJXWbfSo2f0-unsplash.jpg
+  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 **Lame** es la primera máquina publicada en la plataforma de **Hack The Box**, su nivel de dificultad es ```Easy``` en la plataforma, y cuenta con gran participación entre la gente que acaba de comenzar en **HTB**
