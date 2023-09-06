@@ -20,7 +20,7 @@ Utilizaremos la herramienta ```nmap```, para enumerar los **puertos** **abiertos
 nmap -p- -sS --min-rate 5000 -vvv -n -Pn 10.10.10.3 -oG allPorts
 ```
 
-![img](assets/img/Posts/1.png)
+![img](assets/img/capturadepantalla2023-08-30012250.png)
 
 
 Los puertos abiertos que nos reporta nmap son los siguientes: ```21, 22, 139, 445, 3632```
