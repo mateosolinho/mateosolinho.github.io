@@ -1,11 +1,10 @@
 ---
 title: Lame - HTB Writeup
-author: m4teoo
 date: 2023-09-06 15:00:00 +0800
 categories: [Writeups, HTB]
 tags: [Easy, Linux]
 image:
-  path: assets/img/capturadepantalla2023-08-30012250.png
+  path: 
   alt: test
 ---
 
