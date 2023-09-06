@@ -1,6 +1,6 @@
 ---
 title: Jerry - HTB Writeup
-date: 2023-09-06 22:00:00
+date: 2023-09-06 22:00:00 +0800
 categories: [Writeups, HTB]
 tags: [Easy, Windows]
 image:
