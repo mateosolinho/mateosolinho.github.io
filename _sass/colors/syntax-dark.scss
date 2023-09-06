@@ -4,10 +4,10 @@
 
 @mixin dark-syntax {
   --language-border-color: #2d2d2d;
-  --highlight-bg-color: #151515;
-  --highlighter-rouge-color: #7700ff;
+  --highlight-bg-color: #252525;
+  --highlighter-rouge-color: #b06bffe2;
   --highlight-lineno-color: #272822;
-  --inline-code-bg: #323238;
+  --inline-code-bg: #37333B;
   --code-color: #b0b0b0;
   --code-header-text-color: #6a6a6a;
   --code-header-muted-color: #353535;
@@ -30,10 +30,10 @@
   .highlight,
   .highlight .w {
     color: #d0d0d0;
-    background-color: #151515;
+    background-color: #252525;
   }
   .highlight .err {
-    color: #151515;
+    color: #252525;
     background-color: #ac4142;
   }
   .highlight .c,
@@ -68,7 +68,7 @@
   }
   .highlight .gh {
     color: #11a3e1;
-    background-color: #151515;
+    background-color: #252525;
     font-weight: bold;
   }
   .highlight .k,
