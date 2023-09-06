@@ -4,14 +4,12 @@ date: 2023-09-06 15:00:00 +0800
 categories: [Writeups, HTB]
 tags: [Easy, Linux]
 image:
-  path: 
-  alt: test
+  path: _posts/img/img_posts/lame/luca-bravo-XJXWbfSo2f0-unsplash.jpg
 ---
 
 **Lame** es la primera máquina publicada en la plataforma de **Hack The Box**, su nivel de dificultad es ```Easy``` en la plataforma, y cuenta con gran participación entre la gente que acaba de comenzar en **HTB**
 
 En esta máquina explotaremos una vulnerabilidad en el servicio ```smb``` por el puerto ```445```
-
 
 ## Reconocimiento
 
