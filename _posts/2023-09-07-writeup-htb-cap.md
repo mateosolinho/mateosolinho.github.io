@@ -1,10 +1,11 @@
 ---
-title: Getting Started
-author: cotes
-date: 2019-08-09 20:55:00 +0800
-categories: []
-tags: []
-img_path: '/posts/20180809'
+title: Cap - HTB Writeup
+date: 2023-09-07 01:55:00 +0800
+categories: [Writeups, HTB]
+tags: [Easy, Linux]
+image:
+  path: /assets/img/post/cap/garrett-parker-aYHzEnSEH-w-unsplash.jpg
+  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 ## Prerequisites
