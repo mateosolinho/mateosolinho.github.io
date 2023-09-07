@@ -8,143 +8,68 @@ image:
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
-## Prerequisites
+**Cap** es una máquina ```Easy``` en la plataforma **Hack The Box**
 
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of the basic environment. [Git](https://git-scm.com/) also needs to be installed.
+Esta máquina corre un servidor ```HTTP```, el cúal nos permitirá capturar el tráfico **no cifrado** y aprovecharnos de un ```IDOR``` *(referencia de objeto directo inseguro)*, gracias a esto conseguiremos las **credenciales** de un usuario y ganaermos acceso a la máquina.
 
-## Installation
+## **Reconocimiento**
 
-### Creating a New Site
+Para comenzar utilizaremos la herramienta ```nmap``` para ver que puertos están abiertos en la máquina víctima:
 
-There are two ways to create a new repository for this theme:
+![img](/assets/img/post/cap/27601d24-4bb1-4fe0-a372-65128d4ec88c.png)
 
-- [**Using the Chirpy Starter**](#option-1-using-the-chirpy-starter) - Easy to upgrade, isolates irrelevant project files so you can focus on writing.
-- [**GitHub Fork**](#option-2-github-fork) - Convenient for custom development, but difficult to upgrade. Unless you are familiar with Jekyll and are determined to tweak or contribute to this project, this approach is not recommended.
+Podemos oberservar que hay tres puertos abiertos ```21 - 22 - 80```
 
-#### Option 1. Using the Chirpy Starter
+Vamos a realizar un escaneo más exhaustivo para ver las **versiones** y **servicios** que corren por dichos puertos:
 
-Sign in to GitHub and browse to [**Chirpy Starter**][starter], click the button <kbd>Use this template</kbd> > <kbd>Create a new repository</kbd>, and name the new repository `USERNAME.github.io`, where `USERNAME` represents your GitHub username.
+![img](/assets/img/post/cap/6988a938-89c7-4f6b-a87f-a32295ebb5f9.png)
 
-#### Option 2. GitHub Fork
+Vemos que en el puerto ```80``` hay un servicio ```http```, vamos a buscar la web a ver que encontramos:
 
-Sign in to GitHub to [fork **Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork), and then rename it to `USERNAME.github.io` (`USERNAME` means your username).
+![img](/assets/img/post/cap/02f91c54-e996-4b0b-a5a8-6bb4ce741d5f.png)
 
-Next, clone your site to local machine. In order to build JavaScript files later, we need to install [Node.js][nodejs], and then run the tool:
+Podemos ver que hay un usuario ```nathan```, lo apuntamos ya que nos podrá hacer falta en un futuro
 
-```console
-$ bash tools/init
-```
+Si accedemos a ```/capture``` nos redigirá tras 5 segundos a ```/data/1``` donde prodemos ver información sobre ese reporte, realizando un poco de descubrimiento a mano, cambiando el id de la data, nos daremos cuenta de que en ```/data/0``` hay un reporte con información
 
-> If you don't want to deploy your site on GitHub Pages, append option `--no-gh` at the end of the above command.
-{: .prompt-info }
+![img](/assets/img/post/cap/23bf5c97-71c9-4722-86dd-bae6ae365ebe.png)
 
-The above command will:
+Procederemos a darle a ```Download``` y nos descarará un archivo ```.pcap```
 
-1. Check out the code to the [latest tag][latest-tag] (to ensure the stability of your site: as the code for the default branch is under development).
-2. Remove non-essential sample files and take care of GitHub-related files.
-3. Build JavaScript files and export to `assets/js/dist/`{: .filepath }, then make them tracked by Git.
-4. Automatically create a new commit to save the changes above.
+### Archivos .pcap
 
-### Installing Dependencies
+> Los archivos ```.pcap``` son archivos relacionados con ```Wireshark```, estos son archivos de datos creados mediante el programa y que contiene el paquete de datos de una red. Estos archivos se utilizan principalmente en el **análisis de las características de la red de una fecha determinada**.
 
-Before running local server for the first time, go to the root directory of your site and run:
+Gracias a esta información vamos a usar ```whireshark``` para ver si podemos obtener información sobre el archivo que acabamos de descargar:
 
-```console
-$ bundle
-```
+![img](/assets/img/post/cap/9f059673-2d40-4575-a6dd-32e7407ea6a9.png)
 
-## Usage
+Tras unos minutos de busqueda, podemos ver que hay un login bajo el usuario ```nathan``` y con una credencial ```B...............!```
 
-### Configuration
+## Explotación
 
-Update the variables of `_config.yml`{: .filepath} as needed. Some of them are typical options:
+Con estas credenciales podremos conectarnos por ```ftp``` a la máquina y podremos ver la **user flag**.
 
-- `url`
-- `avatar`
-- `timezone`
-- `lang`
+![img](/assets/img/post/cap/49772912-9c2d-4419-be46-54ffcceb37cb.png)
 
-### Customizing Stylesheet
+## Escalada de Privilegios
 
-If you need to customize the stylesheet, copy the theme's `assets/css/style.scss`{: .filepath} to the same path on your Jekyll site, and then add the custom style at the end of it.
+Para la realización de la escalada nos conectaremos con las mismas credenciales por ```SSH```
 
-Starting with version `4.1.0`, if you want to overwrite the SASS variables defined in `_sass/addon/variables.scss`{: .filepath}, copy the main sass file `_sass/jekyll-theme-chirpy.scss`{: .filepath} into the `_sass`{: .filepath} directory in your site's source, then create a new file `_sass/variables-hook.scss`{: .filepath} and assign new value.
+Una vez conectados seguiremos el procedimiento en busqueda de todo tipo de posibles escaldas sobre el usuario nathan
 
-### Customing Static Assets
+Vamos a ver si podemos escalar privilegios aprovechandonos de permisos ```SUID```, aunque no encontraremos nada positivo
 
-Static assets configuration was introduced in version `5.1.0`. The CDN of the static assets is defined by file `_data/origin/cors.yml`{: .filepath }, and you can replace some of them according to the network conditions in the region where your website is published.
+![img](/assets/img/post/cap/70554d01-5ff4-4872-afca-ea373cf6c3b0.png)
 
-Also, if you'd like to self-host the static assets, please refer to the [_chirpy-static-assets_](https://github.com/cotes2020/chirpy-static-assets#readme).
+Por lo tanto buscaremos binarios con ```capabilities``` que nos pueden servir:
 
-### Running Local Server
+![img](/assets/img/post/cap/02a4ee85-e5ca-4f6f-8571-3470fdffaf70.png)
 
-You may want to preview the site contents before publishing, so just run it by:
+Y bingo! Como vemos en el binario ```pyhton3.8``` hay una capabilitie asignada de ```setuid```, con la que podremos escalar privilegos, para ello simplemente ejecutaremos un ```oneline```, para conseguir una consola como ```root```
 
-```console
-$ bundle exec jekyll s
-```
+![img](/assets/img/post/cap/ff094ce5-1a72-4ea6-982c-05e55a5118b8.png)
 
-Or run the site on Docker with the following command:
+Y despues de esto, ya tendriamos acceso privilegiado al sistema, pudiendo ver en ```/root``` la **root flag**
 
-```console
-$ docker run -it --rm \
-    --volume="$PWD:/srv/jekyll" \
-    -p 4000:4000 jekyll/jekyll \
-    jekyll serve
-```
-
-After a few seconds, the local service will be published at _<http://127.0.0.1:4000>_.
-
-## Deployment
-
-Before the deployment begins, check out the file `_config.yml`{: .filepath} and make sure the `url` is configured correctly. Furthermore, if you prefer the [**project site**](https://help.github.com/en/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites) and don't use a custom domain, or you want to visit your website with a base URL on a web server other than **GitHub Pages**, remember to change the `baseurl` to your project name that starts with a slash, e.g, `/project-name`.
-
-Now you can choose _ONE_ of the following methods to deploy your Jekyll site.
-
-### Deploy by Using GitHub Actions
-
-There are a few things to get ready for.
-
-- If you're on the GitHub Free plan, keep your site repository public.
-- If you have committed `Gemfile.lock`{: .filepath} to the repository, and your local machine is not running Linux, go the the root of your site and update the platform list of the lock-file:
-
-  ```console
-  $ bundle lock --add-platform x86_64-linux
-  ```
-
-Next, configure the _Pages_ service.
-
-1. Browse to your repository on GitHub. Select the tab _Settings_, then click _Pages_ in the left navigation bar. Then, in the **Source** section (under _Build and deployment_), select [**GitHub Actions**][pages-workflow-src] from the dropdown menu.  
-![Build source](pages-source-light.png){: .light .border .normal w='375' h='140' }
-![Build source](pages-source-dark.png){: .dark .normal w='375' h='140' }
-
-2. Push any commits to GitHub to trigger the _Actions_ workflow. In the _Actions_ tab of your repository, you should see the workflow _Build and Deploy_ running. Once the build is complete and successful, the site will be deployed automatically.
-
-At this point, you can go to the URL indicated by GitHub to access your site.
-
-### Manually Build and Deploy
-
-On self-hosted servers, you cannot enjoy the convenience of **GitHub Actions**. Therefore, you should build the site on your local machine and then upload the site files to the server.
-
-Go to the root of the source project, and build your site as follows:
-
-```console
-$ JEKYLL_ENV=production bundle exec jekyll b
-```
-
-Or build the site on Docker:
-
-```console
-$ docker run -it --rm \
-    --env JEKYLL_ENV=production \
-    --volume="$PWD:/srv/jekyll" \
-    jekyll/jekyll \
-    jekyll build
-```
-
-Unless you specified the output path, the generated site files will be placed in folder `_site`{: .filepath} of the project's root directory. Now you should upload those files to the target server.
-
-[nodejs]: https://nodejs.org/
-[starter]: https://github.com/cotes2020/chirpy-starter
-[pages-workflow-src]: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow
-[latest-tag]: https://github.com/cotes2020/jekyll-theme-chirpy/tags
+Espero que os haya gustado y servido de ayuda, cualquier comentario se agradece. Adios!
