@@ -34,6 +34,10 @@ La página es **estática**, todos los botones no son funcionales, menos los bot
 
 Hechandole un vistazo al código de la página, podemos ver que el botón ```Submit``` envia una petición por ```POST``` a ```/api/v1/invite/verify``` para realizar una comprobación de si el códio de invitación en válido o no. Tambíen encontramos un script llamado ```inviteapi.min.js```. Si hacemos click encima, podemos ver que hace:
 
+```bash
+curl http://2million.htb/js/inviteapi.min.js; echo
+```
+
 ![img](/assets/img/post/twomillion/0af22e9f-642e-43f2-8fa0-eb05af0e542d.png)
 
 Como podemos ver el código está **ofuscado**, para poder leerlo de manera clara, podemos utilizar recursos como [de4js](https://lelinhtinh.github.io/de4js/). Esto es lo que conseguimos de sacar el código de manera clara:
@@ -41,6 +45,10 @@ Como podemos ver el código está **ofuscado**, para poder leerlo de manera clar
 ![img](/assets/img/post/twomillion/9c8a3a67-e5ff-40fa-918b-3e0ebbd5500a.png)
 
 Vemos que se realiza una petición por ```POST``` a ```/api/v1/invite/how/to/generate``` , por lo tanto, vamos a realizar dicha petición utilizando ```curl```:
+
+```bash
+curl -s -X POST http://2million.htb/api/v1/invite/how/to/generate | jq
+```
 
 ![img](/assets/img/post/twomillion/41a38379-b073-466c-a451-febd2653ac8a.png)
 
@@ -50,9 +58,17 @@ Podemos ver que hay un **mensaje encriptado**, pero nos indica que tipo de cifra
 
 El mensaje nos indica que podemos realizar una petición por ```POST``` a ```/api/v1/invite/generate``` para generar un código de invitación. Vamos a ver que ocurre
 
+```bash
+curl -s -X POST http://2million.htb/api/v1/invite/generate | jq
+```
+
 ![img](/assets/img/post/twomillion/cabd0b4c-01dd-4bb2-ae5d-e8320efbb431.png)
 
 Podemos ver que hay otro mensaje encriptado, pero esta vez en ```base64``` , por lo tanto simplemente desde nuestra terminal podremos ver que dice el mensaje utilizando el comando ```base64 -d```
+
+```bash
+echo "<cookie>" | base64 -d; echo
+```
 
 ![img](/assets/img/post/twomillion/e89e916f-ec8b-4d08-9bcb-9712a1296bcc.png)
 
@@ -80,9 +96,17 @@ Como vemos el botón hace una petición por ```GET``` a ```/api/v1/users/vpn/gen
 
 Vamos a realizar una petición utilizando ```curl``` a ```/api``` a ver que sucede:
 
+```bash
+curl -v 2million.htb/api
+```
+
 ![img](/assets/img/post/twomillion/626be95f-ba9a-479f-9d65-04ef08d18be2.png)
 
 Esta petición nos devuelve un codigo de estado ```401 Unauthorized``` . Vamos a proporcionar la ```cookie de sesión``` que hablabamos anteriormente:
+
+```bash
+curl -sv 2million.htb/api --cookie "PHPSESSID=<cookie>" | jq
+```
 
 ![img](/assets/img/post/twomillion/7b05fcb2-b21a-4f22-bdaa-088c96423520.png)
 
@@ -93,6 +117,10 @@ Vamos a realizar otra petición a ```/api/v1``` a ver que podemos sacar
 En este punto obtenemos una lara lista de ```endpoints``` de la ```api``` . Los que más nos interesan son los que están relacionados con ```admin```
 
 Vamos a realizar una petición ```PUT``` a ```/admin/settings/update``` para ver que ocurre
+
+```bash
+curl -sv -X PUT http://2million.htb/api/v1/admin/settings/update --cookie "PHPSESSID=<cookie>" | jq
+```
 
 ![img](/assets/img/post/twomillion/8148fa51-b34e-4e1e-b6c9-10cee6613ca4.png)
 
