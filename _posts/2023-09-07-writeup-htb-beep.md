@@ -18,11 +18,19 @@ En este caso lo haremos de la manera que me parece más sencilla y fácil de ent
 
 Como de costumbre para comenzar con la fase de reconocimiento, empezaremos realizando un escaneo de puertos con la herramienta ```nmap``` , esta nos reportará los puertos abiertos en la dirección que le indiquemos:
 
+```bash
+nmap -p- -sS --min-rate 5000 -vvv -n -Pn -oG allPorts
+```
+
 ![img](/assets/img/post/beep/c36e782c-17fb-4f76-83f4-ceacf9ab3b12.png)
 
 Como comentabamos al principio, nos encontramos con un gran número de **servicios y puertos abiertos**
 
 Vamos a hacer un escaneo más exhaustivo de los **servicios y versiones** que se ejecutan en cada puerto *(vamos a hacer un escaneo de pocos puertos para que no se demore mucho)*
+
+```bash
+nmap -sCV -p22,25,80 10.10.10.7 -oN versions
+```
 
 ![img](/assets/img/post/beep/1b19c82f-9dfb-4e29-ab8d-1e3533d44858.png)
 
@@ -34,6 +42,10 @@ Vemos que hay un panel de **inicio de sesión**, podemos buscar credenciales por
 
 Usando searchsploit vamos a ver si hay alguna forma de explotar algún fallo de ```Elastix 2.2.0```:
 
+```bash
+searchsploit elastix
+```
+
 ![img](/assets/img/post/beep/796b300a-81bd-4aa5-9e45-46939fff049e.png)
 
 Vemos que hay una vulnerabilidad existente para la versión del servicio al que intentamos acceder
@@ -43,6 +55,10 @@ Vemos que hay una vulnerabilidad existente para la versión del servicio al que 
 Si abrimos el archivo ```.txt```, podremos observar que el servicio es **vulnerable** a un ```Directory Path Traversal```, **con el que podremos apuntar a cualquier archivo del sistema** 
 
 > En este [enlace](https://portswigger.net/web-security/file-path-traversal) dejo más información sobre esta vulnerabilidad
+
+```bash
+https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action
+```
 
 ![img](/assets/img/post/beep/36210f96-940c-43f0-913f-bd7772993135.png)
 
@@ -65,6 +81,10 @@ Una vez en ```Settings```, accederemos a ```Company Details```, donde accederemo
 > La opción de subida de archivos no está bien sanitizada, por lo que debemos colocarle al archivo php la extensión ```.jpg``` para que nos permita subirlo
 
 A su vez nos pondremos en escucha por el puerto ```443``` mediante ```nc```:
+
+```bash
+nc -lvnp 443
+```
 
 ![img](/assets/img/post/beep/24c56a99-1502-4006-be91-05f81d135fd6.png)
 
