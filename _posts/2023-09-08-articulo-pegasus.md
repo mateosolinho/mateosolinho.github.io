@@ -1,8 +1,8 @@
 ---
-title: Borrador
+title: Spyware Pegasus
 date: 2023-09-08 15:30:00 +0800
-categories: []
-tags: []
+categories: [Ciberseguridad, Articulos]
+tags: [articulos]
 image:
   path: /assets/img/post/articulo-pegasus/what-is-pegasus-spyware.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
@@ -68,7 +68,7 @@ Según **Citizen Lab**, en cuanto al espionaje a independentistas vascos y catal
 
 En este caso se utilizaron SMS fraudulentos y mensajes desde redes sociales además de la explotación Zero-day de la app iMessage.
 
-![img](/assets/img/post/articulo-pegasus/IGVMZSFUEJIGZHQHZ56TAQN5TA.jpg)
+![img](/assets/img/post/articulo-pegasus/IGVMZSFUEJIGZHQHZ56TAQN5TA.jpg){: width="972" height="589" }
 
 Segun varias fuentes, la Agencia Española de Inteligencia CNI adquirio Pegasus por unos 6 millones de euros para espiar en el extranjero (supuestamente).
 
