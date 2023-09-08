@@ -68,7 +68,7 @@ Según **Citizen Lab**, en cuanto al espionaje a independentistas vascos y catal
 
 En este caso se utilizaron SMS fraudulentos y mensajes desde redes sociales además de la explotación Zero-day de la app iMessage.
 
-![img](/assets/img/post/articulo-pegasus/IGVMZSFUEJIGZHQHZ56TAQN5TA.jpg){: width="972" height="589" }
+![img](/assets/img/post/articulo-pegasus/images.jpg)
 
 Segun varias fuentes, la Agencia Española de Inteligencia CNI adquirio Pegasus por unos 6 millones de euros para espiar en el extranjero (supuestamente).
 
