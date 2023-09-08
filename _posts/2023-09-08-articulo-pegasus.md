@@ -8,7 +8,7 @@ image:
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
-Vivimos en una época donde la tecnología está a la orden del día, todos lo que usamos diariamente está conectado a la red, y por lo tanto, es **vulnerable** a ciberataques cibernéticos por parte de cibercriminales, esto llevado a los datos, se resume que en este 2023, en lo que llevamos de año, se están reportando un **promedio de 1252 ataques** por semana solamente en España. Por ello la ciberseguridad cada vez tiene un papel más importante en nuestro día a día.
+Vivimos en una época donde la tecnología está a la orden del día, todos lo que usamos diariamente está conectado a la red, y por lo tanto, es **vulnerable** a ataques cibernéticos por parte de cibercriminales, esto llevado a los datos, se resume que en este 2023, en lo que llevamos de año, se están reportando un **promedio de 1252 ataques** por semana solamente en España. Por ello la ciberseguridad cada vez tiene un papel más importante en nuestro día a día.
 
 Es por ello que hoy vamos a hablar de un caso muy mediático y conocido en los últimos años, y que ha afectado a todo tipo de personajes públicos y personas poderosas y reconocidas en todo el mundo.
 
