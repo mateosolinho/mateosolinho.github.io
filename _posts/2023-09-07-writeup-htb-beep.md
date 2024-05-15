@@ -10,7 +10,7 @@ image:
 
 **Beep** es un máquina de dificultad ```Easy``` en la plataforma **Hack The Box**
 
-La máquina **Beep** tiene un gran número de **servicios en ejecucción**, lo que puede ser bueno o malo, ya puede ser dificil encontrar la manera correcta de ganar acceso a la máquina, pero lo bueno es que hay muchas maneras de realizar la intrusión
+La máquina **Beep** tiene un gran número de **servicios en ejecucción**, lo que puede ser tanto bueno como malo, ya puede ser dificil encontrar la manera correcta de ganar acceso a la máquina, pero lo bueno es que hay muchas maneras de realizar la intrusión y vulnerar la máquina
 
 En este caso lo haremos de la manera que me parece más sencilla y fácil de entender, pero hay muchas maneras distintas de hacerlo. Vamos allá!
 
@@ -38,9 +38,9 @@ Podemos ver que hay en ejecución un servicio ```HTTP``` por el puerto ```80```,
 
 ![img](/assets/img/post/beep/ea12d889-e6a7-4a6d-8c5c-9e05e99c32f1.png)
 
-Vemos que hay un panel de **inicio de sesión**, podemos buscar credenciales por defecto de este servicio, pero por desgracia estas han sido cambiadas, así que vamos a buscar si podemos acceder de alguna manera
+Vemos que hay un panel de **inicio de sesión**, podemos buscar credenciales por defecto de este servicio, pero estas han sido cambiadas, así que vamos a buscar si podemos acceder de alguna otra manera
 
-Usando searchsploit vamos a ver si hay alguna forma de explotar algún fallo de ```Elastix 2.2.0```:
+Usando **searchsploit** vamos a ver si hay alguna forma de explotar algún fallo de ```Elastix 2.2.0```:
 
 ```bash
 searchsploit elastix
@@ -48,11 +48,11 @@ searchsploit elastix
 
 ![img](/assets/img/post/beep/796b300a-81bd-4aa5-9e45-46939fff049e.png)
 
-Vemos que hay una vulnerabilidad existente para la versión del servicio al que intentamos acceder
+Vemos que existe una vulnerabilidad existente para la versión del servicio al que intentamos acceder
 
 ![img](/assets/img/post/beep/38acbf8a-ea6b-46ca-b2ec-a8cea437c502.png)
 
-Si abrimos el archivo ```.txt```, podremos observar que el servicio es **vulnerable** a un ```Directory Path Traversal```, **con el que podremos apuntar a cualquier archivo del sistema** 
+Si abrimos el archivo ```.txt```, podremos observar que el servicio es **vulnerable** a un ```Directory Path Traversal```, **con el que podremos apuntar a cualquier archivo del sistema**
 
 > En este [enlace](https://portswigger.net/web-security/file-path-traversal) dejo más información sobre esta vulnerabilidad
 
@@ -64,7 +64,11 @@ https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../../
 
 Vemos que si apuntamos a ```/etc/amportal.conf``` accederemos a un archivo de configuración del servicio ```amportal```
 
+> Amportal es una herramienta que se utiliza para administrar y configurar servidores de telefonía IP que funcionan con FreePBX
+
 En el podremos encontrar unas credenciales ```admin:jEhdIekWmdjE``` , las cuales podremos utilizar para loguearnos en el servicio ```vtigercrm```
+
+> Vtiger CRM es un sistema de gestión de relaciones con los clientes (CRM) de código abierto y basado en la web.
 
 Una vez logueados veremos la siguiente interfaz, haremos click en ```Settings```
 
@@ -96,17 +100,17 @@ Como siempre, lo primero que haremos será ```sudo -l``` , para ver si hay algú
 
 ![img](/assets/img/post/beep/9505d4a3-3e5b-4c9c-853d-7b29e65572c6.png)
 
-Como vemos,** hay muchas opciones con las cuales probar**, pero nosotros lo intentaremos con la opción de ```nmap```. Lo que haremos para conseguir una ```consola``` como ```root``` aprovechandonos de poder ejecutar el ```binario``` de nmap como un usuario privilegiado es lo siguiente:
+Como vemos, **hay muchas opciones con las cuales probar** , pero nosotros lo intentaremos con el binario de ```nmap```. Lo que haremos para conseguir una ```consola``` como ```root``` aprovechandonos de poder ejecutar el ```binario``` de nmap como un usuario privilegiado, es lo siguiente:
 
-```bash 
+```bash
 sudo nmap --interactive
 ```
 
-```bash 
+```bash
 !bash
 ```
 
-> Al realizar el segundo paso no sucederá nada, pero ya deberiamos tener acceso como root
+> Al realizar el segundo paso veremos que no sucede nada visual, pero ya deberiamos tener acceso como root
 
 ![img](/assets/img/post/beep/2fa43191-ce70-4ebc-b99f-d85cbdc9be1d.png)
 
@@ -116,4 +120,4 @@ Como podemos ver ya tendremos acceso como **usuario privilegiado**
 
 Y finalmente ya podremos ver la **root flag**
 
-Espero que os haya gustado y servido de ayuda, cualquier comentario se agradece. Adios!
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*

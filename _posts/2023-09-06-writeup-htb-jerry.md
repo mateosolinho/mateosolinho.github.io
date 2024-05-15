@@ -30,7 +30,7 @@ Podemos **loguearnos** en el servicio **Apache Tomcat** con las credenciales pre
 
 ![img](/assets/img/post/jerry/658a5dde-829f-4032-8068-8d70f427a1e0.png)
 
-Vemos que hay una sección donde podemos **subir archivos** ```.war``` , la cual usaremos para conseguir acceso al sistema: 
+Vemos que hay una sección donde podemos **subir archivos** ```.war``` , la cual usaremos para conseguir acceso al sistema:
 
 ![img](/assets/img/post/jerry/f13630bf-58f1-4988-bdea-0e9e224c5fc1.png)
 
@@ -62,4 +62,4 @@ curl http://10.10.10.95:8000/rev_shell/mdeonxmbgy.jsp
 
 De esta manera ya tendremos acceso completo a la máquina víctima, en donde podremos encontrar las flags en el ```Desktop``` del usuario ```administrator```
 
-Espero que haya ayudado, se agradece cualquier tipo de comentario para mejorar poco a poco. Adios!
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
