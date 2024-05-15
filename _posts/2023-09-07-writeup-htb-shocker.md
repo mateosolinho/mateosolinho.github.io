@@ -78,13 +78,15 @@ Si nos ponemos en escucha con ```nc``` por el puerto indicado, conseguiremos **a
 
 Vamos a hacer un pequeño **reconocimiento**, para ver de que manera podemos escalar privilegios
 
-Ejecutando ```sudo -l``` podemos ver que binarios podem os ejecutar como ```root```:
+Ejecutando ```sudo -l``` podemos ver que binarios podemos ejecutar como ```root```:
 
 ![img](/assets/img/post/shocker/06d78087-6e38-4455-b2dd-91e65d6dbb54.png)
 
 Como vemos podemos ejecutar como ```root``` el binario ```perl```
 
-Por lo tanto vamos a consultar [GTFOBins](https://gtfobins.github.io/), un recurso web que nos ayudará muchísimo
+Por lo tanto vamos a consultar [GTFOBins](https://gtfobins.github.io/) para buscar informacion sobre el binario ```perl```
+
+> GTFOBins es un recurso web que nos ayudará muchísimo
 
 Siguiendo los pasos de la web ejecutaremos:
 
@@ -98,4 +100,4 @@ Y Bingo! Conseguiremos **acceso** a la máquina como el usuario ```root```, y po
 
 ![img](/assets/img/post/shocker/9b6268d5-3382-4ca6-b470-c96c5f9acfc6.png)
 
-Espero que os haya gustado y servido de ayuda, cualquier comentario se agradece. Adios!
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*

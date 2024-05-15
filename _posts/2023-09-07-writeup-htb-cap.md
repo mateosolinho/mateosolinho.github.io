@@ -38,7 +38,7 @@ Vemos que en el puerto ```80``` hay un servicio ```http```, vamos a buscar la we
 
 Podemos ver que hay un usuario ```nathan```, lo apuntamos ya que nos podrá hacer falta en un futuro
 
-Si accedemos a ```/capture``` nos redigirá tras 5 segundos a ```/data/1``` donde prodemos ver información sobre ese reporte, realizando un poco de descubrimiento a mano, cambiando el id de la data, nos daremos cuenta de que en ```/data/0``` hay un reporte con información
+Si accedemos a ```/capture``` tras 5 segundos nos redigirá a ```/data/1``` donde prodemos ver información sobre ese reporte, realizando un poco de descubrimiento a mano, cambiando el id de la data, nos daremos cuenta de que en ```/data/0``` hay un reporte con información
 
 ![img](/assets/img/post/cap/23bf5c97-71c9-4722-86dd-bae6ae365ebe.png)
 
@@ -62,7 +62,7 @@ Con estas credenciales podremos conectarnos por ```ftp``` a la máquina y podrem
 
 ## Escalada de Privilegios
 
-Para la realización de la escalada nos conectaremos con las mismas credenciales por ```SSH```
+Para la realización de la escalada de privilegios nos conectaremos con las mismas credenciales por ```SSH```
 
 Una vez conectados seguiremos el procedimiento en busqueda de todo tipo de posibles escaldas sobre el usuario nathan
 
@@ -92,4 +92,4 @@ Y bingo! Como vemos en el binario ```pyhton3.8``` hay una capabilitie asignada d
 
 Y despues de esto, ya tendriamos acceso privilegiado al sistema, pudiendo ver en ```/root``` la **root flag**
 
-Espero que os haya gustado y servido de ayuda, cualquier comentario se agradece. Adios!
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
