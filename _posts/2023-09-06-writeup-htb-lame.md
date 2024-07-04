@@ -1,8 +1,8 @@
 ---
 title: Lame - HTB Writeup
 date: 2023-09-06 15:00:00 +0800
-categories: [Writeups, HTB]
-tags: [Easy, Linux, Writeup]
+categories: [Ciberseguridad, Writeups, HTB]
+tags: [Writeup]
 image:
   path: /assets/img/post/lame/luca-bravo-XJXWbfSo2f0-unsplash.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
