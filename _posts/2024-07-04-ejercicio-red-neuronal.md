@@ -1,7 +1,7 @@
 ---
 title: Mi Primera Red Neuronal
 date: 2024-07-04 15:50:00 +0800
-categories: [Proyectos, Programacion, IA]
+categories: [Programación, IA]
 tags: [IA]
 image:
   path: /assets/img/post/red_neuronal/brain.jpg
@@ -79,7 +79,7 @@ print(salida.get_weights())
 
 ## Explicación Detallada del Código
 
-1. **Importar Bibliotecas Necesarias**
+### **Importar Bibliotecas Necesarias**
 
 ```python
 import tensorflow as tf
@@ -88,7 +88,7 @@ import numpy as np
 
 Aquí, importamos ```TensorFlow``` para construir y entrenar nuestra red neuronal y ```NumPy``` para manejar los datos de manera eficiente.
 
-2. **Datos de Entrenamiento**
+### **Datos de Entrenamiento**
 
 ```python
 celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
@@ -97,7 +97,7 @@ fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
 
 Definimos dos arrays de ```NumPy``` que contienen las temperaturas en Celsius y sus correspondientes en Fahrenheit.
 
-3. **Definición de las Capas del Modelo**
+### **Definición de las Capas del Modelo**
 
 ```python
 oculta1 = tf.keras.layers.Dense(units=3, input_shape=[1])
@@ -107,7 +107,7 @@ salida = tf.keras.layers.Dense(units=1)
 
 Creamos tres capas ```densas``` ```(fully connected layers)```. La primera capa oculta tiene ```3 neuronas``` y recibe ```una entrada``` (la temperatura en Celsius). La segunda capa oculta también tiene ```3 neuronas```. La ```capa de salida``` tiene una neurona que produce la temperatura en Fahrenheit.
 
-4. **Construcción del Modelo**
+### **Construcción del Modelo**
 
 ```python
 modelo = tf.keras.Sequential([oculta1, oculta2, salida])
@@ -115,7 +115,7 @@ modelo = tf.keras.Sequential([oculta1, oculta2, salida])
 
 Utilizamos ```tf.keras.Sequential``` para definir el modelo como una pila lineal de capas.
 
-5. **Compilación del Modelo**
+### **Compilación del Modelo**
 
 ```python
 modelo.compile(
@@ -126,7 +126,7 @@ modelo.compile(
 
 Compilamos el modelo especificando el optimizador ```Adam``` con una ```tasa de aprendizaje``` de 0.1 y una función de pérdida de error cuadrático medio.
 
-6. **Entrenamiento del Modelo**
+### **Entrenamiento del Modelo**
 
 ```python
 print("Comenzando entrenamiento del modelo...")
@@ -136,7 +136,7 @@ print("Modelo entrenado")
 
 Entrenamos el modelo con los datos de entrenamiento durante ```1000 épocas``` ("vueltas"). Almacenamos el historial del entrenamiento para visualizar la pérdida.
 
-7. **Visualización del Entrenamiento**
+### **Visualización del Entrenamiento**
 
 ```python
 import matplotlib.pyplot as plt
@@ -145,10 +145,12 @@ plt.ylabel("Magnitud de perdida")
 plt.plot(historial.history["loss"])
 plt.show()
 ```
+Salida:
+![img](/assets/img/post/red_neuronal/grafica.png)
 
 Usamos ```Matplotlib``` para graficar la magnitud de la pérdida a lo largo de las épocas, lo que ayuda a entender el modelo de mejora con el tiempo.
 
-8. **Realización de una Predicción**
+### **Realización de una Predicción**
 
 ```python
 print("Hagamos una prediccion!")
@@ -156,9 +158,17 @@ resultado = modelo.predict([100])
 print("El resultado es " + str(resultado) + " fahrenheit")
 ```
 
+Salida:
+
+```python
+Hagamos una prediccion!
+1/1 [==============================] - 0s 101ms/step
+El resultado es [[211.74742]] fahrenheit
+```
+
 Utilizamos el modelo entrenado para predecir la temperatura en Fahrenheit correspondiente a 100 grados Celsius.
 
-9. **Visualización de los Pesos del Modelo**
+### **Visualización de los Pesos del Modelo**
 
 ```python
 print("Variables internas del modelo")
@@ -167,8 +177,23 @@ print(oculta2.get_weights())
 print(salida.get_weights())
 ```
 
+Salida:
+
+```python
+Variables internas del modelo
+[array([[ 0.46807313,  0.10201637, -0.3496878 ]], dtype=float32), array([ 3.317963 , -2.85734  , -3.2782311], dtype=float32)]
+[array([[-0.8704237 , -0.67110294,  0.6999068 ],
+       [ 0.87758327,  0.09569932,  0.45393893],
+       [ 1.3989487 ,  0.42570233,  0.68541443]], dtype=float32), array([-3.2544918, -3.00666  ,  3.1300454], dtype=float32)]
+[array([[-1.5702448],
+       [-1.0594199],
+       [ 0.3759461]], dtype=float32), array([3.1386135], dtype=float32)]
+```
+
 Imprimimos los ```pesos de las capas``` desués del entrenamiento para ver cómo el modelo ha ajustado sus parámetros.
 
 ## Conclusión
 
 En este ejercicio muestra cómo construir y entrenar una red neuronal básica para convertir temperaturas de Celsius a Fahrenheit. Aunque es un ejemplo simple, ilustra los conceptos fundamentales del aprendizaje automático y el uso de TensorFlow.
+
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
