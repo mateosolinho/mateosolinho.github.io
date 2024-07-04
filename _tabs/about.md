@@ -4,20 +4,20 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-# About
+# Sobre Mi
 
-*Hello! My name is ```Mateo```, I am a student and lover of cybersecurity, pentesting and ```CTF```.*
+*¡Hola! Mi nombre es ```Mateo```, soy estudiante y apasionado por la programación, el desarrollo de software y la creación de proyectos innovadores.*
 
-*With this small blog I seek to increase my level of **knowledge** in the field.*
+*Con este pequeño blog, busco compartir mis experiencias, aprender y mejorar mis habilidades en el mundo de la programación. Actualmente, estoy formándome en inteligencia artificial, aquí encontrarás tutoriales, proyectos personales y recursos útiles para desarrolladores de todos los niveles. ¡Acompáñame en este viaje de aprendizaje y descubrimiento!*
 
-## Contents
+## Contenidos
 
-*In this blog I will publish several types of **articles**.*
+*En este blog publicaré varios tipos de **artículos**.*
 
-* **Writeups from some platforms (```HTB```, ```HackMyVM```, ```VulnHub```)**
+* **Tutoriales de programación**
 
-* **Cybersecurity Articles**
+* **Proyectos personales**
 
-* **Cibersecurity Tips**
+* **Consejos y trucos para desarrolladores**
 
-*I hope you like it, it is helpful to you and we can **learn** together*
+*Espero que te guste, te sea útil y que podamos ```aprender``` juntos.*

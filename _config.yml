@@ -18,11 +18,11 @@ timezone: Europe/Madrid
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: M4teoo # the main title
+title: Mateo Soliño # the main title
 
-tagline: Ethical Hacking, Pentesting, Writeups and Cibersecurity articles # it will display as the sub-title
+tagline: Explorando el mundo de la programación, proyectos, tutoriales y experiencias para entusiastas de la tecnología # it will display as the sub-title
 
-description: Ethical Hacking, Pentesting, Writeups and Cibersecurity articles # used by seo meta and the atom feed
+description: Explora proyectos de programación innovadores, tutoriales detallados y experiencias personales en desarrollo web, inteligencia artificial y más. Perfecto para entusiastas de la tecnología y desarrolladores de todos los niveles. Frontend, Backend, Ciberseguridad, Programacion. # used by seo meta and the atom feed
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://mateosolinho.github.io/"
@@ -31,12 +31,12 @@ github:
   username: mateosolinho # change to your github username
 
 twitter:
-  username: mateosolinho # change to your twitter username
+  username: LEOrbitSpace # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: M4teoo
+  name: Mateo Soliño
   email: mateosolino1@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
@@ -75,7 +75,7 @@ theme_mode: dark
 img_cdn: ""
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "assets/img/assassin-warrior-mascot-vector.jpg"
+avatar: "assets/img/perfil.jpg"
 
 # boolean type, the global switch for TOC in posts.
 toc: false
