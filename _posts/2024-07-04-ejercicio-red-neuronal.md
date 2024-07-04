@@ -145,7 +145,9 @@ plt.ylabel("Magnitud de perdida")
 plt.plot(historial.history["loss"])
 plt.show()
 ```
+
 Salida:
+
 ![img](/assets/img/post/red_neuronal/grafica.png)
 
 Usamos ```Matplotlib``` para graficar la magnitud de la pérdida a lo largo de las épocas, lo que ayuda a entender el modelo de mejora con el tiempo.
