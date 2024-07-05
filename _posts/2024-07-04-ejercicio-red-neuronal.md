@@ -1,5 +1,5 @@
 ---
-title: Mi Primera Red Neuronal
+title: Primera Red Neuronal
 date: 2024-07-04 15:50:00 +0800
 categories: [Programación, IA]
 tags: [IA]
