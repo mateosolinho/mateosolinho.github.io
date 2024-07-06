@@ -34,7 +34,7 @@ La ```red neuronal densa (ANN)``` es una red **totalmente conectada**, donde **c
 
 ### Red Neuronal Convolucional (CNN)
 
-Las redes neuronales convulocionales (CNN) son especialmente eficaces para el procesamiento de datos de imágenes. Utilizan capas de convolución y pooling para extraer características espaciales y patrones relevantes de las imágenes
+Las ```redes neuronales convulocionales (CNN)``` son especialmente eficaces para el **procesamiento de datos de imágenes**. Utilizan capas de ```convolución y pooling``` para extraer características espaciales y patrones relevantes de las imágenes
 
 #### Capas del modelo CNN
 
@@ -292,12 +292,6 @@ modeloCNN2_AD.fit(
 )
 
 modeloCNN_AD.save('perros-gatos-cnn-ad.h5')
-
-!pip install tensorflowjs
-
-!mkdir carpeta_salida
-
-!tensorflowjs_converter --input_format keras perros-gatos-cnn-ad.h5 carpeta_salida
 ```
 
 ## Explicación Detallada del Código
