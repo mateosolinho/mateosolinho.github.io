@@ -1,6 +1,6 @@
 ---
 title: Clasificación de Imágenes con una Red Neuronal
-date: 2024-07-05 03:20:00 +0800
+date: 2024-07-05 12:20:00 +0800
 categories: [Programación, IA]
 tags: [IA]
 image:
