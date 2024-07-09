@@ -1,10 +1,10 @@
 ---
-title: Análisis y Visualización de Datos de Misiones Espaciales 1957-2020
-date: 2024-09-06 10:20:00 +0800
-categories: [Programación, Data Science]
-tags: [Data Science, Python, Pandas, Visualización]
+title: Clasificación de Imágenes con TensorFlow [ Comparación de Modelos Densos y Convolucionales ]
+date: 2024-07-06 21:40:00 +0800
+categories: [Programación, IA]
+tags: [IA]
 image:
-  path: /assets/img/post/rocket_dataset/8.jpg
+  path: /assets/img/post/cats_vs_dogs/6.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
