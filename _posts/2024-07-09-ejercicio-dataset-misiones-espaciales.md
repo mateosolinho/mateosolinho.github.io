@@ -260,7 +260,7 @@ Visualizamos el número de **misiones por organización con un gráfico de barra
 
 Salida:
 
-![img](/assets/img/post/rocket_dataset/8.jpg)
+![img](/assets/img/post/rocket_dataset/2.png)
 
 En esta gráfica de barras podemos obervar que la organización que más misiones ha realizado ha sido **RVSN USSR**, empresa espacial **Rusa**.
 
