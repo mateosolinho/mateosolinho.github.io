@@ -299,7 +299,7 @@ Salida:
 
 ![img](/assets/img/post/rocket_dataset/4.png)
 
-En esta gráfica podemos observar que el año **preferido** para el lanzamiento de misiones hasta el año 2020 ha sido **Diciembre**.
+En esta gráfica podemos observar que el año **preferido** para el lanzamiento de misiones hasta el año **2020** ha sido **Diciembre**.
 
 ***¿Cómo ha variado el costo de una misión espacial a lo largo del tiempo?***
 
