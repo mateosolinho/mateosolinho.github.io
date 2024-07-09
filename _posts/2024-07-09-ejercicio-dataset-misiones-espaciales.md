@@ -1,5 +1,5 @@
 ---
-title: Clasificación de Imágenes con TensorFlow [ Comparación de Modelos Densos y Convolucionales ]
+title: Análisis y Visualización de Datos de Misiones Espaciales 1957-2020
 date: 2024-07-06 21:40:00 +0800
 categories: [Programación, IA]
 tags: [IA]
