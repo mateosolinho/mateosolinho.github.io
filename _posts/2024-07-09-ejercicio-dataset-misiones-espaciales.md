@@ -1,6 +1,6 @@
 ---
 title: Análisis y Visualización de Datos de Misiones Espaciales 1957-2020
-date: 2024-07-06 21:40:00 +0800
+date: 2024-07-07 21:40:00 +0800
 categories: [Programación, Data Science]
 tags: [Data Science, Python, Pandas]
 image:
