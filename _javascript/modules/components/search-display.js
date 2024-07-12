@@ -1,7 +1,7 @@
 /**
  * This script make #search-result-wrapper switch to unloaded or shown automatically.
  */
-const $btnSbTrigger = $('#sidebar-trigger');
+// const $btnSbTrigger = $('#sidebar-trigger');
 const $btnSearchTrigger = $('#search-trigger');
 const $btnCancel = $('#search-cancel');
 const $content = $('#main>.row');
