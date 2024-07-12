@@ -1,10 +1,10 @@
 ---
-title: Sistema de Gestión de Esstrellas en Python
-date: 2024-07-12 17:50:00 +0800
-categories: [Programación, Desarrollo de Software]
-tags: [Python, Tkinter, MySQL, CRUD]
+title: Análisis y Visualización de Datos de Misiones Espaciales 1957-2020
+date: 2024-07-08 21:40:00 +0800
+categories: [Programación, Data Science]
+tags: [Data Science, Python, Pandas]
 image:
-  path: /assets/img/post/ejercicio_crud_estrellas/1.png
+  path: /assets/img/post/rocket_dataset/8.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
