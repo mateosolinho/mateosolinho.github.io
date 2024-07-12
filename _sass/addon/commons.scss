@@ -939,7 +939,7 @@ $btn-mb: 0.5rem;
   }
 } /* #topbar */
 
-#sidebar-trigger,
+// #sidebar-trigger,
 #search-trigger {
   display: none;
 }
@@ -1233,7 +1233,7 @@ $btn-mb: 0.5rem;
     height: 5rem;
     margin-left: 26px;
   }
-  
+
 }
 
 @media all and (max-width: 768px) {
@@ -1333,7 +1333,7 @@ $btn-mb: 0.5rem;
   }
 
   #topbar-title,
-  #sidebar-trigger,
+  // #sidebar-trigger,
   #search-trigger {
     display: block;
   }
