@@ -183,10 +183,6 @@ exclude:
   - LICENSE
   - rollup.config.js
   - package*.json
-  - test
-  - Test
-  - tests
-  - Tests
 
 jekyll-archives:
   enabled: [categories, tags]
