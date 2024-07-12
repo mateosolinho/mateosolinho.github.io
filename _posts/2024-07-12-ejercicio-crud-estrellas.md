@@ -660,4 +660,8 @@ En resumen, el aprendizaje y aplicación de CRUDs en el desarrollo de software e
 
 La experiencia adquirida en este proyecto refuerza la importancia de comprender y aplicar estos conceptos para desarrollar aplicaciones efectivas y útiles.
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+[Descargar .EXE de la aplicación](https://github.com/mateosolinho/python/releases/tag/Star_Manager)
+
+*Para utilizarla deberás tener `XAMPP` instalado.*
+
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. ¡Adios!*
