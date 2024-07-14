@@ -2,7 +2,7 @@
 title: Sistema de Gestión de Estrellas en Python
 date: 2024-07-12 17:50:00 +0800
 categories: [Programación, Desarrollo de Software]
-tags: [Python, Tkinter, MySQL, CRUD]
+tags: [Python, Tkinter, MySQL, CRUD, Desarrollo de Software]
 image:
   path: /assets/img/post/ejercicio_crud_estrellas/1.png
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
@@ -12,17 +12,17 @@ image:
 
 ## Introducción
 
-En el mundo del desarrollo de Software, el concepto de ```CRUD``` **(Crear, Leer, Actualizar y Eliminar)** es fundamental para la gestión de datos en aplicaciones.
+En el mundo del desarrollo de Software, el concepto de `CRUD` **(Crear, Leer, Actualizar y Eliminar)** es fundamental para la gestión de datos en aplicaciones.
 
-Un sistema ```CRUD``` permite a los usuarios interactuar con una base de datos de manera completa: **añadir nuevos registros, leer o consultar datos existentes, actualizar registros y eliminar aquellos que ya no sean necesarios**.
+Un sistema `CRUD` permite a los usuarios interactuar con una base de datos de manera completa: **añadir nuevos registros, leer o consultar datos existentes, actualizar registros y eliminar aquellos que ya no sean necesarios**.
 
-En esta entrada, exploraremos cómo construir un sistema ```CRUD``` para gestionar un **catálogo de estrellas** utilizando ```Python```, ```Tkinter``` para la **interfaz gráfica** y ```MySQL``` como **sistema de gestión de bases de datos**.
+En esta entrada, exploraremos cómo construir un sistema `CRUD` para gestionar un **catálogo de estrellas** utilizando `Python`, `Tkinter` para la **interfaz gráfica** y `MySQL` como **sistema de gestión de bases de datos**.
 
 ## ¿Qué es un CRUD?
 
 ![img](/assets/img/post/ejercicio_crud_estrellas/5.png)
 
-```CRUD``` es un acrónimo de las **cuatro operaciones básicas** que se pueden realizar en una base de datos:
+`CRUD` es un acrónimo de las **cuatro operaciones básicas** que se pueden realizar en una base de datos:
 
 * **Crear**: **Inserción** de nuevos datos en la base de datos.
 
@@ -44,7 +44,7 @@ En esta entrada, exploraremos cómo construir un sistema ```CRUD``` para gestion
 
 1. **Complejidad Inicial**: Requiere una **planificación cuidadosa** para definir las operaciones y su interacción.
 
-2. **Rendimiento**: En aplicaciones con **grandes volúmenes de datos**, las operaciones ```CRUD``` pueden afectar al rendimiento si estas no están optimizadas.
+2. **Rendimiento**: En aplicaciones con **grandes volúmenes de datos**, las operaciones `CRUD` pueden afectar al rendimiento si estas no están optimizadas.
 
 3. **Seguridad**: La implementación incorrecta puede llevar a **vulnerabilidades** en la gestión de datos.
 
@@ -54,11 +54,11 @@ En esta entrada, exploraremos cómo construir un sistema ```CRUD``` para gestion
 
 ![img](/assets/img/post/ejercicio_crud_estrellas/4.png)
 
-```XAMPP``` es una **solución de software** que proporciona una plataforma de ```servidor web local``` que incluye ```Apache```, ```MySQL``` (o MariaDB), ```PHP``` y ```Perl```. Aquí está un desglose de su uso y ventajas:
+`XAMPP` es una **solución de software** que proporciona una plataforma de `servidor web local` que incluye `Apache`, `MySQL` (o MariaDB), `PHP` y `Perl`. Aquí está un desglose de su uso y ventajas:
 
 1. **¿Qué es XAMPP?**
   
-    ```XAMPP``` es un **paquete de software** que facilita la instalación de un ```servidor web local``` en sistemas operativos como ```Windows```, ```Linux``` o ```macOS```. Su nombre es un acrónimo de las tecnologías incluidas:
+    `XAMPP` es un **paquete de software** que facilita la instalación de un `servidor web local` en sistemas operativos como `Windows`, `Linux` o `macOS`. Su nombre es un acrónimo de las tecnologías incluidas:
 
     * **X**: Multiplataforma *(Cross-Platform)*
     * **A**: Apache *(Servidor web)*
@@ -68,15 +68,15 @@ En esta entrada, exploraremos cómo construir un sistema ```CRUD``` para gestion
   
 2. **Uso en el Desarrollo de la Aplicación**
 
-    Para la aplicación, ```XAMPP``` se utiliza principalmente para:
+    Para la aplicación, `XAMPP` se utiliza principalmente para:
 
     * **Desarrollar y Probar**: Proporciona un entorno de **servidor local** donde se puede **desarrollar y probar** la base de datos y el código de la aplicación antes de desplegarlo en un servidor en vivo.
 
-    * **Gestionar la Base de Datos**: ```XAMPP``` incluye ```MySQL/MariaDB```, que se utiliza para **almacenar y gestionar** los datos de la aplicación.
+    * **Gestionar la Base de Datos**: `XAMPP` incluye `MySQL/MariaDB`, que se utiliza para **almacenar y gestionar** los datos de la aplicación.
 
 3. **Ventajas**
 
-    * **Fácil Instalación**: ```XAMPP``` se instala **rápidamente y configura automáticamente** el servidor web y la base de datos.
+    * **Fácil Instalación**: `XAMPP` se instala **rápidamente y configura automáticamente** el servidor web y la base de datos.
 
     * **Multiplataforma**: Compatible con **varios sistemas operativos**, lo que facilita el desarrollo en diferentes entornos.
 
@@ -84,7 +84,7 @@ En esta entrada, exploraremos cómo construir un sistema ```CRUD``` para gestion
 
 4. **Desventajas**
 
-    * **Seguridad**: Al estar configurado para facilitar el desarrollo, ```XAMPP``` **no es seguro para un entorno de producción** sin una configuración adicional.
+    * **Seguridad**: Al estar configurado para facilitar el desarrollo, `XAMPP` **no es seguro para un entorno de producción** sin una configuración adicional.
 
 ### HeidiSQL
 
@@ -94,22 +94,22 @@ HeidiSQL es una herramienta de gestión y administración de bases de datos MySQ
 
 1. **¿Qué es HeidiSQL?**
   
-    ```HeidiSQL``` es una **aplicación gráfica** que proporciona una **interfaz de usuario** para gestionar bases de datos ```SQL```. Permite la administración de **bases de datos, tablas, consultas SQL y la visualización de datos** de manera intuitiva.
+    `HeidiSQL` es una **aplicación gráfica** que proporciona una **interfaz de usuario** para gestionar bases de datos `SQL`. Permite la administración de **bases de datos, tablas, consultas SQL y la visualización de datos** de manera intuitiva.
   
 2. **Uso en el Desarrollo de la Aplicación**
 
-    Para la aplicación, ```HeidiSQL``` se utiliza para:
+    Para la aplicación, `HeidiSQL` se utiliza para:
 
-    * **Administrar la Base de Datos**: **Crear, modificar y eliminar bases de datos y tablas**. En nuestro caso, se usa para gestionar la tabla de ```stars```.
-    * **Ejecutar Consultas SQL**: **Probar y ejecutar** consultas ```SQL``` directamente, lo que ayuda en la depuración y desarrollo de la lógica de base de datos.
+    * **Administrar la Base de Datos**: **Crear, modificar y eliminar bases de datos y tablas**. En nuestro caso, se usa para gestionar la tabla de `stars`.
+    * **Ejecutar Consultas SQL**: **Probar y ejecutar** consultas `SQL` directamente, lo que ayuda en la depuración y desarrollo de la lógica de base de datos.
 
     * **Visualizar Datos**: **Ver y editar datos** directamente en una interfaz gráfica.
 
 3. **Ventajas**
 
-    * **Interfaz Gráfica Amigable**: Proporciona una **interfaz intuitiva** que facilita la administración de bases de datos **sin necesidad de escribir comandos** ```SQL``` manualmente.
+    * **Interfaz Gráfica Amigable**: Proporciona una **interfaz intuitiva** que facilita la administración de bases de datos **sin necesidad de escribir comandos** `SQL` manualmente.
 
-    * **Soporte para Múltiples Bases de Datos**: Compatible con ```MySQL```, ```MariaDB``` y ```PostgreSQL```.
+    * **Soporte para Múltiples Bases de Datos**: Compatible con `MySQL`, `MariaDB` y `PostgreSQL`.
 
     * **Funcionalidades Avanzadas**: Permite **importar y exportar datos, realizar backups**, y otras tareas administrativas.
 

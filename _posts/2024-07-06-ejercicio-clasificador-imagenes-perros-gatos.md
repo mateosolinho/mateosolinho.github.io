@@ -2,7 +2,7 @@
 title: Clasificación de Imágenes con TensorFlow [ Comparación de Modelos Densos y Convolucionales ]
 date: 2024-07-06 21:40:00 +0800
 categories: [Programación, IA]
-tags: [IA]
+tags: [Machine Learning, Data Science, TensorFlow, ANN, CNN, Aprendizaje Automático, IA]
 image:
   path: /assets/img/post/cats_vs_dogs/6.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
@@ -22,19 +22,19 @@ El dataset Cats vs Dogs es un conjunto de datos de imágenes que contiene miles 
 
 ### Red Neuronal Densa (ANN)
 
-La ```red neuronal densa (ANN)``` es una red **totalmente conectada**, donde **cada neurona de una capa está conectada a cada neurona de la siguiente capa**. Esta rred es adecuada para tareas básicas de clasificación, aunque puede no ser tan efectiva para datos de imágenes más complejos como las ```CNN```
+La `red neuronal densa (ANN)` es una red **totalmente conectada**, donde **cada neurona de una capa está conectada a cada neurona de la siguiente capa**. Esta rred es adecuada para tareas básicas de clasificación, aunque puede no ser tan efectiva para datos de imágenes más complejos como las `CNN`
 
 #### Capas del Modelo Denso
 
-* **Capa de Entrada (Flatten Layer):** Convierte cada imagen de ```100x100 píxeles``` en un ```vector unidimensional de 10.000 elementos```.
+* **Capa de Entrada (Flatten Layer):** Convierte cada imagen de `100x100 píxeles` en un `vector unidimensional de 10.000 elementos`.
 
-* **Capas Ocultas (Dense Layers):** Dos capas ```densas``` ```(fully connected)``` con 150 neuronas cada una y ```función de activación ReLU```. Estas capas capturan patrones y características complejas de las imágenes.
+* **Capas Ocultas (Dense Layers):** Dos capas `densas` `(fully connected)` con 150 neuronas cada una y `función de activación ReLU`. Estas capas capturan patrones y características complejas de las imágenes.
 
-* **Capa de Salida (Dense Layer):** Una capa ```densa``` con 1 neurona y ```función de activación sigmoide```, que produce una probabilidad para la clase (gato o perro)
+* **Capa de Salida (Dense Layer):** Una capa `densa` con 1 neurona y `función de activación sigmoide`, que produce una probabilidad para la clase (gato o perro)
 
 ### Red Neuronal Convolucional (CNN)
 
-Las ```redes neuronales convulocionales (CNN)``` son especialmente eficaces para el **procesamiento de datos de imágenes**. Utilizan capas de ```convolución y pooling``` para extraer características espaciales y patrones relevantes de las imágenes
+Las `redes neuronales convulocionales (CNN)` son especialmente eficaces para el **procesamiento de datos de imágenes**. Utilizan capas de `convolución y pooling` para extraer características espaciales y patrones relevantes de las imágenes
 
 #### Capas del modelo CNN
 
@@ -46,13 +46,13 @@ Las ```redes neuronales convulocionales (CNN)``` son especialmente eficaces para
   * ***Conv2D(128, (3,3), activation='relu'):*** Extrae características aún más abstractas.
   * ***MaxPooling2D(2, 2):*** Reduce la dimensionalidad al nivel final.
 
-* **Capa de Aplanado (Flatten):** Convierte la salida ```tridimensional``` de las capas convolucionales en un vector ```unidimensional```.
-* **Capa Densa (Dense Layer):** Una capa ```densa con 100 neuronas``` y ```función de activación ReLU``` para combinar las características extraídas.
-* **Capa de Salida (Dense Layer):** Una capa densa con ```una neurona``` y ```función de activación sigmoide``` para la clasificación binaria.
+* **Capa de Aplanado (Flatten):** Convierte la salida `tridimensional` de las capas convolucionales en un vector `unidimensional`.
+* **Capa Densa (Dense Layer):** Una capa `densa con 100 neuronas` y `función de activación ReLU` para combinar las características extraídas.
+* **Capa de Salida (Dense Layer):** Una capa densa con `una neurona` y `función de activación sigmoide` para la clasificación binaria.
 
 #### Modelo CNN con Dropout
 
-Para reducir el **sobreajuste**, añadimos una capa de ```Dropout``` con la **tasa del 50%**, que desactiva aleatoriamente neuronas durante el entrenamiento
+Para reducir el **sobreajuste**, añadimos una capa de `Dropout` con la **tasa del 50%**, que desactiva aleatoriamente neuronas durante el entrenamiento
 
 El **sobreajuste** ocurre cuando un modelo tiene un rendimiento excelente en los datos de entrenamiento, pero falla al generalizar y obtener buenos resultados en datos no vistos *(de prueba o validación)*.
 
@@ -322,9 +322,9 @@ for i, (imagen, etiqueta) in enumerate(datos['train'].take(25)):
   plt.imshow(imagen, cmap='gray')
 ```
 
-Importamos las librerias ```tensorflow```, ```tensorflow_datasets```, ```matplotlib``` y ```cv2```, cargamos el dataset y preprocesamos las imágenes para que tengan un tamaño uniforme y se conviertan a escala de grises
+Importamos las librerias `tensorflow`, `tensorflow_datasets`, `matplotlib` y `cv2`, cargamos el dataset y preprocesamos las imágenes para que tengan un tamaño uniforme y se conviertan a escala de grises
 
-1. Utilizamos ```tfds.load``` paraq cargar el dataset ```'cats_vs_dogs'```
+1. Utilizamos `tfds.load` paraq cargar el dataset `'cats_vs_dogs'`
 2. Redimensionamos las imágenes a 100x100 píxeles y las convertimos a escala de grises para simplificar el procesamiento.
 3. Mostramos algunas de imágenes del conjunto de datos para ver como se ven después del proprocesamiento.
 
@@ -360,7 +360,7 @@ Preparamos los datos de entrenamiento redimensionando y normalizando las imágen
 
 1. Procesamos todas las imágenes del dataset y las convertimos a escala de grises.
 2. Escalamos los valores de los píxeles a un rango de 0 a 1 para facilitar el entrenamiento del modelo.
-3. Separamos las imágenes y las etiquetas en dos arrays, ```X``` para las imágenes ```y``` y para las etiquetas.
+3. Separamos las imágenes y las etiquetas en dos arrays, `X` para las imágenes `y` y para las etiquetas.
 
 ### Definiendo y Entrenando los Modelos
 
@@ -381,10 +381,10 @@ modeloDenso.compile(optimizer='adam',
 
 Primero, definimos un modelo denso, que es una red neuronal simple con capas totalmente conectadas.
 
-1. **Capa de Entrada:** La capa ```Flatten``` convierte la imagen 2D en un vector 1D.
-2. **Capas Ocultas:** Dos **capas densas con 150 neuronas cada una** y ```función de activación ReLU```.
-3. **Capa de Salida:** Una **capa densa con una neurona** y ```función de activación sigmoide``` para clasificación binaria (gato o perro).
-4. **Compilación:** Utilizamos el optimizador ```'adam'``` y la ```función de pérdida 'binary_crossentropy'```.
+1. **Capa de Entrada:** La capa `Flatten` convierte la imagen 2D en un vector 1D.
+2. **Capas Ocultas:** Dos **capas densas con 150 neuronas cada una** y `función de activación ReLU`.
+3. **Capa de Salida:** Una **capa densa con una neurona** y `función de activación sigmoide` para clasificación binaria (gato o perro).
+4. **Compilación:** Utilizamos el optimizador `'adam'` y la `función de pérdida 'binary_crossentropy'`.
 
 #### Modelo Convolucional (CNN)
 
@@ -409,10 +409,10 @@ modeloCNN.compile(optimizer='adam',
 
 A continuación, definimos un modelo convolucional, que es más adecuado para el procesamiento de datos de imágenes.
 
-1. **Capas Convolucionales:** Tres **capas convolucionales** con ```funciones de activación ReLU``` y **tamaños de filtro de 3x3**.
-2. **Capas de Pooling:** Tres capas de max ```pooling``` para reducir la dimensionalidad.
+1. **Capas Convolucionales:** Tres **capas convolucionales** con `funciones de activación ReLU` y **tamaños de filtro de 3x3**.
+2. **Capas de Pooling:** Tres capas de max `pooling` para reducir la dimensionalidad.
 3. **Capa de Flatten:** Convierte las **activaciones 2D en un vector 1D**.
-4. **Capa Oculta y de Salida:** Una **capa densa con 100 neuronas** y la capa de **salida** con una neurona ```sigmoide```.
+4. **Capa Oculta y de Salida:** Una **capa densa con 100 neuronas** y la capa de **salida** con una neurona `sigmoide`.
 
 #### Modelo Convolucional con Regularización
 
@@ -438,9 +438,9 @@ modeloCNN2.compile(optimizer='adam',
 
 Por último, definimos un modelo convolucional similar al anterior, pero con técnicas de regularización para evitar el sobreajuste.
 
-1. **Capas Convolucionales y de Pooling:** Igual que en el modelo ```CNN``` anterior.
-2. **Capa de Dropout:** Se añade una capa de ```Dropout``` para **regularización**, que "apaga" aleatoriamente el **50% de las neuronas** durante el entrenamiento para evitar el sobreajuste.
-3. **Capa de Flatten, Oculta y de Salida:** Igual que en el modelo ```CNN``` anterior, pero con más neuronas en la capa densa.
+1. **Capas Convolucionales y de Pooling:** Igual que en el modelo `CNN` anterior.
+2. **Capa de Dropout:** Se añade una capa de `Dropout` para **regularización**, que "apaga" aleatoriamente el **50% de las neuronas** durante el entrenamiento para evitar el sobreajuste.
+3. **Capa de Flatten, Oculta y de Salida:** Igual que en el modelo `CNN` anterior, pero con más neuronas en la capa densa.
 
 ### Entrenando los modelos
 
@@ -466,7 +466,7 @@ modeloCNN2.fit(X, y, batch_size=32,
                 callbacks=[tensorboardCNN2])
 ```
 
-Entrenamos cada modelo durante ```100 épocas``` con un ```batch size de 32```, reservando el ```15% de los datos para validación``` y utilizamos ```TensorBoard``` para monitorear el proceso de entrenamiento. *(En las gráficas solo uso 25 épocas para observar la diferencia, en la ejecución normal uso 100)*.
+Entrenamos cada modelo durante `100 épocas` con un `batch size de 32`, reservando el `15% de los datos para validación` y utilizamos `TensorBoard` para monitorear el proceso de entrenamiento. *(En las gráficas solo uso 25 épocas para observar la diferencia, en la ejecución normal uso 100)*.
 
 ### Visualizando los Datos de Entrenamiento
 
@@ -513,7 +513,7 @@ for imagen, etiqueta in datagen.flow(X, y, batch_size=10, shuffle=False):
   break
 ```
 
-Utilizamos ```ImageDataGenerator``` para aplicar aumentación de datos, lo que ayuda a mejorar la generalización del modelo.
+Utilizamos `ImageDataGenerator` para aplicar aumentación de datos, lo que ayuda a mejorar la generalización del modelo.
 
 ![img](/assets/img/post/cats_vs_dogs/3.png)
 
@@ -625,16 +625,16 @@ modeloCNN_AD.save('perros-gatos-cnn-ad.h5')
 ```
 
 1. Guardamos el modelo para ser exportado a un navegador
-2. Instalamos el paquete ```TensorFlow.js```.
+2. Instalamos el paquete `TensorFlow.js`.
 3. Creamos una **carpeta de salida** para el modelo convertido.
-4. Convertimos el modelo de ```Keras``` a ```TensorFlow.js``` para su **despliegue en la web**.
+4. Convertimos el modelo de `Keras` a `TensorFlow.js` para su **despliegue en la web**.
 
 ## Despliegue del Modelo en la Web
 
 Para desplegar el modelo en la web deberemos de seguir varios pasos:
 
-* Descargamos todo el contenido de la carpeta ```carpeta_salida```, deberían ser 3 archivos, ```1 .json``` y ```2 .bin```
-* Movemos todo el contenido descargado a una carpeta junto con un ```index.html``` con el siguiente código:
+* Descargamos todo el contenido de la carpeta `carpeta_salida`, deberían ser 3 archivos, `1 .json` y `2 .bin`
+* Movemos todo el contenido descargado a una carpeta junto con un `index.html` con el siguiente código:
   
   ```html
     <!doctype html>
@@ -897,7 +897,7 @@ Para desplegar el modelo en la web deberemos de seguir varios pasos:
     </html>
   ```
 
-* Dentro de la carpeta donde tengamos el ```index.HTML```, lanzamos el siguiente comando para crear un servidor con python:
+* Dentro de la carpeta donde tengamos el `index.HTML`, lanzamos el siguiente comando para crear un servidor con python:
 
   ```cmd
   python -m http.server 8000
@@ -905,7 +905,7 @@ Para desplegar el modelo en la web deberemos de seguir varios pasos:
 
   Y nos podremos conectar al localhost creado mediante: [localhost:8000/index.html](localhost:8000/index.html)
 
-* Por último, para poder utilzar cámara del móvil en la web deberemos usar un sitio con ```HTTPS```, utilizaremos ```NGROK``` *[[Descarga NGROK]](https://ngrok.com/download)* para crear un túnel ```HTTPS``` y poder acceder a la cámara de la web desde el móvil
+* Por último, para poder utilzar cámara del móvil en la web deberemos usar un sitio con `HTTPS`, utilizaremos `NGROK` *[[Descarga NGROK]](https://ngrok.com/download)* para crear un túnel `HTTPS` y poder acceder a la cámara de la web desde el móvil
 
   Una vez instalado ejecutaremos lo siguiente en otra consola:
 

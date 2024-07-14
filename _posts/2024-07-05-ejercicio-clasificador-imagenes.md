@@ -2,7 +2,7 @@
 title: Clasificación de Imágenes con una Red Neuronal
 date: 2024-07-05 12:20:00 +0800
 categories: [Programación, IA]
-tags: [IA]
+tags: [Machine Learning, Data Science, TensorFlow, ANN, Red Neuronal, Aprendizaje Automático, IA]
 image:
   path: /assets/img/post/clasificacion_imagenes/red.png
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
@@ -10,45 +10,45 @@ image:
 
 [Link Repositorio Github](https://github.com/mateosolinho/python/tree/master/projects/clasificador_imagenes)
 
-En esta entrada de blog, veremos cómo construir y entrenar una red neuronal para clasificar imágenes de ropa utilizando el dataset ```Fashion MNIST``` con ```TensorFlow```.
+En esta entrada de blog, veremos cómo construir y entrenar una red neuronal para clasificar imágenes de ropa utilizando el dataset `Fashion MNIST` con `TensorFlow`.
 
 A continuación, se explicará en detalle el tipo de red utilizada, su propósito y un desglose de cada parte del código.
 
 ## ¿Qué es el Dataset Fashion MNIST?
 
-```Fashion MNIST``` es un conjunto de datos de imágenes que contiene 70,000 imágenes en escala de grises de 28x28 píxeles, repartidas en 10 categorías.
+`Fashion MNIST` es un conjunto de datos de imágenes que contiene 70,000 imágenes en escala de grises de 28x28 píxeles, repartidas en 10 categorías.
 
-Es una versión más compleja del clásico ```dataset MNIST```, que contiene dígitos escritos a mano.
+Es una versión más compleja del clásico `dataset MNIST`, que contiene dígitos escritos a mano.
 
 Fashion MNIST se utiliza comúnmente para entrenar y evaluar modelos de clasificación de imágenes.
 
 ## ¿Qué Tipo de Red Neuronal Estamos Utilizando y Por Qué?
 
-En este proyecto, utilizamos una ```Red Neuronal Artificial (ANN)``` para la tarea de clasificación de imágenes.
+En este proyecto, utilizamos una `Red Neuronal Artificial (ANN)` para la tarea de clasificación de imágenes.
 
 ### ¿Por Qué Usar una ANN?
 
-1. **Simplitud y Eficiencia:** Las ```ANN``` son relativamente simples de construir y entender, lo que las hace ideales para tareas de clasificación básicas y como introducción al aprendizaje profundo.
+1. **Simplitud y Eficiencia:** Las `ANN` son relativamente simples de construir y entender, lo que las hace ideales para tareas de clasificación básicas y como introducción al aprendizaje profundo.
 
-2. **Tamaño de las Imágenes:** Las imágenes de ```28x28 píxeles``` del ```dataset Fashion MNIST``` son lo suficientemente pequeñas para que una ```ANN``` pueda manejarlas eficientemente sin requerir la complejidad adicional de ```redes neuronales convolucionales (CNN)```, que son más adecuadas para imágenes de mayor resolución.
+2. **Tamaño de las Imágenes:** Las imágenes de `28x28 píxeles` del `dataset Fashion MNIST` son lo suficientemente pequeñas para que una `ANN` pueda manejarlas eficientemente sin requerir la complejidad adicional de `redes neuronales convolucionales (CNN)`, que son más adecuadas para imágenes de mayor resolución.
 
-3. **Rapidez en el Entrenamiento:** Las ```ANN``` pueden entrenarse rápidamente con datasets de tamaño moderado como ```Fashion MNIST```, permitiendo iteraciones rápidas y ajustes en el modelo.
+3. **Rapidez en el Entrenamiento:** Las `ANN` pueden entrenarse rápidamente con datasets de tamaño moderado como `Fashion MNIST`, permitiendo iteraciones rápidas y ajustes en el modelo.
 
 ### Estructura de la Red Neuronal Utilizada
 
-* **Capa de Entrada (Flatten Layer):** Convierte cada imagen de ```28x28 píxeles``` en un ```vector unidimensional de 784 elementos```.
+* **Capa de Entrada (Flatten Layer):** Convierte cada imagen de `28x28 píxeles` en un `vector unidimensional de 784 elementos`.
 
-* **Capas Ocultas (Dense Layers):** Dos capas ```densas``` ```(fully connected)``` con 50 neuronas cada una y ```función de activación ReLU```. Estas capas capturan patrones y características complejas de las imágenes.
+* **Capas Ocultas (Dense Layers):** Dos capas `densas` `(fully connected)` con 50 neuronas cada una y `función de activación ReLU`. Estas capas capturan patrones y características complejas de las imágenes.
 
-* **Capa de Salida (Dense Layer):** Una capa ```densa``` con 10 neuronas y ```función de activación softmax```, que produce una probabilidad para cada una de las 10 clases de ropa.
+* **Capa de Salida (Dense Layer):** Una capa `densa` con 10 neuronas y `función de activación softmax`, que produce una probabilidad para cada una de las 10 clases de ropa.
 
 ### Funciones de Activación
 
-Las funciones de activación son componentes esenciales de las redes neuronales, ya que introducen ```no linealidad``` en el modelo, permitiendo que aprenda y represente ```relaciones complejas```. En este modelo, utilizamos las siguientes funciones de activación:
+Las funciones de activación son componentes esenciales de las redes neuronales, ya que introducen `no linealidad` en el modelo, permitiendo que aprenda y represente `relaciones complejas`. En este modelo, utilizamos las siguientes funciones de activación:
 
 * **ReLU (Rectified Linear Unit)**: Es una función de activación muy utilizada en redes neuronales profundas. Se define como `ReLU(x) = max(0, x)`. La principal ventaja de ReLU es que introduce no linealidad en el modelo y ayuda a mitigar el problema del gradiente desvanecido, permitiendo un entrenamiento más eficiente.
 
-* **Softmax**: Esta función de activación se utiliza en la capa de salida de una red neuronal para tareas de ```clasificación multiclase```. Convierte las salidas de la red en probabilidades, asegurando que **la suma de todas las probabilidades sea 1**. La clase con la probabilidad más alta es la predicción final del modelo.
+* **Softmax**: Esta función de activación se utiliza en la capa de salida de una red neuronal para tareas de `clasificación multiclase`. Convierte las salidas de la red en probabilidades, asegurando que **la suma de todas las probabilidades sea 1**. La clase con la probabilidad más alta es la predicción final del modelo.
 
 ## Implementación del Código
 
@@ -210,7 +210,7 @@ import tensorflow as tf
 import tensorflow_datasets as tfds
 ```
 
-Aquí, importamos ```TensorFlow``` para construir y entrenar nuestra red neuronal y ```TensorFlow_Datasets``` para cargar el ```dataset Fashion MNIST```.
+Aquí, importamos `TensorFlow` para construir y entrenar nuestra red neuronal y `TensorFlow_Datasets` para cargar el `dataset Fashion MNIST`.
 
 ### Cargar y Dividir el Dataset
 
@@ -220,8 +220,8 @@ datos_entrenamiento, datos_prueba = datos['train'], datos['test']
 nombres_clases = metadatos.features['label'].names
 ```
 
-Cargamos el ```dataset Fashion MNIST``` y lo dividimos en datos de entrenamiento y prueba.
-También obtenemos los ```nombres de las clases``` para etiquetar las imágenes.
+Cargamos el `dataset Fashion MNIST` y lo dividimos en datos de entrenamiento y prueba.
+También obtenemos los `nombres de las clases` para etiquetar las imágenes.
 
 ### Normalizar las imágenes
 
@@ -239,7 +239,7 @@ datos_prueba = datos_prueba.cache()
 
 Definimos una función para normalizar las imágenes *(escalar los valores de los píxeles entre 0 y 1)* y aplicamos esta función a los datos de entrenamiento y prueba.
 
-También ```cacheamos``` los datos para mejorar el rendimiento.
+También `cacheamos` los datos para mejorar el rendimiento.
 
 ### Visualizar Imágenes de Ejemplo
 
@@ -295,7 +295,7 @@ modelo = tf.keras.Sequential([
 ])
 ```
 
-Definimos un **modelo secuencial** con una ```capa de aplanamiento (flatten)```, dos capas ```densas con 50 neuronas``` cada una y ```función de activación ReLU```, y una ```capa de salida con 10 neuronas``` y ```función de activación softmax```.
+Definimos un **modelo secuencial** con una `capa de aplanamiento (flatten)`, dos capas `densas con 50 neuronas` cada una y `función de activación ReLU`, y una `capa de salida con 10 neuronas` y `función de activación softmax`.
 
 ### Compilación del Modelo
 
@@ -307,7 +307,7 @@ modelo.compile(
 )
 ```
 
-Compilamos el modelo especificando el optimizador ```Adam```, la ```función de perdida de entropía cruzada categórica escasa``` y la ```métrica de precisión```.
+Compilamos el modelo especificando el optimizador `Adam`, la `función de perdida de entropía cruzada categórica escasa` y la `métrica de precisión`.
 
 ### Preparación de los Datos para el Entrenamiento
 
@@ -323,7 +323,7 @@ datos_prueba = datos_prueba.batch(TAMANO_LOTE)
 
 Obtenemos el **número de ejemplos de entrenamiento y prueba**.
 
-Configuramos el **tamaño del lote** y preparamos los datos para el ```entrenamiento, repitiéndolos, barajándolos``` y ```dividiéndolos en lotes```.
+Configuramos el **tamaño del lote** y preparamos los datos para el `entrenamiento, repitiéndolos, barajándolos` y `dividiéndolos en lotes`.
 
 ### Entrenamiento del Modelo
 
@@ -333,7 +333,7 @@ import math
 historial = modelo.fit(datos_entrenamiento, epochs=5, steps_per_epoch=math.ceil(num_ej_entrenamiento/TAMANO_LOTE))
 ```
 
-Entrenamos el modelo durante ```5 épocas (vueltas)```, calculando el **número de pasos por época**.
+Entrenamos el modelo durante `5 épocas (vueltas)`, calculando el **número de pasos por época**.
 
 ### Visualización del Proceso de Entrenamiento
 

@@ -2,7 +2,7 @@
 title: Primera Red Neuronal
 date: 2024-07-04 15:50:00 +0800
 categories: [Programación, IA]
-tags: [IA]
+tags: [Machine Learning, Data Science, TensorFlow, ANN, Red Neuronal, Aprendizaje Automático, IA]
 image:
   path: /assets/img/post/red_neuronal/brain.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
@@ -10,7 +10,7 @@ image:
 
 [Link Repositorio Github](https://github.com/mateosolinho/python/tree/master/projects/red_neuronal)
 
-En esta entrada de blog, compartiré mi experiencia al crear mi primera red neuronal utilizando ```TensorFlow```.
+En esta entrada de blog, compartiré mi experiencia al crear mi primera red neuronal utilizando `TensorFlow`.
 
 La red neuronal que implementé es de prueba, la cual convierte temperaturas de Celsius a Fahrenheit.
 
@@ -18,11 +18,11 @@ A continuación, explicaré en detalle el tipo de red utilizada, su propósito y
 
 ## ¿Qué es una Red Neuronal?
 
-Una red neuronal es un ```modelo``` de aprendizaje automático inspirado en el cerebro humano. Está compuesta por capas de ```nodos``` (o neuronas) que están conectados entre sí. Estas redes son capaces de aprender y hacer predicciones basadas en datos de entrenamiento.
+Una red neuronal es un `modelo` de aprendizaje automático inspirado en el cerebro humano. Está compuesta por capas de `nodos` (o neuronas) que están conectados entre sí. Estas redes son capaces de aprender y hacer predicciones basadas en datos de entrenamiento.
 
 ## Tipo de Red Utilizada
 
-Para este ejercicio, he utilizado una red neuronal ```conectada``` (o densamente conectada), también conocida como una red neuronal ```feedforward```.
+Para este ejercicio, he utilizado una red neuronal `conectada` (o densamente conectada), también conocida como una red neuronal `feedforward`.
 
 Este tipo de red es uno de los más básicos y se caracteriza por tener capas donde cada neurona está conectada a todas las neuronas de la siguiente capa.
 
@@ -88,7 +88,7 @@ import tensorflow as tf
 import numpy as np
 ```
 
-Aquí, importamos ```TensorFlow``` para construir y entrenar nuestra red neuronal y ```NumPy``` para manejar los datos de manera eficiente.
+Aquí, importamos `TensorFlow` para construir y entrenar nuestra red neuronal y `NumPy` para manejar los datos de manera eficiente.
 
 ### **Datos de Entrenamiento**
 
@@ -97,7 +97,7 @@ celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
 fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
 ```
 
-Definimos dos arrays de ```NumPy``` que contienen las temperaturas en Celsius y sus correspondientes en Fahrenheit.
+Definimos dos arrays de `NumPy` que contienen las temperaturas en Celsius y sus correspondientes en Fahrenheit.
 
 ### **Definición de las Capas del Modelo**
 
@@ -107,7 +107,7 @@ oculta2 = tf.keras.layers.Dense(units=3)
 salida = tf.keras.layers.Dense(units=1)
 ```
 
-Creamos tres capas ```densas``` ```(fully connected layers)```. La primera capa oculta tiene ```3 neuronas``` y recibe ```una entrada``` (la temperatura en Celsius). La segunda capa oculta también tiene ```3 neuronas```. La ```capa de salida``` tiene una neurona que produce la temperatura en Fahrenheit.
+Creamos tres capas `densas` `(fully connected layers)`. La primera capa oculta tiene `3 neuronas` y recibe `una entrada` (la temperatura en Celsius). La segunda capa oculta también tiene `3 neuronas`. La `capa de salida` tiene una neurona que produce la temperatura en Fahrenheit.
 
 ### **Construcción del Modelo**
 
@@ -115,7 +115,7 @@ Creamos tres capas ```densas``` ```(fully connected layers)```. La primera capa 
 modelo = tf.keras.Sequential([oculta1, oculta2, salida])
 ```
 
-Utilizamos ```tf.keras.Sequential``` para definir el modelo como una pila lineal de capas.
+Utilizamos `tf.keras.Sequential` para definir el modelo como una pila lineal de capas.
 
 ### **Compilación del Modelo**
 
@@ -126,7 +126,7 @@ modelo.compile(
 )
 ```
 
-Compilamos el modelo especificando el optimizador ```Adam``` con una ```tasa de aprendizaje``` de 0.1 y una función de pérdida de error cuadrático medio.
+Compilamos el modelo especificando el optimizador `Adam` con una `tasa de aprendizaje` de 0.1 y una función de pérdida de error cuadrático medio.
 
 ### **Entrenamiento del Modelo**
 
@@ -136,7 +136,7 @@ historial = modelo.fit(celsius, fahrenheit, epochs=1000, verbose=False)
 print("Modelo entrenado")
 ```
 
-Entrenamos el modelo con los datos de entrenamiento durante ```1000 épocas``` ("vueltas"). Almacenamos el historial del entrenamiento para visualizar la pérdida.
+Entrenamos el modelo con los datos de entrenamiento durante `1000 épocas` ("vueltas"). Almacenamos el historial del entrenamiento para visualizar la pérdida.
 
 ### **Visualización del Entrenamiento**
 
@@ -152,7 +152,7 @@ Salida:
 
 ![img](/assets/img/post/red_neuronal/grafica.png)
 
-Usamos ```Matplotlib``` para graficar la magnitud de la pérdida a lo largo de las épocas, lo que ayuda a entender el modelo de mejora con el tiempo.
+Usamos `Matplotlib` para graficar la magnitud de la pérdida a lo largo de las épocas, lo que ayuda a entender el modelo de mejora con el tiempo.
 
 ### **Realización de una Predicción**
 
@@ -194,7 +194,7 @@ Variables internas del modelo
        [ 0.3759461]], dtype=float32), array([3.1386135], dtype=float32)]
 ```
 
-Imprimimos los ```pesos de las capas``` desués del entrenamiento para ver cómo el modelo ha ajustado sus parámetros.
+Imprimimos los `pesos de las capas` desués del entrenamiento para ver cómo el modelo ha ajustado sus parámetros.
 
 ## Conclusión
 

@@ -10,9 +10,9 @@ image:
 
 [Link Repositorio Github](https://github.com/mateosolinho/python/tree/master/projects/rocket_dataset)
 
-En esta entrada del blog, compartiré un análisis de datos de misiones espaciales utilizando ```Pandas``` y ```Matplotlib```.
+En esta entrada del blog, compartiré un análisis de datos de misiones espaciales utilizando `Pandas` y `Matplotlib`.
 
-A continuación, explicaré en detalle el proceso de ```limpieza```, ```transformación``` y ```visualización``` de los datos, destacando la importancia de cada paso en la **preparación de los datos para el análisis**.
+A continuación, explicaré en detalle el proceso de `limpieza`, `transformación` y `visualización` de los datos, destacando la importancia de cada paso en la **preparación de los datos para el análisis**.
 
 ## Implementación del Código
 
@@ -158,16 +158,16 @@ import numpy as np
 df = pd.read_csv('C:/Users/mateo/Escritorio/python/projects/rocket_dataset/mission_launches.csv')
 ```
 
-Leemos el archivo ```CSV``` que contiene los **datos de las misiones espaciales**.
+Leemos el archivo `CSV` que contiene los **datos de las misiones espaciales**.
 
 ```python
 df.head(10)
 df.info()
 ```
 
-Mostramos las primeras ```10 filas``` del ```DataFrame``` para tener una idea general de los datos y la **información general del DataFrame**.
+Mostramos las primeras `10 filas` del `DataFrame` para tener una idea general de los datos y la **información general del DataFrame**.
 
-Revisamos la información general del ```DataFrame``` nos permite **entender la estructura de los datos, los tipos de datos en cada columna y detectar posibles valores nulos**.
+Revisamos la información general del `DataFrame` nos permite **entender la estructura de los datos, los tipos de datos en cada columna y detectar posibles valores nulos**.
 
 ### Limpieza y Conversión de Datos
 
@@ -176,35 +176,35 @@ df.drop(['Unnamed: 0.1','Unnamed: 0'], axis=1, inplace=True)
 df.info()
 ```
 
-Eliminamos las columnas que **no aportan valor al análisis**. En este caso, las columnas ```'Unnamed: 0.1' y 'Unnamed: 0'```
+Eliminamos las columnas que **no aportan valor al análisis**. En este caso, las columnas `'Unnamed: 0.1' y 'Unnamed: 0'`
 
 ```python
 df['Date'] = pd.to_datetime(df['Date'], utc=True, errors='coerce')
 df.info()
 ```
 
-Convertimos la columna ```Date``` al tipo ```datetime``` para **facilitar la manipulación y análisis de datos**.
+Convertimos la columna `Date` al tipo `datetime` para **facilitar la manipulación y análisis de datos**.
 
 ```python
 df['Price'] = df['Price'].str.replace(',', '').astype('float')
 df.info()
 ```
 
-Los valores de ```Price``` están en formato ```string``` y contienen comas. Los convertimos a tipo ```float``` para poder **realizar cálculos y análisis**.
+Los valores de `Price` están en formato `string` y contienen comas. Los convertimos a tipo `float` para poder **realizar cálculos y análisis**.
 
 ```python
 df['Price'].fillna(df['Price'].mean(), inplace=True)
 df.info()
 ```
 
-Rellenamos los valores ```nulos``` en la columna ```Price``` con el valor ```promedio``` de la columna para mantener la **consistencia en los datos**.
+Rellenamos los valores `nulos` en la columna `Price` con el valor `promedio` de la columna para mantener la **consistencia en los datos**.
 
 ```python
 df = df.dropna(subset='Date')
 df.info()
 ```
 
-Eliminamos las filas donde la columna ```Date``` es ```nula```, ya que las fechas **son cruciales para nuestro análisis**.
+Eliminamos las filas donde la columna `Date` es `nula`, ya que las fechas **son cruciales para nuestro análisis**.
 
 ### Creación de Nuevas Columnas
 
@@ -214,14 +214,14 @@ df['Month'] = df['Date'].dt.month
 df.head(10)
 ```
 
-Creamos nuevas columnas ```Year``` y ```Month``` a partir de la columna ```Date``` **para facilitar el análisis**.
+Creamos nuevas columnas `Year` y `Month` a partir de la columna `Date` **para facilitar el análisis**.
 
 ```python
 df['Country'] = df['Location'].apply(lambda ctry: ctry.split(',')[-1].strip())
 df.head(10)
 ```
 
-Extraemos el **país** de la columna ```Location``` para **analizar las misiones por país**. Utilizamos una ```función lambda``` para dividir el ```string``` y obtener el último elemento, que representa el país.
+Extraemos el **país** de la columna `Location` para **analizar las misiones por país**. Utilizamos una `función lambda` para dividir el `string` y obtener el último elemento, que representa el país.
 
 ### Visualización de Datos
 
@@ -371,8 +371,8 @@ Salida:
 
 ## Conclusión
 
-En este análisis, hemos ```limpiado```, ```transformado``` y ```visualizado``` **datos de misiones espaciales** para obtener información valiosa sobre las ```tendencias``` y ```patrones``` en los lanzamientos de cohetes a lo largo del tiempo.
+En este análisis, hemos `limpiado`, `transformado` y `visualizado` **datos de misiones espaciales** para obtener información valiosa sobre las `tendencias` y `patrones` en los lanzamientos de cohetes a lo largo del tiempo.
 
-La **preparación de los datos** es **crucial** para garantizar la ```precisión``` y ```relevancia``` del **análisis**. Con datos **limpios y bien estructurados**, podemos crear visualizaciones significativas que nos permitan **extraer conclusiones útiles**.
+La **preparación de los datos** es **crucial** para garantizar la `precisión` y `relevancia` del **análisis**. Con datos **limpios y bien estructurados**, podemos crear visualizaciones significativas que nos permitan **extraer conclusiones útiles**.
 
 *Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. ¡Hasta la próxima!*
