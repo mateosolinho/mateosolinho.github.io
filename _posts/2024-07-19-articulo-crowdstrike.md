@@ -4,11 +4,11 @@ date: 2024-07-19 18:30:00 +0800
 categories: [Tecnología, Articulos]
 tags: [Ciberseguridad, CrowdStrike, Windows, BlueScreenOfDeath, Microsoft, Tecnología, IncidentesIT]
 image:
-  path: /assets/img/post/articulo_crowdstrike/12.JPG
+  path: /assets/img/post/articulo_crowdstrike/12.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
-El día de hoy, **19 de julio de 2024**, nos despertamos con la noticia de un **"apagón cibernético"** que afecta a nivel mundial. Gran parte de los sistemas **Windows** están mostrando la famosa **pantalla azul**, conocida en el mundo IT como **Blue Screen of Death (BSOD)**.
+**¡Imagina despertar un día y encontrar que tu ordenador muestra una pantalla azul gigante, y que este problema está ocurriendo en todo el mundo!** Eso es exactamente lo que ha pasado el 19 de julio de 2024, cuando un error en una actualización de seguridad causó el **mayor apagón cibernético** de la historia. Desde **hospitales** hasta **aeropuertos**, casi todos los sistemas que usaban Windows se vieron afectados. ¡Sí, incluso muchos aviones tuvieron que aterrizar de emergencia!
 
 ![img](/assets/img/post/articulo_crowdstrike/7.png)
 
@@ -96,6 +96,8 @@ Muchas tiendas, tanto grandes como pequeñas, se han visto obligadas a **cerrar 
 
 Además de los problemas inherentes al fallo, una complicación adicional es que la **solución no puede aplicarse de manera automática**. Como mencionamos anteriormente, cada sistema debe ser corregido individualmente siguiendo estos pasos:
 
+![Problemas en tiendas](/assets/img/post/articulo_crowdstrike/13.jpg)
+
 1. **Iniciar Windows en modo seguro** o accede al entorno de recuperación de Windows.
 
 2. **Navegar hasta** `C:\Windows\System32\drivers\CrowdStrike`.
@@ -104,7 +106,7 @@ Además de los problemas inherentes al fallo, una complicación adicional es que
 
 4. **Reiniciar el sistema de manera normal**.
 
-Este proceso manual es necesario para solucionar el problema en cada máquina afectada, lo que puede ser laborioso, pero es esencial para restaurar el funcionamiento correcto del sistema.
+Este proceso manual es necesario para solucionar el problema en cada máquina afectada, lo que puede ser **laborioso**, pero es esencial para restaurar el funcionamiento correcto del sistema.
 
 ## Conclusión
 
