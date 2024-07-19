@@ -24,7 +24,7 @@ Ayer, a las **06:32 UTC**, se comenzaron a reportar errores con un archivo `.sys
 
 **CrowdStrike** es una compañía de **ciberseguridad** especializada en la **detección** y **prevención de amenazas**.
 
-Fundada en **2011** por **George Kurtz**, **Dmitri Alperovitch** y **Gregg Marston**, la empresa se destaca por su enfoque innovador en la **protección de endpoints**, como computadoras y teléfonos móviles, mediante el uso de **inteligencia artificial** y **análisis de big data**.
+Fundada en **2011** por **George Kurtz**, **Dmitri Alperovitch** y **Gregg Marston**, la empresa se destaca por su enfoque innovador en la **protección de endpoints**, como ordenadores y teléfonos móviles, mediante el uso de **inteligencia artificial** y **análisis de big data**.
 
 **CrowdStrike** y **Microsoft** han colaborado en varias ocasiones para mejorar la **seguridad cibernética**. En **2017**, CrowdStrike integró su plataforma **Falcon** con **Microsoft Azure**, permitiendo a los clientes de Azure utilizar sus capacidades avanzadas de detección y respuesta en la nube de Microsoft.
 
@@ -48,7 +48,7 @@ A diferencia de las aplicaciones que funcionan en **Modo Usuario**, el **sensor 
 
 En este caso específico, el archivo del **controlador defectuoso del sensor Falcon** tiene un nombre que comienza con `C-00000291` y termina en `.sys`. La **actualización defectuosa** de este controlador provocó un **Kernel Panic**, según el rastreo de la pila del pánico. El controlador parece haber hecho una lectura incorrecta en la dirección `0x9c`, lo que desencadenó el fallo crítico.
 
-[Link Fuente](https://x.com/snicoara/status/1814184181863526504)
+[Link Lectura Incorrecta en Memoria](https://x.com/snicoara/status/1814184181863526504)
 
 Mientras que algunos ordenadores pueden solucionar el problema mediante una **actualización**, muchos de los sistemas afectados necesitarán una **reparación manual**. La única solución es **iniciar en Modo Seguro** y eliminar el archivo `C-00000291.sys` (es decir, todos los archivos `.sys` que empiezan con `C-00000291`) ubicado en `C:\Windows\System32\drivers\CrowdStrike`.
 
