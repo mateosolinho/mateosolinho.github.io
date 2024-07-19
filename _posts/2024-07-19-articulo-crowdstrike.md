@@ -58,6 +58,16 @@ Como los **controladores de dispositivos** se cargan durante el arranque del sis
 
 [Enlace al archivo por VirusTotal](https://www.virustotal.com/gui/file/e50deca54e79c37a0360a6995cc54f8b2371c364e3a56957641cfb54dd50c600/details)
 
+Un usuario de Twitter (ahora X) llamado [@Perpetualmaniac](https://twitter.com/Perpetualmaniac) ha publicado una **excelente explicación**, con todo lujo de detalles, sobre el motivo por el cual la actualización de CrowdStrike provoca un **pantallazo azul** en los sistemas Windows. Según su análisis, el fallo proviene de un **NULL pointer en memoria** que ocurre en **C++**.
+
+[Hilo Explicación del Fallo de CrowdStrike](https://x.com/Perpetualmaniac/status/1814376668095754753)
+
+Muchos usuarios están investigando y han descubierto que el archivo inicial `C-000......032.sys` contiene **41 KB de valores nulos o en blanco**, probablemente debido a este **NULL pointer en memoria** pero curiosamente, el parche para solucionarlo, `C-000......033.sys`, es tan solo de **35 KB**. Esto plantea una nueva pregunta: **¿fue un error del programador o del QA, o lo dejaron pasar?**
+
+![Imagen del Archivo 032.sys](/assets/img/post/articulo_crowdstrike/14.png)
+
+El usuario de Perpetualmaniac sugiere que podría ser un **movimiento estratégico para migrar los códigos más críticos de la empresa de C++ a Rust**, aunque admite que esto es pura **especulación** y es probable que nunca lo sepamos con certeza. Sin embargo, la investigación es interesante y abre la puerta a más discusiones sobre prácticas de programación y calidad de software.
+
 ## Impacto en el Mundo
 
 ![img](/assets/img/post/articulo_crowdstrike/9.jpg)
@@ -107,6 +117,10 @@ Además de los problemas inherentes al fallo, una complicación adicional es que
 4. **Reiniciar el sistema de manera normal**.
 
 Este proceso manual es necesario para solucionar el problema en cada máquina afectada, lo que puede ser **laborioso**, pero es esencial para restaurar el funcionamiento correcto del sistema.
+
+Un usuario de la comunidad ha hecho un pequeño **script** que automatiza estos pasos, pero este habría que ejecutarlo equipo a equipo
+
+[Link Repositorio Github Automatización](https://github.com/panxos/CrowdStrike-rollback)
 
 ## Conclusión
 
