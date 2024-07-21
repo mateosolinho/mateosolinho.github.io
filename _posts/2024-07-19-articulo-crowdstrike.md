@@ -34,7 +34,7 @@ En **2019**, la empresa se unió al programa **Microsoft Intelligent Security As
 
 ![img](/assets/img/post/articulo_crowdstrike/3.png)
 
-**CrowdStrike Falcon** es una solución avanzada de **ciberseguridad** diseñada para proteger los **endpoints**, como ordenadores, servidores y teléfonos móviles.
+**CrowdStrike Falcon Cloud Security** es una solución avanzada de **ciberseguridad** diseñada para proteger los **endpoints**, como ordenadores, servidores y teléfonos móviles en tiempo real.
 
 Desarrollada por **CrowdStrike**, esta plataforma está basada en la **nube** y se especializa en la **detección**, **prevención** y **respuesta ante amenazas cibernéticas**, ofreciendo una **defensa integral** contra una amplia gama de ataques.
 
@@ -62,7 +62,7 @@ Un usuario de Twitter (ahora X) llamado [@Perpetualmaniac](https://twitter.com/P
 
 [Hilo Explicación del Fallo de CrowdStrike](https://x.com/Perpetualmaniac/status/1814376668095754753)
 
-Muchos usuarios están investigando y han descubierto que el archivo inicial `C-000......032.sys` contiene **41 KB de valores nulos o en blanco**, probablemente debido a este **NULL pointer en memoria** pero curiosamente, el parche para solucionarlo, `C-000......033.sys`, es tan solo de **35 KB**. Esto plantea una nueva pregunta: **¿fue un error del programador o del QA, o lo dejaron pasar?**
+Muchos usuarios están investigando y han descubierto que el archivo `C-00000291......032.sys` contiene **41 KB de valores nulos o en blanco**, probablemente debido a este **NULL pointer en memoria** pero curiosamente, el parche para solucionarlo, `C-00000291......033.sys`, es tan solo de **35 KB**. Esto plantea una nueva pregunta: **¿fue un error del programador o del QA, o lo dejaron pasar?**
 
 ![Imagen del Archivo 032.sys](/assets/img/post/articulo_crowdstrike/14.png)
 
