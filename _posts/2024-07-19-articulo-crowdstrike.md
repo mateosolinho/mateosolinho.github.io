@@ -150,3 +150,5 @@ En resumen, la crisis actual no solo ilustra el impacto que puede tener un peque
 [https://www.ndtv.com/world-news/fix-deployed-ceo-of-firm-behind-global-microsoft-outage-6140433](https://www.ndtv.com/world-news/fix-deployed-ceo-of-firm-behind-global-microsoft-outage-6140433)
 
 [https://twitter.com/ananayarora/status/1814276755420746213](https://twitter.com/ananayarora/status/1814276755420746213)
+
+*Espero que os haya gustado leer el artículo tanto como a mi hacerlo. ¡Gracias por leer!*
