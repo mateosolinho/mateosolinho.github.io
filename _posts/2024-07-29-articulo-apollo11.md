@@ -353,7 +353,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Configuración del Banco de Memoria y Localización
 
-    ```python
+    ```nasm
     BANK    21
     SETLOC  R10
     BANK
@@ -363,7 +363,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Actualización de TBASE2 y PIPCTR
 
-    ```python
+    ```nasm
     LANDISP  LXCH  PIPCTR1
     CS      TIME1
     DXCH    TBASE2
@@ -373,7 +373,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Manejo de la Visualización de Altitud y Tasa de Altitud
 
-    ```python
+    ```nasm
     CS      FLAGWRD7
     MASK    SWANDBIT
     CCS    A
@@ -388,7 +388,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Cálculo de la Tasa de Altitud
 
-    ```python
+    ```nasm
     ALTROUT  TC   DISINDAT
     CS      IMODES33
     MASK    BIT7
@@ -402,7 +402,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Conversión de Datos
 
-    ```python
+    ```nasm
     CA    ARCONV
     EXTEND
     MP    RUPTREG1
@@ -420,7 +420,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Visualización de Datos
 
-    ```python
+    ```nasm
     DATAOUT TS    ALTM
     CAF    BIT3
     EXTEND
@@ -432,7 +432,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Manejo de Datos de Velocidad
 
-    ```python
+    ```nasm
     SPEEDRUN  CS   PIPTIME +1
     AD    TIME1
     AD    HALF
@@ -447,7 +447,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Monitoreo de Velocidades
 
-    ```python
+    ```nasm
     VMONITOR  TS   ITEMP5
     CCS   LATVEL
     TCF   +4
@@ -458,7 +458,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Manejo de Errores y Salida
 
-    ```python
+    ```nasm
     DISPRSET  CS   FLAGWRD0
     MASK  R10FLBIT
     EXTEND
@@ -516,7 +516,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
   - Explicación Detallada del Código:
     - Configuración Inicial:
 
-      ```python
+      ```nasm
       BANK    32
       SETLOC  F2DPS*32
       BANK
@@ -532,27 +532,27 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Fase de Alunizaje: Preparación y Configuración:
 
-      ```python
+      ```nasm
       COUNT*  $$/P63
       ```
 
       - COUNT* $$/P63: Marca el comienzo de la sección del código P63, que se refiere a la fase de alunizaje.
 
-      ```python
+      ```nasm
       P63LM   TC  PHASCHNG
           OCT 04024
       ```
 
       - P63LM TC PHASCHNG: Transición a la fase de alunizaje (P63), con el código de cambio de fase.
 
-      ```python
+      ```nasm
       TC  BANKCALL  # DO IMU STATUS CHECK ROUTINE R02
       CADR R02BOTH
       ```
 
       - TC BANKCALL CADR R02BOTH: Llama a la rutina R02 para verificar el estado del IMU (Unidad de Medición Inercial).
 
-      ```python
+      ```nasm
       CAF P63ADRES  # INITIALIZE WHICH FOR BURNBABY
       TS  WHICH
       CAF DPSTHRSH  # INITIALIZE DVMON
@@ -565,7 +565,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
       - CAF DPSTHRSH TS DVTHRUSH: Carga y almacena el umbral para el monitoreo del DV.
       - CAF FOUR TS DVCNTR: Inicializa el contador del DV con el valor 4.
 
-      ```python
+      ```nasm
       CS ONE    # INITIALIZE WCHPHASE AND FLPASS0
       TS  WCHPHASE
       CA  ZERO
@@ -575,7 +575,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
       - CS ONE TS WCHPHASE: Inicializa la fase de guía.
       - CA ZERO TS FLPASS0: Inicializa el flag de paso.
 
-      ```python
+      ```nasm
       CS BIT14
       EXTEND
       WAND CHAN12    # REMOVE TRACK-ENABLE DISCRETE.
@@ -585,7 +585,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Configuración de Flags y Parámetros:
 
-      ```python
+      ```nasm
       FLAGORGY TC INTPRET
       CLEAR  CLEAR
           NOTHROTL
@@ -603,7 +603,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Algoritmo de Guía Inicial (IGNALG):
 
-      ```python
+      ```nasm
       IGNALG SETPD VLOAD
       0   # AT 0D LANDING SITE IN MOON FIXED FRAME
       RLS # AT 6D ESTIMATED TIME OF LANDING
@@ -628,7 +628,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
       - STCALL LAND GUIDINIT: Inicializa el sistema de guía.
       - DLOAD DSU TLAND GUIDDURN: Carga datos para la duración de la guía y el tiempo.
 
-      ```python
+      ```nasm
       SSP VLOAD
       NIGNLOOP
       40D
@@ -651,7 +651,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Bucle de Cálculo y Corrección (IGNALOOP):
 
-      ```python
+      ```nasm
       IGNALOOP DLOAD
               TAT
       STOVL PIPTIME1
@@ -669,7 +669,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Cálculo de Corrección Dummy (DDUMCALC):
 
-      ```python
+      ```nasm
       DDUMCALC TS NIGNLOOP
         TC INTPRET
         DLOAD DMPR  # FORM DENOMINATOR FIRST
@@ -682,7 +682,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Procedimientos de Verificación y Finalización:
 
-      ```python
+      ```nasm
       P63SPOT2 VLOAD UNIT
         R60VSAVE
       STOVL POINTVSM
@@ -693,7 +693,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
       - P63SPOT2 VLOAD UNIT R60VSAVE: Inicializa el cálculo de actitud de alunizaje.
 
-      ```python
+      ```nasm
       P63SPOT3 CA BIT6   # IS THE LR ANTENNA IN POSITION 1 YET
       EXTEND
       RAND CHAN33
@@ -703,7 +703,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
       - P63SPOT3 CA BIT6 EXTEND RAND CHAN33: Verifica si la antena está en la posición correcta.
 
-      ```python
+      ```nasm
       P63SPOT4 TC BANKCALL  # ENTER  INITIALIZE LANDING RADAR
       CADR SETPOS1
       TC POSTJUMP  # OFF TO SEE THE WIZARD...
@@ -714,14 +714,14 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Confirmación de Alunizaje (LANDJUNK):
 
-      ```python
+      ```nasm
       LANDJUNK TC PHASCHNG
               OCT 04024
       ```
 
       - LANDJUNK TC PHASCHNG: Marca la fase de confirmación del alunizaje.
 
-      ```python
+      ```nasm
       INHINT
       TC BANKCALL  # ZERO ATTITUDE ERROR
       CADR ZATTEROR
@@ -732,7 +732,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
       - INHINT TC BANKCALL CADR ZATTEROR: Llama a la rutina para corregir el error de actitud y ajustar el rango muerto de 5 grados.
 
-      ```python
+      ```nasm
       TC INTPRET
       SET CLEAR
           SURFFLAG
@@ -750,7 +750,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
       - SET CLEAR SURFFLAG LETABORT: Configura las banderas finales para la confirmación.
       - SET VLOAD APSFLAG RN STODL ALPHAV PIPTIME: Configura y almacena los parámetros finales del alunizaje.
 
-      ```python
+      ```nasm
       CAF V06N43*   # ASTRONAUT: NOW LOOK WHERE YOU ENDED UP
       TC BANKCALL
       CADR GOFLASH
@@ -763,7 +763,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Constantes y Parámetros:
 
-      ```python
+      ```nasm
       P63ADRES GENADR P63TABLE
 
       ASTNDEX = MD1   # OCT 25: INDEX FOR CLOKTASK
@@ -780,7 +780,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
       - CODE500 OCT 00500: Define constantes necesarias para el proceso.
       - 99999CON 2DEC 30479.7 B-24: Establece una constante para el cálculo.
 
-      ```python
+      ```nasm
       LANDJUNK TC PHASCHNG
               OCT 04024
       ```
