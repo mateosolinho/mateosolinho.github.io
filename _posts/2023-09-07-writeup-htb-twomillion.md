@@ -2,7 +2,7 @@
 title: TwoMillion - HTB Writeup
 date: 2023-09-07 04:33:00 +0800
 categories: [Ciberseguridad, Writeups, HTB]
-tags: [Writeup, HTB, Penetration Testing, Ethical Hacking, ROT13, Base64, Command Injection, CVE-2023-0386]
+tags: [Writeup, HTB, Penetration Testing, Ethical Hacking, ROT13,CVE-2023-0386]
 image:
   path: /assets/img/post/twomillion/4e68d072-a3eb-4e6f-ba21-c77aee4df04a.png
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
