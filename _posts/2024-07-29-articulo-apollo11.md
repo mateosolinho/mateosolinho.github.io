@@ -162,7 +162,7 @@ El Abort Guidance System (AGS) del Módulo Lunar del programa Apollo fue diseña
 
 - **Diagnóstico y Auto-Pruebas**
 
-  <!-- ![Diagrama de Diagnóstico y Auto-Pruebas](//) -->
+  <!-- ![Diagrama de Diagnóstico y Auto-Pruebas](//). -->
 
   - **Monitoreo Continuo:** Se realizaban auto-pruebas constantes para verificar su estado operativo.
   - **Alertas y Diagnósticos:** Proporcionaba alertas y diagnósticos simples para informar a los astronautas sobre el estado del sistema y posibles fallos.
