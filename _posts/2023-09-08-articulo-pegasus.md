@@ -2,7 +2,7 @@
 title: Spyware Pegasus
 date: 2023-09-08 15:30:00 +0800
 categories: [Ciberseguridad, Articulos]
-tags: [Spyware, Pegasus, NSO Group, Ciberseguridad, Zero-day, CVE-2016-4655, CVE-2016-4656, CVE-2016-4657, CVE-2023-41064, CVE-2023-41061, Citizen Lab]
+tags: [Spyware, Pegasus, CVE-2016-4655, CVE-2016-4656, CVE-2016-4657, CVE-2023-41064, CVE-2023-41061]
 image:
   path: /assets/img/post/articulo-pegasus/1.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
