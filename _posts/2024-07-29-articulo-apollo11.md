@@ -1,6 +1,6 @@
 ---
 title: Explorando el Código Fuente del Apollo 11 - Un Viaje al Corazón de la Computación Espacial
-date: 2024-07-19 18:30:00 +0800
+date: 2024-07-30 20:00:00 +0800
 categories: [Tecnología, Articulos]
 tags: [Apollo 11, Apollo Guidance Computer, Abort Guidance System , AGC, AGS , Computación Espacial, Historia del Espacio, Ingeniería de Software, Código Fuente, Tecnología Espacial]
 image:
