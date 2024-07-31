@@ -1025,11 +1025,82 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
 
     - [TVCEXECUTIVE.agc]([assets\img\post\apollo11\code\TVCEXECUTIVE.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Comanche055/TVCEXECUTIVE.agc))
 
+## Influencia en Futuras Misiones Espaciales
+
+1. Innovaciones en Navegación y Control Espacial
+
+   El AGC revolucionó la forma en que se realizaban las maniobras espaciales. Su capacidad para realizar cálculos complejos y proporcionar orientación precisa permitió a las misiones Apollo realizar maniobras críticas con un grado de exactitud sin precedentes. Esta tecnología de control y navegación se convirtió en un estándar para la planificación de misiones espaciales posteriores, incluyendo la navegación interplanetaria. Las técnicas desarrolladas para el AGC se adaptaron y mejoraron para misiones espaciales posteriores, como las sondas Voyager y las misiones a Marte.
+
+2. Desarrollo de Sistemas de Control de Actitud
+
+    El AGC también sentó las bases para el desarrollo de sistemas avanzados de control de actitud en vehículos espaciales. Su sistema de Control de Actitud y Navegación (CAN) se utilizó para mantener la orientación y trayectoria de la nave espacial, un principio que sigue siendo esencial en las naves espaciales modernas. Los algoritmos de control adaptativos y las técnicas de compensación de errores desarrolladas para el AGC se emplearon en las misiones de la Estación Espacial Internacional (EEI) y en los satélites actuales.
+
+3. Influencia en la Exploración Robótica
+
+    Las tecnologías y metodologías desarrolladas para el AGC también influyeron en los sistemas de control de las sondas espaciales y los robots. Las primeras misiones espaciales robóticas, como las sondas Mariner y Pioneer, adoptaron técnicas de control basadas en las experiencias del AGC. La precisión en la navegación y el procesamiento de datos inspiraron avances en la robótica espacial, que ahora permite a los rovers explorar Marte y otras superficies planetarias con alta autonomía.
+
+4. Implementación en el Diseño de Satélites
+
+    Los principios de diseño del AGC se incorporaron en los sistemas de control de satélites. La capacidad del AGC para realizar cálculos de manera eficiente y controlar sistemas críticos a bordo influyó en el diseño de satélites de comunicaciones y observación de la Tierra. Los satélites modernos utilizan técnicas de procesamiento similares para manejar sus operaciones, mantener la estabilidad y transmitir datos con precisión.
+
+## Lugar en la Historia de la Informática y la Ingeniería
+
+1. Pionero en la Informática Embebida
+
+    El AGC es reconocido como uno de los primeros ejemplos de informática embebida. Diseñado para realizar tareas específicas dentro de un sistema mayor, el AGC demostró la viabilidad de utilizar computadoras especializadas para realizar funciones críticas en tiempo real. Este concepto se ha expandido enormemente, y la informática embebida ahora se utiliza en una amplia gama de dispositivos, desde electrodomésticos hasta automóviles y sistemas de control industrial.
+
+2. Avances en Arquitectura de Computadoras
+
+    La arquitectura del AGC fue revolucionaria en su tiempo. Utilizaba una arquitectura de palabra de 15 bits con una memoria de solo 64 KB, lo que fue extremadamente compacto en comparación con las computadoras de la época. El diseño del AGC, con su enfoque en la simplicidad y la eficiencia, influyó en la evolución de las arquitecturas de computadoras de sistemas embebidos y en la optimización de recursos en entornos de hardware limitados.
+
+3. Desarrollo de Software y Algoritmos
+
+    El desarrollo del software para el AGC, incluyendo su sistema operativo y sus algoritmos de control, fue un avance significativo en la programación de sistemas críticos. El AGC empleó el uso de programación en lenguaje ensamblador y técnicas avanzadas de gestión de interrupciones y prioridades. Estas prácticas sentaron las bases para el desarrollo de software en sistemas embebidos y en tiempo real.
+
+4. Inspiración para Innovaciones Tecnológicas
+
+    El éxito del AGC inspiró a generaciones de ingenieros y científicos. La forma en que el AGC superó los desafíos técnicos de su época impulsó la investigación y el desarrollo en campos relacionados con la informática, la ingeniería de control y la electrónica. La narrativa de cómo un equipo pequeño y dedicado pudo lograr avances significativos en tecnología con recursos limitados sigue siendo una fuente de inspiración para la innovación y el ingenio en la ingeniería y la tecnología.
+
+5. Legado en la Cultura Popular y la Educación
+
+    El AGC también ha tenido un impacto cultural significativo. Su papel en las misiones Apollo ha sido celebrado en numerosos documentales, películas y libros. Además, el estudio del AGC y su código fuente se ha convertido en una herramienta educativa valiosa para enseñar sobre la historia de la informática, el diseño de sistemas embebidos y la ingeniería espacial.
+
+6. Contribuciones a la Arquitectura de Redes y Comunicaciones
+
+    Aunque no directamente, el AGC influyó en el desarrollo de las redes de comunicaciones. La necesidad de transmitir datos entre la nave espacial y el control de misión en la Tierra inspiró avances en las técnicas de comunicación espacial y en la forma en que se gestionan las redes de datos en sistemas críticos.
+
+## Conclusión
+
+La misión Apollo 11 fue un logro monumental en la historia de la humanidad, siendo el primer aterrizaje del hombre en la Luna el 20 de julio de 1969.
+
+Un componente esencial para este éxito fue el Apollo Guidance Computer (AGC), una de los primeros ordenadores digitales embarcadas. Este dispositivo permitió manejar las complejidades del vuelo espacial con una eficiencia y fiabilidad extraordinarias para su época. Su diseño compacto y su capacidad para ejecutar múltiples tareas a través de una interfaz intuitiva demostraron la importancia de una buena interacción entre el hombre y la máquina.
+
+El desarrollo del AGC y la misión Apollo 11 fueron muy buenos ejemplos de colaboración interdisciplinaria, donde ingenieros, científicos, programadores y astronautas trabajaron juntos bajo la coordinación de la NASA.
+
+Los avances tecnológicos y los conocimientos adquiridos durante esta misión han dejado un legado duradero en la exploración espacial y en la tecnología informática. Las lecciones aprendidas siguen influyendo en las misiones espaciales actuales.
+
+El éxito de Apollo 11 y el papel crucial del AGC continúan inspirando a nuevas generaciones de científicos y entusiastas del espacio, recordándonos la capacidad humana para superar límites y alcanzar nuevas fronteras mediante la innovación y el trabajo en equipo.
+
+*Espero que os haya gustado leer el artículo tanto como a mi hacerlo. ¡Gracias por leer!*
+
+## Webgrafía
+
 [https://ntrs.nasa.gov/](https://ntrs.nasa.gov/)
+
 [The Apollo Guidance Computer: Architecture and Operation](https://nss.org/book-review-the-apollo-guidance-computer-architecture-and-operation/)
+
 [https://github.com/chrislgarry/Apollo-11](https://github.com/chrislgarry/Apollo-11)
+
 [http://www.ibiblio.org/apollo/#gsc.tab=0](http://www.ibiblio.org/apollo/#gsc.tab=0)
+
 [https://www.nasa.gov/history/alsj/main.html](https://www.nasa.gov/history/alsj/main.html)
+
+[https://ntrs.nasa.gov/citations/19880069935](https://ntrs.nasa.gov/citations/19880069935)
+
 [https://www.nasa.gov/history/alsj/alsj-LMdocs.html](https://www.nasa.gov/history/alsj/alsj-LMdocs.html)
 
-## UC
+[https://www.nasa.gov/the-apollo-program/](https://www.nasa.gov/the-apollo-program/)
+
+[https://hackaday.com/tag/apollo-guidance-computer/](https://hackaday.com/tag/apollo-guidance-computer/)
+
+[https://en.wikipedia.org/wiki/Apollo_Guidance_Computer](https://en.wikipedia.org/wiki/Apollo_Guidance_Computer)
