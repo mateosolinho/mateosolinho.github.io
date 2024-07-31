@@ -248,7 +248,7 @@ El término **"Luminary"** se refiere a algo que emite luz, como una estrella o 
 
 El número **"099"** representa una versión específica del software. En el contexto del desarrollo de software, los números de versión son esenciales para llevar un registro de las distintas iteraciones del programa.
 
-**Luminary 099** es especialmente notable porque fue la versión utilizada durante la misión **Apollo 11**, la histórica misión que logró el primer alunizaje tripulado el **20 de julio de 1969**. Este software fue responsable de las complejas tareas de navegación y control necesarias para guiar el módulo lunar *"Eagle"* desde la órbita lunar hasta su alunizaje en el *Mar de la Tranquilidad* y luego de vuelta a la órbita para reunirse con el Módulo de Comando y Servicio *"Columbia"*.
+**Luminary 099** es especialmente notable porque fue la versión utilizada durante la misión **Apollo 11**, la histórica misión que logró el primer alunizaje tripulado el **20 de julio de 1969**. Este software fue responsable de las complejas tareas de navegación y control necesarias para guiar el módulo lunar _"Eagle"_ desde la órbita lunar hasta su alunizaje en el _Mar de la Tranquilidad_ y luego de vuelta a la órbita para reunirse con el Módulo de Comando y Servicio _"Columbia"_.
 
 - **ASCENT_GUIDANCE.agc**
 
@@ -854,7 +854,6 @@ Para entender cómo el **Módulo de Comando y Servicio (CSM)** del Apollo 11 man
 
     - [`CM_BODY_ATTITUDE.agc`](https://github.com/chrislgarry/Apollo-11/blob/master/Comanche055/CM_BODY_ATTITUDE.agc)
 
-
 - **IMU_CALIBRATION_AND_ALIGNMENT.agc**
 
   Esta porción de código del AGC se usa para la _Calibración y Alineación de la IMU_, diseñada específicamente para soportar varias pruebas de rendimiento y rutinas relacionadas con la Unidad de Medición Inercial (IMU) para el Módulo de Comando del Apollo. A continuación, presento una explicación de las secciones clave y sus propósitos:
@@ -901,7 +900,6 @@ Para entender cómo el **Módulo de Comando y Servicio (CSM)** del Apollo 11 man
 
     - [`IMU_CALIBRATION_AND_ALIGNMENT.agc`](https://github.com/chrislgarry/Apollo-11/blob/master/Comanche055/IMU_CALIBRATION_AND_ALIGNMENT.agc)
 
-  
 - **ORBITAL_INTEGRATION.agc**
 
   Este código se divide en distintas **"páginas"** que realizan diferentes funciones. A continuación, se explica de manera detallada cada página o conjunto de ellas:
@@ -969,7 +967,6 @@ Para entender cómo el **Módulo de Comando y Servicio (CSM)** del Apollo 11 man
   - **Código de ensamblador:**
 
     - [`ORBITAL_INTEGRATION.agc`](https://github.com/chrislgarry/Apollo-11/blob/master/Comanche055/ORBITAL_INTEGRATION.agc)
-
 
 - **TVCEXECUTIVE.arg**
 
@@ -1039,14 +1036,13 @@ Para entender cómo el **Módulo de Comando y Servicio (CSM)** del Apollo 11 man
 
     - [`TVCEXECUTIVE.agc`](https://github.com/chrislgarry/Apollo-11/blob/master/Comanche055/TVCEXECUTIVE.agc)
 
-
 ## Influencia en Futuras Misiones Espaciales
 
 ![CM](/assets/img/post/apollo11/22.jpg)
 
 1. **Innovaciones en Navegación y Control Espacial**
 
-   El AGC revolucionó la forma en que se realizaban las maniobras espaciales. Su capacidad para realizar cálculos complejos y proporcionar orientación precisa permitió a las misiones Apollo realizar maniobras críticas con un grado de _exactitud sin precedentes_. Esta tecnología de control y navegación se convirtió en un estándar para la planificación de misiones espaciales posteriores, incluyendo la _navegación interplanetaria_. Las técnicas desarrolladas para el AGC se adaptaron y mejoraron para misiones espaciales posteriores, como las _sondas Voyager_ y las _misiones a Marte_.
+   El **AGC** revolucionó la forma en que se realizaban las maniobras espaciales. Su capacidad para realizar cálculos complejos y proporcionar **orientación precisa** permitió a las misiones Apollo realizar maniobras críticas con un grado de **_exactitud sin precedentes_**. Esta tecnología de control y navegación se convirtió en un estándar para la planificación de misiones espaciales posteriores, incluyendo la **_navegación interplanetaria_**. Las técnicas desarrolladas para el **AGC** se adaptaron y mejoraron para misiones espaciales posteriores, como las **_sondas Voyager_** y las **_misiones a Marte_**.
 
 2. **Desarrollo de Sistemas de Control de Actitud**
 
@@ -1054,11 +1050,11 @@ Para entender cómo el **Módulo de Comando y Servicio (CSM)** del Apollo 11 man
 
 3. **Influencia en la Exploración Robótica**
 
-    Las tecnologías y metodologías desarrolladas para el AGC también influyeron en los sistemas de control de las _sondas espaciales_ y los _robots_. Las primeras misiones espaciales robóticas, como las _sondas Mariner_ y _Pioneer_, adoptaron técnicas de control basadas en las experiencias del AGC. La _precisión en la navegación_ y el _procesamiento de datos_ inspiraron avances en la robótica espacial, que ahora permite a los _rovers_ explorar Marte y otras superficies planetarias con alta autonomía.
+    Las tecnologías y metodologías desarrolladas para el **AGC** también influyeron en los sistemas de control de las **_sondas espaciales_** y los **_robots_**. Las primeras misiones espaciales robóticas, como las **_sondas Mariner_** y **_Pioneer_**, adoptaron técnicas de control basadas en las experiencias del **AGC**. La **_precisión en la navegación_** y el **_procesamiento de datos_** inspiraron avances en la robótica espacial, que ahora permite a los **_rovers_** explorar Marte y otras superficies planetarias con alta autonomía.
 
 4. **Implementación en el Diseño de Satélites**
 
-    Los _principios de diseño_ del AGC se incorporaron en los sistemas de control de satélites. La capacidad del AGC para realizar cálculos de manera eficiente y controlar sistemas críticos a bordo influyó en el diseño de _satélites de comunicaciones_ y _observación de la Tierra_. Los satélites modernos utilizan técnicas de procesamiento similares para manejar sus operaciones, mantener la estabilidad y transmitir datos con precisión.
+    Los **_principios de diseño_** del **AGC** se incorporaron en los sistemas de control de **_satélites_**. La capacidad del **AGC** para realizar cálculos de manera eficiente y controlar sistemas críticos a bordo influyó en el diseño de **_satélites de comunicaciones_** y **_observación de la Tierra_**. Los satélites modernos utilizan técnicas de procesamiento similares para manejar sus operaciones, mantener la estabilidad y transmitir datos con precisión.
 
 ## Impacto y Legado del programa Apollo
 
@@ -1066,28 +1062,27 @@ Para entender cómo el **Módulo de Comando y Servicio (CSM)** del Apollo 11 man
 
 1. **Pionero en la Informática Embebida**
 
-    El AGC es reconocido como uno de los primeros ejemplos de informática embebida. Diseñado para realizar tareas específicas dentro de un sistema mayor, el AGC demostró la viabilidad de utilizar computadoras especializadas para realizar funciones críticas en tiempo real. Este concepto se ha expandido enormemente, y la informática embebida ahora se utiliza en una amplia gama de dispositivos, desde electrodomésticos hasta automóviles y sistemas de control industrial.
+    El **AGC** es reconocido como uno de los primeros ejemplos de _informática embebida_. Diseñado para realizar tareas específicas dentro de un sistema mayor, el **AGC** demostró la viabilidad de utilizar computadoras especializadas para realizar funciones críticas en _tiempo real_. Este concepto se ha expandido enormemente, y la _informática embebida_ ahora se utiliza en una amplia gama de dispositivos, desde _electrodomésticos_ hasta _automóviles_ y _sistemas de control industrial_.
 
 2. **Avances en Arquitectura de Computadoras**
 
-    La arquitectura del AGC fue revolucionaria en su tiempo. Utilizaba una _arquitectura de palabra de 15 bits_ con una memoria de solo _64 KB_, lo que fue extremadamente compacto en comparación con las computadoras de la época. El diseño del AGC, con su enfoque en la _simplicidad_ y la _eficiencia_, influyó en la evolución de las arquitecturas de computadoras de sistemas embebidos y en la optimización de recursos en entornos de hardware limitados.
+    La **arquitectura** del **AGC** fue revolucionaria en su tiempo. Utilizaba una _arquitectura de palabra_ de `15 bits` con una memoria de solo `64 KB`, lo que fue extremadamente compacto en comparación con las computadoras de la época. El diseño del **AGC**, con su enfoque en la _simplicidad_ y la _eficiencia_, influyó en la evolución de las arquitecturas de computadoras de sistemas embebidos y en la optimización de recursos en entornos de hardware limitados.
 
 3. **Desarrollo de Software y Algoritmos**
 
-    El desarrollo del software para el AGC, incluyendo su sistema operativo y sus algoritmos de control, fue un avance significativo en la programación de sistemas críticos. El AGC empleó el uso de _programación en lenguaje ensamblador_ y técnicas avanzadas de gestión de interrupciones y prioridades. Estas prácticas sentaron las bases para el desarrollo de software en sistemas embebidos y en tiempo real.
+    El desarrollo del software para el **AGC**, incluyendo su sistema operativo y sus algoritmos de control, fue un avance significativo en la programación de sistemas críticos. El **AGC** empleó el uso de _programación en lenguaje ensamblador_ y técnicas avanzadas de _gestión de interrupciones_ y _prioridades_. Estas prácticas sentaron las bases para el desarrollo de software en _sistemas embebidos_ y en _tiempo real_.
 
 4. **Inspiración para Innovaciones Tecnológicas**
 
-    El éxito del AGC inspiró a generaciones de ingenieros y científicos. La forma en que el AGC superó los desafíos técnicos de su época impulsó la investigación y el desarrollo en campos relacionados con la informática, la ingeniería de control y la electrónica. La narrativa de cómo un equipo pequeño y dedicado pudo lograr avances significativos en tecnología con recursos limitados sigue siendo una fuente de _inspiración_ para la _innovación_ y el _ingenio_ en la ingeniería y la tecnología.
+    El éxito del **AGC** inspiró a generaciones de _ingenieros_ y _científicos_. La forma en que el **AGC** superó los desafíos técnicos de su época impulsó la investigación y el desarrollo en campos relacionados con la _informática_, la _ingeniería de control_ y la _electrónica_. La narrativa de cómo un equipo pequeño y dedicado pudo lograr avances significativos en tecnología con recursos limitados sigue siendo una fuente de **inspiración** para la **innovación** y el **ingenio** en la ingeniería y la tecnología.
 
 5. **Legado en la Cultura Popular y la Educación**
 
-    El AGC también ha tenido un impacto cultural significativo. Su papel en las misiones Apollo ha sido celebrado en numerosos documentales, películas y libros. Además, el estudio del AGC y su código fuente se ha convertido en una herramienta educativa valiosa para enseñar sobre la historia de la informática, el diseño de sistemas embebidos y la ingeniería espacial.
+    El **AGC** también ha tenido un _impacto cultural_ significativo. Su papel en las misiones **Apollo** ha sido celebrado en numerosos _documentales_, _películas_ y _libros_. Además, el estudio del **AGC** y su _código fuente_ se ha convertido en una _herramienta educativa_ valiosa para enseñar sobre la historia de la informática, el diseño de sistemas embebidos y la ingeniería espacial.
 
 6. **Contribuciones a la Arquitectura de Redes y Comunicaciones**
 
-    Aunque no directamente, el AGC influyó en el desarrollo de las redes de comunicaciones. La necesidad de transmitir datos entre la nave espacial y el control de misión en la Tierra inspiró avances en las técnicas de comunicación espacial y en la forma en que se gestionan las redes de datos en sistemas críticos.
-
+    Aunque no directamente, el **AGC** influyó en el desarrollo de las redes de comunicaciones. La necesidad de transmitir datos entre la nave espacial y el **control de misión** en la Tierra inspiró avances en las técnicas de _comunicación espacial_ y en la forma en que se gestionan las _redes de datos_ en sistemas críticos.
 
 ## Conclusión
 
@@ -1103,8 +1098,7 @@ Los avances tecnológicos y los conocimientos adquiridos durante esta misión ha
 
 El éxito de Apollo 11 y el papel crucial del AGC continúan _inspirando a nuevas generaciones_ de científicos y entusiastas del espacio, recordándonos la capacidad humana para superar límites y alcanzar nuevas fronteras mediante la _innovación y el trabajo en equipo_.
 
-
-*Espero que os haya gustado leer el artículo tanto como a mi hacerlo. ¡Gracias por leer!*
+_Espero que os haya gustado leer el artículo tanto como a mi hacerlo. ¡Gracias por leer!_
 
 ## Webgrafía
 
