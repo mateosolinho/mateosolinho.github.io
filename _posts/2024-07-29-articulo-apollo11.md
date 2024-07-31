@@ -4,7 +4,7 @@ date: 2024-07-29 20:00:00 +0800
 categories: [Tecnología, Articulos]
 tags: [Apollo 11, AGC, AGS, Computación Espacial, RocketScience, Tecnología Espacial]
 image:
-  path: /assets/img/post/apollo11/1.jpg
+  path: /assets/img/post/apollo11/2.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
@@ -236,7 +236,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
   - Código de Ensamblador:
 
-    - [AGC_BLOCK_TWO_SELF_CHECK.agc](assets\img\post\apollo11\code\AGC_BLOCK_TWO_SELF_CHECK.agc)
+    - [AGC_BLOCK_TWO_SELF_CHECK.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Luminary099/AGC_BLOCK_TWO_SELF_CHECK.agc)
 
 ### Archivos del Módulo Lunar (LM)
 
@@ -304,7 +304,7 @@ Luminary 099 es especialmente notable porque fue la versión utilizada durante l
   
   - Código de Ensamblador:
 
-    - [ASCENT_GUIDANCE.agc](assets\img\post\apollo11\code\ASCENT_GUIDANCE.agc)
+    - [ASCENT_GUIDANCE.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Luminary099/ASCENT_GUIDANCE.agc)
 
 - **BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc**
   
@@ -343,7 +343,7 @@ Luminary 099 es especialmente notable porque fue la versión utilizada durante l
 
     - Código de Ensamblador:
 
-      - [BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc](assets\img\post\apollo11\code\BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc)
+      - [BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Luminary099/BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc)
 
 - **LANDING_ANALOG_DISPLAYS.agc**
   
@@ -469,7 +469,7 @@ Luminary 099 es especialmente notable porque fue la versión utilizada durante l
 
   - Código de Ensamblador:
 
-    - [LANDING_ANALOG_DISPLAYS.agc](assets\img\post\apollo11\code\LANDING_ANALOG_DISPLAYS.agc)
+    - [LANDING_ANALOG_DISPLAYS.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Luminary099/LANDING_ANALOG_DISPLAYS.agc)
 
 - **THE_LUNAR_LANDING.agc**
   
@@ -787,7 +787,7 @@ Luminary 099 es especialmente notable porque fue la versión utilizada durante l
 
   - Código de Ensamblador:
 
-    - [THE_LUNAR_LANDING.agc](assets\img\post\apollo11\code\THE_LUNAR_LANDING.agc)
+    - [THE_LUNAR_LANDING.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Luminary099/THE_LUNAR_LANDING.agc)
 
 ### Archivos del Módulo de Comando y Servicio (CSM)
 
@@ -841,7 +841,7 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
   
   - Código de ensamblador:
 
-    - [CM_BODY_ATTITUDE.agc](assets\img\post\apollo11\code\CM_BODY_ATTITUDE.agc)
+    - [CM_BODY_ATTITUDE.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Comanche055/CM_BODY_ATTITUDE.agc)
 
 - **IMU_CALIBRATION_AND_ALIGNMENT.agc**
 
@@ -887,7 +887,7 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
   
   - Código de ensamblador:
 
-    - [IMU_CALIBRATION_AND_ALIGNMENT.agc](assets\img\post\apollo11\code\IMU_CALIBRATION_AND_ALIGNMENT.agc)
+    - [IMU_CALIBRATION_AND_ALIGNMENT.agc]([assets\img\post\apollo11\code\IMU_CALIBRATION_AND_ALIGNMENT.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Comanche055/IMU_CALIBRATION_AND_ALIGNMENT.agc))
   
 - **ORBITAL_INTEGRATION.agc**
   
@@ -955,7 +955,7 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
   
   - Código de ensamblador:
 
-    - [ORBITAL_INTEGRATION.agc](assets\img\post\apollo11\code\ORBITAL_INTEGRATION.agc)
+    - [ORBITAL_INTEGRATION.agc]([assets\img\post\apollo11\code\ORBITAL_INTEGRATION.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Comanche055/ORBITAL_INTEGRATION.agc))
 
 - **TVCEXECUTIVE.arg**
 
@@ -1023,7 +1023,7 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
   
   - Código de ensamblador:
 
-    - [TVCEXECUTIVE.agc](assets\img\post\apollo11\code\TVCEXECUTIVE.agc)
+    - [TVCEXECUTIVE.agc]([assets\img\post\apollo11\code\TVCEXECUTIVE.agc](https://github.com/chrislgarry/Apollo-11/blob/master/Comanche055/TVCEXECUTIVE.agc))
 
 [https://ntrs.nasa.gov/](https://ntrs.nasa.gov/)
 [The Apollo Guidance Computer: Architecture and Operation](https://nss.org/book-review-the-apollo-guidance-computer-architecture-and-operation/)
