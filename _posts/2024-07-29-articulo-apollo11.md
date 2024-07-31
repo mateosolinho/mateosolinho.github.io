@@ -12,29 +12,31 @@ Imagina tener que guiar a un módulo espacial a través del vasto vacío del esp
 
 En este post, vamos a sumergirnos en el fascinante mundo del hardware y el software que hizo posible el alunizaje. Desde las intrincadas rutinas de auto-verificación hasta las complejas ecuaciones de guía lunar, descubrirás como el código detrás del AGC no solo llevó al hombre a la Luna, sino que tambíen marcó un hito en la historia de la computación espacial.
 
-<!-- ![Foto de la misión Apollo](//) -->
+![Foto de la misión Apollo](/assets/img/post/apollo11/1.jpg)
 
 ## Historia del AGC
 
 Para entender el impacto del Apollo Guidance Computer (AGC) en la misión Apollo 11, primero debemos explorar su historia y su contexto.
 
-<!-- ![Foto del Apollo Guidance Computer (AGC)](//) -->
+![Foto del Apollo Guidance Computer (AGC)](/assets/img/post/apollo11/4.jpg)
 
 El AGC, desarrollado en el MIT Instrumentation Laboratory bajo la dirección de Charles Stark Draper, fue un avance revolucionario en la computacion espacial. Su diseño compacto y robusto estaba destinado a soportar las rigurosas condiciones del espacio y a facilitar las complejas maniobras necesarias para una misión lunar exitosa.
 
 Uno de los nombres más destacados en el desarrollo del AGC es Margaret Hamilton, quien lideró el equipo de ingenieros de software. Su enfoque meticuloso en la ingeniería de Software y su visión pionera no solo garantizaron el éxito de la misión Apollo 11, sino que también establecieron muchos de los principio de programación que hoy consideramos fundamentales.
 
-<!-- ![Margaret Hamilton trabajando en el AGC](//) -->
+![Margaret Hamilton trabajando en el AGC](/assets/img/post/apollo11/5.jpg)
 
 ## Hardware del AGC
 
 El Apollo Guidance Computer (AGC) fue una pieza fundamental del éxito de las misiones Apollo, destacando por sus innovaciones en la ingeniería de hardware y software en la época.
 
+![AGC](/assets/img/post/apollo11/25.jpeg)
+
 ### Características técnicas del AGC
 
 - **Procesador:** 2.048 MHz
 
-  <!-- ![Diagrama del procesador del AGC](//) -->
+  ![Diagrama del procesador del AGC](/assets/img/post/apollo11/8.jpg)
 
   - **Ciclo de Instrucción:** El AGC operaba a una frecuencia de 2.048 MHz, lo que permitía un ciclo de instrucción de aproximadamente 11.72 microsegundos. Cada instrucción del conjunto de instrucciones del AGC se ejecutaba en uno o más de estos ciclos.
   - **Arquitectura:** El procesador del AGC tenía una arquitectura de 16 bits, utilizando una aquitectura word de 15 bits más un bit de paridad. El conjunto de instrucciones incluía operaciones básicas aritmétricas, lógicas, de control de flujo y de manipulación de datos.
@@ -42,14 +44,14 @@ El Apollo Guidance Computer (AGC) fue una pieza fundamental del éxito de las mi
 
 - **Memoria Ram (Random Access Memory):** 2 KB
   
-  <!-- ![Imagen de núcleos magnéticos de RAM](//) -->
+  ![Imagen de núcleos magnéticos de RAM](/assets/img/post/apollo11/6.jpg)
 
   - **Tecnología:** La RAM del AGC estaba basada en núcleos magnéticos (magnetic core memory), una tecnología robusta y no volátil que permitía mantener el estado incluso en caso de pérdida de energía.
   - **Función:** La RAM se utilizaba principalmente para almacenar variables temporales y datos intermedios necesarios para los cálculos en tiempo real. También se usaba para almacenar el estado del programa y los datos de navegación.
 
 - **ROM (Read-Only Memory):** 36 KB
 
-  <!-- ![Diagrama del Core Rope Memory](//) -->
+  ![Diagrama del Core Rope Memory](/assets/img/post/apollo11/7.jpg)
 
   - **Tecnología:** La ROM utilizaba la tecnología Core Rope Memory, donde los bits de datos se almacenaban en núcleos magnéticos mediante cables trenzados. Esta tecnología ofrecía alta densidad de almacenamiento y era extremadamente resistente a fallos.
   - **Función:** La ROM contenía el código de programa esencial para todas las fases de la misión, incluyendo rutinas de navegación, control y manejo de datos. La estrcutura del software era modular, permitiendo actualizaciones y modificaciones sin alterar el código base.
@@ -58,14 +60,14 @@ El Apollo Guidance Computer (AGC) fue una pieza fundamental del éxito de las mi
 
 - **Teclado y Pantalla (DSKY - Display and Keyboard):**
 
-  <!-- ![Imagen del DSKY](//) -->
+  ![Imagen del DSKY](/assets/img/post/apollo11/9.png)
 
   - **Interfaz de Usuario:** El DSKY consistía en una pantalla de 7 segmentos para mostrar datos numéricos y una serie de luces de estado para indicar diferentes modos y estados del sistema. El teclado permitía la entrada de comandos mediante un conjunto de teclas numéricas y de función.
   - **Comunicaciones:** El DSKY se comunicaba con el AGC mediante un bus de datos dedicado, permitiendo la entrada y salida rápida y eficiente de información.
 
-- **Unidad de Navegación Inercial (IMU - Inertial Measurement Unit):**
+- **Unidad de Navegación Inercial (INU - Inertial Navigation Unit):**
   
-  <!-- ![Diagrama de la Unidad de Navegación Inercial (IMU)](//) -->
+  ![Diagrama de la Unidad de Navegación Inercial (INU)](/assets/img/post/apollo11/14.jpg)
 
   - **Componentes:** El IMU contenía giroscopios y acelerómetros que proporcionaban datos sobre la orientación y aceleración de la nave. Estos datos eran críticos para la navegación y el control de la trayectoria.
   - **Integración:** El AGC integraba los datos del IMU con sus cálculos de navegación para determinar la posición y orientación precisas del módulo lunar y el módulo de comando.
@@ -98,13 +100,15 @@ El Apollo Guidance Computer no solo fue un logro técnico impresionante en su é
 
 El Abort Guidance System (AGS) del Módulo Lunar del programa Apollo fue diseñado específicamente para proporcionar capacidades de navegación y control en caso de un fallo del sistema principal de guiado, el AGC. A continuación, algunos aspectos importantes a tener en cuenta sobre el AGS
 
-<!-- ![Foto del AGS](//) -->
+![Foto del AGS](/assets/img/post/apollo11/11.jpg)
+
+![Foto del AGS](/assets/img/post/apollo11/12.jpg)
 
 ### Arquitectura y Diseño del AGS
 
 - **Computadora de Guiado (Abort Electronics Assembly, AEA)**
 
-  <!-- ![Abort Electronics Assembly (AEA)](//) -->
+  ![Abort Electronics Assembly (AEA)](/assets/img/post/apollo11/13.jpg)
 
   - **Procesador:** Basado en tecnología de lógica discreta, menos avanzada que el procesador del AGC.
   - **RAM:** Aproximadamente 2 KB de memoria volátil, utilzada para operaciones temorales.
@@ -113,7 +117,7 @@ El Abort Guidance System (AGS) del Módulo Lunar del programa Apollo fue diseña
 
 - **Unidad de Medición Inercial (IMU)**
   
-  <!-- ![Unidad de Medición Inercial (IMU)](//) -->
+  ![Unidad de Medición Inercial (IMU)](/assets/img/post/apollo11/10.jpg)
 
   - **Descripción:** La IMU del AGS era una versión simplificada y menos precisa que la utilzada por el AGC.
   - **Giroscopio:** Menos precisos pero suficientes para las operaciones de emergencia.
@@ -121,20 +125,18 @@ El Abort Guidance System (AGS) del Módulo Lunar del programa Apollo fue diseña
   
 - **Interfaces de Entrada/Salida**
   
-  <!-- ![DSKY Simplificado del AGS](//) -->
+  ![DSKY Simplificado del AGS](/assets/img/post/apollo11/15.jpg)
 
   - **DSKY Simplificado:** La pantalla proporcionaba información básica de estado y navegación, el teclado permitía la entrada de comandos esenciales para la operación del AGS.
   
 - **Sensores y Actuadores**
-  
-  <!-- ![Sensores y Actuadores](//) -->
 
   - **Sensores de Presión y Temperatura:** Utilzados para monitorear condiciones críticas del Modulo Lunar.
   - **Actuadores de Control:** Permitían el ajuste de la orientación y la ejecución de maniobras de emergencia.
   
 - **Algoritmos de Navegación**
 
-  <!-- ![Diagrama de Algoritmos de Navegación](//) -->
+  ![Diagrama de Algoritmos de Navegación](/assets/img/post/apollo11/16.jpg)
 
   - **Ascent Guidance Algorithm:** Diseñado para calcular y ejecutar una trayectoria de ascenso segura desde la superficie lunar en caso de aborto.
   - **Abort Modes:** Incluía modos específicos para diferentes fases del descenso y ascenso, cada uno con rutas de navegación predefinidad para maximizar la probabilidad de éxito.
@@ -148,21 +150,19 @@ El Abort Guidance System (AGS) del Módulo Lunar del programa Apollo fue diseña
 
 - **Navegación de Respaldo**
 
-  <!-- ![Diagrama de Precisión del AGS](//) -->
-
   - **Precisión:** Aunque menos preciso que el AGC, el AGS podía proporcionar suficiente precisión para una operación de emergencia.
   - **Fiabilidad:** Diseñado para ser extremadamente fiable y fácil de usar en situaciones de alta tensión.
 
 - **Manejo de Emergencias**
 
-  <!-- ![Procedimientos de Emergencia](//) -->
+  ![Procedimientos de Emergencia](/assets/img/post/apollo11/18.jpg)
 
   - **Abort Modes:** Capacidad para iniciar y gestionar diferentes modos de aborto basados en la fase de la misión y las condiciones presentes.
   - **Ascent Capability:** Proporcionaba una ruta de ascenso segura en caso de un aborto durante el descenso o en la superficie lunar.
 
 - **Diagnóstico y Auto-Pruebas**
 
-  <!-- ![Diagrama de Diagnóstico y Auto-Pruebas](//). -->
+  ![Diagrama de Diagnóstico y Auto-Pruebas](/assets/img/post/apollo11/19.png)
 
   - **Monitoreo Continuo:** Se realizaban auto-pruebas constantes para verificar su estado operativo.
   - **Alertas y Diagnósticos:** Proporcionaba alertas y diagnósticos simples para informar a los astronautas sobre el estado del sistema y posibles fallos.
@@ -241,6 +241,8 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 ### Archivos del Módulo Lunar (LM)
 
 El software Luminary 099 es una pieza fundamental en la historia de la exploración espacial, ya que fue el software de vuelo utilizado en el Módulo Lunar (LM) durante las misiones Apollo
+
+![Lunar Module Diagram](/assets/img/post/apollo11/20.jpg)
 
 El término "Luminary" se refiere a algo que emite luz, como una estrella o una fuente de inspiración. Este nombre es particularmente apto para el software de guía y navegación del Modulo Lunar del AGC. De manera simbólica, "Luminary" también refleja la aspiración de la misión Apollo de iluminar el camino para la humanidad en la exploración espacial, convirtiéndose en una luz guía en la historia de la ciencia y la ingeniería.
 
@@ -793,6 +795,8 @@ Luminary 099 es especialmente notable porque fue la versión utilizada durante l
 
 El software Comanche 055 es otra pieza crucial en la historia de la exploración espacial, ya que fue el software de vuelo utilizado en el Módulo de Comando (CM) durante las misiones Apollo.
 
+![CM](/assets/img/post/apollo11/21.jpg)
+
 El término "Comanche" hace referencia a una tribu nativa americana conocida por su habilidad en la navegación y estrategia en el terreno, cualidades que son paralelas a las necesidades del Módulo de Comando en las misiones Apollo. Esta denominación simboliza la misión del software de guiar y proteger a los astronautas durante sus viajes a la Luna y su regreso a la Tierra, de la misma manera que los Comanches eran maestros en guiar a su gente a través de vastas regiones.
 
 Al igual que con el número del Luminary 099, el 055 representa una versión específica del software del Módulo de Comando.
@@ -1027,6 +1031,8 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
 
 ## Influencia en Futuras Misiones Espaciales
 
+![CM](/assets/img/post/apollo11/22.jpg)
+
 1. Innovaciones en Navegación y Control Espacial
 
    El AGC revolucionó la forma en que se realizaban las maniobras espaciales. Su capacidad para realizar cálculos complejos y proporcionar orientación precisa permitió a las misiones Apollo realizar maniobras críticas con un grado de exactitud sin precedentes. Esta tecnología de control y navegación se convirtió en un estándar para la planificación de misiones espaciales posteriores, incluyendo la navegación interplanetaria. Las técnicas desarrolladas para el AGC se adaptaron y mejoraron para misiones espaciales posteriores, como las sondas Voyager y las misiones a Marte.
@@ -1044,6 +1050,8 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
     Los principios de diseño del AGC se incorporaron en los sistemas de control de satélites. La capacidad del AGC para realizar cálculos de manera eficiente y controlar sistemas críticos a bordo influyó en el diseño de satélites de comunicaciones y observación de la Tierra. Los satélites modernos utilizan técnicas de procesamiento similares para manejar sus operaciones, mantener la estabilidad y transmitir datos con precisión.
 
 ## Lugar en la Historia de la Informática y la Ingeniería
+
+  ![CM](/assets/img/post/apollo11/23.jpg)
 
 1. Pionero en la Informática Embebida
 
@@ -1071,6 +1079,8 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
 
 ## Conclusión
 
+![CM](/assets/img/post/apollo11/24.jpeg)
+
 La misión Apollo 11 fue un logro monumental en la historia de la humanidad, siendo el primer aterrizaje del hombre en la Luna el 20 de julio de 1969.
 
 Un componente esencial para este éxito fue el Apollo Guidance Computer (AGC), una de los primeros ordenadores digitales embarcadas. Este dispositivo permitió manejar las complejidades del vuelo espacial con una eficiencia y fiabilidad extraordinarias para su época. Su diseño compacto y su capacidad para ejecutar múltiples tareas a través de una interfaz intuitiva demostraron la importancia de una buena interacción entre el hombre y la máquina.
@@ -1084,8 +1094,6 @@ El éxito de Apollo 11 y el papel crucial del AGC continúan inspirando a nuevas
 *Espero que os haya gustado leer el artículo tanto como a mi hacerlo. ¡Gracias por leer!*
 
 ## Webgrafía
-
-[https://ntrs.nasa.gov/](https://ntrs.nasa.gov/)
 
 [The Apollo Guidance Computer: Architecture and Operation](https://nss.org/book-review-the-apollo-guidance-computer-architecture-and-operation/)
 
@@ -1104,3 +1112,5 @@ El éxito de Apollo 11 y el papel crucial del AGC continúan inspirando a nuevas
 [https://hackaday.com/tag/apollo-guidance-computer/](https://hackaday.com/tag/apollo-guidance-computer/)
 
 [https://en.wikipedia.org/wiki/Apollo_Guidance_Computer](https://en.wikipedia.org/wiki/Apollo_Guidance_Computer)
+
+[http://www.righto.com/2019/09/a-computer-built-from-nor-gates-inside.html](http://www.righto.com/2019/09/a-computer-built-from-nor-gates-inside.html)
