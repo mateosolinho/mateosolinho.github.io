@@ -10,7 +10,7 @@ image:
 
 Imagina tener que guiar a un módulo espacial a través del vasto vacío del espacio y aterrizarlo con precisión en la superficie lunar, todo mientras se trabaja con un ordenador con menos potencia que un moderno teléfono móvil. Este fue el desafío enfrendato por el Apollo Guidance Computer (AGC) durante la histórica misión Apollo 11, la cual llevo al primer humano a la superficie lunar.
 
-En este post, vamos a sumergirnos en el fascinante mundo del software que hizo posible el alunizaje. Desde las intrincadas rutinas de auto-verificación hasta las complejas ecuaciones de guía lunar, descubrirás como el código detrás del AGC no solo llevó al hombre a la Luna, sino que tambíen marcó un hito en la historia de la computación espacial.
+En este post, vamos a sumergirnos en el fascinante mundo del hardware y el software que hizo posible el alunizaje. Desde las intrincadas rutinas de auto-verificación hasta las complejas ecuaciones de guía lunar, descubrirás como el código detrás del AGC no solo llevó al hombre a la Luna, sino que tambíen marcó un hito en la historia de la computación espacial.
 
 <!-- ![Foto de la misión Apollo](//) -->
 
@@ -240,13 +240,17 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     <!-- - [AGC_BLOCK_TWO_SELF_CHECK.agc](assets\img\post\apollo11\code\AGC_BLOCK_TWO_SELF_CHECK.agc) -->
 
-### Archivos del Módulo de Comando y Servicio (CSM)
-
 ### Archivos del Módulo Lunar (LM)
 
-- **ASCENT_GUIDANCE.agc**
+El software Luminary 099 es una pieza fundamental en la historia de la exploración espacial, ya que fue el software de vuelo utilizado en el Módulo Lunar (LM) durante las misiones Apollo
 
-  - Propósito:
+El término "Luminary" se refiere a algo que emite luz, como una estrella o una fuente de inspiración. Este nombre es particularmente apto para el software de guía y navegación del Modulo Lunar del AGC. De manera simbólica, "Luminary" también refleja la aspiración de la misión Apollo de iluminar el camino para la humanidad en la exploración espacial, convirtiéndose en una luz guía en la historia de la ciencia y la ingeniería.
+
+El número "099" representa una versión específica del software. En el contexto del desarrollo de software, los números de versión son esenciales para llevar un registro de las distintas iteraciones del programa.
+
+Luminary 099 es especialmente notable porque fue la versión utilizada durante la misión Apollo 11, la histórica misión que logró el primer alunizaje tripulado el 20 de julio de 1969. Este software fue responsable de las complejas tareas de navegación y control necesarias para guiar el módulo lunar "Eagle" desde la órbita lunar hasta su alunizaje en el Mar de la Tranquilidad y luego de vuelta a la órbita para reunirse con el Módulo de Comando y Servicio "Columbia".
+
+- **ASCENT_GUIDANCE.agc**
 
     Este código es parte del Ordenador de Guía del Apollo (AGC) para la fase de ascenso del Módulo Lunar durante la misión Apollo 11. La fase de ascenso implica el lanzamiento del Módulo Lunar desde la superficie de la Luna de vuelta a la órbital lunar para encontrarse con el Módulo de comando.
 
@@ -302,7 +306,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
   
   - Código de Ensamblador:
 
-    <!-- - [AGC_BLOCK_TWO_SELF_CHECK.agc](assets\img\post\apollo11\code\ASCENT_GUIDANCE.agc) -->
+    <!-- - [ASCENT_GUIDANCE.agc](assets\img\post\apollo11\code\ASCENT_GUIDANCE.agc) -->
 
 - **BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc**
   
@@ -341,11 +345,9 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
     - Código de Ensamblador:
 
-    <!-- - [AGC_BLOCK_TWO_SELF_CHECK.agc](assets\img\post\apollo11\code\BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc) -->
+    <!-- - [BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc](assets\img\post\apollo11\code\BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc) -->
 
 - **LANDING_ANALOG_DISPLAYS.agc**
-
-  - Propósito:
   
     Controlar y actualizar las pantallas analógicas que muestran datos críticos a los astronautas durante el alunizaje. Estas pantallas proporcionan información sobre el estado del módulo lunar y ayudan a los astronautas a tomar decisiones durante el proceso de descenso
 
@@ -469,11 +471,9 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
   - Código de Ensamblador:
 
-  <!-- - [AGC_BLOCK_TWO_SELF_CHECK.agc](assets\img\post\apollo11\code\LANDING_ANALOG_DISPLAYS.agc) -->
+  <!-- - [LANDING_ANALOG_DISPLAYS.agc](assets\img\post\apollo11\code\LANDING_ANALOG_DISPLAYS.agc) -->
 
 - **THE_LUNAR_LANDING.agc**
-
-  - Propósito:
   
     Se encarga de la fase de alunizaje, incluyendo la preparación, el cálculo de correcciones de guía, la verificación de componentes y la confirmación final del alunizaje. El código está dividido en bloques que manejan la configuración, el cálculo de guía, la verificación de componentes y la confirmación del alunizaje, asegurando así una transición precisa y controlada a la fase de aterrizaje en la Luna.
 
@@ -789,11 +789,249 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
   - Código de Ensamblador:
 
-  <!-- - [AGC_BLOCK_TWO_SELF_CHECK.agc](assets\img\post\apollo11\code\THE_LUNAR_LANDING.agc) -->
+  <!-- - [THE_LUNAR_LANDING.agc](assets\img\post\apollo11\code\THE_LUNAR_LANDING.agc) -->
+
+### Archivos del Módulo de Comando y Servicio (CSM)
+
+El software Comanche 055 es otra pieza crucial en la historia de la exploración espacial, ya que fue el software de vuelo utilizado en el Módulo de Comando (CM) durante las misiones Apollo.
+
+El término "Comanche" hace referencia a una tribu nativa americana conocida por su habilidad en la navegación y estrategia en el terreno, cualidades que son paralelas a las necesidades del Módulo de Comando en las misiones Apollo. Esta denominación simboliza la misión del software de guiar y proteger a los astronautas durante sus viajes a la Luna y su regreso a la Tierra, de la misma manera que los Comanches eran maestros en guiar a su gente a través de vastas regiones.
+
+Al igual que con el número del Luminary 099, el 055 representa una versión específica del software del Módulo de Comando.
+
+Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó sus complejas tareas, exploraremos algunos de los archivos más relevantes del software Comanche055. Estos archivos son fundamentales para comprender el funcionamiento del CSM durante la misión. A continuación, presentamos una selección de los archivos más importantes e interesantes:
+
+- **CM_BODY_ATTITUDE.agc**
+
+    El propósito de este código es actualizar y manejar los ángulos de orientación del módulo de comando en respuesta a las lecturas de los acelerómetros y giroscopios. El código guarda las posiciones actuales y calcula los cambios en la orientación basándose en estas lecturas, manteniendo la estabilidad y control necesarios para las maniobras durante la misión.
+
+  - Sección y Subrutina
+
+    - **Sección Principal:** Control de la Actitud del Cuerpo (CM_BODY_ATTITUDE)
+
+    - **Subrutina Principal:** CM/ATUP (Actualización de los Ángulos de Actitud)
+
+  - Descripción Funcional
+
+    - **Guardado de Ángulos y Valores de Gimbal:**
+
+      Los ángulos de gimbal y del cuerpo válidos en el momento PIP son guardados durante la lectura de los acelerómetros (READACCS)
+
+    - **Configuración Inicial y Cálculo de Vectores:**
+      - El intérprete establece el banco correcto.
+      - Se realizan cálculos vectoriales y se almacenan los resultados para su uso en la guía de entrada y coordenadas de referencia.
+
+    - **Cálculos de Trayectoria y Ángulos:**
+      - Se calculan los vectores relativos y se alamacenan los resultados.
+      - Se obtienen triadas de trayectoria y se calculan los componentes del movimiento del módulo.
+
+    - **Actualización de Ángulos:**
+      - La subrutina CM/ATUP se encarga de actualizar los ángulos de actitud (ROLL, BETA, ALFA) basándose en los datos obtenidos desde la última actualización.
+      - Se manejan las interrupciones y se aseguran los cálculos precisos corrigiendo los posibles desbordamientos.
+
+    - **Correción y Ajuste de Ángulos:**
+      - La subrutina CM/ATUP se encarga de actualizar los ángulos de actitud (ROLL, BETA, ALFA) basándose en los datos obtenidos desde la última actualización.
+      - Se manejan las interrupciones y se aseguran los cálculos precisos corrigiendo los posibles desbordamientos.
+  
+  - Detalles Técnicos
+    - **KVSCALE:** Constante utilizada para la escala de velocidad.
+    - **TCDU:** Tiempo de ciclo de unidad (0.1 segundos).
+    - **Subrutinas Específicas:**
+      - CM/POSE, CM/POSE2, CM/POSE3: Manejan diferentes etapas del cálculo de orientación.
+      - DOGAMDOT, NOGAMDOT: Deciden si calcular o no la velocidad angular en base a ciertas condiciones.
+      - REDOPOSE, CORANGOV: Ajustan los ángulos y manejan los posibles desbordamientos.
+  
+  - Código de ensamblador:
+
+    <!-- - [CM_BODY_ATTITUDE.agc](assets\img\post\apollo11\code\CM_BODY_ATTITUDE.agc) -->
+
+- **IMU_CALIBRATION_AND_ALIGNMENT.agc**
+
+    Esta porción de código del AGC se usa para la Calibración y Alineación de la IMU, diseñada específicamente para soportar varias pruebas de rendimiento y rutinas relacionadas con la Unidad de Medición Inercial (IMU) para el Módulo de Comando del Apollo. A continuación presento una explicación de las secciones claves y sus propósitos:
+
+  - Pruebas de Rendimiento de la IMU:
+  
+    - **Inicialización:** El código inicializa las pruebas de la IMU, configurando varios contadores y flags a cero. Esto incluye el NDXCTR (contador de índice) y el TORQNDX (índice de torque).
+
+    - **Rutinas de Posicionamiento:** Se utilizan varias rutinas para posicionar y alinear la IMU. El programa configura y verifica varios componentes gométricos y realiza cálculos como seno y coseno de la latitud, azimut y otros parámetros de alineación.
+
+    - **Pruebas de Deriva del Giroscopio:** El código realiza pruebas del giroscopio para asegurar que os giroscopios funcionen correctamente. Esto implica configurar temporizadores (LENGTHOT), capturar y procesar pulsos PIPA (Acelerómetro Péndulo Integrador Pulsado).
+
+    - **Compensación de la Velocidad de la Tierra:** El código compensa la velocidad de rotación de la Tierra calculando y aplicando correcciones a las lecturas de la IMU. Eso asegura un posicionamiento y alineación precisos a pesar del movimiento de la Tierra.
+
+  - Manejo de Datos y Prueba de Reinicio:
+
+    - **Prueba de Reinicio:** Para manejar posibles reinicios, el código incluye rutinas para almacenar y recargar datos críticos. Esto asegura que el sistema pueda reanudar pruebas o procedimientos de alineación sin comenzar desde cero.
+
+    - **Almacenamiento y Carga:** Los datos relacionados con la alineación y calibración de la IMU se almacenan periódicamente y se pueden recargar para continuar las operaciones sin problemas después de un reinicio.
+  
+  - Procedimientos de Alineación y Calibración:
+
+    - **Alineación Gruesa (COAALIGN):** Esta rutina maneja la alineación inicial de la IMU, configurando la orientación y asegurando que la plataforma esté correctamente alineada.
+
+    - **Alineación Fina (IMUFINE):** Después de la alineación gruesa, la rutina de alineación fina ajusta la orientación de la IMU con mayor precisión.
+
+    - **Pruebas PIPA (PIPACHK):** Esta rutina prueba el PIPA para medir tasas verticales y asegurar la precisión de la IMU.
+  
+  - Desglose Detallado:
+
+    - **Inicialización (IMUTEST):** Limpia y configura valores iniciales para tiempos de deriva, componentes geográficos y otros parámetros de prueba.
+
+    - **Pruebas de Deriva del Giroscopio (VERTDRFT, TORQUE):** Realiza pruebas para medir y compensar la deriva en los giroscopios.
+
+    - **Compensación de la Velocidad de la Tierra (ERTHRVSE, EARTHR):** Calcula la compensación necesaria para la rotación de la Tierra para mantener lecturas precisas de la IMU.
+
+    - **Procedimientos de Alineación (COAALIGN, IMUFINE):** Alinea inicialmente la IMU y ajusta la alineación para operaciones precisas.
+
+    - **Captura de Pulsos PIPA (CHECKG, PIPACHK):** Captura y procesa pulsos PIPA para asegurar que la IMU mida con precisión la aceleración y orientación.
+
+    - **Prueba de Reinicio (STOREDTA, LOADSTDT):** Asegura que en caso de un reinicio, los datos críticos de alineación y calibración se guarden y puedan recargarse para reanudar operaciones rápidamente.
+  
+  - Código de ensamblador:
+
+    <!-- - [IMU_CALIBRATION_AND_ALIGNMENT.agc](assets\img\post\apollo11\code\IMU_CALIBRATION_AND_ALIGNMENT.agc) -->
+  
+- **ORBITAL_INTEGRATION.agc**
+  
+  Este código se divide en distintas "páginas" que realizan diferentes funciones, a continuación explicaré de manera detallada cada página o conjunto de ellas:
+
+  - **Páginas 1334-1336: ORBITAL INTEGRATION y KEPPREP:**
+
+    Estas páginas configuran las rutinas para la integración orbital, que es un proceso clave en la navegación espacial. La rutina KEPPREP parece preparar variables y realizar cálculos preliminares necesarias para la integración de las órbitas.
+
+    - **Bancos de Memoria:** El código usa diferentes bancos de memoria para almacenar datos específicos.
+
+    - **Cargas y Almacenamientos:** Se cargan y alamcenan valores en diferentes ubicaciones de memoria, que incluyen cálculos de varos físicos como la raíz cuadrada de la constante gravitacional.
+
+  - **Páginas 1337: ACCOMP:**
+
+    La rutina ACCOMP calcula los componentes de aceleración. Utiliza vectores de posición y velocidad, y realiza operaciones vectoriales como multiplicaciones y sumas.
+
+    - **Carga de Vectores:** Carga y almacena vectores de aceleración.
+
+    - **Normalización:** Normaliza los vectores para los cálculos posteriores.
+
+  - **Páginas 1338-1340: GAMCOMP:**
+
+    Esta subrutina calcula componentes específicos de la aceleración gravitacional (GAMCOMP).
+
+    - **Cálculo de la aceleración:** Realiza cálculos complejos para determinar la aceleración debido a la gravedad y otras fuerzas.
+
+    - **Normalización:** Asegura que los valores calculados estén en un rango normalizado.
+
+  - **Página 1341: OBLATE:**
+
+    La rutina OBLATE calcula la aceleración debido a la oblación terrestre (achatamiento de la Tierra en los polos).
+
+    - **Cálculo de componentes de Oblateness:** Usa el vector de posición del vehículo y su distancia al centro de la Tierra para calcular la aceleración adicional debido a la forma oblata de la Tierra.
+
+    - **Ajustes y Sumas:** Ajusta los valores de aceleración calculados y los suma a las aceleraciones existentes.
+
+  - **Página 1343: COMTERM y COSPHIE:**
+
+    Estas secciones manejan cálculos adicionales y ajustes específicos relacionados con los efectos del oblateness.
+
+    - **Cálculos de términos adicionales:** Calcula y ajusta términos adicionales necesarios para la precisión en la integración orbital.
+
+  - **Páginas 1344-1345: TIMESTEP y RECTEST:**
+
+    Estas rutinas gestionan los pasos de tiempo en la integración y verifican si se necesita una rectificación en la órbita calculada.
+
+    - **Verificaciones y ajustes:** Verifica condiciones específicas que podrían requerir ajustes en la órbita calculada.
+
+    - **Integración:** Realiza la integración de la órbita utilizando pasos de tiempo específicos.
+
+  - **Página 1346: ORIGCHNG:**
+
+    La rutina ORIGCHNG maneja los cambios de origen, es decir, cuando el sistema de referencia necesita ser ajustado debido a cambios significativos en la posición o velocidad.
+
+    - **Ajustes de Origen:** Ajusta el sistema de referencia y recalcula los vectores de posición y velocidad en relación con el nuevo origen.
+
+  - **Página 1347: RECTIFY:**
+
+    La subrutina RECTIFY establece una nueva órbita cónica cuando se detectan cambios significativos.
+
+    - **Reestablecimiento de Órbita:** Establece una nueva órbita cónica basada en los cálculos actuales de posición y velocidad.
+
+    - **Reinicialización:** Reinicializa las variables y prepara el sistema para la siguiente etapa de integración.
+  
+  - Código de ensamblador:
+
+    <!-- - [ORBITAL_INTEGRATION.agc](assets\img\post\apollo11\code\ORBITAL_INTEGRATION.agc) -->
+
+- **TVCEXECUTIVE.arg**
+
+  TVCEXECUTIVE es uan rutina crítica del AGC que se encarga de gestionar y actualizar el sistema de control de actitud y navegación (TVC) del Módulo de Comando. Esta rutina se ejecuta a intervalos regulares de 0.5 segundos y realiza varias tareas esenciales:
+
+  - Preparación de Datos de Control:
+
+    - **Actualización de Roll DAP:** Se prepara el DAP (Data Access Processor) para el control del roll del módulo con los datos actuales.
+
+    - **Actualización del FDAI Needle:** Se actualiza la aguja del Indicador de Actitud de Vuelo (FDAI) con el error de control de actitud del roll.
+
+    - **Actualización del Phase Plane:** Se prepara el plano de fase del roll para el error OGA (Error de Guía de Actitud).
+
+  - Actualización de Necesidades y Datos:
+
+    - **Actualización de Needles:** Llama a una subrutina que actualiza los indicadores de actitud.
+
+    - **Actualización de Masa:** Actualiza la masa del vehículo y, por ende, los datos de inercia.
+
+    - **Actualización de Ganancias:** Actualiza las ganancias de control de actitud en pitch (elevación), yaw (guía) y roll, basándose en los datos de masa actualizados.
+
+  - Corrección y Reajustes:
+
+    - **Corrección de Un Solo Disparos:** Realiza ajustes únicos en el bucle TMC (Throttle Maneuver Control) poco después de la ignición.
+
+    - **Corrección Repetitiva:** Ejecuta correcciones repetitivas para el bucle TMC después de la corrección de un solo disparo.
+  
+  - Llamadas y Secuencia de Ejecución:
+
+    - TVCEXEC es llamado como una tarea en la lista de espera por TVCINIT4 y por sí mismo a intervalos de 0.5 segundos.
+
+      - **Verificación de Terminación:** El código primero verifica si debe terminarse, usando un chequeo de bits en la palabra de bandera (FLAGWRD6).
+
+      - **Preparación de Datos:** Luego prepara diversos datos y actualiza los indicadores y sistemas necesarios.
+
+    - Actualización y Manejo de Errores:
+
+      - **Preparación del DAP:** Actualiza el DAP y otros componentes con los errores actuales y los datos de control.
+
+      - **Actualización de Needles:** Llama a una subrutina para actualizar los indicadores de actitud.
+
+    - Manejo de Ganancias y Correcciones:
+
+      - **Chequeo del Estado del Motor:** Verifica si el motor está encendido para decidir si se deben actualizar las ganancias y la masa.
+
+      - **Actualización de Ganancias y Masa:** Realiza ajustes basados en el estado actual del motor y actualiza las ganancias y datos de masa.
+
+    - Correcciones de Un Solo Disparo y Repetitivas:
+
+      - **Chequeo de Tiempo:** Verifica el tiempo para decidir cuándo realizar una corrección de un solo disparo o una corrección repetitiva.
+
+      - **Ajustes y Correcciones:** Realiza correcciones según sea necesario, basándose en el estado de las correcciones anteriores.
+
+    - Subrutinas Importantes:
+
+      - **NEEDLER:** Actualiza los indicadores de actitud (needles).
+      - **MASSPROP:** Actualiza la masa y las propiedades relacionadas.
+      - **IBNKCALL:** Llama a una subrutina de banco de instrucciones para realizar operaciones específicas.
+
+    - Salidas y Variables:
+
+      - **ROLL DAP, FDAI Needle, y Phase Plane:** Se actualizan con los valores más recientes para el control del roll.
+      - **Ganancias Variables:** Se ajustan para el pitch, yaw y roll basados en los datos más recientes.
+      - **Correcciones de Ángulo de Motor:** Se ajustan los ángulos de trim del motor y otros parámetros relevantes.
+  
+  - Código de ensamblador:
+
+    <!-- - [TVCEXECUTIVE.agc](assets\img\post\apollo11\code\TVCEXECUTIVE.agc) -->
 
 [https://ntrs.nasa.gov/](https://ntrs.nasa.gov/)
 [The Apollo Guidance Computer: Architecture and Operation](https://nss.org/book-review-the-apollo-guidance-computer-architecture-and-operation/)
 [https://github.com/chrislgarry/Apollo-11](https://github.com/chrislgarry/Apollo-11)
 [http://www.ibiblio.org/apollo/#gsc.tab=0](http://www.ibiblio.org/apollo/#gsc.tab=0)
+[https://www.nasa.gov/history/alsj/main.html](https://www.nasa.gov/history/alsj/main.html)
+[https://www.nasa.gov/history/alsj/alsj-LMdocs.html](https://www.nasa.gov/history/alsj/alsj-LMdocs.html)
 
 ## UC
