@@ -177,8 +177,6 @@ En las siguientes secciones, exploraremos varios archivos de código fuente, cla
 
 Analizaremos el propósito de cada archivo, su estructura y las innovaciones técnicas que hicieron posible la realización de estas funciones vitales en el entorno hostil del espacio.
 
-<!-- METER EXPLICACIÓN DE LOS NOMBRES DE LOS ARCHIVOS ETC -->
-
 - **AGC_BLOCK_TWO_SELF_CHECK.agc**
 
   - Descripción del Programa:
@@ -238,7 +236,7 @@ Analizaremos el propósito de cada archivo, su estructura y las innovaciones té
 
   - Código de Ensamblador:
 
-    <!-- - [AGC_BLOCK_TWO_SELF_CHECK.agc](assets\img\post\apollo11\code\AGC_BLOCK_TWO_SELF_CHECK.agc) -->
+    - [AGC_BLOCK_TWO_SELF_CHECK.agc](assets\img\post\apollo11\code\AGC_BLOCK_TWO_SELF_CHECK.agc)
 
 ### Archivos del Módulo Lunar (LM)
 
@@ -306,7 +304,7 @@ Luminary 099 es especialmente notable porque fue la versión utilizada durante l
   
   - Código de Ensamblador:
 
-    <!-- - [ASCENT_GUIDANCE.agc](assets\img\post\apollo11\code\ASCENT_GUIDANCE.agc) -->
+    - [ASCENT_GUIDANCE.agc](assets\img\post\apollo11\code\ASCENT_GUIDANCE.agc)
 
 - **BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc**
   
@@ -345,7 +343,7 @@ Luminary 099 es especialmente notable porque fue la versión utilizada durante l
 
     - Código de Ensamblador:
 
-    <!-- - [BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc](assets\img\post\apollo11\code\BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc) -->
+      - [BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc](assets\img\post\apollo11\code\BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc)
 
 - **LANDING_ANALOG_DISPLAYS.agc**
   
@@ -471,7 +469,7 @@ Luminary 099 es especialmente notable porque fue la versión utilizada durante l
 
   - Código de Ensamblador:
 
-  <!-- - [LANDING_ANALOG_DISPLAYS.agc](assets\img\post\apollo11\code\LANDING_ANALOG_DISPLAYS.agc) -->
+    - [LANDING_ANALOG_DISPLAYS.agc](assets\img\post\apollo11\code\LANDING_ANALOG_DISPLAYS.agc)
 
 - **THE_LUNAR_LANDING.agc**
   
@@ -789,7 +787,7 @@ Luminary 099 es especialmente notable porque fue la versión utilizada durante l
 
   - Código de Ensamblador:
 
-  <!-- - [THE_LUNAR_LANDING.agc](assets\img\post\apollo11\code\THE_LUNAR_LANDING.agc) -->
+    - [THE_LUNAR_LANDING.agc](assets\img\post\apollo11\code\THE_LUNAR_LANDING.agc)
 
 ### Archivos del Módulo de Comando y Servicio (CSM)
 
@@ -843,7 +841,7 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
   
   - Código de ensamblador:
 
-    <!-- - [CM_BODY_ATTITUDE.agc](assets\img\post\apollo11\code\CM_BODY_ATTITUDE.agc) -->
+    - [CM_BODY_ATTITUDE.agc](assets\img\post\apollo11\code\CM_BODY_ATTITUDE.agc)
 
 - **IMU_CALIBRATION_AND_ALIGNMENT.agc**
 
@@ -889,7 +887,7 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
   
   - Código de ensamblador:
 
-    <!-- - [IMU_CALIBRATION_AND_ALIGNMENT.agc](assets\img\post\apollo11\code\IMU_CALIBRATION_AND_ALIGNMENT.agc) -->
+    - [IMU_CALIBRATION_AND_ALIGNMENT.agc](assets\img\post\apollo11\code\IMU_CALIBRATION_AND_ALIGNMENT.agc)
   
 - **ORBITAL_INTEGRATION.agc**
   
@@ -957,7 +955,7 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
   
   - Código de ensamblador:
 
-    <!-- - [ORBITAL_INTEGRATION.agc](assets\img\post\apollo11\code\ORBITAL_INTEGRATION.agc) -->
+    - [ORBITAL_INTEGRATION.agc](assets\img\post\apollo11\code\ORBITAL_INTEGRATION.agc)
 
 - **TVCEXECUTIVE.arg**
 
@@ -1025,7 +1023,7 @@ Para entender cómo el módulo de comando y servicio (CSM) del Apollo 11 manejó
   
   - Código de ensamblador:
 
-    <!-- - [TVCEXECUTIVE.agc](assets\img\post\apollo11\code\TVCEXECUTIVE.agc) -->
+    - [TVCEXECUTIVE.agc](assets\img\post\apollo11\code\TVCEXECUTIVE.agc)
 
 [https://ntrs.nasa.gov/](https://ntrs.nasa.gov/)
 [The Apollo Guidance Computer: Architecture and Operation](https://nss.org/book-review-the-apollo-guidance-computer-architecture-and-operation/)
