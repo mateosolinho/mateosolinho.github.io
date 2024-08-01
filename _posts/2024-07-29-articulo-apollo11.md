@@ -1,6 +1,6 @@
 ---
 title: Explorando el Código Fuente del Apollo 11 - Un Viaje al Corazón de la Computación Espacial
-date: 2024-07-29 20:00:00 +0800
+date: 2024-07-31 20:00:00 +0800
 categories: [Tecnología, Articulos]
 tags: [Apollo 11, AGC, AGS, Computación Espacial, RocketScience, Tecnología Espacial]
 image:
