@@ -112,3 +112,5 @@ El Airbus A320 fue el primer avión comercial en incorporar Fly-by-Wire como sis
 
 3. Air France 447
     - Aunque este accidente resaltó deficiencias humanas y técnicas, el FBW evitó daños mayores al neutralizar entradas erróneas extremas realizadas por los pilotos durante el vuelo.
+
+# UC (UNDER CONSTRUCTION)
