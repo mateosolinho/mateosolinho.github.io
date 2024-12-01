@@ -113,4 +113,14 @@ El Airbus A320 fue el primer avión comercial en incorporar Fly-by-Wire como sis
 3. Air France 447
     - Aunque este accidente resaltó deficiencias humanas y técnicas, el FBW evitó daños mayores al neutralizar entradas erróneas extremas realizadas por los pilotos durante el vuelo.
 
-# UC (UNDER CONSTRUCTION)
+## Flight Management System (FMS)
+
+El Flight Management System (FMS) es uno de los sistmas más sofisticados e importantes de la aviación moderna, considerado el "cerebro" del avión por su capacidad para gestionar múltiples aspectos del vuelo de manera autónoma, este sistema integra diversas fuentes para garantizar que cada vuelo sea lo más eficiente, seguro y predecible posible.
+
+**Funciones Principales del FMS**
+
+El FMS tiene como tarea central la gestión de plan de vuelo, optimizando la ruta, el consumo de combustible y la altitud en tiempo real. Para lograr esto, se basa en varias funciones clave:
+
+- Cálculo de Rutas: El FMS utiliza bases de datos que incluyen aeropuertos, rutas predefinidas (airways) y restricciones de altitud para crear el plan de vuelo más eficiente posible, este plan incluye todos los puntos de navegación (waypoints) que el avión deberá seguir.
+- Gestión de Performance: Durante el vuelo, el FMS supervisa parámetros como el peso del avión, la carag de combustible y las condiciones meteorológicas para ajustar continuamente el plan y mejorar la eficiencia.
+- Autonomía Operativa: El sistema puede calcular automáticamente las fases de ascenso, crucero y descenso, ajustando factores como la velocidad y la altitud para adaptarse a las condiciones dinámicas en las distintas fases del vuelo.
