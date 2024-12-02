@@ -166,3 +166,28 @@ El FMS ha demostrado ser una herramienta clave en incidentes y operaciones cotid
 
 - Vuelo United Airlines 232 (1989): Aunque el FMS no evitó el accidente, fue fundamental en la coordinación de las acciones del piloto para mantener el avión bajo control tras la pérdida de los sistemas hidráulicos.
 - Optimización Operativa: Durante la pandemia de COVID-19, los FMS ayudaron a las aerolíneas a reducir costos ajustando las rutas y el consumo de combustible, siendo un aliado crucial para sobrevivir en un entorno de bajas operaciones.
+
+## Sistemas de Piloto Automático (Autopilot)
+
+El Sistema de Piloto Automático es uno de los mayores avances en la aviación moderna, diseñado para reducir la carga de trabajo de los pilotos, este sistema puede controlar el avión durante la mayoría de las fases del vuelo, desde el despegue hasta el aterrizaje, dependiendo de la complejidad del modelo. Los pilotos automáticos no reemplazan a los humanos, pero son una herramienta vital para aumentar la eficiencia, la precisión y la seguridad del vuelo.
+
+### Como Funciona el Piloto Automático
+
+El piloto automático utiliza una combinación de sensores, sistemas de navegación y software para controlar las superficies de vuelo del avión (alerones, elevadores, timones) y mantenerlo en la trayectoria deseada.
+
+1. Entrada de Datos:
+
+    El sistema recibe información en tiempo real de múltiples fuentes, incluyendo:
+
+    - Sensores Inerciales: Proveen datos sobre la posición y orientación del avión (acelerómetros y giroscopios)
+    - GPS y sistema de navegación: Para determinar la posición exacta y ajustar el rumbo.
+    - Altímetros barométricos: Para mantener una altitud constante.
+
+2. Control mediante Algoritmos PID:
+
+    El núcleo del piloto automático son los algoritmos PID (Proporcional-Integral-Derivativo), un método clásico en la ingeniería de control, este algoritmo ajusta continuamente las superficies de control del avión basándose en los errores entre las condiciones actuales y los parámetros deseados (como altitud o velocidad).
+
+    - Proporcional (P): Corrige desviaciones inmediatamente en proporción al error.
+    - Integral (I): Ajusta errores acumulados a lo largo del tiempo (para corregir pequeños desvíos persistentes).
+    - Derivativo (D): Actúa sobre el ritmo de cambio del error para suavizar las correciones.
+ 
