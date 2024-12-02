@@ -88,6 +88,7 @@ Dado que el FBW reemplaza controles críticos, su diseño se basa en arquitectur
 - Las pruebas incluyen simulaciones de fallos, condiciones extremas y análisis de confiabilidad para garantizar la robustez del sistema.
 
 ### Ventajas del Fly-By-Wire
+
 1. Reducción de Peso y Complejidad:
     - Elimina la necesidad de largos cables mecánicos y sistemas hidráulicos pesados.
 
@@ -101,6 +102,7 @@ Dado que el FBW reemplaza controles críticos, su diseño se basa en arquitectur
     - Los sistemas digitales son más fáciles de diagnosticar y reparar que los mecánicos.
 
 ### Casos Reales de Éxito del Fly-by-Wire
+
 1. Airbus A320: Primer Avión Comercial con FBW Total
 El Airbus A320 fue el primer avión comercial en incorporar Fly-by-Wire como sistema principal de control. Este avance introdujo:
     - Protección del Envolvente de Vuelo: Ayudó a evitar maniobras peligrosas por errores humanos.
@@ -113,14 +115,54 @@ El Airbus A320 fue el primer avión comercial en incorporar Fly-by-Wire como sis
 3. Air France 447
     - Aunque este accidente resaltó deficiencias humanas y técnicas, el FBW evitó daños mayores al neutralizar entradas erróneas extremas realizadas por los pilotos durante el vuelo.
 
+> En el desarrollo del FBW de Airbus, se utilizó Ada para programar los controladores principales, los cálculos aerodinámicos y las simulaciones de vuelo, esenciales para el desarrollo y prueba del sistema, fueron implementados en lenguajes como MATLAB y Fortran, que siguen siendo herramientas clave en la industria aeroespacial.
+
 ## Flight Management System (FMS)
 
 El Flight Management System (FMS) es uno de los sistmas más sofisticados e importantes de la aviación moderna, considerado el "cerebro" del avión por su capacidad para gestionar múltiples aspectos del vuelo de manera autónoma, este sistema integra diversas fuentes para garantizar que cada vuelo sea lo más eficiente, seguro y predecible posible.
 
-**Funciones Principales del FMS**
+### Funciones Principales del FMS
+
+> Los FMS modernos están diseñados utilizando lenguajes como C y Ada, debido a su confiabilidad en sistemas críticos en tiempo real, estos permiten escribir software que gestiona tareas concurrentes, como el cálculo de rutas y el procesamiento de señales provenientes de múltiples sensores.
 
 El FMS tiene como tarea central la gestión de plan de vuelo, optimizando la ruta, el consumo de combustible y la altitud en tiempo real. Para lograr esto, se basa en varias funciones clave:
 
 - Cálculo de Rutas: El FMS utiliza bases de datos que incluyen aeropuertos, rutas predefinidas (airways) y restricciones de altitud para crear el plan de vuelo más eficiente posible, este plan incluye todos los puntos de navegación (waypoints) que el avión deberá seguir.
 - Gestión de Performance: Durante el vuelo, el FMS supervisa parámetros como el peso del avión, la carag de combustible y las condiciones meteorológicas para ajustar continuamente el plan y mejorar la eficiencia.
 - Autonomía Operativa: El sistema puede calcular automáticamente las fases de ascenso, crucero y descenso, ajustando factores como la velocidad y la altitud para adaptarse a las condiciones dinámicas en las distintas fases del vuelo.
+
+### Optimización y Algoritmos de Consumo de combustible
+
+Uno de los aspectos más críticos del FMS es su capacidad para optimizar el consumo de combustible, los algoritmos avanzados del sistema analizan en tiempo real factores como:
+- Condiciones Meteorológicas: Utilizando datos meteorológicos actualizados, el FMS puede evitar zonas de fuerte viento en contra o aprovechar corrientes de aire favorables (jet streams).
+- Carga y Peso: Calcula el equilibrio ideal entre velocidad y altitud para el peso actual del avión, maximizando la eficiencia.
+- Tráfico Aéreo: Integra restricciones impuestas por los controladores aéreos para encontrar la ruta más corta posible sin comprometer la seguridad.
+- Trayectoria 4D: No solo calcula el camino más eficiente en el espacio (3D), sino también el tiempo ideal para llegar a cada waypoint, garantizando un uso óptimo del combustible.
+
+> La optimización en tiempo real es posible gracias a técnicas de programación como la programación lineal y el uso de algoritmos heurísticos para encontrar soluciones rápidas en entornos complejos, además se implementan sistemas de inteligencia artificial escritos en Python o C++ para predicción meteorológica y análisis de datos históricos.
+
+### Integración con GPS y Radares Meteorológicos
+
+El FMS está diseñado para trabajar en conjunto con otros sistemas avanzados como:
+
+- Sistemas de GPS: El FMS utiliza señales GPS para determinar la posición exacta del avión en todo momento. Esto permite ajustar el plan de vuelo en tiempo real con una precisión milimétrica, incluso en condiciones de baja visibilidad.
+- Radares Meteorológicos: Estos radares detectan condiciones adversas, como tormentas o turbulencias. El FMS interpreta estos datos y, si es necesario, modifica automáticamente la trayectoria para garantizar un vuelo seguro.
+- Sistemas Inerciales (INS): Como respaldo al GPS, los sistemas de navegación inercial permiten al FMS seguir funcionando con precisión durante periodos en los que la señal GPS pueda ser débil o esté bloqueada.
+
+> Los FMS dependen de sistemas distribuidos, con software que se ejecuta en múltiples ordenadores de forma paralela. Los lenguajes como C++ son esenciales aquí por su capacidad de manejar comunicación entre sistemas en tiempo real, además, los protocolos de comunicación, como ARINC 429, son codificados para garantizar interoperabilidad entre sensores, radares y sistemas de navegación.
+
+### Ejemplos de Implementación
+
+Los FMS varían entre fabricantes, pero tanto Airbus como Boeing han desarrollado sistemas altamente avanzados que han revolucionado la gestión del vuelo:
+
+- Airbus: El FMS del Airbus A320 incluye capacidades de optimización en tiempo real que ajustan constantemente la altitud y el consumo de combustible según las condiciones del vuelo.
+- Boeing: Los sistemas FMS del Boeing 777 y 787 Dreamliner por ejemplo están diseñados para largos vuelos intercontinentales, maximizando la eficiencia mediante algoritmos avanzados que tienen en cuenta trayectorias de largo alcance.
+
+> En los aviones modernos, los sistemas FMS se ejecutan en hardware embebido con sistemas operativos en tiempo real (RTOS), el código suele estar certificado bajo estándares como DO-178C, que como comentamos antes, regula el desarrollo de software aeronáutico.
+
+### Casos Reales de Impacto
+
+El FMS ha demostrado ser una herramienta clave en incidentes y operaciones cotidianas:
+
+- Vuelo United Airlines 232 (1989): Aunque el FMS no evitó el accidente, fue fundamental en la coordinación de las acciones del piloto para mantener el avión bajo control tras la pérdida de los sistemas hidráulicos.
+- Optimización Operativa: Durante la pandemia de COVID-19, los FMS ayudaron a las aerolíneas a reducir costos ajustando las rutas y el consumo de combustible, siendo un aliado crucial para sobrevivir en un entorno de bajas operaciones.
