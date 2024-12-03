@@ -190,4 +190,48 @@ El piloto automático utiliza una combinación de sensores, sistemas de navegaci
     - Proporcional (P): Corrige desviaciones inmediatamente en proporción al error.
     - Integral (I): Ajusta errores acumulados a lo largo del tiempo (para corregir pequeños desvíos persistentes).
     - Derivativo (D): Actúa sobre el ritmo de cambio del error para suavizar las correciones.
- 
+
+> Los controladores PID suelen ser programados en lenguajes como C, C++ y Python, especialmente para prototipos y simulaciones, herramientas como MATLAB/Simulink se utilizan ampliamente para modelar y probar estos algoritmos antes de implementarlos en hardware real.
+
+3. Fases del Vuelo Controladas:
+
+    Dependiendo del nivel de automatización, el piloto automático puede realizar tareas como:
+
+    - Crucero: Mantener la altitud, velocidad y rumbo especificados por el plan de vuelo.
+    - Gestión de Rutas: Integrado con el Flight Management System (FMS), ajusta automáticamente la trayectoria según el plan de vuelo preprogramado.
+    - Aterrizaje Automático: En aeronaves modernas como el Airbus A350 o el Boeing 787, el piloto automático puede realizar aterrizajes de precisión (categoría III), incluso con visibilidad nula.
+
+### Escenario de Emergencia
+
+Además de su rol en vuelos rutinarios, el piloto automático puede ser una herramienta crucial en situaciones de emergencia.
+
+  1. Gestión de Condiciones Meteorológicas Adversas:
+    
+    - Al integrarse con los radares meteorológicos, el sistema puede ajustar automáticamente la altitud o el rumbo para evitar turbulencias severas o tormentas.
+    - El software del piloto automático está diseñado para priorizar la estabilidad de la aeronave, ajustando los controles para evitar situaciones críticas como pérdidas de sustentación.
+
+  2. Sistemas de Alerta de Colisión:
+
+    - El piloto automático puede integrarse con el Traffic Collision Avoidance System (TCAS) para evitar colisiones con otras aeronaves.
+    - En caso de una posible colisión, el sistema ajusta automáticamente la altitud o la trayectoria para mantener una distancia segura, según las recomendaciones del TCAS.
+
+  3. Desvío Automático:
+
+    - En caso de emergencias médicas a bordo o problemas técnicos, el piloto automático puede desviar el avión al aeropuerto más cercano, utiliza datos del FMS, como el alcance del combustible y las características del aeropuerto, para seleccionar la mejor opción.
+
+> Los sistemas de piloto automático de emergencia son desarrollados con lenguajes como Ada, debido a su alta seguridad y resistencia a errores, la programación de sistemas TCAS y de navegación avanzada también puede incluir C++, que permite trabajar con hardware de alto rendimiento y baja latencia.
+
+### Ejemplos Reales de Implementación
+
+1. Autoland en Airbus y Boeing:
+
+  - En aviones como el Airbus A350 y el Boeing 787 Dreamliner, el piloto automático puede aterrizar el avión con precisión milimétrica en condiciones de baja visibilidad.
+  - Estos sistemas están certificados para cumplir con estándares de nuevo, como DO-178C, que regula el desarrollo de software crítico en la aviación.
+
+2. El Caso del Vuelo Qantas 72:
+
+  - En 2008, un Airbus A330 sufrió un fallo en su sistema de datos inerciales, el piloto automático, junto con los sistemas FBW, ayudó a estabilizar el avión, minimizando el impacto de la situación antes de que los pilotos tomaran el control manual.
+
+### Impacto en la Aviación
+
+El piloto automático ha cambiado completamente la forma en la que se opera un avión, no solo reduce la carga de trabajo de los pilotos, sino que también mejora la seguridad y eficiencia del vuelo. En combinación con otros sistemas como el FMS y el FBW, el piloto automático representa la cúspide de la integración entre programación avanzada y aviación moderna.
