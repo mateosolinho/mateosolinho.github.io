@@ -235,3 +235,5 @@ Además de su rol en vuelos rutinarios, el piloto automático puede ser una herr
 ### Impacto en la Aviación
 
 El piloto automático ha cambiado completamente la forma en la que se opera un avión, no solo reduce la carga de trabajo de los pilotos, sino que también mejora la seguridad y eficiencia del vuelo. En combinación con otros sistemas como el FMS y el FBW, el piloto automático representa la cúspide de la integración entre programación avanzada y aviación moderna.
+
+# UC 
