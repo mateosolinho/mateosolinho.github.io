@@ -236,4 +236,53 @@ Además de su rol en vuelos rutinarios, el piloto automático puede ser una herr
 
 El piloto automático ha cambiado completamente la forma en la que se opera un avión, no solo reduce la carga de trabajo de los pilotos, sino que también mejora la seguridad y eficiencia del vuelo. En combinación con otros sistemas como el FMS y el FBW, el piloto automático representa la cúspide de la integración entre programación avanzada y aviación moderna.
 
+## Sistemas de Alerta y Prevención de Colisiones (TCAS)
+
+El TCAS (Traffic Collision Avoidance System) es un sistema crucial en la aviación moderna para evitar colisiones en el aire, utiliza datos de transpondedores y sensores de altitud para identificar aeronaves cercanas que puedan representar una amenaza. El TCAS predice la trayectoria de estos aviones y toma decisiones en tiempo real, proporcionando alertas y recomendaciones al piloto sobre cómo proceder para evitar un choque.
+
+### Funcionamiento del TCAS
+
+1. Sensores y Transpondedores:
+
+    El TCAS se basa principalmente en los transpondedores de las aeronaves y radar. Los transpondedores envían información sobre la ubicación, velocidad y altitud de la aeronave a otras aeronaves en su proximidad.
+
+    - Transpondedor de modo A/C (Radar Primario y Secundario): Utiliza señales radar para transmitir y recibir información de otras aeronaves.
+    - Transpondedor de modo S (Radar Secundario): Ofrece una mayor precisión, permitiendo la identificación exacta de las aeronaves cercanas, además de proporcionar información adicional sobre la aeronave.
+
+2. Algoritmos de Predicción de Colisiones:
+
+    Una vez que el TCAS recibe los datos del transpondedor, utiliza algoritmos de predicción de trayectorias para calcular si hay una posible amenaza de colisión.
+
+    - Predicción de Trayectorias: El TCAS analiza los vectores de velocidad y altitud de las aeronaves cercanas y predice su trayectoria a lo largo del tiempo. Si se detecta una posible intersección de estas trayectorias, el sistema genera una alerta.
+    - Manejo de la Prioridad de Evitación: El TCAS asigna una prioridad para la evasión de colisiones, determinando qué aeronave debería maniobrar en caso de una amenaza. Dependiendo de la situación, el sistema indicará al piloto si debe ascender, descender o mantener el curso.
+
+> Los algoritmos de predicción y evasión del TCAS requieren programación en tiempo real y deben ser altamente confiables, lenguajes como C y Ada son ampliamente utilizados en la programación de estos sistemas debido a su capacidad para manejar operaciones en tiempo real con alta precisión. Además, se usan técnicas de procesamiento de señales y análisis de datos para identificar patrones en los movimientos de otras aeronaves.
+
+3. Interfaz con el Piloto:
+
+    Si el TCAS detecta una posible colisión, genera alertas en la cabina:
+
+    - RA (Resolution Advisory): Una recomendación activa que indica al piloto que realice una maniobra evasiva (ascender o descender) para evitar la colisión.
+    - TA (Traffic Advisory): Una alerta pasiva que indica la presencia de una aeronave cercana, pero sin necesidad de maniobras evasivas inmediatas.
+
+    El piloto recibe estas alertas a través de pantallas en la cabina, que indican la dirección en la que debe maniobrar, ayudando a evitar la colisión sin necesidad de intervención directa de los controladores aéreos.
+
+### Desafíos de Sincronización
+
+Uno de los mayores desafíos del TCAS es la sincronización de la información en zonas con varios aviones utilizando el sistema. Esta sincronización es crítica para evitar interferencias y garantizar que las alertas sean precisas y relevantes.
+
+1. Múltiples Aeronaves en la Mismma Zona:
+
+    Cuando varias aeronaves están en las cercanías, pueden estar utilizando el sistema TCAS, lo que aumenta la complejidad de la gestión de la información. El sistema debe ser capaz de:
+
+    - Distinguir las aeronaves: El TCAS necesita identificar cada aeronave individualmente, lo que requiere técnicas avanzadas de filtrado de señales y seguimiento de objetivos.
+    - Sincronización de Alertas: Si dos aeronaves se están aproximando a la misma zona, el sistema debe asegurarse de que las alertas de resolución (RA) no se solapen, lo que podría causar confusión en los pilotos. El TCAS debe generar alertas de manera que se minimicen los riesgos de maniobras evasivas conflictivas entre aeronaves.
+
+2. Interferencia de Señales:
+
+    El TCAS también debe gestionar las interferencias de señal provenientes de otros sistemas electrónicos a bordo (como el radar o sistemas de comunicación) que podrían afectar la precisión del sistema. Para mitigar estos efectos, se utilizan técnicas de filtrado digital y procesamiento de señales avanzadas.
+
+> Los algoritmos que gestionan la sincronización de datos y la resolución de conflictos entre aeronaves cercanas se basan en programación en tiempo real, los lenguajes más utilizados incluyen C para la programación de sistemas embebidos y Ada para aplicaciones de alta seguridad, ya que estos lenguajes ofrecen fiabilidad y control de bajo nivel esenciales para evitar fallos, la teoría de sistemas distribuidos y los algoritmos de consenso también se emplean para garantizar que los datos sean sincronizados correctamente entre todas las aeronaves que utilizan TCAS en la misma área.
+
+
 # UC 
