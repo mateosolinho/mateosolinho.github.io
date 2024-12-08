@@ -399,4 +399,206 @@ La redundancia es un principio esencial en el diseño de sistemas eléctricos ae
 
     - La recopilación de datos en tiempo real permite identificar tendencias que podrían conducir a fallos, programando mantenimiento antes de que ocurran problemas.
 
-# UC 
+## 7. Cabinas de Cristal (Glass Cockpits)
+
+Las cabinas de cristal, conocidas como Glass Cockpits, han revolucionado la forma en que los pilotos interactúan con los sistemas del avión, al sustituir los instrumentos analógicos tradicionales por pantallas digitales multifunción, estas cabinas han mejorado la ergonomía, la eficiencia y la seguridad de los vuelos modernos.
+
+### Pantallas Digitales en el Cockpit
+
+Las cabinas de cristal están equipadas con pantallas avanzadas que integran información clave para el vuelo, como:
+
+1. Primary Flight Display (PFD):
+
+    - Muestra datos críticos como velocidad, altitud, actitud del avión, rumbo y variación vertical.
+
+2. Navigation Display (ND):
+
+    - Proporciona información sobre la ruta, posición del avión y datos de navegación, como puntos de referencia y aeropuertos cercanos.
+
+3. Radar Meteorológico:
+
+    - Representa gráficamente condiciones meteorológicas cercanas, alertando sobre turbulencias o tormentas.
+
+4. Engine Indication and Crew Alerting System (EICAS) o Electronic Centralized Aircraft Monitor (ECAM):
+
+    - Supervisa y muestra el estado de los sistemas del avión, incluidos motores, combustible y sistemas hidráulicos.
+
+Estas pantallas no solo consolidan datos, sino que también se adaptan al contexto del vuelo, resaltando la información más relevante en cada fase, como el despegue, el crucero o el aterrizaje.
+
+### Programación de PFD y ND
+
+La programación de las pantallas en las cabinas de cristal es un desafío técnico que requiere garantizar alta precisión, confiabilidad y tiempos de respuesta en tiempo real.
+
+1. Lenguajes de Programación Utilizados:
+
+    - Ada:
+
+        - Ampliamente utilizado en sistemas críticos por su capacidad de manejar errores y garantizar la integridad de los datos.
+        - Ideal para las pantallas PFD y ND, donde un fallo en la visualización podría comprometer la seguridad del vuelo.
+
+    - C++:
+
+        - Proporciona flexibilidad y control sobre el hardware, siendo clave para manejar gráficos avanzados y la integración de múltiples sistemas.
+
+    - OpenGL y Vulkan:
+
+        - Para el renderizado de gráficos en tiempo real, especialmente en simulaciones meteorológicas o mapas de navegación.
+
+2. Requisitos Técnicos:
+
+    - Tiempo Real: Las pantallas deben actualizarse con información al instante para reflejar cambios en altitud, rumbo, o condiciones meteorológicas. Esto se logra utilizando sistemas operativos en tiempo real (RTOS) que priorizan tareas críticas.
+    - Redundancia: En caso de fallo de una pantalla, los sistemas están diseñados para redistribuir la información en otras pantallas disponibles.
+    - Interfaz de Usuario: Los sistemas integran elementos visuales diseñados para reducir la carga cognitiva del piloto, con un enfoque en colores, tamaños y alertas intuitivas.
+
+### Ventajas Operativas
+
+1. Integración de Datos:
+
+    - Los Glass Cockpits consolidan datos de múltiples sistemas, eliminando la necesidad de que los pilotos supervisen múltiples instrumentos analógicos.
+
+2. Mayor Seguridad:
+
+    - Las alertas en tiempo real y la representación visual intuitiva permiten a los pilotos reaccionar más rápido ante emergencias o condiciones cambiantes.
+
+3. Adaptabilidad:
+
+    - Estos sistemas pueden ser actualizados con nuevos algoritmos o software para adaptarse a las necesidades de cada aeronave o aerolínea.
+
+### Ejemplo Práctico
+
+Aviones como el Airbus A320neo o el Boeing 787 Dreamliner son pioneros en el uso de cabinas de cristal, estos modelos cuentan con sistemas integrados que incluso permiten a los pilotos interactuar con las pantallas mediante interfaces táctiles o joysticks, eliminando aún más la necesidad de instrumentos analógicos.
+
+### Conexión con Sistemas Externos
+
+Las cabinas de cristal no funcionan de forma aislada; están conectadas con sistemas como el Flight Management System (FMS) y el Traffic Collision Avoidance System (TCAS) para proporcionar datos en tiempo real sobre rutas, consumo de combustible, o alertas de colisión.
+
+## Sistema de Control Ambiental (ECS)
+
+Los Sistemas de Control Ambiental (ECS) son fundamentales para garantizar la comodidad y seguridad de pasajeros y tripulación durante el vuelo, estos sistemas se encargan de regular factores críticos como la temperatura, presión y calidad del aire en la cabina, ajustándose dinámicamente a las condiciones externas y a las necesidades internas.
+
+### Monitoreo y Regulación del Aire
+
+El ECS combina hardware avanzado con software especializado para monitorear y regular el ambiente dentro del avión:
+
+1. Sensores de Calidad del Aire:
+
+    - Miden parámetros como la presión, temperatura, humedad y concentración de oxígeno en la cabina.
+    - Detectan impurezas o contaminantes en el aire, ajustando los filtros y la ventilación según sea necesario.
+
+2. Regulación de Presión y Temperatura:
+
+    - Presurización: En altitudes superiores a 10,000 pies, el aire exterior no es respirable. El ECS utiliza compresores y válvulas de control para mantener la presión dentro de la cabina a niveles seguros (generalmente equivalentes a una altitud de entre 6,000 y 8,000 pies).
+    - Control de Temperatura: Ajusta automáticamente los sistemas de calefacción y enfriamiento para mantener una temperatura constante y cómoda.
+
+3. Entrada de Aire Fresco:
+
+    - El ECS combina aire del exterior con aire reciclado filtrado, asegurando un flujo constante de aire limpio. Esto no solo mejora la calidad del aire, sino que también optimiza el consumo energético.
+
+### Programación y Algoritmos del ECS
+
+La eficiencia del ECS depende en gran medida del software que gestiona sus funciones.
+
+1. Lenguajes Utilizados:
+
+    - Ada y C: Se emplean para la programación de sistemas críticos, debido a su confiabilidad en entornos de tiempo real.
+    - MATLAB/Simulink: Utilizados durante la fase de desarrollo para simular el comportamiento del sistema y optimizar los algoritmos de control.
+
+2. Algoritmos Clave:
+
+    - Control PID (Proporcional-Integral-Derivativo): Este algoritmo ajusta en tiempo real la presión y temperatura, asegurando una respuesta rápida a cambios en la altitud o las condiciones internas de la cabina.
+    - Modelos Predictivos: Los sistemas modernos integran algoritmos predictivos que anticipan cambios en el entorno, como descensos rápidos, y ajustan los parámetros antes de que los pasajeros lo perciban.
+
+3. Redundancia del Sistema:
+
+    - El ECS cuenta con software redundante que toma el control en caso de fallos, asegurando que las condiciones de la cabina se mantengan estables incluso si un componente del sistema deja de funcionar.
+
+### Casos de Estudio
+
+Un ejemplo notable del impacto del ECS es el control de presurización en vuelos de gran altitud:
+
+- Vuelo Comercial a 35,000 pies: A estas alturas, el aire exterior tiene una presión tan baja que no es posible respirar sin ayuda. El ECS presuriza la cabina de forma automática, tomando aire del motor y comprimiéndolo para simular una altitud segura dentro de la cabina.
+- Caso de Emergencia: En el famoso incidente del vuelo Helios Airways 522 (2005), una falla en el ECS causó la despresurización de la cabina, resultando en la pérdida de conciencia de la tripulación y pasajeros. Este evento subrayó la importancia de sistemas de control ambiental robustos y su programación precisa para detectar y mitigar fallos.
+
+## Sistemas de Radar y Sensores Modernos
+
+Los sistemas de radar y sensores modernos han revolucionado la aviación, proporcionando datos precisos en tiempo real para la toma de decisiones y mejorando la seguridad de los vuelos en condiciones adversas, estos sistemas dependen de tecnologías avanzadas, algoritmos y software para interpretar grandes volúmenes de información.
+
+### Radar Meteorológico y Predicción de Turbulencias
+
+Los radares meteorológicos a bordo son fundamentales para detectar y evitar fenómenos meteorológicos adversos, como tormentas, turbulencias y cambios bruscos en el viento.
+
+1. Funcionamiento del Radar Meteorológico:
+
+    - Emite pulsos de energía de microondas hacia la atmósfera y mide la reflexión de estas ondas en partículas como gotas de agua o cristales de hielo.
+    - Genera un mapa en tiempo real de la actividad meteorológica en la ruta de vuelo.
+
+2. Procesamiento de Datos en Tiempo Real:
+
+    - Los algoritmos integrados procesan rápidamente los datos obtenidos para identificar regiones de riesgo.
+    - Técnicas de Machine Learning están comenzando a ser utilizadas para mejorar la predicción de turbulencias a partir de patrones meteorológicos complejos.
+
+3. Lenguajes y Software:
+
+    - C++ y Python son comunes en el desarrollo de estos sistemas debido a su capacidad para manejar grandes volúmenes de datos y realizar cálculos complejos.
+    - Los sistemas también pueden integrar plataformas como MATLAB para análisis y simulaciones durante el diseño.
+
+4. Ejemplos de Uso:
+
+    - En aviones modernos como el Boeing 787 y el Airbus A350, los radares meteorológicos pueden predecir turbulencias hasta 60 millas náuticas por delante, ajustando automáticamente la altitud o la ruta para evitarlas.
+
+### Sensores Infrarrojos y Cámaras para Aterrizaje Asistido
+
+Los sensores y cámaras modernos ayudan a superar las limitaciones de visibilidad durante el despegue y aterrizaje, especialmente en condiciones meteorológicas extremas.
+
+1. Sensores Infrarrojos (Enhanced Vision Systems - EVS):
+
+    - Capturan imágenes térmicas, permitiendo a los pilotos ver objetos en la pista, como vehículos o animales, incluso en total oscuridad o niebla densa.
+    - Los datos del sensor se proyectan en el HUD (Head-Up Display) o en el PFD (Primary Flight Display).
+
+2. Cámaras de Alta Resolución:
+
+    - Integradas en sistemas como el Synthetic Vision System (SVS), estas cámaras generan mapas en 3D de la pista y el entorno cercano, basándose en bases de datos geográficas.
+    - Combinan datos reales con simulaciones para ofrecer una visión clara del entorno incluso cuando la visibilidad exterior es nula.
+
+3. Programación y Algoritmos:
+
+    - Los sistemas EVS y SVS son programados en C++, Ada, o incluso Rust en implementaciones modernas por su alto rendimiento y seguridad.
+    - Algoritmos de procesamiento de imágenes y detección de bordes permiten identificar elementos clave como luces de pista o obstáculos.
+
+4. Ejemplo de Implementación:
+
+    - Aviones como el Gulfstream G500 integran sensores infrarrojos avanzados que mejoran la percepción del entorno durante aterrizajes nocturnos o con niebla.
+    - El Boeing 787 y el Airbus A350 combinan cámaras y datos de radar para aterrizajes de precisión en aeropuertos con condiciones climáticas adversas.
+
+### Integración y Futuro de los Sistemas de Radar y Sensores
+
+1. Integración con Otros Sistemas:
+
+    - Los radares y sensores trabajan en conjunto con el FMS (Flight Management System) para ajustar automáticamente las rutas en caso de detectarse turbulencias o cambios bruscos en las condiciones meteorológicas.
+    - Estos sistemas también están conectados con el TCAS para evitar colisiones durante aproximaciones complicadas.
+
+2. Avances Futuros:
+
+    - Sensores LIDAR: Están siendo explorados para mejorar la precisión en la detección de obstáculos cercanos.
+    - Inteligencia Artificial: Permitiría interpretar los datos de radar y sensores de forma más eficiente, facilitando aterrizajes automáticos en situaciones de visibilidad cero.
+    - Sensores más pequeños y ligeros con menor consumo energético están en desarrollo, especialmente para aviones eléctricos o drones.
+
+[https://es.wikipedia.org/wiki/Fly-by-wire](https://es.wikipedia.org/wiki/Fly-by-wire)
+
+[https://easbcn.com/el-sistema-fly-by-wire-en-el-control-de-las-aeronaves/](https://easbcn.com/el-sistema-fly-by-wire-en-el-control-de-las-aeronaves/)
+
+[https://es.wikipedia.org/wiki/Avi%C3%B3nica](https://es.wikipedia.org/wiki/Avi%C3%B3nica)
+
+[https://www.aviationgroup.es/actualidad/principales-sistemas-avionicos-aeronave/](https://www.aviationgroup.es/actualidad/principales-sistemas-avionicos-aeronave/)
+
+[https://es.wikipedia.org/wiki/Monitor_electrónico_centralizado_de_la_aeronave](https://es.wikipedia.org/wiki/Monitor_electrónico_centralizado_de_la_aeronave)
+
+[https://www.professionalaviation.it/es/2019/11/21/que-es-el-tcas-traffic-alert-and-collision-avoidance-system/](https://www.professionalaviation.it/es/2019/11/21/que-es-el-tcas-traffic-alert-and-collision-avoidance-system/)
+
+[https://www.ingelist.net/lenguajes-de-programacion/la-programacion-en-los-aviones-un-viaje-al-interior-de-la-aviacion/](https://www.ingelist.net/lenguajes-de-programacion/la-programacion-en-los-aviones-un-viaje-al-interior-de-la-aviacion/)
+
+[https://www.oneair.es/radomo-aviones/](https://www.oneair.es/radomo-aviones/)
+
+[https://en.wikipedia.org/wiki/Environmental_control_system](https://en.wikipedia.org/wiki/Environmental_control_system)
+
+[https://skybrary.aero/articles/head-display-hud](https://skybrary.aero/articles/head-display-hud)
