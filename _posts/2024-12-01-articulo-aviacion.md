@@ -284,5 +284,62 @@ Uno de los mayores desafíos del TCAS es la sincronización de la información e
 
 > Los algoritmos que gestionan la sincronización de datos y la resolución de conflictos entre aeronaves cercanas se basan en programación en tiempo real, los lenguajes más utilizados incluyen C para la programación de sistemas embebidos y Ada para aplicaciones de alta seguridad, ya que estos lenguajes ofrecen fiabilidad y control de bajo nivel esenciales para evitar fallos, la teoría de sistemas distribuidos y los algoritmos de consenso también se emplean para garantizar que los datos sean sincronizados correctamente entre todas las aeronaves que utilizan TCAS en la misma área.
 
+## Sistemas de Monitorización de Motores (ECAM/EICAS)
+
+Los sistemas ECAM (Electronic Centralized Aircraft Monitoring) de Airbus y EICAS (Engine Indicating and Crew Alerting System) de Boeing son componentes esenciales en la monitorización de los motores y sistemas del avión. Diseñados para recopilar, analizar y presentar datos en tiempo real, estos sistemas ayudan a los pilotos a tomar decisiones informadas, especialmente en situaciones críticas.
+
+### Sensores y Detección de Fallos
+
+Los sistemas ECAM y EICAS recopilan información utilizando una red de sensores distribuidos por toda la aeronave, estos sensores miden una variedad de parámetros, como temperatura, presión, velocidad de rotación y flujo de combustible en los motores.
+
+1. Adquisición de Datos en Tiempo Real:
+
+    - Tipos de Sensores: Los sensores analógicos y digitales convierten las mediciones físicas en señales eléctricas. Por ejemplo:
+
+        - Termopares para medir la temperatura.
+        - Sensores de presión para detectar cambios en el flujo de aire o combustible.
+
+    - Procesamiento de Datos: Los datos recopilados por los sensores se envían a un sistema centralizado, donde se procesan mediante algoritmos en tiempo real para identificar desviaciones o anomalías.
+
+2. Detección de Fallos Predictiva:
+
+    - Mediante técnicas como el análisis de tendencias y modelos de aprendizaje automático, estos sistemas pueden prever fallos antes de que ocurran.
+    - Por ejemplo, si el sistema detecta un aumento gradual en la vibración de un motor, puede generar una alerta para que la tripulación tome medidas preventivas antes de que se produzca una avería.
+
+> El software que gestiona estos sistemas está escrito en lenguajes como C o C++, optimizados para operaciones en tiempo real, los algoritmos de detección de fallos a menudo utilizan técnicas de modelado matemático y análisis estadístico para identificar patrones anormales en los datos del sensor. Además, se emplean sistemas embebidos para garantizar que las operaciones sean confiables y rápidas.
+
+### Alertas en Tiempo Real
+
+Los sistemas ECAM y EICAS no solo recopilan datos, sino que también presentan información clave a la tripulación mediante alertas visuales y sonoras. Estas alertas están diseñadas para priorizar situaciones críticas y garantizar que los pilotos respondan de manera eficiente.
+
+1. Clasificación de Alertas:
+
+    - Alertas Críticas: Como pérdida de potencia en un motor, estas alertas se muestran en rojo, indicando la necesidad de acción inmediata.
+    - Alertas No Críticas: Incluyen advertencias de mantenimiento o condiciones operativas que no afectan la seguridad inmediata del vuelo.
+
+2. Interfaz con la Tripulación:ç
+
+    - En aviones Airbus, el ECAM presenta información detallada sobre el problema y las acciones correctivas recomendadas directamente en la pantalla.
+    - En aviones Boeing, el EICAS ofrece mensajes más resumidos, pero complementados con indicadores en el panel de control.
+
+### Caso de Estudio: Vuelo US Airways 1549
+
+El sistema ECAM jugó un papel crucial durante el incidente del vuelo US Airways 1549. Cuando una bandada de aves inutilizó ambos motores, el sistema detectó inmediatamente la pérdida de potencia y proporcionó a la tripulación información clave sobre el estado de los motores. Esto permitió al capitán Chesley "Sully" Sullenberger y a su primer oficial tomar decisiones rápidas, como planear un aterrizaje de emergencia en el río Hudson, salvando la vida de todos a bordo.
+
+> La generación de alertas depende de sistemas de software altamente confiables, que utilizan reglas lógicas y sistemas expertos para determinar qué alertas mostrar y cuándo. El diseño de la interfaz con la tripulación (UI/UX) requiere programación en lenguajes como Ada y Python para garantizar que las alertas sean claras, prioritizadas y fáciles de entender bajo presión.
+
+### Beneficios de ECAM y EICAS
+
+1. Prevención de Fallos:
+
+    - Identificación temprana de problemas, reduciendo el riesgo de incidentes graves.
+
+2. Optimización de Mantenimiento:
+
+    - Los datos recopilados pueden ser analizados después del vuelo para planificar un mantenimiento preventivo eficiente.
+
+3. Mejora en la Toma de Decisiones:
+
+    - La tripulación recibe información clara y priorizada, mejorando su capacidad para manejar emergencias.
 
 # UC 
