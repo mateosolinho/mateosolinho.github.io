@@ -205,17 +205,17 @@ El piloto automático utiliza una combinación de sensores, sistemas de navegaci
 
 Además de su rol en vuelos rutinarios, el piloto automático puede ser una herramienta crucial en situaciones de emergencia.
 
-  1. Gestión de Condiciones Meteorológicas Adversas:
+1. Gestión de Condiciones Meteorológicas Adversas:
     
     - Al integrarse con los radares meteorológicos, el sistema puede ajustar automáticamente la altitud o el rumbo para evitar turbulencias severas o tormentas.
     - El software del piloto automático está diseñado para priorizar la estabilidad de la aeronave, ajustando los controles para evitar situaciones críticas como pérdidas de sustentación.
 
-  2. Sistemas de Alerta de Colisión:
+2. Sistemas de Alerta de Colisión:
 
     - El piloto automático puede integrarse con el Traffic Collision Avoidance System (TCAS) para evitar colisiones con otras aeronaves.
     - En caso de una posible colisión, el sistema ajusta automáticamente la altitud o la trayectoria para mantener una distancia segura, según las recomendaciones del TCAS.
 
-  3. Desvío Automático:
+3. Desvío Automático:
 
     - En caso de emergencias médicas a bordo o problemas técnicos, el piloto automático puede desviar el avión al aeropuerto más cercano, utiliza datos del FMS, como el alcance del combustible y las características del aeropuerto, para seleccionar la mejor opción.
 
@@ -341,5 +341,62 @@ El sistema ECAM jugó un papel crucial durante el incidente del vuelo US Airways
 3. Mejora en la Toma de Decisiones:
 
     - La tripulación recibe información clara y priorizada, mejorando su capacidad para manejar emergencias.
+
+## Los Sistemas Eléctricos y su Control Computarizado
+
+Los sistemas eléctricos de los aviones modernos son fundamentales para el funcionamiento seguro y eficiente de las aeronaves, desde alimentar los motores y sistemas de navegación hasta proporcionar energía a los sistemas de entretenimiento, su gestión precisa y computarizada es clave para garantizar un vuelo exitoso.
+
+### Regulación de la Electricidad
+
+La gestión de la energía eléctrica en los aviones modernos es un proceso automatizado, controlado por software embebido que supervisa y distribuye la energía entre generadores, baterías y consumidores de forma eficiente.
+
+1. Gestión Automatizada:
+
+    - Distribución Dinámica de Energía: El software prioriza la energía para sistemas críticos como instrumentos de navegación, comunicaciones y controles de vuelo en caso de una pérdida parcial de energía.
+    - Supervisión en Tiempo Real: Los datos de sensores eléctricos se procesan continuamente para detectar problemas como sobrecargas o picos de corriente.
+
+2. Respuesta a Fallos:
+
+    - Cuando ocurre un fallo en un generador o en una batería, el sistema conmutará automáticamente a fuentes secundarias de energía.
+    - Se utilizan algoritmos de control adaptativo para redistribuir la carga entre los generadores restantes o activar fuentes de energía de respaldo, como una unidad de energía auxiliar (APU).
+
+> El software que controla estos sistemas está desarrollado en lenguajes como C y Ada, los cuales son preferidos por su confiabilidad en sistemas críticos. Para tareas de simulación y optimización de energía, se emplean herramientas como MATLAB y algoritmos de control avanzado. Se implementan técnicas de control predictivo basado en modelos (MPC) para anticipar y mitigar posibles interrupciones en la energía.
+
+### Redundancia en Sistemas Eléctricos
+
+La redundancia es un principio esencial en el diseño de sistemas eléctricos aeronáuticos, dado que un fallo eléctrico puede tener consecuencias catastróficas, los aviones están equipados con múltiples fuentes de energía y sistemas de respaldo.
+
+1. Redes Eléctricas Duales o Triples:
+
+    - Los aviones modernos como el Boeing 787 y el Airbus A350 emplean múltiples redes eléctricas que pueden operar de manera independiente o compartir la carga si una de ellas falla.
+
+2. Unidades de Energía Auxiliar (APU):
+
+    - Estas unidades actúan como una fuente de energía de emergencia, asegurando que los sistemas críticos continúen operando incluso si los generadores principales fallan.
+
+3. Sistemas de Monitoreo y Diagnóstico:
+
+    - Los sistemas eléctricos están equipados con software de diagnóstico que puede identificar fallos en tiempo real y sugerir soluciones a la tripulación. Por ejemplo, si una batería muestra un nivel de carga inusualmente bajo, el sistema puede aislarla automáticamente para evitar que afecte al resto de la red.
+
+### Evolución Tecnológica y Aprendizaje de Incidentes Pasados:
+
+- Caso Concorde (2000): El trágico accidente del Concorde subrayó la importancia de la redundancia y supervisión avanzada en los sistemas eléctricos y de combustible.
+- Como resultado, los fabricantes han adoptado estrategias de diseño más avanzadas, integrando controladores redundantes y algoritmos más sofisticados para mitigar el riesgo de fallos.
+
+> Los sistemas eléctricos redundantes están controlados por sistemas de tiempo real (RTOS), que permiten respuestas inmediatas a fallos, el desarrollo de estos sistemas utiliza arquitecturas de software distribuidas que emplean canales de comunicación seguros, programados con lenguajes como C++ para garantizar la sincronización de datos entre los diferentes controladores.
+
+### Beneficios de los Sistemas Computarizados en la Gestión Eléctrica
+
+1. Mayor Seguridad:
+
+    - La capacidad de respuesta rápida y la redundancia integrada reducen significativamente el riesgo de fallos catastróficos.
+
+2. Eficiencia Energética:
+
+    - Los sistemas modernos optimizan la distribución de energía, reduciendo el consumo y alargando la vida útil de los componentes eléctricos.
+
+3. Mantenimiento Predictivo:
+
+    - La recopilación de datos en tiempo real permite identificar tendencias que podrían conducir a fallos, programando mantenimiento antes de que ocurran problemas.
 
 # UC 
