@@ -1,6 +1,6 @@
 ---
 title: La Programación en la Aviación Moderna - De los Sistemas de Control a la Gestión del Vuelo
-date: 2024-11-30 12:30:00 +0800
+date: 2024-12-08 12:30:00 +0800
 categories: [Tecnología, Articulos]
 tags: [Aviacion, TCAS, ECAM, EICAS, Aeroespacial, Tecnología]
 image:
