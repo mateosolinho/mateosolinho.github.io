@@ -1,5 +1,5 @@
 ---
-title: Procesamiento de Telemetría de Lanzamientos de Cohetes utilizando OCR
+title: Rocket Launch Telemetry Processing Using OCR
 date: 2024-12-08 12:30:00 +0800
 categories: [Programación, Desarrollo de Software]
 tags: [OCR, Tesseract, Python, OpenCV, Python, DataScience]
@@ -8,34 +8,35 @@ image:
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
-## Introducción 
+## Introduction 
 
-Seguro que alguna vez has visto el lanzamiento de un cohete, ya sea en directo o en video, pero, ¿Te has preguntado alguna vez que son todos esos números que aparecen en pantlla, como la velociad o la altitud.
+Surely, you’ve watched a rocket launch at some point, either live or in a video, but have you ever wondered what all those numbers on the screen mean, like the speed or altitude?
 
-En este post te enseáré como esos datos pueden ser muy interesantes y como con este proyecto he conseguido mediante un motor de OCR llamado Tesseract, procesar estos datos en tiempo real, analizarlos, sacar conclusiones e incluso llegar a otros puntos mucho más complejos que no vemos a simple vista en el lanzamiento.
+
+In this post, I’ll show you how these data points can be incredibly interesting and how, with this project, I’ve managed to process them in real time using an OCR engine called Tesseract, this allows me to analyze the data, draw conclusions, and even explore much more complex aspects that aren’t immediately visible during the launch.
 
 Además te enseñaré como funciona el programa de extracción de telemetría, cuales son sus partes y por supuesto, como utilizarlo tu mismo.
 
-## Conexto del Proyecto
+## Project Context
 
-El objetivo de este proyecto ha sido desde el primer momento la extracción de información relevante de la telemetría que se nos proporciona de manera pública en los directos de lanzamientos de cohetes como Starship y Falcon 9 de la empresa SpaceX.
+The goal of this project has always been to extract relevant information from the telemetry publicly provided during live broadcasts of rocket launches, such as SpaceX's Starship and Falcon 9.
 
-Algunos importantes desafíos que me he encontrado en su desarrollo incluyen:
+Some significant challenges I encountered during development include:
 
-- Calidad de imagen y ruido visual
+- Image quality and visual noise
 
-- Procesamiento de 6 fotogramas por segundo
+- Processing 6 frames per second
 
-- Variedad y conversión de diferentes formatos de vídeo
+- Variety and conversion of different video formats
 
-## Herramientas y Tecnologías Utilizadas
+## Tools and Technologies Used
 
-- **Python:** Lenguaje base del proyecto.
+- **Python:** Base language of the project.
 
-- **Tesseract:** Herramienta OCR utilziada para extraer texto de imágenes.
+- **Tesseract:** OCR tool used to extract text from images.
 
-- **OpenCV:** Biblioteca para el procesamiento de imágenes y vídeos.
+- **OpenCV:** Library for image and video processing.
 
-- **Expresiones Regulares:** Para filtrar y procesar los datos extraídos.
+- **Expresiones Regulares:** To filter and process the extracted data.
 
 # UC
