@@ -39,4 +39,30 @@ Some significant challenges I encountered during development include:
 
 - **Expresiones Regulares:** To filter and process the extracted data.
 
+## Project Design
+
+### **General Program Flow**
+
+  1. Load launch video
+
+  2. Detect the region of interest (ROI) where telemetry appears in the video
+
+  3. Apply OCR to extract the text from the video
+
+  4. Filter and clean the extracted data
+
+  5. Save the result in a .csv and .xlsx file
+
+### **Initial Configuration**
+
+**How to install Tesseract OCR:**
+
+- *Windows*
+
+  - Go to [Official Tesseract Proyect Site](https://github.com/tesseract-ocr/tesseract) and download .exe file from the links in 'Realeases'
+
+
+
+
+
 # UC
