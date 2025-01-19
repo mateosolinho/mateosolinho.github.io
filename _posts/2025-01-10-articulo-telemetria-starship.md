@@ -15,7 +15,7 @@ Surely, you’ve watched a rocket launch at some point, either live or in a vide
 
 In this post, I’ll show you how these data points can be incredibly interesting and how, with this project, I’ve managed to process them in real time using an OCR engine called Tesseract, this allows me to analyze the data, draw conclusions, and even explore much more complex aspects that aren’t immediately visible during the launch.
 
-Además te enseñaré como funciona el programa de extracción de telemetría, cuales son sus partes y por supuesto, como utilizarlo tu mismo.
+I will also show you how the telemetry extraction program works, what its parts are and of course, how to use it yourself.
 
 ## Project Context
 
@@ -37,7 +37,7 @@ Some significant challenges I encountered during development include:
 
 - **OpenCV:** Library for image and video processing.
 
-- **Expresiones Regulares:** To filter and process the extracted data.
+- **Regular Expressions:** To filter and process the extracted data.
 
 ## Project Design
 
@@ -57,9 +57,49 @@ Some significant challenges I encountered during development include:
 
 **How to install Tesseract OCR:**
 
-- *Windows*
+- ***Windows***
+  1. **Download the installer:**
+      - Go to [Official Tesseract Project Site](https://github.com/tesseract-ocr/tesseract) and download .exe file from the links in 'Releases'
 
-  - Go to [Official Tesseract Proyect Site](https://github.com/tesseract-ocr/tesseract) and download .exe file from the links in 'Realeases'
+  2. **Install Tesseract:**
+      - Execute the .exe file and follow the installer instructions
+      - During the installation note or remember the directory where Tesseract will be installed (for example, `C:\Program Files\Tesseract-OCR`)
+
+  3. **Add Tesseract to the system PATH**
+      - Go to "System Configuration" > "Advanced System Configuration" > "Environment Variables"
+
+      - Find the `Path` variable in the system variables, edit it and add the path to the Tesseract installation directory.
+
+  4. **Verify the installation:**   
+      - Open a terminal (cmd or PowerShell) and run:
+      `tesseract --version`
+
+- ***Linux***
+  1. **Update the System**
+  `sudo apt update && sudo apt upgrade -y`
+
+  2. **Install Tesseract**
+  `sudo apt install tesseract-ocr -y`
+
+  3. **Verify the installation:**
+  `tesseract --version`
+
+- ***MacOS***
+  1. **Install Homebrew (if you don't have it):**
+  `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+  2. **Install Tesseract:**
+  `brew install tesseract`
+
+  3. **Verify the installation:**
+  `tesseract --version`
+
+- ***Python***
+    Independent of the OS, you can install the module for python with:
+    `pip install pytesseract` 
+
+
+
 
 
 
