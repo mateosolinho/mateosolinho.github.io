@@ -56,6 +56,12 @@ jobs:
 
       - name: List files over 50MB
         run: find ./_site -type f -size +50M -exec ls -lh {} \;
+
+      - name: Remove files over 50MB
+        run: find ./_site -type f -size +50M -exec rm -f {} \;
+
+      - name: Check total artifact size
+        run: du -sh ./_site
         
       - name: Upload artifact
         uses: actions/upload-artifact@v4
