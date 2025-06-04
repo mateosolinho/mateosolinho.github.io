@@ -59,9 +59,9 @@ Aprender regresión lineal es uno de los primeros pasos recomendados para inicia
 
 Dado un conjunto de datos con una variable explicativa (X) y una variable objetivo (Y), queremos encontrar una relación lineal que nos permita predecir el valor de Y a partir de X mediante una fórmula sencilla:
 
-\[
+$$
 \hat{y} = wx + b
-\]
+$$
 
 Donde:
 
