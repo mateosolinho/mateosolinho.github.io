@@ -52,6 +52,12 @@ jobs:
         with:
           name: site-artifact
           path: ./_site
+      - name: Check build output
+        run: |
+          if [ ! -d "_site" ]; then
+            echo "_site directory does not exist. Build failed."
+            exit 1
+          fi
 
   # Deployment job
   deploy:
