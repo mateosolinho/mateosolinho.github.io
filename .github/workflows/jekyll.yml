@@ -60,7 +60,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: jekyll-site
+          name: github-pages
           path: ./_site
 
   # Deployment job
