@@ -48,11 +48,14 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      - name: Remove symlinks and hard links
+      - name: Remove symlinks
         run: find ./_site -type l -exec rm -f {} \;
 
-      - name: Check _site size
-        run: du -sh ./_site
+      - name: Remove hard links
+        run: find ./_site ! -type d -links +1 -exec rm -f {} \;
+
+      - name: List files over 50MB
+        run: find ./_site -type f -size +50M -exec ls -lh {} \;
         
       - name: Upload artifact
         uses: actions/upload-artifact@v4
