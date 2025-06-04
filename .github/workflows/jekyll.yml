@@ -47,6 +47,13 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+
+      - name: Remove symlinks and hard links
+        run: find ./_site -type l -exec rm -f {} \;
+
+      - name: Check _site size
+        run: du -sh ./_site
+        
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
