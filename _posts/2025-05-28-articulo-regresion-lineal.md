@@ -65,6 +65,10 @@ $$
 \end{equation}
 $$
 
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+
+TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+
 Donde:
 
 - **`w` (pendiente o coeficiente):** representa cuánto cambia la variable objetivo \(Y\) cuando la variable explicativa \(X\) aumenta en una unidad.  
