@@ -1,5 +1,5 @@
 ---
-title: Regresión Lineal: Teoría, implementación y análisis
+title: Rocket Launch Telemetry Processing Using OCR
 date: 2024-12-08 12:30:00 +0800
 categories: [Programación, Desarrollo de Software]
 tags: [OCR, Tesseract, Python, OpenCV, Python, DataScience]
