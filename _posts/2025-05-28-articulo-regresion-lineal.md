@@ -8,9 +8,9 @@ image:
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
-La regresión lineal es uno de los modelos más fundamentales en el aprendizaje automátic, a pesar de su simplicidad, es una herramienta importante para comprender las relaciones entre las variables y sirve como base para modelos más complejos.
+La regresión lineal es uno de los modelos matemáticos más fundamentales en el aprendizaje automático de modelos de IA, a pesar de su simplicidad, es una técnica muy importante para comprender las relaciones entre las variables y sirve como base para entender y hacer funcionar modelos más complejos.
 
-Este artículo te guiará paso a paso desde la teoría hasta una implementación en Python:
+En este artículo veremos diferentes modelos
 
 ### Aplicaciones prácticas
 
@@ -22,7 +22,7 @@ Este artículo te guiará paso a paso desde la teoría hasta una implementación
 
 ## ¿Por qué es esencial aprender regresión lineal para empezar con la IA?
 
-Aprender regresión lineal es uno de los primeros pasos recomendados para iniciarse en inteligencia artificial y machine learning, veamos por qué, desde cuatro perspectivas clave:
+Aprender lo que es y la esencia de la regresión lineal es uno de los primeros pasos recomendados para iniciarse en el mundo de la inteligencia artificial y machine learning, veamos por qué desde cuatro perspectivas clave:
 
 ### ✅ 1. Establece las bases del aprendizaje supervisado:
 
@@ -108,13 +108,15 @@ Esta comprensión ayuda a ver que modelos más complejos, como redes neuronales 
 
 La función de pérdida nos dice qué tan bien o mal está funcionando nuestro modelo, comparando las predicciones con los valores reales.
 
+Es simple, necesitamos saber si nuestras predicciones se acercan a la realidad o son un completo disparate y con esa información poder mejorar la accuracy del modelo.
+
 Para regresión lineal usamos una función llamada **Error Cuadrático Medio (MSE)**, que se calcula así:
 
 $\begin{equation}
 MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
 \end{equation}$
 
-### Explicación sencilla
+### Explicación
 
 - Comparamos cada valor real $y_i$ con su predicción $\hat{y}_i$.
 - Restamos para ver la diferencia (error).
@@ -152,6 +154,8 @@ Si hacemos esto para muchas casas y luego sacamos el promedio, obtenemos el MSE.
 Cuanto más pequeño sea ese número, mejor es nuestro modelo porque significa que nuestras predicciones están cerca de los precios reales.
 
 Por eso, en la práctica, al entrenar un modelo, intentamos minimizar el MSE para que nuestras predicciones sean lo más exactas posible.
+
+Podemos mejorar el MSE (Hacer su resultado más pequeño) entrenando más al modelo o en su defecto limpiando y obteniendo mejores datos de entrada.
 
 ### Relación con redes neuronales
 
@@ -248,9 +252,11 @@ $\begin{equation}
 \hat{y} = 1500 \cdot 90 = 135{,}000 \, \text{euros}
 \end{equation}$
 
-## 5. Descenso del gradiente (método numérico)
+## 5. Descenso del gradiente
 
-Cuando tenemos muchos datos o varias variables, usar la fórmula directa puede ser complicado o muy lento. Entonces usamos el **descenso del gradiente**, que ajusta poco a poco los parámetros para mejorar la predicción.
+Cuando tenemos muchos datos o varias variables, usar la fórmula directa puede ser complicado o muy lento, entonces usamos el **descenso del gradiente**, que ajusta poco a poco los parámetros para mejorar la predicción.
+
+Este método nos sirve para ajustar poco a poco los parámetros (pendiente y sesgo) de la línea hasta que el error sea el mínimo posible.
 
 ### Derivadas parciales
 
@@ -292,7 +298,7 @@ def gradient_descent(x, y, lr=0.01, epochs=1000):
 
 ### Aplicación práctica (ejemplo del precio de la casa)
 
-Si empiezas con `w = 0` y `b = 0`, el modelo predice siempre 0 euros sin importar el tamaño, usando descenso del gradiente, cada paso ajusta el precio base (`b`) y cuánto aumenta el precio por metro cuadrado (`w`) para acercarse al precio real de las casas.
+Si empezamos con `w = 0` y `b = 0`, el modelo predice siempre 0 euros sin importar el tamaño, usando descenso del gradiente, cada paso ajusta el precio base (`b`) y cuánto aumenta el precio por metro cuadrado (`w`) para acercarse al precio real de las casas.
 
 ### Relación con redes neuronales
 
@@ -310,15 +316,43 @@ Ver los datos y la línea de regresión en un gráfico nos ayuda a entender cóm
 Al comparar la línea con los puntos, podemos ver si el modelo está haciendo buenas predicciones o si se aleja mucho de los datos reales. Esta visualización es una herramienta práctica para interpretar y validar el modelo.
 
 ```python
-import matplotlib.pyplot as plt
+x = np.array([45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 120, 130, 140, 150, 160, 170, 180])
+y = np.array([90, 95, 100, 115, 120, 125, 135, 140, 150, 160, 165, 175, 190, 210, 220, 240, 255, 265, 280, 300])
 
-def plot_regression(x, y, w, b):
-    plt.scatter(x, y, label="Datos")
-    plt.plot(x, w * x + b, color="red", label="Regresión")
-    plt.legend()
-    plt.show()
+N = len(x)
+sum_x = np.sum(x)
+sum_y = np.sum(y)
+sum_xy = np.sum(x * y)
+sum_x2 = np.sum(x ** 2)
+
+w = (N * sum_xy - sum_x * sum_y) / (N * sum_x2 - sum_x**2)
+b = (sum_y / N) - w * (sum_x / N)
+
+def predict(x):
+    return w * x + b
+
+plt.scatter(x, y, label="Datos")
+plt.plot(x, predict(x), color="red", label=f"Regresión (w={w:.2f}, b={b:.2f})")
+plt.xlabel("m2")
+plt.ylabel("Precio (miles $)")
+plt.legend()
+plt.show()
 
 ```
+
+### Explicación del código
+
+![plot](/assets/img/post/regresion-lineal/1.png)
+
+- Puntos azules (scatter): representan los datos reales, casas con su tamaño y precio.
+
+- Línea roja (plot): la recta que mejor ajusta esos datos según la regresión lineal.
+
+- La pendiente $w$ nos dice cuánto sube el precio por cada m² extra.
+
+- La intersección $b$ es el precio estimado para una casa con tamaño 0.
+
+- La gráfica muestra cómo el modelo predice el precio según el tamaño.
 
 ## 7. Relación con modelos complejos
 
