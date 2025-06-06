@@ -63,25 +63,25 @@ $\begin{equation} \hat{y} = wx + b \end{equation}$
 
 Donde:
 
-- **`w` (pendiente o coeficiente):** representa cuánto cambia la variable objetivo $Y$ cuando la variable explicativa \(X\) aumenta en una unidad.  
-  Por ejemplo, si \(w = 2\), significa que por cada aumento de 1 en \(X\), \(Y\) aumentará aproximadamente 2.
+- **`w` (pendiente o coeficiente):** representa cuánto cambia la variable objetivo $Y$ cuando la variable explicativa $X$ aumenta en una unidad.  
+  Por ejemplo, si $w = 2$, significa que por cada aumento de 1 en $X$, $Y$ aumentará aproximadamente 2.
 
-- **`b` (término independiente o bias):** es el valor que toma \(Y\) cuando \(X = 0\).  
-  Es el punto donde la línea de regresión cruza el eje vertical (eje \(Y\)) y ajusta la línea para que se acerque mejor a los datos.
+- **`b` (término independiente o bias):** es el valor que toma $Y$ cuando $X = 0$.  
+  Es el punto donde la línea de regresión cruza el eje vertical (eje $Y$) y ajusta la línea para que se acerque mejor a los datos.
 
-- **`\hat{y}` (predicción):** es el valor estimado o calculado de \(Y\) para un valor dado de \(X\), es la salida que el modelo nos da para hacer predicciones.
+- **$\hat{y}$ (predicción):** es el valor estimado o calculado de $Y$ para un valor dado de $X$, es la salida que el modelo nos da para hacer predicciones.
 
 ### Comprensión práctica
 
 Imagina que quieres predecir el precio de una casa según su tamaño (en metros cuadrados). En este caso:
 
 - `w` es el coeficiente que indica cuánto aumenta el precio por cada metro cuadrado adicional.  
-  Por ejemplo, si \(w = 1500\), significa que cada metro cuadrado extra aumenta el precio en 1500 unidades monetarias.
+  Por ejemplo, si $w = 1500$, significa que cada metro cuadrado extra aumenta el precio en 1500 unidades monetarias.
 
 - `b` es el precio base, es decir, el precio estimado de una casa con tamaño 0 (conceptualmente el punto de partida).  
-  Por ejemplo, si \(b = 50000\), ese sería el costo mínimo o base del inmueble sin importar el tamaño.
+  Por ejemplo, si $b = 50000$, ese sería el costo mínimo o base del inmueble sin importar el tamaño.
 
-- `\hat{y}` es la predicción del precio para un tamaño específico.
+- $\hat{y}$ es la predicción del precio para un tamaño específico.
 
 Por ejemplo, si tienes una casa de 100 metros cuadrados:
 
@@ -118,7 +118,7 @@ MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
 
 ### Explicación sencilla
 
-- Comparamos cada valor real \(y_i\) con su predicción \(\hat{y}_i\).
+- Comparamos cada valor real $y_i$ con su predicción $\hat{y}_i$.
 - Restamos para ver la diferencia (error).
 - Elevamos esa diferencia al cuadrado para que los errores más grandes pesen más.
 - Sacamos el promedio de todos esos errores cuadrados.
@@ -165,7 +165,7 @@ Minimizar el MSE es como decir “quiero que mi modelo cometa el menor error pos
 
 ## 4. Solución analítica (closed-form)
 
-Cuando tenemos nuestros datos, podemos calcular directamente la pendiente \( w \) y el punto de intersección \( b \) de la mejor línea que se ajusta a esos datos sin necesidad de hacer muchas pruebas o iteraciones.
+Cuando tenemos nuestros datos, podemos calcular directamente la pendiente $w$ y el punto de intersección $b$ de la mejor línea que se ajusta a esos datos sin necesidad de hacer muchas pruebas o iteraciones.
 
 Las fórmulas son:
 
@@ -177,7 +177,7 @@ w = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}
 b = \bar{y} - w \bar{x}
 \]
 
-Donde \(\bar{x}\) y \(\bar{y}\) son los promedios de todos los tamaños de casas y precios.
+Donde $\bar{x}$ y $\bar{y}$ son los promedios de todos los tamaños de casas y precios.
 
 ### Intuición práctica
 
@@ -193,7 +193,7 @@ Imagina que tienes datos de varias casas con sus tamaños y precios:
 | 100         | 150000    |
 | 120         | 180000    |
 
-El método calcula cuánto cambia el precio promedio cuando cambia el tamaño promedio (eso es \( w \)), y cuál es el precio base cuando el tamaño es cero (eso es \( b \)).
+El método calcula cuánto cambia el precio promedio cuando cambia el tamaño promedio (eso es $w$), y cuál es el precio base cuando el tamaño es cero (eso es $b$).
 
 Con esos valores, puedes predecir el precio de una casa nueva con solo saber su tamaño.
 
