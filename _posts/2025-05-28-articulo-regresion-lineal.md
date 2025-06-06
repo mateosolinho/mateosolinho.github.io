@@ -1,6 +1,6 @@
 ---
 title: Regresión Lineal - Teoría, implementación y análisis
-date: 2024-12-08 12:30:00 +0800
+date: 2025-06-05 12:30:00 +0800
 categories: [Inteligencia Artificial, Machine Learning]
 tags: [aprendizaje, inteligencia, machine, regresion-lineal, numpy, python]
 image:
