@@ -2,7 +2,7 @@
 title: Regresión Lineal: Teoría, implementación y análisis
 date: 2024-12-08 12:30:00 +0800
 categories: [Inteligencia Artificial, Machine Learning]
-tags: [aprendizaje-supervisado, inteligencia-artificial, machine-learning, regresion-lineal, numpy, python]
+tags: [aprendizaje, inteligencia, machine, regresion-lineal, numpy, python]
 image:
   path: /assets/img/post/telemetria_starship/1.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
@@ -81,7 +81,7 @@ Imagina que quieres predecir el precio de una casa según su tamaño (en metros 
 - `b` es el precio base, es decir, el precio estimado de una casa con tamaño 0 (conceptualmente el punto de partida).  
   Por ejemplo, si $b = 50000$, ese sería el costo mínimo o base del inmueble sin importar el tamaño.
 
-- $\hat{y}$ es la predicción del precio para un tamaño específico.
+- `$\hat{y}$` es la predicción del precio para un tamaño específico.
 
 Por ejemplo, si tienes una casa de 100 metros cuadrados:
 
