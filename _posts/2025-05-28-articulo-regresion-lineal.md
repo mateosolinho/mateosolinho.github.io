@@ -63,10 +63,10 @@ $\begin{equation} \hat{y} = wx + b \end{equation}$
 
 Donde:
 
-- **`w` (pendiente o coeficiente):** representa cuánto cambia la variable objetivo $Y$ cuando la variable explicativa $X$ aumenta en una unidad.  
+- **$w$ (pendiente o coeficiente):** representa cuánto cambia la variable objetivo $Y$ cuando la variable explicativa $X$ aumenta en una unidad.  
   Por ejemplo, si $w = 2$, significa que por cada aumento de 1 en $X$, $Y$ aumentará aproximadamente 2.
 
-- **`b` (término independiente o bias):** es el valor que toma $Y$ cuando $X = 0$.  
+- **$b$ (término independiente o bias):** es el valor que toma $Y$ cuando $X = 0$.  
   Es el punto donde la línea de regresión cruza el eje vertical (eje $Y$) y ajusta la línea para que se acerque mejor a los datos.
 
 - **$\hat{y}$ (predicción):** es el valor estimado o calculado de $Y$ para un valor dado de $X$, es la salida que el modelo nos da para hacer predicciones.
@@ -75,13 +75,13 @@ Donde:
 
 Imagina que quieres predecir el precio de una casa según su tamaño (en metros cuadrados). En este caso:
 
-- `w` es el coeficiente que indica cuánto aumenta el precio por cada metro cuadrado adicional.  
+- **$w$** es el coeficiente que indica cuánto aumenta el precio por cada metro cuadrado adicional.  
   Por ejemplo, si $w = 1500$, significa que cada metro cuadrado extra aumenta el precio en 1500 unidades monetarias.
 
-- `b` es el precio base, es decir, el precio estimado de una casa con tamaño 0 (conceptualmente el punto de partida).  
+- **$b$** es el precio base, es decir, el precio estimado de una casa con tamaño 0 (conceptualmente el punto de partida).  
   Por ejemplo, si $b = 50000$, ese sería el costo mínimo o base del inmueble sin importar el tamaño.
 
-- `$\hat{y}$` es la predicción del precio para un tamaño específico.
+- **$\hat{y}$** es la predicción del precio para un tamaño específico.
 
 Por ejemplo, si tienes una casa de 100 metros cuadrados:
 
