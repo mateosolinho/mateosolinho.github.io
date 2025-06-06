@@ -59,11 +59,11 @@ Aprender regresión lineal es uno de los primeros pasos recomendados para inicia
 
 Dado un conjunto de datos con una variable explicativa (X) y una variable objetivo (Y), queremos encontrar una relación lineal que nos permita predecir el valor de Y a partir de X mediante una fórmula sencilla:
 
-\begin{equation} \hat{y} = wx + b \end{equation}
+$\begin{equation} \hat{y} = wx + b \end{equation}$
 
 Donde:
 
-- **`w` (pendiente o coeficiente):** representa cuánto cambia la variable objetivo $\begin{equation}Y\end{equation}$ cuando la variable explicativa \(X\) aumenta en una unidad.  
+- **`w` (pendiente o coeficiente):** representa cuánto cambia la variable objetivo $Y$ cuando la variable explicativa \(X\) aumenta en una unidad.  
   Por ejemplo, si \(w = 2\), significa que por cada aumento de 1 en \(X\), \(Y\) aumentará aproximadamente 2.
 
 - **`b` (término independiente o bias):** es el valor que toma \(Y\) cuando \(X = 0\).  
