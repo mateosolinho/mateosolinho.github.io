@@ -1,8 +1,8 @@
 ---
-title: TEST
+title: Regresión Lineal: Teoría, implementación y análisis
 date: 2024-12-08 12:30:00 +0800
-categories: [Programación, Desarrollo de Software]
-tags: [OCR, Tesseract, Python, OpenCV, Python, DataScience]
+categories: [Inteligencia Artificial, Machine Learning]
+tags: [aprendizaje-supervisado, inteligencia-artificial, machine-learning, regresion-lineal, numpy, python]
 image:
   path: /assets/img/post/telemetria_starship/1.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
@@ -61,19 +61,15 @@ Dado un conjunto de datos con una variable explicativa (X) y una variable objeti
 
 $\begin{equation} \hat{y} = wx + b \end{equation}$
 
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
-
-TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-
 Donde:
 
-- **`w` (pendiente o coeficiente):** representa cuánto cambia la variable objetivo \(Y\) cuando la variable explicativa \(X\) aumenta en una unidad.  
-  Por ejemplo, si \(w = 2\), significa que por cada aumento de 1 en \(X\), \(Y\) aumentará aproximadamente 2.
+- **`w` (pendiente o coeficiente):** representa cuánto cambia la variable objetivo $\displaystyle Y$ cuando la variable explicativa $\displaystyle X$ aumenta en una unidad.  
+  Por ejemplo, si $w = 2$, significa que por cada aumento de 1 en $X$, $Y$ aumentará aproximadamente 2.
 
-- **`b` (término independiente o bias):** es el valor que toma \(Y\) cuando \(X = 0\).  
-  Es el punto donde la línea de regresión cruza el eje vertical (eje \(Y\)) y ajusta la línea para que se acerque mejor a los datos.
+- **`b` (término independiente o bias):** es el valor que toma $\displaystyle Y$ cuando $\displaystyle X = 0$.  
+  Es el punto donde la línea de regresión cruza el eje vertical (eje $Y$) y ajusta la línea para que se acerque mejor a los datos.
 
-- **`\hat{y}` (predicción):** es el valor estimado o calculado de \(Y\) para un valor dado de \(X\), es la salida que el modelo nos da para hacer predicciones.
+- **$\hat{y}$ (predicción):** es el valor estimado o calculado de $\displaystyle Y$ para un valor dado de $\displaystyle X$, es la salida que el modelo nos da para hacer predicciones.
 
 ### Comprensión práctica
 
