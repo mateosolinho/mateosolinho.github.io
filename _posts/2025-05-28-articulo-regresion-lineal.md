@@ -8,8 +8,6 @@ image:
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
-## 1. Introducción
-
 La regresión lineal es uno de los modelos más fundamentales en el aprendizaje automátic, a pesar de su simplicidad, es una herramienta importante para comprender las relaciones entre las variables y sirve como base para modelos más complejos.
 
 Este artículo te guiará paso a paso desde la teoría hasta una implementación en Python:
@@ -55,7 +53,7 @@ Aprender regresión lineal es uno de los primeros pasos recomendados para inicia
 
 ---
 
-## 2. Planteamiento del problema
+## Planteamiento del problema
 
 Dado un conjunto de datos con una variable explicativa (X) y una variable objetivo (Y), queremos encontrar una relación lineal que nos permita predecir el valor de Y a partir de X mediante una fórmula sencilla:
 
@@ -85,9 +83,9 @@ Imagina que quieres predecir el precio de una casa según su tamaño (en metros 
 
 Por ejemplo, si tienes una casa de 100 metros cuadrados:
 
-\[
-\hat{y} = 1500 \times 100 + 50000 = 150000 + 50000 = 200000
-\]
+$\begin{equation}
+\hat{y} = 1500 \cdot 100 + 50000 = 150000 + 50000 = 200000
+\end{equation}$
 
 El modelo predice que el precio aproximado será de 200,000 unidades monetarias.
 
@@ -106,15 +104,15 @@ Esta comprensión ayuda a ver que modelos más complejos, como redes neuronales 
 
 ---
 
-## 3. Función de pérdida: Error Cuadrático Medio (MSE)
+## Función de pérdida: Error Cuadrático Medio (MSE)
 
 La función de pérdida nos dice qué tan bien o mal está funcionando nuestro modelo, comparando las predicciones con los valores reales.
 
 Para regresión lineal usamos una función llamada **Error Cuadrático Medio (MSE)**, que se calcula así:
 
-\[
+$\begin{equation}
 MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
-\]
+\end{equation}$
 
 ### Explicación sencilla
 
@@ -139,15 +137,15 @@ Volviendo con el ejemplo de la casa, imagina que queremos de nuevo predecir el p
 
 El error es la diferencia entre el precio real y el predicho:
 
-\[
-160,000 - 150,000 = 10,000
-\]
+$\begin{equation}
+160{,}000 - 150{,}000 = 10{,}000
+\end{equation}$
 
 Elevamos este error al cuadrado para que errores grandes tengan más peso:
 
-\[
-10,000^2 = 100,000,000
-\]
+$\begin{equation}
+10{,}000^2 = 100{,}000{,}000
+\end{equation}$
 
 Si hacemos esto para muchas casas y luego sacamos el promedio, obtenemos el MSE.
 
@@ -163,19 +161,20 @@ Minimizar el MSE es como decir “quiero que mi modelo cometa el menor error pos
 
 ---
 
-## 4. Solución analítica (closed-form)
+## Solución analítica (closed-form)
 
 Cuando tenemos nuestros datos, podemos calcular directamente la pendiente $w$ y el punto de intersección $b$ de la mejor línea que se ajusta a esos datos sin necesidad de hacer muchas pruebas o iteraciones.
 
 Las fórmulas son:
 
-\[
+$\begin{equation}
 w = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}
-\]
+\end{equation}$
 
-\[
+$\begin{equation}
 b = \bar{y} - w \bar{x}
-\]
+\end{equation}$
+
 
 Donde $\bar{x}$ y $\bar{y}$ son los promedios de todos los tamaños de casas y precios.
 
@@ -239,16 +238,15 @@ En otros casos, el intercepto puede ser diferente y ajusta la línea de predicci
 
 Entonces, la fórmula de predicción sería:
 
-\[
-\hat{y} = 1500 \times x + 0
-\]
+$\begin{equation}
+\hat{y} = 1500 \cdot x + 0
+\end{equation}$
 
 Entonces, si quieres predecir el precio de una casa de 90 m², solo tienes que multiplicar:
 
-\[
-\hat{y} = 1500 \times 90 = 135,000 \, \text{euros}
-\]
-
+$\begin{equation}
+\hat{y} = 1500 \cdot 90 = 135{,}000 \, \text{euros}
+\end{equation}$
 
 ## 5. Descenso del gradiente (método numérico)
 
@@ -258,13 +256,14 @@ Cuando tenemos muchos datos o varias variables, usar la fórmula directa puede s
 
 Estas fórmulas nos dicen cómo cambiar `w` y `b` para mejorar el modelo, calculando la pendiente del error:
 
-\[
+$\begin{equation}
 \frac{\partial \text{MSE}}{\partial w} = -\frac{2}{n} \sum x_i (y_i - \hat{y}_i)
-\]
+\end{equation}$
 
-\[
+$\begin{equation}
 \frac{\partial \text{MSE}}{\partial b} = -\frac{2}{n} \sum (y_i - \hat{y}_i)
-\]
+\end{equation}$
+
 
 ### Algoritmo paso a paso
 
