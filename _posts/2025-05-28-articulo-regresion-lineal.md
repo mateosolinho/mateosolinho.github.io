@@ -10,7 +10,10 @@ image:
 
 La regresión lineal es uno de los modelos matemáticos más fundamentales en el aprendizaje automático de modelos de IA, a pesar de su simplicidad, es una técnica muy importante para comprender las relaciones entre las variables y sirve como base para entender y hacer funcionar modelos más complejos.
 
-En este artículo veremos diferentes modelos
+![plot](/assets/img/post/regresion-lineal/2.jpg)
+
+En este artículo veremos diferentes modelos y técnicas relacionadas con el tema central del post:
+
 
 ### Aplicaciones prácticas
 
@@ -200,7 +203,7 @@ El método calcula cuánto cambia el precio promedio cuando cambia el tamaño pr
 
 Con esos valores, puedes predecir el precio de una casa nueva con solo saber su tamaño.
 
-### Implementación en Python (analítica)
+### Implementación en Python
 
 ```python
 import numpy as np
@@ -296,6 +299,23 @@ def gradient_descent(x, y, lr=0.01, epochs=1000):
     return w, b
 ```
 
+$w$ = 2.18, significa que por cada metro cuadrado adicional que tenga la casa, el precio sube aproximadamente 2.18 miles de €
+
+$b$ = 10.24 miles de € es el valor de precio base cuando la casa tiene 0 metros cuadrados. Aunque en la vida real no tiene sentido una casa con 0 m², este valor sirve como punto de partida para la línea de regresión.
+
+La fórmula para predecir el precio es:
+
+$\begin{equation}
+\text{precio} = 2.18 \times m^2 + 10.24
+\end{equation}
+$
+
+Entonces, si una casa tiene 50 m², su precio estimado sería:
+
+$\begin{equation}
+2.18 \times 50 + 10.24 = 119.24 \text{ miles de €}
+\end{equation}$
+
 ### Aplicación práctica (ejemplo del precio de la casa)
 
 Si empezamos con `w = 0` y `b = 0`, el modelo predice siempre 0 euros sin importar el tamaño, usando descenso del gradiente, cada paso ajusta el precio base (`b`) y cuánto aumenta el precio por metro cuadrado (`w`) para acercarse al precio real de las casas.
@@ -309,9 +329,6 @@ La regresión lineal es la forma más simple de aplicar esta idea.
 ### 6. Visualización
 
 Ver los datos y la línea de regresión en un gráfico nos ayuda a entender cómo el modelo funciona.
-
-- Los puntos azules representan los datos reales (por ejemplo, casas con sus tamaños y precios).
-- La línea roja es la predicción del modelo, que intenta ajustarse lo mejor posible a esos puntos.
 
 Al comparar la línea con los puntos, podemos ver si el modelo está haciendo buenas predicciones o si se aleja mucho de los datos reales. Esta visualización es una herramienta práctica para interpretar y validar el modelo.
 
@@ -340,26 +357,29 @@ plt.show()
 
 ```
 
-### Explicación del código
+### Explicación del código y gráfica
 
 ![plot](/assets/img/post/regresion-lineal/1.png)
 
-- Puntos azules (scatter): representan los datos reales, casas con su tamaño y precio.
+- **Puntos azules (scatter)**: representan los datos reales, casas con su tamaño y precio.
 
-- Línea roja (plot): la recta que mejor ajusta esos datos según la regresión lineal.
+- **Línea roja (plot)**: la recta que mejor ajusta esos datos según la regresión lineal.
 
-- La pendiente $w$ nos dice cuánto sube el precio por cada m² extra.
+- **La pendiente $w$** nos dice cuánto sube el precio por cada m² extra.
 
-- La intersección $b$ es el precio estimado para una casa con tamaño 0.
+- **La intersección $b$** es el precio estimado para una casa con tamaño 0.
 
-- La gráfica muestra cómo el modelo predice el precio según el tamaño.
+- La gráfica muestra cómo el modelo **predice el precio** según el tamaño de la casa.
 
 ## 7. Relación con modelos complejos
 
-- Una red neuronal con una sola capa lineal (sin activación) es básicamente una regresión lineal.  
-- La regresión logística es similar, pero aplica una función sigmoide al resultado para resolver problemas de clasificación (decidir entre categorías).  
-- Técnicas como Ridge (L2) y Lasso (L1) son formas de regularización que ayudan a evitar que el modelo se ajuste demasiado a los datos de entrenamiento (sobreajuste). Estas técnicas se usan tanto en regresión lineal como en redes neuronales más complejas.
+- Una red neuronal con una sola capa lineal es básicamente una regresión lineal.
 
+- La regresión logística es similar, pero aplica una función sigmoide al resultado para resolver problemas de clasificación (decidir entre categorías).
+
+- Técnicas como Ridge (L2) y Lasso (L1) son formas de regularización que ayudan a evitar que el modelo se ajuste demasiado a los datos de entrenamiento (sobreajuste), estas técnicas se usan tanto en regresión lineal como en redes neuronales más complejas.
+
+> Veremos lo que es una función sigmoide en un futuro
 
 ## 8. Conclusión
 
@@ -370,6 +390,3 @@ En este artículo hemos cubierto:
 - Implementaciones prácticas en Python.
 - Visualización para entender el modelo.
 - Conexiones clave con redes neuronales y su importancia en IA.
-
-La regresión lineal es un conocimiento esencial y un excelente punto de partida para avanzar hacia modelos más complejos en inteligencia artificial.
-
