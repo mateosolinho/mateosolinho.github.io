@@ -1,7 +1,7 @@
 ---
 title: Linear Regression - Theory, Implementation and Analysis
 date: 2025-06-05 12:30:00 +0800
-categories: [Artificial Inteligence, Machine Learning]
+categories: [Artificial Intelligence, Machine Learning]
 tags: [learning, AI, machine_learning, linear_regression, numpy, python]
 image:
   path: /assets/img/post/regresion-lineal/regresion_lineal_curva.jpg
@@ -220,7 +220,7 @@ print(f"Intercept (b): {b}")
 
 Result:
 
-```pyhton
+```python
 
 Slope (w): 1500.0 
 Intercept (b): 0.0
