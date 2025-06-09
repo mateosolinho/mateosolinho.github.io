@@ -74,17 +74,17 @@ Where:
 Imagine you want to predict the **price of a house based on its size** (in square meters). In this case:
 
 - **$w$** is the coefficient that indicates **how much the price increases for each additional square meter**.
-  - For example, if $w = $1500$, it means that each additional square meter increases the price by €1,500.
+  - For example, if $w = $1,500$, it means that each additional square meter increases the price by €1,500.
 
 - **$b$** is the **base price**, that is, the **estimated price of a house with a size of 0** (conceptually the starting point).
-  - For example, if $b = $50000$, that would be the minimum or base cost of the house regardless of the size.
+  - For example, if $b = $50,000$, that would be the minimum or base cost of the house regardless of the size.
 
 - **$\hat{y}$** is the price prediction for a specific size.
 
 For example, if you have a house of **100 square meters**:
 
 $\begin{equation}
-\hat{y} = 1500 \cdot 100 + 50000 = 150000 + 50000 = 200000
+\hat{y} = 1{,}500 \cdot 100 + 50{,}000 = 150{,}000 + 50{,}000 = 200{,}000
 \end{equation}$
 
 The model predicts that the **approximate price will be €200,000**.
@@ -227,11 +227,13 @@ Intercept (b): 0.0
 
 ```
 
-**Slope (w) = 1500.0**  
+**Slope (w) = 1,500.0**  
 
-This means that for every additional square meter in the house's size, the price **increases by 1500 €**.
+This means that for every additional square meter in the house's size, the price 
 
-For example, if a house is 10 m² larger, the price will increase by approximately €15,000 (10 × 1500 €).
+**increases by 1,500 €**.
+
+For example, if a house is 10 m² larger, the price will increase by approximately €15,000 (10 × 1,500 €).
 
 **Intercept (b) = 0**
 
@@ -242,13 +244,13 @@ In other cases, the `intercept` may be different and adjust the `prediction line
 So the prediction formula would be:
 
 $\begin{equation}
-\hat{y} = 1500 \cdot x + 0
+\hat{y} = 1{,}500 \cdot x + 0
 \end{equation}$
 
 So, if you want to predict the price of a 90 m² house, you just have to multiply:
 
 $\begin{equation}
-\hat{y} = 1500 \cdot 90 = 135{,}000 \, \text{€}
+\hat{y} = 1{,}500 \cdot 90 = 135{,}000 \, \text{€}
 \end{equation}$
 
 ## 5. Gradient descent
