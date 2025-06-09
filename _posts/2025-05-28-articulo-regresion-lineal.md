@@ -314,7 +314,7 @@ $\begin{equation}
 
 ### Practical application (house price example)
 
-If we start with $w = 0$ and $b = 0$, the model **always predicts 0 euros regardless of size**, using `gradient descent`, each step **adjusts** the base price $b$ and how much the price per square meter $w$ increases to get closer to the actual price of the houses.
+If we start with $w = 0$ and $b = 0$, the model **always predicts 0 € regardless of size**, using `gradient descent`, each step **adjusts** the base price $b$ and how much the price per square meter $w$ increases to get closer to the actual price of the houses.
 
 ### Relationship with neural networks
 
