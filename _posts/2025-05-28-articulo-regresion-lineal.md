@@ -1,173 +1,173 @@
 ---
-title: Regresión Lineal - Teoría, implementación y análisis
+title: Linear Regression - Theory, Implementation and Analysis
 date: 2025-06-05 12:30:00 +0800
-categories: [Inteligencia Artificial, Machine Learning]
-tags: [aprendizaje, inteligencia, machine, regresion-lineal, numpy, python]
+categories: [Artificial Inteligence, Machine Learning]
+tags: [learning, AI, machine_learning, linear_regression, numpy, python]
 image:
   path: /assets/img/post/regresion-lineal/regresion_lineal_curva.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
-La `regresión lineal` es uno de los **modelos matemáticos más fundamentales** en el `aprendizaje automático` de modelos de IA, a pesar de su simplicidad, es una técnica **muy importante** para comprender las **relaciones entre las variables** y sirve como base para entender y hacer funcionar modelos más complejos.
+`Linear regression` is one of the **most fundamental mathematical models** in `machine learning` of AI models, despite its simplicity, it is a **very important** technique to understand the **relationships between variables** and serves as a base for understanding and operating more complex models.
 
-En este artículo veremos diferentes **modelos y técnicas** relacionadas con el tema central del post:
+In this article we will look at different **models and techniques** related to the central theme of the article:
 
-### Aplicaciones prácticas
+### Practical applications
 
-- **Predicción de precios** (viviendas, acciones, etc.)
-- **Estimación de tendencias**
-- **Relación entre variables** en estudios científicos
-
----
-
-## ¿Por qué es esencial saber lo que es la regresión lineal para empezar con la IA?
-
-Aprender lo que es y la esencia de la `regresión lineal` es uno de los **primeros pasos recomendados** para iniciarse en el mundo de la `inteligencia artificial` y `machine learning`, veamos por qué desde cuatro perspectivas clave:
-
-### ✅ 1. Establece las bases del aprendizaje supervisado:
-
-- La `regresión lineal` es el modelo **más simple de aprendizaje supervisado**.
-- Permite entender cómo un modelo **aprende a reconocer patrones** a partir de datos **etiquetados**.
-- Introduce el concepto de `función de pérdida`, que mide qué tan bien el modelo está aprendiendo.
-- Enseña la idea de `generalización` = **aplicar el aprendizaje a datos nuevos**.
-
-### ✅ 2. Introduce conceptos matemáticos claves:
-
-- Define **funciones matemáticas** para **medir errores** (como el `Error Cuadrático Medio`, `MSE`).
-- Permite estudiar **cálculo básico como derivadas** y `gradiente descendente` para **optimizar modelos**.
-- Facilita el uso de **álgebra lineal** `(vectores, matrices)`, clave en modelos complejos.
-
-### ✅ 3. Conexión directa con redes neuronales:
-
-- Imagina una **red neuronal** como varias `“capas”` que procesan datos, si solo tienes una capa que hace una suma y multiplicación simple (sin cosas complicadas), eso es justo una `regresión lineal`.
-- La `regresión logística` es casi igual, pero después de esa suma, le aplicamos una función que convierte el resultado en una **probabilidad** (`sigmoide`).
-- Algunas ideas para evitar que el modelo se confunda con los datos (como `Ridge` y `Lasso`) vienen de la `regresión lineal` y también se usan en **redes neuronales** más grandes.
-
-> Todo esto lo veremos en futuros artículos :)
-
-### ✅ 4. Aplicable a la práctica desde el primer día:
-
-- Puedes aplicar `regresión lineal` a datasets reales rápidamente.
-- Ejemplos típicos: predicción de precios de vivienda, estimación salarial o análisis de ventas.
-- Sirve para **validar ideas y generar prototipos ágiles** en proyectos de IA.
+- **Price prediction** (housing, stocks, etc.)
+- **Trend estimation**
+- **Relationships between variables** in scientific studies
 
 ---
 
-## Planteamiento del problema
+## Why is it essential to know what linear regression is to get started with AI?
 
-Dado un conjunto de datos con una **variable explicativa** $X$ y una **variable objetivo** $Y$, queremos encontrar una `relación lineal` que nos permita predecir el valor de $Y$ a partir de $X$ mediante una fórmula sencilla:
+Learning what `linear regression` is and its essence is one of the **first recommended steps** to get started in the world of `artificial intelligence` and `machine learning`. Let's see why from four key perspectives:
+
+### ✅ 1. Establishes the foundations of supervised learning:
+
+- `Linear regression` is the **simplest supervised learning model**.
+- Provides an understanding of how a model **learns to recognize patterns** from **labeled** data.
+- Introduces the concept of a `loss function`, which measures how well the model is learning.
+- Teaches the idea of ​​`generalization` = **applying learning to new data**.
+
+### ✅ 2. Introduces key mathematical concepts:
+
+- Defines **mathematical functions** to **measure errors** (such as the Mean Square Error, `MSE`).
+- Allows you to study **basic calculus such as derivatives** and `gradient descent` to **optimize models**.
+- Facilitates the use of **linear algebra** `(vectors, matrices)`, which is key in complex models.
+
+### ✅ 3. Direct connection with neural networks:
+
+- Imagine a **neural network** as several `“layers”` that process data, if you only have one layer that does simple addition and multiplication (no complicated stuff), that is just a `linear regression`.
+- `Logistic regression` is almost the same, but after that sum, we apply a function that converts the result into a **probability** (`sigmoid`).
+- Some ideas for preventing the model from being confused by the data (such as `Ridge` and `Lasso`) come from `linear regression` and are also used in larger **neural networks**.
+
+> We will see all this in future articles :)
+
+### ✅ 4. Applicable to practice from day one:
+
+- You can quickly apply `linear regression` to real datasets.
+- Typical examples: housing price prediction, salary estimation, or sales analysis.
+- It is used to **validate ideas and generate agile prototypes** in AI projects.
+
+---
+
+## Problem statement
+
+Given a data set with an **explanatory variable** $X$ and a **target variable** $Y$, we want to find a `linear relationship` that allows us to predict the value of $Y$ from $X$ using a simple formula:
 
 $\begin{equation} \hat{y} = wx + b \end{equation}$
 
-Donde:
+Where:
 
-- **$w$ (pendiente o coeficiente):** representa cuánto **cambia la variable objetivo** $Y$ cuando la **variable explicativa** $X$ **aumenta** en una unidad.  
-  - Por ejemplo, si $w = 2$, significa que por cada **aumento de 1** en $X$, $Y$ aumentará aproximadamente 2.
+- **$w$ (slope or coefficient):** represents how much the **target variable** $Y$ changes when the **explanatory variable** $X$ **increases** by one unit.
+  - For example, if $w = 2$, it means that for every **increase of 1** in $X$, $Y$ will increase by approximately 2.
 
-- **$b$ (término independiente o bias):** es el valor que toma $Y$ cuando $X = 0$.  
-  - Es el punto donde la `línea de regresión` cruza el **eje vertical** (eje $Y$) y ajusta la línea para que se acerque **mejor a los datos**.
+- **$b$ (independent term or bias):** is the value that $Y$ takes when $X = 0$.
+- It is the point where the `regression line` crosses the **vertical axis** ($Y$ axis) and adjusts the line to **better fit the data**.
 
-- **$\hat{y}$ (predicción):** es el valor estimado o calculado de $Y$ para un valor dado de $X$, es **la salida** que el modelo nos da para hacer **predicciones**.
+- **$\hat{y}$ (prediction):** is the estimated or calculated value of $Y$ for a given value of $X$, it is **the output** that the model gives us to make **predictions**.
 
-### Comprensión práctica
+### Practical Understanding
 
-Imagina que quieres predecir el **precio de una casa según su tamaño** (en metros cuadrados). En este caso:
+Imagine you want to predict the **price of a house based on its size** (in square meters). In this case:
 
-- **$w$** es el coeficiente que indica **cuánto aumenta el precio por cada metro cuadrado** adicional.  
-  - Por ejemplo, si $w = 1500$, significa que cada metro cuadrado extra aumenta el precio en 1500 €.
+- **$w$** is the coefficient that indicates **how much the price increases for each additional square meter**.
+  - For example, if $w = $1500$, it means that each additional square meter increases the price by €1,500.
 
-- **$b$** es el **precio base**, es decir, el **precio estimado de una casa con tamaño 0** (conceptualmente el punto de partida).  
-  - Por ejemplo, si $b = 50000$, ese sería el costo mínimo o base de la casa sin importar el tamaño.
+- **$b$** is the **base price**, that is, the **estimated price of a house with a size of 0** (conceptually the starting point).
+  - For example, if $b = $50000$, that would be the minimum or base cost of the house regardless of the size.
 
-- **$\hat{y}$** es la predicción del precio para un tamaño específico.
+- **$\hat{y}$** is the price prediction for a specific size.
 
-Por ejemplo, si tienes una casa de **100 metros cuadrados**:
+For example, if you have a house of **100 square meters**:
 
 $\begin{equation}
 \hat{y} = 1500 \cdot 100 + 50000 = 150000 + 50000 = 200000
 \end{equation}$
 
-El modelo predice que el **precio aproximado será de 200000 €**.
+The model predicts that the **approximate price will be €200,000**.
 
-### Relación con redes neuronales
+### Relationship with neural networks
 
-Este modelo de regresión lineal puede verse como una **neurona muy simple** en una red neuronal, donde:
+This linear regression model can be seen as a **very simple neuron** in a neural network, where:
 
-- La `entrada` es el valor $x$ (tamaño de la casa).
-- El `peso` $w$ multiplica esa entrada para ajustar su importancia.
-- El `sesgo` $b$ se suma para desplazar la salida y mejorar el ajuste.
-- No hay `función de activación`, por lo que la salida es **simplemente una combinación lineal**.
+- The `input` is the value $x$ (size of the house).
+- The `weight` $w$ multiplies that input to adjust its importance.
+- The `bias` $b$ is added to shift the output and improve the fit.
+- There is no `activation function`, so the output is **simply a linear combination**.
 
-Es decir, esta neurona calcula directamente **el valor predicho sin transformarlo**, que es exactamente lo que hace la `regresión lineal`.
+That is, this neuron directly calculates **the predicted value without transforming it**, which is exactly what `linear regression` does.
 
-Esta comprensión ayuda a ver que **modelos más complejos**, como redes neuronales profundas, están construidos a partir de **muchas capas y neuronas similares**, pero con `funciones de activación` que les permiten aprender relaciones no lineales.
+This understanding helps to see that **more complex models**, such as deep neural networks, are built from **many similar layers and neurons**, but with `activation functions` that allow them to learn non-linear relationships.
 
 ---
 
-## Función de pérdida: Error Cuadrático Medio (MSE)
+## Loss Function: Mean Square Error (MSE)
 
-La `función de pérdida` nos dice qué tan bien o mal está funcionando nuestro modelo, comparando las predicciones con los valores reales.
+The `loss function` tells us how well or poorly our model is performing, comparing the predictions with the actual values.
 
-Es simple, necesitamos saber si nuestras predicciones se **acercan a la realidad** o son un **completo disparate** y con esa información poder mejorar la **accuracy** del modelo.
+It's simple, we need to know if our predictions are **close to reality** or are **complete nonsense** and with that information we can improve the **accuracy** of the model.
 
-Para `regresión lineal` usamos una función llamada `Error Cuadrático Medio (MSE)`, que se calcula así:
+For `linear regression` we use a function called `Mean Square Error (MSE)`, which is calculated like this:
 
 $\begin{equation}
 MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
 \end{equation}$
 
-### Explicación
+### Explanation
 
-- Comparamos cada valor real $y_i$ con su predicción $\hat{y}_i$.
-- Restamos para ver **la diferencia** (error).
-- **Elevamos esa diferencia al cuadrado** para que los errores **más grandes pesen más**.
-- Sacamos **el promedio** de todos esos errores cuadrados.
+- We compare each actual value $y_i$ with its prediction $\hat{y}_i$.
+- We subtract to see **the difference** (error).
+- **We square that difference** so that the **larger errors weigh more**.
+- We take the **average** of all those squared errors.
 
-Así, si nuestras predicciones están muy lejos de los valores reales, el `MSE` será grande; si están cerca, será pequeño.
+Thus, if our predictions are very far from the actual values, the `MSE` will be large; if they are close, it will be small.
 
-### ¿Por qué es útil?
+### Why is it useful?
 
-El objetivo del modelo es hacer el `MSE` lo más **pequeño posible**, es decir, que las predicciones sean lo más **cercanas a los valores reales**.
+The objective of the model is to make the `MSE` as **small as possible**, that is, to make the predictions as **close to the real values** as possible.
 
-### Aplicación práctica:
+### Practical application:
 
-Volviendo con el ejemplo de la casa, imagina que queremos de nuevo predecir el precio de una casa según su tamaño.
+Returning to the house example, imagine we want to predict the price of a house based on its size.
 
-- Supongamos que el tamaño de la casa es de **100 metros cuadrados**.
-- Nuestro modelo predice que el **precio será 150000 €**.
-- Pero el **precio real es 160000 €**.
+- Let's say the house is **100 square meters**.
+- Our model predicts that the **price will be €150,000**.
+- But the **actual price is €160,000**.
 
-El **error** es la **diferencia entre el precio real y el predicho**:
+The **error** is the **difference between the actual and predicted price**:
 
 $\begin{equation}
 160{,}000 - 150{,}000 = 10{,}000
 \end{equation}$
 
-Elevamos este error al cuadrado para que **errores grandes tengan más peso**:
+We square this error so that **large errors carry more weight**:
 
 $\begin{equation}
 10{,}000^2 = 100{,}000{,}000
 \end{equation}$
 
-Si hacemos esto para muchas casas y luego sacamos el promedio, obtenemos el `MSE`.
+If we do this for many houses and then take the average, we get the `MSE`.
 
-Cuanto más **pequeño sea ese número**, mejor es nuestro modelo porque significa que nuestras predicciones están **cerca de los precios reales**.
+The **smaller this number**, the better our model is because it means our predictions are **close to actual prices**.
 
-Por eso, en la práctica, al entrenar un modelo, intentamos **minimizar** el `MSE` para que nuestras predicciones sean **lo más exactas posible**.
+Therefore, in practice, when training a model, we try to **minimize** the `MSE` so that our predictions are **as accurate as possible**.
 
-### Relación con redes neuronales
+### Relationship with neural networks
 
-En las **redes neuronales**, esta `función de pérdida` también se usa para saber qué tan bien están funcionando y para **ajustar los números** que controlan el modelo (los pesos y sesgos).  
+In **neural networks**, this `loss function` is also used to determine how well they are performing and to **tune the numbers** that control the model (the weights and biases).
 
-Minimizar el `MSE` es como decir *“quiero que mi modelo cometa el menor error posible”*.
+Minimizing the `MSE` is like saying *“I want my model to make as few errors as possible”*.
 
 ---
 
-## Solución analítica (closed-form)
+## Analytical solution (closed-form)
 
-Cuando tenemos nuestros datos, podemos calcular **directamente la pendiente** $w$ y el **punto de intersección** $b$ de la mejor línea que se ajusta a esos datos sin necesidad de hacer muchas pruebas.
+When we have our data, we can directly calculate **the slope** $w$ and the **intercept** $b$ of the best line that fits that data without having to do many tests.
 
-Las fórmulas son:
+The formulas are:
 
 $\begin{equation}
 w = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}
@@ -178,27 +178,27 @@ b = \bar{y} - w \bar{x}
 \end{equation}$
 
 
-Donde $\bar{x}$ y $\bar{y}$ son los promedios de todos los tamaños de casas y precios.
+Where $\bar{x}$ y $\bar{y}$, these are the averages of all house sizes and prices.
 
-### Intuición práctica
+### Practical intuition
 
-Este método encuentra **en un solo paso** la línea que **mejor se ajusta a todos los datos**, minimizando la suma de los errores al cuadrado.
+This method finds **in a single step** the line that **best fits all the data**, minimizing the sum of the squared errors.
 
-### Aplicación práctica con el ejemplo de la casa
+### Practical application with the example of the house
 
-Imagina que tienes datos de varias casas con sus tamaños y precios:
+Imagine you have data for several houses with their sizes and prices:
 
-| Tamaño (m²) | Precio (€) |
+| Size (m²) | Price (€) |
 |-------------|------------|
 | 80          | 120000    |
 | 100         | 150000    |
 | 120         | 180000    |
 
-El método calcula cuánto **cambia el precio promedio** cuando cambia el tamaño promedio (eso es $w$), y cuál es el **precio base cuando el tamaño es cero** (eso es $b$).
+The method calculates how much the **average price changes** when the average size changes (that's $w$), and what the **base price is when the size is zero** (that's $b$).
 
-Con esos valores, puedes predecir el precio de una casa nueva cxon solo saber su tamaño**.
+With these values, you can predict the price of a new home just by knowing its size.
 
-### Implementación en Python
+### Python Implementation
 
 ```python
 import numpy as np
@@ -209,57 +209,57 @@ def linear_regression_analytic(x, y):
     b = y_mean - w * x_mean
     return w, b
 
-x = np.array([80, 100, 120])          # Tamaños
-y = np.array([120000, 150000, 180000])  # Precios
+x = np.array([80, 100, 120])          # Sizes
+y = np.array([120000, 150000, 180000])  # Prices
 
 w, b = linear_regression_analytic(x, y)
-print(f"Pendiente (w): {w}")
-print(f"Intercepto (b): {b}")
+print(f"Slope (w): {w}")
+print(f"Intercept (b): {b}")
 
 ```
 
-Resultado:
+Result:
 
 ```pyhton
 
-Pendiente (w): 1500.0 
-Intercepto (b): 0.0
+Slope (w): 1500.0 
+Intercept (b): 0.0
 
 ```
 
-**Pendiente (w) = 1500.0**  
+**Slope (w) = 1500.0**  
 
-Esto significa que por cada metro cuadrado adicional en el tamaño de la casa, el precio **sube en 1500 €**.
+This means that for every additional square meter in the house's size, the price **increases by 1500 €**.
 
-Por ejemplo, si una casa es 10 m² más grande, el precio aumentará aproximadamente 15000 € (10 × 1500).
+For example, if a house is 10 m² larger, the price will increase by approximately €15,000 (10 × 1500 €).
 
-**Intercepto (b) = 0**
+**Intercept (b) = 0**
 
-Este valor es el **precio base cuando el tamaño de la casa es 0 m²**. En este caso es 0 euros, lo cual tiene sentido porque una casa sin tamaño no tendría precio.
+This value is the **base price when the house size is 0 m²**, in this case, it's 0 €, which makes sense because a house with no size would have no price.
 
-En otros casos, el `intercepto` puede ser diferente y ajusta la `línea de predicción`.
+In other cases, the `intercept` may be different and adjust the `prediction line`.
 
-Entonces, la fórmula de predicción sería:
+So the prediction formula would be:
 
 $\begin{equation}
 \hat{y} = 1500 \cdot x + 0
 \end{equation}$
 
-Entonces, si quieres predecir el precio de una casa de 90 m², solo tienes que multiplicar:
+So, if you want to predict the price of a 90 m² house, you just have to multiply:
 
 $\begin{equation}
-\hat{y} = 1500 \cdot 90 = 135{,}000 \, \text{euros}
+\hat{y} = 1500 \cdot 90 = 135{,}000 \, \text{€}
 \end{equation}$
 
-## 5. Descenso del gradiente
+## 5. Gradient descent
 
-Cuando tenemos **muchos datos o varias variables**, usar la fórmula directa puede ser complicado o muy lento, entonces usamos el `descenso del gradiente`, que **ajusta poco a poco los parámetros** para mejorar la predicción.
+When we have **a lot of data or several variables**, using the direct formula can be complicated or very slow, so we use `gradient descent`, which **gradually adjusts the parameters** to improve the prediction.
 
-Este método nos sirve para ajustar poco a poco los parámetros `(pendiente y sesgo)` de la línea hasta que el error sea el mínimo posible.
+This method allows us to gradually adjust the parameters `(slope and bias)` of the line until the error is as small as possible.
 
-### Derivadas parciales
+### Formulas to apply
 
-Estas fórmulas nos dicen cómo cambiar `w` y `b` para mejorar el modelo, **calculando la pendiente del error**:
+These formulas tell us how to change `w` and `b` to improve the model, **by calculating the slope of the error**:
 
 $\begin{equation}
 \frac{\partial \text{MSE}}{\partial w} = -\frac{2}{n} \sum x_i (y_i - \hat{y}_i)
@@ -270,16 +270,16 @@ $\begin{equation}
 \end{equation}$
 
 
-### Algoritmo paso a paso
+### Step-by-step algorithm
 
-1. Empezamos con `w` y `b` iguales a cero (o cualquier valor).
-2. **Calculamos las prediccione**s con esos valores.
-3. Medimos el **error entre las predicciones y los valores reales**.
-4. Calculamos cuánto hay que cambiar `w` y `b` para reducir ese error `(gradientes)`.
-5. Actualizamos `w` y `b` un poco hacia la **dirección que reduce el error**.
-6. Repetimos muchas veces hasta que el error **sea mínimo o cambie poco**.
+1. We start with `w` and `b` equal to zero (or any value).
+2. We **calculate the predictions** with those values.
+3. We **measure the error between the predictions and the actual values**.
+4. We calculate how much `w` and `b` need to **change to reduce that error (gradients)**.
+5. We update `w` and `b` slightly in the direction that **reduces the error**.
+6. We repeat this many times until the **error is minimal or changes little**.
 
-### Implementación en Python
+### Python Implementation
 
 ```python
 def gradient_descent(x, y, lr=0.01, epochs=1000):
@@ -295,40 +295,40 @@ def gradient_descent(x, y, lr=0.01, epochs=1000):
     return w, b
 ```
 
-- $w$ = 2.18, significa que por **cada metro cuadrado adicional que tenga la casa**, el precio sube **aproximadamente 2.18 miles de €**
+- $w$ = 2.18, meaning that for **each additional square meter the house has**, the price increases **approximately 2.18 € thousand**
 
-- $b$ = 10.24 miles de € es el valor **de precio base cuando la casa tiene 0 metros** cuadrados, aunque en la vida real no tiene sentido una casa con 0 m², este valor sirve como **punto de partida para la `línea de regresión`**.
+- $b$ = 10.24 thousand € is the **base price value when the house has 0 square meters**, although in real life a house with 0 m² does not make sense, this value serves as a **starting point for the `regression line`**.
 
-La fórmula para predecir el precio es:
+The formula to predict the price is:
 
 $\begin{equation}
 \text{precio} = 2.18 \times m^2 + 10.24
 \end{equation}
 $
 
-Entonces, si una casa tiene 50 m², su precio estimado sería:
+So, if a house is 50 m², its estimated price would be:
 
 $\begin{equation}
-2.18 \times 50 + 10.24 = 119.24 \text{ miles de €}
+2.18 \times 50 + 10.24 = 119.24 \text{ thousands of €}
 \end{equation}$
 
-### Aplicación práctica (ejemplo del precio de la casa)
+### Practical application (house price example)
 
-Si empezamos con $w = 0$ y $b = 0$, el modelo **predice siempre 0 euros sin importar el tamaño**, usando `descenso del gradiente`, cada paso **ajusta** el precio base $b$ y cuánto aumenta el precio por metro cuadrado $w$ para acercarse al precio real de las casas.
+If we start with $w = 0$ and $b = 0$, the model **always predicts 0 euros regardless of size**, using `gradient descent`, each step **adjusts** the base price $b$ and how much the price per square meter $w$ increases to get closer to the actual price of the houses.
 
-### Relación con redes neuronales
+### Relationship with neural networks
 
-Este proceso de **ajustar los parámetros paso a paso** es exactamente lo que hacen las redes neuronales cuando se entrenan con `retropropagación` 
+This process of **adjusting parameters step by step** is exactly what neural networks do when trained with `backpropagation`
 
-> También lo explicaremos en futuros posts. 
+> We will also explain this in future posts.
 
-La `regresión lineal` es la forma **más simple** de aplicar esta idea.
+`Linear regression` is the **simplest** way to apply this idea.
 
-### 6. Visualización
+### Visualization
 
-Ver los datos y la línea de regresión en un gráfico nos ayuda a **entender cómo el modelo funciona**.
+Viewing the data and the regression line on a graph helps us **understand how the model works**.
 
-Al comparar la línea con los puntos, podemos ver si el modelo está haciendo **buenas predicciones** o si se **aleja mucho de los datos reales**, esta visualización es una herramienta práctica para interpretar y validar el modelo.
+By comparing the line with the points, we can see if the model is making **good predictions** or if it is **far from the real data**, this visualization is a practical tool to interpret and validate the model.
 
 ```python
 x = np.array([45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 120, 130, 140, 150, 160, 170, 180])
@@ -346,47 +346,47 @@ b = (sum_y / N) - w * (sum_x / N)
 def predict(x):
     return w * x + b
 
-plt.scatter(x, y, label="Datos")
-plt.plot(x, predict(x), color="red", label=f"Regresión (w={w:.2f}, b={b:.2f})")
+plt.scatter(x, y, label="Data")
+plt.plot(x, predict(x), color="red", label=f"Regression (w={w:.2f}, b={b:.2f})")
 plt.xlabel("m2")
-plt.ylabel("Precio (miles $)")
+plt.ylabel("Price (thousands €)")
 plt.legend()
 plt.show()
 
 ```
 
-### Explicación del código y gráfica
+### Code and graphic explanation
 
 ![plot](/assets/img/post/regresion-lineal/1.png)
 
-- **Puntos azules (scatter)**: representan los datos reales, casas con su tamaño y precio.
+- **Blue dots (scatter)**: represent the actual data, houses with their size and price.
 
-- **Línea roja (plot)**: la recta que mejor ajusta esos datos según la `regresión lineal`.
+- **Red line (plot)**: the line that best fits the data according to the `linear regression`.
 
-- **La pendiente $w$** nos dice cuánto sube el precio por cada m² extra.
+- **The slope $w$** tells us how much the price increases for each additional square meter.
 
-- **La intersección $b$** es el precio estimado para una casa con tamaño 0.
+- **The intercept $b$** is the estimated price for a house with size 0.
 
-- La gráfica muestra cómo el modelo **predice el precio** según el tamaño de la casa.
+- The graph shows how the model **predicts the price** based on the house's size.
 
-## 7. Relación con modelos complejos
+## Relationship with complex models
 
-- Una red neuronal con una sola **capa lineal** es básicamente una `regresión lineal`.
+- A neural network with a single **linear layer** is basically a `linear regression`.
 
-- La **regresión logística** es similar, pero aplica una función `sigmoide` al resultado para resolver problemas de clasificación (decidir entre categorías).
+- **Logistic regression** is similar, but applies a `sigmoid` function to the output to solve classification problems (deciding between categories).
 
-- Técnicas como `Ridge (L2)` y `Lasso (L1)` son formas de **regularización que ayudan a evitar que el modelo se ajuste demasiado** a los datos de **entrenamiento** (`sobreajuste`), estas técnicas se usan tanto en `regresión lineal` como en redes neuronales más complejas.
+- Techniques such as `Ridge (L2)` and `Lasso (L1)` are forms of **regularization that help prevent the model from fitting too much** to the **training** data (`overfitting`), these techniques are used both in `linear regression` and in more complex neural networks.
 
-> Veremos lo que es una función sigmoide en un futuro
+> We will see what a sigmoid function is in the future
 
-## 8. Conclusión
+## Conclusion
 
-En este artículo hemos cubierto:
+In this article we have covered:
 
-- La **teoría y matemáticas** que fundamentan la `regresión lineal`.
-- Dos formas de resolverla: `solución analítica` y `descenso del gradiente`.
-- **Implementaciones prácticas** en `Python`.
-- **Visualización** para entender el modelo.
-- Conexiones clave con **redes neuronales** y su **importancia en IA**.
+- The **theory and mathematics** underlying `linear regression`.
+- Two ways to solve it: `analytical solution` and `gradient descent`.
+- **Practical implementations** in `Python`.
+- **Visualization** to understand the model.
+- Key connections with **neural networks** and their **importance in AI**.
 
-_Espero que os haya gustado leer el artículo tanto como a mi hacerlo. ¡Gracias por leer!_
+_I hope you enjoyed reading this article as much as I did. Thanks for reading!_
