@@ -1,11 +1,11 @@
 ---
-title: Unsupervised Image Clustering Using Visual Embeddings
-date: 2025-05-26 12:30:00 +0800
-categories: [Programación, Desarrollo de Software]
-tags: [OCR, Tesseract, Python, OpenCV, Python, DataScience]
+title:
+date:
+categories:
+tags:
 image:
-  path: /assets/img/post/telemetria_starship/1.jpg
-  lqip: d
+  path:
+  lqip:
 ---
 
 # =================== UC ===================
