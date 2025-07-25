@@ -1,6 +1,6 @@
 ---
 title: Unsupervised Image Clustering Using Visual Embeddings
-date: 2026-05-26 12:30:00 +0800
+date: 2025-05-26 12:30:00 +0800
 categories: [Programación, Desarrollo de Software]
 tags: [OCR, Tesseract, Python, OpenCV, Python, DataScience]
 image:
