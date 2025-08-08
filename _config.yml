@@ -10,7 +10,7 @@ baseurl: "https://mateosolinho.github.io/"
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: es-ES
+lang: en
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
 timezone: Europe/Madrid
@@ -20,9 +20,9 @@ timezone: Europe/Madrid
 
 title: Portfolio de Mateo - Desarrollador de Software # the main title
 
-tagline: Explorando el mundo de la programación, proyectos, tutoriales y experiencias para entusiastas de la tecnología # it will display as the sub-title
+tagline: Exploring the world of programming, projects, tutorials, and experiences for tech enthusiasts. # it will display as the sub-title
 
-description: Explora proyectos de programación innovadores, tutoriales detallados y experiencias personales en desarrollo web, inteligencia artificial y más. Perfecto para entusiastas de la tecnología y desarrolladores de todos los niveles. Frontend, Backend, Ciberseguridad, Programacion. # used by seo meta and the atom feed
+description: Explore innovative programming projects, tutorials, and personal experiences in web development, artificial intelligence, and more, perfect for tech enthusiasts and developers of all levels, Artificial Intelligence, Frontend, Backend, Cybersecurity... # used by seo meta and the atom feed
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://mateosolinho.github.io/"

@@ -4,20 +4,18 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-# Sobre Mi
+*Hello! My name is `Mateo`. I'm a junior software developer.*
 
-*¡Hola! Mi nombre es ```Mateo```, soy estudiante y apasionado por la programación, el desarrollo de software y la creación de proyectos innovadores.*
+*With this little blog, I aim to share my experiences, learn, and improve my programming skills. I'm currently training in artificial intelligence. Here you'll find tutorials, personal projects, and useful resources for developers of all levels. Join me on this journey of learning and discovery!*
 
-*Con este pequeño blog, busco compartir mis experiencias, aprender y mejorar mis habilidades en el mundo de la programación. Actualmente, estoy formándome en inteligencia artificial, aquí encontrarás tutoriales, proyectos personales y recursos útiles para desarrolladores de todos los niveles. ¡Acompáñame en este viaje de aprendizaje y descubrimiento!*
+## Contents
 
-## Contenidos
+*On this blog, I'll publish various types of **articles**.*
 
-*En este blog publicaré varios tipos de **artículos**.*
+* **Programming Tutorials**
 
-* **Tutoriales de programación**
+* **Personal Projects**
 
-* **Proyectos personales**
+* **Tips and Tricks for Developers**
 
-* **Consejos y trucos para desarrolladores**
-
-*Espero que te guste, te sea útil y que podamos ```aprender``` juntos.*
+*I hope you like it, find it useful, and that we can `learn` together.*
