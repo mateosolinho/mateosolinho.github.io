@@ -8,44 +8,40 @@ image:
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
  
-# =================== UC ===================
- 
----
- 
 ## 1. Introduction
  
-In the past decade, the development of **AI models**, especially **large language models** (LLMs), has transformed the landscape of modern software. However, as these models are deployed in real-world applications, a critical need has emerged: **to connect them in a structured, secure, and reusable way to data sources, tools, and external systems**.
+In the past decade, the development of **AI models**, especially LLMs, has transformed the landscape of modern software, as these models are deployed in real world applications, a critical need has emerged **to connect them in a structured, secure, and reusable way to data sources, tools, and external systems**.
  
-Until recently, this integration was done in an ad hoc manner, through proprietary *plugins*, specific *scripts*, or closed adapters, which limited interoperability, made maintenance difficult, and posed challenges in terms of security and scalability.
+Recently, this integration was done in an ad hoc manner, through proprietary *plugins*, specific *scripts*, or closed adapters, made maintenance difficult, and posed challenges in terms of security and scalability.
 
-To address these limitations, **Anthropic proposed in November 2024** the **Model Context Protocol (MCP)**, an open standard that defines how AI models can interact with their contextual environment in a **modular, portable, and auditable** way. Simply put, MCP acts as a **universal protocol for describing and accessing the context surrounding a model during its execution**, including both passive resources (files, texts, databases) and active ones (tools, APIs, functional *prompts*).
+To address these limitations, In November 2024, **Anthropic** introduced the **Model Context Protocol (MCP)**, the idea was simple but ambitious, to create an **open standard so that AI models could understand and use their environment in a safe and flexible way**, MCP works as a universal connector that describes and gives access to everything that surrounds the model while it works, from files and databases to tools and APIs.
  
 ### 1.1 A Necessary Analogy: The USB-C of AI
 
-Just as the **USB-C** standard has unified the way electronic devices connect to chargers, displays, and peripherals, **MCP aims to become the standardized connector between language models and their execution ecosystem**. This analogy is not merely aesthetic: as in hardware, interoperability is crucial for efficiency, security, and open innovation.
+Just as the **USB-C** standard has unified the way electronic devices connect to chargers, displays, and peripherals, **MCP aims to become the standardized connector between language models and their execution ecosystem**. This analogy is not merely aesthetic as in hardware, interoperability is crucial for efficiency, security, and open innovation.
 
 ### 1.2 Purpose of This Article
 
-This article aims to provide a **technical and comprehensive** overview of the *Model Context Protocol*, covering not only its architecture and use cases but also its practical implications and emerging challenges. Throughout the content, we will analyze:
+Here I'll explain what the **Model Context Protocol** is, how it's built, and in what cases it can be used. We'll also look at its practical implications and the *challenges* it brings.
 
 - What an MCP is from a technical standpoint,  
 - How it is structured (components, messages, transport),  
 - What problems it solves,  
-- Real-world use cases and practical examples,  
+- Real world use cases and practical examples,  
 - What security risks it introduces,  
 - And why it represents a key advancement in the era of autonomous and modular AI agents.
  
 ## 2. Context and Motivation
 
-One of the main challenges when working with language models in real-world applications is the **incorporation of external context**: relevant, up-to-date, or user-specific information that the model needs to generate useful responses. Although LLMs are trained on vast amounts of data, their knowledge is static and limited by their training cutoff date. Therefore, they require access to external resources—such as documents, tools, databases, or APIs—to operate effectively in real-world environments.
+One of the main challenges when working with language models in real world applications is the **incorporation of external context** relevant, up to date, or user specific information that the model needs to generate useful responses, LLMs are trained on vast amounts of data, their knowledge is static and limited by their training cutoff date. This is why, models need to be able to connect to documents, tools, databases, or APIs if they are to work well in real world environments.
 
 ### 2.1 The Problem of Ad Hoc Integration
 
-Before MCP, the connection between a model and its contextual environment was handled on a case-by-case basis:
+Before MCP, the connection between a model and its contextual environment was handled on a case by case basis:
 
-- Closed plugins (such as ChatGPT plugins or Claude-specific extensions),  
+- Closed plugins (such as ChatGPT plugins or Claude specific extensions),  
 - Manual pipelines using tools like LangChain or Semantic Kernel,  
-- Custom-built solutions to integrate features with internal data.
+- Custom built solutions to integrate features with internal data.
 
 This led to multiple issues:
 
@@ -58,29 +54,29 @@ In environments where traceability, context isolation, and data governance are c
  
 ### 2.2 The Need for a Universal Standard
 
-The rise of autonomous agents—systems capable of planning, reasoning, and executing actions—made the need for a protocol even more evident, one that:
+The rise of autonomous agents systems capable of planning, reasoning, and executing actions made the need for a protocol even more evident, one that:
 
 1. Clearly describes the environment in which the model operates,  
 2. Allows the model to discover, query, and use tools and data in a structured way,  
 3. Is auditable, portable, and secure by design.
 
-Inspired by standards such as the **Language Server Protocol (LSP)**—which transformed the integration of development tools through a common interface—**Anthropic designed MCP as a modular, extensible, and open solution** to connect models with their context. Just as LSP enabled editors like VSCode or Neovim to communicate with multiple programming languages uniformly, MCP aims to allow any model to interoperate with any source or tool that exposes a standard interface.
+Inspired by the **Language Server Protocol** (`LSP`), which forever changed how editors communicate with development tools, Anthropic designed MCP as a modular, extensible, and open solution for connecting models to their context.
 
 ### 2.3 An Inevitable Evolution
 
-MCP not only addresses a technical need, but also reflects a structural shift in how we conceive AI systems: no longer as monolithic black boxes, but as composable agents that interact with their environment, guided by explicit, transparent, and reusable protocols.
+MCP not only addresses a technical need, but also reflects a structural shift in how we conceive AI systems no longer as monolithic black boxes, but as composable agents that interact with their environment, guided by explicit, transparent, and reusable protocols.
 
-This transition toward open, interoperable, and controllable architectures is essential for the next generation of AI-based applications and positions the Model Context Protocol as one of the central components of the intelligent agent ecosystem in 2025 and beyond.
+Moving to open, interoperable, and controllable architectures is key to the next generation of AI applications, and in that future, MCP can become a centerpiece of the intelligent agent ecosystem.
  
 ## 3. Technical Definition of the Model Context Protocol
 
-The **Model Context Protocol (MCP)** is a structured communication protocol based on **JSON-RPC 2.0**, designed to enable language models to interact with their contextual environment in a standardized way. It defines both the **communication interface** and the **structure of the messages** exchanged between system components.
+The **Model Context Protocol** (MCP) is a communication protocol, based on `JSON-RPC 2.0`, designed to allow language models to interact with their environment in a standard way. It defines both the **communication interface** and the **structure of the messages** exchanged between system components.
 
-The protocol establishes a **client-server architecture**, in which one or more **MCP clients** (typically part of the host where the model is running) communicate with one or more **MCP servers** that expose resources and tools the model can use during inference.
+MCP follows a **client server architecture**, one or more MCP clients, usually within the application running the model, connect to one or more MCP servers that provide resources and tools that the model can use during its execution.
 
 ### 3.1 General Architecture
 
-The MCP architecture follows a modified client-server pattern tailored for use within language model environments. The key components are:
+The MCP architecture follows a modified client server pattern tailored for use within language model environments. The key components are:
 
 - **Host**: The main application that runs or interacts with a language model (e.g., an IDE, conversational assistant, or desktop environment such as Claude Desktop).  
 - **MCP Client**: A module within the host responsible for managing connections to MCP servers.  
@@ -94,7 +90,7 @@ The MCP architecture follows a modified client-server pattern tailored for use w
            └── MCP Server (another external resource)
 ```
  
-Each client-server connection is governed by a session of messages exchanged via JSON-RPC.
+Each client server connection is governed by a session of messages exchanged via JSON-RPC.
 
 ### 3.2 Messaging Protocol: JSON-RPC 2.0
 
@@ -139,7 +135,7 @@ MCP supports multiple physical transport mechanisms for transmitting JSON-RPC me
 
     stdio: Standard input/output of the operating system, useful for local processes.
 
-    HTTP/SSE (Server-Sent Events): For cases where network communication or continuous data streaming is required.
+    HTTP/SSE (Server Sent Events): For cases where network communication or continuous data streaming is required.
 
 The specification allows the transport channel to be negotiated between client and server based on the execution environment.
 
@@ -147,7 +143,7 @@ The specification allows the transport channel to be negotiated between client a
 
 One of MCP’s defining features is its ability to describe itself. Through methods like `introspect`, MCP servers can report which tools and resources are available, under what schemas, and how they are expected to be used.
 
-This self-describing capability enables the construction of dynamic and adaptive AI systems, where a model can discover its environment and modify its behavior according to accessible resources, without requiring changes to the source code.
+This self describing capability enables the construction of dynamic and adaptive AI systems, where a model can discover its environment and modify its behavior according to accessible resources, without requiring changes to the source code.
  
 ### 3.5 Formalization of Context
 
@@ -177,11 +173,11 @@ The host:
 - Incorporates one or more **MCP clients**,  
 - Orchestrates communication between the model and context.
 
-Common examples of hosts: Claude Desktop, ChatGPT with tools, VSCode with AI assistance, conversational assistants integrated in browsers.
+Common examples of hosts, Claude Desktop, ChatGPT with tools, VSCode with AI assistance, conversational assistants integrated in browsers.
  
 ### 4.2 MCP Client
 
-The **MCP client** is an entity within the host that maintains an active 1:1 connection with an **MCP server**. Its role is to act as a low-level intermediary:
+The **MCP client** is an entity within the host that maintains an active 1:1 connection with an **MCP server**. Its role is to act as a low level intermediary:
 
 - Establishes the transport channel (stdio, HTTP/SSE),  
 - Sends and receives JSON-RPC messages,  
@@ -216,7 +212,7 @@ Examples of resources:
 - Database tables,  
 - Web browsing summaries or search results.
 
-Resources may also include embedded content, cross-references, and semantic annotations, enabling the model to understand their structure and contextual relevance.
+Resources can also contain embedded content, cross  references, or semantic annotations, which helps the model better understand their structure and relevance.
  
 ### 4.5 Tools
 
@@ -235,7 +231,7 @@ Examples of tools:
 - Calls to external APIs (e.g., `GET /weather?city=Barcelona`),  
 - Calculation or transformation functions.
 
-The model may decide to invoke a tool if the MCP client provides adequate information about its availability and contextual usefulness.
+The model may decide to use a tool if the MCP client provides sufficient information about its availability and usefulness at that time
 
 ### 4.6 Prompts
 
@@ -244,7 +240,7 @@ The model may decide to invoke a tool if the MCP client provides adequate inform
 Each prompt can include:
 
 - Base text with parameterizable variables,  
-- Usage examples (*few-shot learning*),  
+- Usage examples (*few shot learning*),  
 - Formatting or response style instructions.
 
 An example of a prompt could be:
@@ -264,7 +260,7 @@ The structured use of prompts within the protocol allows the model to adapt to c
 
 ## 5. Practical Use Cases
 
-The true value of the Model Context Protocol (MCP) manifests when applied in real-world scenarios, where language models need to access external data, execute specialized functions, or integrate with complex workflows. This section presents several **representative use cases**, illustrating the protocol’s versatility and applicability in modern AI contexts.
+MCP demonstrates its true value when used in practical environments, where a language model needs to access external data, execute specialized functions, or integrate into complex workflows.
 
 ### 5.1 Structured Access to Documents and Files
 
@@ -288,20 +284,20 @@ The model can access this resource, extract relevant clauses, and generate a leg
 
 ### 5.2 Assistance in Development Environments (IDE)
 
-Integrated into an IDE like VSCode or Zed, an MCP client can expose source code files, change history, and tools such as linters or test runners, enabling the model to perform:
+When integrated into an IDE like VSCode or Zed, an MCP client can expose source code files, change history, and tools like linters or test runners, allowing the model to perform tasks such as:
 
 - Error diagnosis  
 - Guided refactoring  
 - Unit test generation  
-- Context-aware code review  
+- Context aware code review  
 
-Key advantage: the model does not operate on isolated plain text, but on a structured and active context synchronized with the project.
+Key advantage, the model does not operate on isolated plain text, but on a structured and active context synchronized with the project.
 
 ### 5.3 Workflow Automation
 
 MCP allows the model to invoke external tools to execute automated tasks within a controlled session.
 
-Example: the model acts as an assistant to draft and send follow-up emails through an MCP tool connected to an email API.
+Example: the model acts as an assistant to draft and send follow up emails through an MCP tool connected to an email API.
  
 ```json
   {
@@ -314,7 +310,7 @@ Example: the model acts as an assistant to draft and send follow-up emails throu
   }
 ```
  
-The interaction can include validation, confirmation, and follow-up, all orchestrated through the MCP client.
+The interaction can include validation, confirmation, and follow up, all orchestrated through the MCP client.
 
 ### 5.4 Models as Cognitive Agents
 
@@ -327,7 +323,7 @@ Typical flow:
 3. It generates the appropriate invocation.
 4. It processes the result and integrates it into its reasoning flow.
 
-This pattern approaches the paradigm of toolformer or function-calling agents, but using a standardized abstraction layer.
+This pattern approaches the paradigm of toolformer or function calling agents, but using a standardized abstraction layer.
 
 ### 5.5 Integration with Enterprise Information Systems
 
@@ -365,13 +361,13 @@ One of MCP’s main achievements is providing a **common reference framework** f
  
 #### 6.1.2 Improved Model Contextual Capability
 
-Thanks to the protocol, the model can operate on **structured and up-to-date data**, not just free text. This enables richer interactions, more complex tasks, and a more precise understanding of the environment.
+Thanks to the protocol, the model can operate on **structured and up to date data**, not just free text. This enables richer interactions, more complex tasks, and a more precise understanding of the environment.
 
 Example: comparing two legal contracts, running unit tests on code, or reviewing metrics of a data pipeline.
 
 #### 6.1.3 Extensibility and Modularity
 
-MCP is designed to be **modular**, allowing developers to create their own custom servers, tools, or resources without needing to modify the core of the host or model. This accelerates innovation and enables domain-specific adaptations.
+MCP is designed to be **modular**, allowing developers to create their own custom servers, tools, or resources without needing to modify the core of the host or model. This accelerates innovation and enables domain specific adaptations.
 
 #### 6.1.4 Alignment with Emerging Paradigms
 
@@ -379,7 +375,7 @@ The protocol is compatible with current trends such as:
 
 - **Autonomous agents** based on LLM models,
 - **LLMs with external tools and functions** (*tool use*),
-- **Context-assisted cognitive systems in real time**.
+- **Context assisted cognitive systems in real time**.
 
 Its architecture positions it as a key infrastructure for the future of applied AI.
 
@@ -427,19 +423,19 @@ Although the Model Context Protocol (MCP) represents a novel and structured appr
 
 ### 7.1 LangChain
 
-LangChain is one of the best-known libraries for building applications that integrate LLMs with tools, databases, documents, and APIs. Unlike MCP, **LangChain is a library oriented towards execution flows within Python environments**, and not an interoperable protocol.
+LangChain is one of the best known libraries for building applications that integrate LLMs with tools, databases, documents, and APIs. Unlike MCP, **LangChain is a library oriented towards execution flows within Python environments**, and not an interoperable protocol.
 
 **Comparison:**
  
 | Feature                | MCP                               | LangChain                         |
 |------------------------|----------------------------------|----------------------------------|
 | Type                   | RPC Protocol                     | Python Library                   |
-| Interoperability       | High (model-agnostic)            | Low (tied to execution environment) |
+| Interoperability       | High (model agnostic)            | Low (tied to execution environment) |
 | Modularity             | High (separate client, server, tools) | Moderate (all in the same process) |
 | Observability          | Standardized by design           | Depends on implementation        |
 | Agents and reasoning   | Supported if the model allows it | Highly integrated                |
  
-LangChain provides useful tools for quickly building agents, but it does not define a standard interface to expose context to third-party models.
+LangChain provides useful tools for quickly building agents, but it does not define a standard interface to expose context to third party models.
 
 ### 7.2 Semantic Kernel
 
@@ -457,7 +453,7 @@ OpenAI introduced `function_call` as a mechanism for GPT models to invoke user-d
 **Comparison with MCP:**
 
 - Both allow the model to invoke external functions with structured arguments.
-- However, **OpenAI defines a closed protocol, specific to its models**, whereas MCP proposes an open standard, vendor-independent.
+- , **OpenAI defines a closed protocol, specific to its models**, whereas MCP proposes an open standard, vendor independent.
 - The semantics of tools and resources in MCP are more explicit and auditable.
 
 ### 7.4 ReAct and Toolformer
@@ -482,7 +478,7 @@ Both separate client and server, define standard methods, and promote a modular 
 
 ## 8. Current Ecosystem and Available Tools
 
-Although the Model Context Protocol (MCP) is an emerging standard, its adoption has begun to take shape through reference implementations, open-source tools, and community contributions. This section details the main technical resources available, their maturity level, and how they can be used to start working with MCP in real applications.
+Although the Model Context Protocol (MCP) is an emerging standard, its adoption has begun to take shape through reference implementations, open source tools, and community contributions. This section details the main technical resources available, their maturity level, and how they can be used to start working with MCP in real applications.
  
 ### 8.1 Official Repositories
 
@@ -496,7 +492,7 @@ Key repositories:
 
 These repositories provide documentation, examples, and tests to enable implementing and deploying a functional MCP environment.
 
-### 8.2 Third-Party Clients and Servers
+### 8.2 Third Party Clients and Servers
 
 Beyond official implementations, some developers have started building MCP clients, servers, and adapters tailored to various environments:
 
@@ -509,7 +505,7 @@ As of 2025, MCP support by LLM providers remains limited and experimental, but g
 
 - **Claude (Anthropic)**: Natively supports MCP in some enterprise environments. It is the model most aligned with the protocol.
 - **GPT-4**: Does not directly support MCP, but can be adapted via tool use if the client implements the protocol.
-- **Open-source models (Mistral, LLaMA, etc.)**: Can work with MCP as long as they receive the necessary structured context through prompt engineering or tool-use methods like ReAct.
+- **Open source models (Mistral, LLaMA, etc.)**: Can work with MCP as long as they receive the necessary structured context through prompt engineering or tool use methods like ReAct.
 
 ### 8.4 Complementary Tools
 
@@ -535,7 +531,7 @@ The development of MCP is supported by technical community resources:
 | Specification          | Stable, version 1.0 published         |
 | Official client        | JS available, others in development   |
 | Official server        | Python functional and extensible      |
-| Third-party ecosystem  | Growing, still in early stages        |
+| Third party ecosystem  | Growing, still in early stages        |
 | Model adoption         | Limited, led by Anthropic              |
 
 ## 9. Use Cases and Application Scenarios
@@ -550,7 +546,7 @@ An assistant can use MCP to:
 
 - Query the status of data pipelines exposed as JSON resources,
 - Invoke tools to restart processes or validate integrity,
-- Obtain real-time traces and logs from internal tools.
+- Obtain real time traces and logs from internal tools.
 
 This prevents the model from "imagining" answers based only on text and forces it to work with live, verified information.
 
@@ -574,7 +570,7 @@ By connecting to tools like linters, test runners, or compilers via MCP, an assi
 
 Example: running `pytest` on a specific folder and summarizing errors in natural language.
 
-#### 9.2.2 Context-Guided Refactoring
+#### 9.2.2 Context Guided Refactoring
 
 MCP allows the model to query a dependency resource or class graph, identify bottlenecks, and propose a refactoring plan based on real system data, not just learned heuristics.
 
@@ -586,7 +582,7 @@ Through structured resources containing contract versions, specific clauses, or 
 
 - Compare clauses across documents,
 - Detect inconsistencies or risky clauses,
-- Propose well-founded modifications.
+- Propose well founded modifications.
 
 #### 9.3.2 Regulatory Task Automation
 
@@ -594,7 +590,7 @@ An assistant can query regulations (e.g., GDPR or financial directives) exposed 
 
 ### 9.4 Technical Support and Troubleshooting
 
-MCP enables a model to act as a first-level technical assistant, with access to logs, system metrics, diagnostic tools, and knowledge bases.
+MCP enables a model to act as a first level technical assistant, with access to logs, system metrics, diagnostic tools, and knowledge bases.
 
 Example flow:
 
@@ -603,7 +599,7 @@ Example flow:
 3. Invokes an automated analysis tool,  
 4. Informs the user of the fault and corrects it if possible.
 
-### 9.5 Multi-Model Agent Composition
+### 9.5 Multi Model Agent Composition
 
 By standardizing how tools and resources are described, MCP allows coordination of multiple LLM agents, each with distinct roles and capabilities, collaborating on the same environment.
 
@@ -615,9 +611,9 @@ Example:
 
 All of this can be orchestrated in a structured, auditable, and repeatable manner via MCP.
 
-### 9.6 Integration with Human-in-the-Loop Processes
+### 9.6 Integration with Human in the Loop Processes
 
-MCP is not limited to automatic tasks: it can coordinate human-in-the-loop workflows, allowing the model to:
+MCP is not limited to automatic tasks: it can coordinate human in the loop workflows, allowing the model to:
 
 - Request human validations at certain steps,  
 - Record manually made decisions,  
@@ -631,22 +627,22 @@ The Model Context Protocol (MCP) is a young proposal with a solid architecture a
 
 ### 10.1 Standardization and Governance
 
-MCP is currently in open development, driven by a technical community led by Anthropic and other independent contributors. Near-future plans include:
+MCP is currently in open development, driven by a technical community led by Anthropic and other independent contributors. Near future plans include:
 
 - **Formal standardization proposals** through bodies like W3C, OpenAI Alliance, or even consortia such as IEEE or IETF.  
 - **Stable versioning and compatibility contracts** that guarantee interoperability across different client and server versions.  
 - **Open governance models** that allow change proposals, community discussion, and progressive adoption.
 
-A robust and long-lasting protocol requires an active community and a transparent technical evolution process.
+A robust and long lasting protocol requires an active community and a transparent technical evolution process.
 
 ### 10.2 Protocol Extensions and Specializations
 
-The current specification covers the fundamentals: tool discovery, execution, context resources, and metadata. However, areas for future extensions are already identified:
+The current specification covers the fundamentals: tool discovery, execution, context resources, and metadata. , areas for future extensions are already identified:
 
 #### 10.2.1 Advanced Semantic Typing
 
 - Support for **richer validation schemas** (JSON Schema, Protobuf, Avro).  
-- Inclusion of **ontologies** or **shared semantic types** enabling cross-domain interoperability (e.g., financial, clinical, legal types).
+- Inclusion of **ontologies** or **shared semantic types** enabling cross domain interoperability (e.g., financial, clinical, legal types).
 
 #### 10.2.2 Streaming Data Access
 
@@ -665,11 +661,11 @@ One of the most important challenges is to enable **LLM models themselves to nat
 
 - Anthropic is advancing in this direction with their Claude models.
 - Other companies like OpenAI or Mistral could follow this approach if the community shows enough traction.
-- Including the "tool protocol" as part of pretraining or fine-tuning is seen as a viable strategy.
+- Including the "tool protocol" as part of pretraining or fine tuning is seen as a viable strategy.
 
 ### 10.4 Collaborative Ecosystems
 
-MCP could become the backbone for multi-agent, distributed, and collaborative execution environments:
+MCP could become the backbone for multi agent, distributed, and collaborative execution environments:
 
 - Platforms like AutoGen, LangGraph, or CrewAI could adopt MCP as the underlying protocol.
 - Specialized models (e.g., data extraction, planning, reasoning) can interoperate through MCP by sharing tools.
@@ -695,7 +691,7 @@ Not all models can manage multiple tools with multiple arguments. An overly rich
 
 If multiple dialects, incompatible extensions, or closed implementations of the protocol emerge, there is a risk of losing interoperability. This must be mitigated with compliance test suites and formal contracts.
 
-### 10.6 Long-term Vision: Infrastructure for Autonomous LLMs
+### 10.6 Long term Vision: Infrastructure for Autonomous LLMs
 
 MCP could play a key role as a foundational infrastructure in:
 
@@ -718,11 +714,11 @@ MCP should be understood as a **fundamental piece of infrastructure** for buildi
 - Modularity and component reuse,
 - Standardization of interfaces between AI and systems.
 
-Just as HTTP enabled the growth of the web or SQL allowed declarative data manipulation, MCP can be the catalyst for sustainable growth of generative AI-based systems.
+Just as HTTP enabled the growth of the web or SQL allowed declarative data manipulation, MCP can be the catalyst for sustainable growth of generative AI based systems.
 
 ### 11.2 MCP Is Not a Magic Solution
 
-Despite its potential, MCP does not solve all LLM-related problems:
+Despite its potential, MCP does not solve all LLM related problems:
 
 - It does not guarantee correct reasoning: it only structures the environment.
 - It does not ensure precise results: it depends on the quality of connected data and tools.
@@ -753,7 +749,7 @@ Therefore, its implementation must be accompanied by **rigorous evaluations**, *
 
 ### 11.4 Emerging Future
 
-As language models become **autonomous agents capable of executing complex tasks**, the need for structured, auditable, and controllable environments becomes critical. MCP provides a solid framework for this, and its adoption — though still early — could be decisive for the next generation of interactive, reliable, and modular AI systems.
+As language models become **autonomous agents capable of executing complex tasks**, the need for structured, auditable, and controllable environments becomes critical. MCP provides a solid framework for this, and its adoption though still early could be decisive for the next generation of interactive, reliable, and modular AI systems.
 
 ## 12. Web Resources and References
 
@@ -769,7 +765,7 @@ As language models become **autonomous agents capable of executing complex tasks
 #### 12.2 Technical Articles and Papers
 
 - **“Model Context Protocol (MCP) at First Glance” (Jun 2025)**  
-  Large-scale study of vulnerabilities and health metrics in MCP servers: [arXiv:2506.13538](https://arxiv.org/abs/2506.13538)
+  Large scale study of vulnerabilities and health metrics in MCP servers: [arXiv:2506.13538](https://arxiv.org/abs/2506.13538)
 - **“Unveiling Attack Vectors in the Model Context Protocol Ecosystem” (Jun 2025)**  
   Identification of attack vectors (tool poisoning, puppet, rug pull): [arXiv:2506.02040](https://arxiv.org/abs/2506.02040)
 - **“Enterprise‑Grade Security for the Model Context Protocol” (Apr 2025)**  
