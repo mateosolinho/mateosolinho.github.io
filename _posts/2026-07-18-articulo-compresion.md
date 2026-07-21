@@ -58,7 +58,7 @@ Lo que sigue a partir de aquí es una sucesión de personas resolviendo, cada ve
 
 ### 1948 — Claude Shannon pone la pregunta sobre papel
 
-![FBW](/assets\img\post\articulo_compresion\shannon.png)
+![FBW](/assets/img/post/articulo_compresion/shannon.png)
 
 El salto más importante de toda esta historia no fue un algoritmo, fue un marco matemático. 
 
@@ -70,7 +70,7 @@ Le voy a dedicar el próximo capítulo entero a la **entropía**, porque es la p
 
 #### 1951-1952 — Un estudiante le gana la partida a su profesor
 
-![FBW](/assets\img\post\articulo_compresion\DavidHuffman.png)
+![FBW](/assets/img/post/articulo_compresion/DavidHuffman.png)
 
 Esta es, para mí, la mejor historia de toda la cronología, en 1951, **David Huffman** era estudiante de posgrado en el **MIT**, en un curso de teoría de la información impartido por **Robert Fano** uno de los grandes nombres del campo, que además había trabajado codo con codo con el propio Shannon. 
 
@@ -80,13 +80,13 @@ Lo que Fano no les contó es que ese problema seguía abierto, ni siquiera él, 
 
 Huffman, sin saber que se estaba enfrentando a un problema sin resolver, pasó meses dándole vueltas sin éxito, según su propio relato, estaba a pocos días del examen final, ya dispuesto a tirar la toalla y ponerse a estudiar, cuando tuvo el golpe de intuición que necesitaba, en vez de construir el código de arriba hacia abajo, como hacía el método de su profesor, había que construirlo de abajo hacia arriba, combinando primero los símbolos menos frecuentes en un árbol binario.
 
-![FBW](/assets\img\post\articulo_compresion\hufman.png)
+![FBW](/assets/img/post/articulo_compresion/hufman.png)
 
 El resultado, publicado en 1952, no solo resolvía el problema demostrablemente daba el código óptimo, **mejor que el método que su propio profesor llevaba tiempo desarrollando**.
 
 ### 1977-1978 — Lempel y Ziv cambian la pregunta
 
-![FBW](/assets\img\post\articulo_compresion\1.png)
+![FBW](/assets/img/post/articulo_compresion/1.png)
 
 Huffman resolvió cómo aprovechar la frecuencia de símbolos individuales, pero un texto no es solo una bolsa de letras sueltas, tiene palabras repetidas, frases que vuelven a aparecer, estructuras que se repiten. 
 
@@ -96,7 +96,7 @@ Es el nacimiento de la **compresión "por diccionario"**, y es un cambio de para
 
 ### 1984 — LZW y el algoritmo que llegó a todas partes
 
-![FBW](/assets\img\post\articulo_compresion\2.png)
+![FBW](/assets/img/post/articulo_compresion/2.png)
 
 **Terry Welch** refinó esta familia de algoritmos en 1984 con `LZW`, una variante que construye un diccionario dinámico de patrones a medida que va leyendo los datos, sin necesidad de guardar ese diccionario en el archivo final, el propio proceso de descompresión es capaz de reconstruirlo de forma idéntica sobre la marcha. 
 
@@ -106,7 +106,7 @@ Esa segunda decisión, como veremos en un capítulo dedicado solo a esto, acabar
 
 ### DEFLATE: cuando alguien decide combinar las dos familias
 
-![FBW](/assets\img\post\articulo_compresion\3.png)
+![FBW](/assets/img/post/articulo_compresion/3.png)
 
 A principios de los 90, **Phil Katz** diseñó `DEFLATE`, un algoritmo que no inventa una técnica nueva, sino que combina inteligentemente las dos que ya existían.
 
@@ -230,13 +230,13 @@ En resumen, la compresión `lossy` explota los límites de la percepción humana
 
 Como primera aproximación, intenté comprimir un archivo de texto con la siguiente información: *"Este archivo es un archivo de prueba, quiero comprobar su peso antes y después de comprimir con un software como Winrar"*. 
 
-![FBW](/assets\img\post\articulo_compresion\1.ImagenArchivoTexto.png)
+![FBW](/assets/img/post/articulo_compresion/1.ImagenArchivoTexto.png)
 
 Su peso en `.txt` era de `127 bytes`, y su comprimido en `.rar` es de `186 bytes`.
 
-![FBW](/assets\img\post\articulo_compresion\2.ImagenArchivoTextoPeso.png)
+![FBW](/assets/img/post/articulo_compresion/2.ImagenArchivoTextoPeso.png)
 
-![FBW](/assets\img\post\articulo_compresion\3.ImagenTextoComprimidoPesoMas.png)
+![FBW](/assets/img/post/articulo_compresion/3.ImagenTextoComprimidoPesoMas.png)
 
 Esto sucede porque al comprimir un archivo extremadamente pequeño como este, el archivo resultante (`.zip` o `.rar`) suele pesar más que el original, esto no es un error del software, sino un fenómeno matemático predecible, un texto tan corto casi no tiene patrones repetidos, por lo que el algoritmo de compresión apenas tiene margen para "encoger" los datos reales.
 
@@ -249,13 +249,13 @@ En resumen, los bytes que ocupa el "envase" superan con creces los pocos bytes q
 
 Para que podamos ver la compresión de forma efectiva, generé un `.txt` con más caracteres que pesa `1005 bytes`. 
 
-![FBW](/assets\img\post\articulo_compresion\4.ArchivoTxt.png)
+![FBW](/assets/img/post/articulo_compresion/4.ArchivoTxt.png)
 
-![FBW](/assets\img\post\articulo_compresion\5.ArchivoPesoTxt.png)
+![FBW](/assets/img/post/articulo_compresion/5.ArchivoPesoTxt.png)
 
 En este caso, al hacer la misma compresión, podemos ver que el archivo ha pasado de pesar `1005 bytes` a pesar `640 bytes`. 
 
-![FBW](/assets\img\post\articulo_compresion\6.TxtComprimidoPesoMenos.png)
+![FBW](/assets/img/post/articulo_compresion/6.TxtComprimidoPesoMenos.png)
 
 Esto ha sucedido porque hemos conseguido que el contenido del `.txt` tenga suficiente redundancia, de forma que el ahorro supera el peso de los metadatos que genera el `.rar`, permitiéndonos ver el beneficio real de la compresión.
 
