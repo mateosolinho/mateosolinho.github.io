@@ -1,6 +1,6 @@
 ---
 title: Arquitecturas de la Invisibilidad: Viaje hacia la compresión de datos
-date: 2026-07-18 12:30:00 +0800
+date: 2026-07-19 12:30:00 +0800
 categories: [Ciencias de la Computación, Desarrollo de Software]
 tags: [Compresion, Rust, Web, Datos]
 image:
