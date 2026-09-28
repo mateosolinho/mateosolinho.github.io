@@ -15,6 +15,7 @@ tabs:
   tags: Tags
   archives: Archives
   about: About
+  readings: Readings
 
 # the text displayed in the search bar & search results
 search:
@@ -70,6 +71,7 @@ post:
     share_link:
       title: Copy link
       succeed: Link copied successfully!
+  pin_prompt: Pinned
 
 # Date time format.
 # See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
@@ -89,3 +91,33 @@ categories:
   post_measure:
     singular: post
     plural: posts
+
+# ----- Custom (bilingual UI) -----
+
+site:
+  title: Mateo Soliño - Software Developer
+  tagline: Exploring the world of programming, projects, tutorials, and experiences for tech enthusiasts.
+
+sidebar:
+  download_cv: Download CV
+
+ui_lang:
+  switch_label: Cambiar a español
+  switch_to: ES
+
+# Readings (source card at the top of a post + Readings tab)
+source:
+  types:
+    paper: Paper
+    article: Article
+    post: Blog post
+    talk: Talk
+    video: Video
+    book: Book
+  original: Original
+  pdf: PDF
+  code: Code
+  tldr: TL;DR
+readings:
+  intro: Papers, articles and other readings I have summarised or explained.
+  empty: No readings yet.

@@ -8,7 +8,7 @@ layout: page
 <div id="page-category">
   <h1 class="ps-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
-    {{ page.title }}
+    {% include term-name.html name=page.title %}
     <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
   </h1>
 

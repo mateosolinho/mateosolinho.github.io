@@ -1,11 +1,11 @@
 ---
 title: Sistema de Gestión de Estrellas en Python
-date: 2024-07-12 17:50:00 +0800
-categories: [Programación, Desarrollo de Software]
-tags: [Python, Tkinter, MySQL, CRUD, Desarrollo de Software]
+lang: es
+date: 2024-07-12 17:50:00 +0200
+categories: [Projects]
+tags: [SQL, Python]
 image:
   path: /assets/img/post/ejercicio_crud_estrellas/1.png
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 [Link Repositorio Github](https://github.com/mateosolinho/python/tree/master/projects/star_manager)
@@ -38,7 +38,7 @@ En esta entrada, exploraremos cómo construir un sistema `CRUD` para gestionar u
 
 2. **Escalabilidad**: Permite la **adición de funcionalidades y datos** sin reestructurar el sistema.
 
-3. **Interfaz de Usuario**: Facilita la cración de **interfaces gráficas de usuario** para gestionar datos de **manera eficiente**.
+3. **Interfaz de Usuario**: Facilita la creación de **interfaces gráficas de usuario** para gestionar datos de **manera eficiente**.
 
 ### Desventajas del Enfoque
 
@@ -119,7 +119,7 @@ HeidiSQL es una herramienta de gestión y administración de bases de datos MySQ
 
 ### SQL (Structured Query Language)
 
-![img](/assets/img/post/ejercicio_crud_estrellas/6.jpg)
+![img](/assets/img/post/ejercicio_crud_estrellas/6.webp)
 
 `SQL` es un lenguaje de programación estándar utilizado **para gestionar y manipular bases de datos relacionales**. Aquí está cómo se utiliza y sus beneficios:
 
@@ -664,4 +664,4 @@ La experiencia adquirida en este proyecto refuerza la importancia de comprender 
 
 *Para utilizarla deberás tener `XAMPP` instalado.*
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. ¡Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. ¡Adiós!*

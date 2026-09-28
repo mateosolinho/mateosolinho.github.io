@@ -1,11 +1,11 @@
 ---
 title: Primera Red Neuronal
-date: 2024-07-04 15:50:00 +0800
-categories: [Programación, IA]
-tags: [Machine Learning, Data Science, TensorFlow, ANN, Red Neuronal, Aprendizaje Automático, IA]
+lang: es
+date: 2024-07-04 15:50:00 +0200
+categories: [Artificial Intelligence]
+tags: [Machine Learning, Neural Networks, TensorFlow, Python]
 image:
-  path: /assets/img/post/red_neuronal/brain.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: /assets/img/post/red_neuronal/brain.webp
 ---
 
 [Link Repositorio Github](https://github.com/mateosolinho/python/tree/master/projects/red_neuronal)
@@ -194,10 +194,10 @@ Variables internas del modelo
        [ 0.3759461]], dtype=float32), array([3.1386135], dtype=float32)]
 ```
 
-Imprimimos los `pesos de las capas` desués del entrenamiento para ver cómo el modelo ha ajustado sus parámetros.
+Imprimimos los `pesos de las capas` después del entrenamiento para ver cómo el modelo ha ajustado sus parámetros.
 
 ## Conclusión
 
 En este ejercicio muestra cómo construir y entrenar una red neuronal básica para convertir temperaturas de Celsius a Fahrenheit. Aunque es un ejemplo simple, ilustra los conceptos fundamentales del aprendizaje automático y el uso de TensorFlow.
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adiós!*

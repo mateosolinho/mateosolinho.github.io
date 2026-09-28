@@ -15,6 +15,7 @@ tabs:
   tags: Etiquetas
   archives: Archivo
   about: Acerca de
+  readings: Lecturas
 
 # the text displayed in the search bar & search results
 search:
@@ -63,7 +64,7 @@ post:
   relate_posts: Lecturas adicionales
   share: Compartir
   button:
-    next: Nuevo
+    next: Más reciente
     previous: Anterior
     copy_code:
       succeed: ¡Copiado!
@@ -71,7 +72,71 @@ post:
       title: Copiar enlace
       succeed: ¡Enlace copiado!
 
+  pin_prompt: Fijado
+
+# Date time format.
+# See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
+df:
+  post:
+    strftime: "%d/%m/%Y"
+    dayjs: "ll"
+  archives:
+    strftime: "%b"
+    dayjs: "MMM"
+
 # categories page
 categories:
-  category_measure: categorias
-  post_measure: entradas
+  category_measure:
+    singular: categoría
+    plural: categorías
+  post_measure:
+    singular: entrada
+    plural: entradas
+
+# ----- Custom (bilingual UI) -----
+
+site:
+  title: Mateo Soliño - Desarrollador de Software
+  tagline: Explorando el mundo de la programación con proyectos, tutoriales y experiencias para amantes de la tecnología.
+
+sidebar:
+  download_cv: Descargar CV
+
+ui_lang:
+  switch_label: Switch to English
+  switch_to: EN
+
+# Lecturas (ficha de la fuente al principio del post + tab de lecturas)
+source:
+  types:
+    paper: Paper
+    article: Artículo
+    post: Post de blog
+    talk: Charla
+    video: Vídeo
+    book: Libro
+  original: Original
+  pdf: PDF
+  code: Código
+  tldr: En resumen
+readings:
+  intro: Papers, artículos y otras lecturas que he resumido o explicado.
+  empty: Todavía no hay lecturas.
+
+# Nombres de categorías y tags en español (en los posts se escriben en inglés).
+# Los que no aparecen aquí (Hack The Box, Python, LLM...) se muestran igual en los dos idiomas.
+term_names:
+  Cybersecurity: Ciberseguridad
+  Artificial Intelligence: Inteligencia Artificial
+  Projects: Proyectos
+  Technology: Tecnología
+  Readings: Lecturas
+  Real-World Incidents: Casos reales
+  Neural Networks: Redes neuronales
+  Computer Vision: Visión por computador
+  Data Analysis: Análisis de datos
+  Aerospace: Aeroespacial
+  Embedded Systems: Sistemas embebidos
+  Computing History: Historia de la informática
+  Algorithms: Algoritmos
+  Math: Matemáticas

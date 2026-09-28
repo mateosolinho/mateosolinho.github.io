@@ -1,0 +1,29 @@
+{%- comment -%}
+  Bilingual UI text. Outputs the English and Spanish strings of a locale key;
+  CSS shows the one matching <html data-ui-lang> (see `ui-lang.html`).
+  Params: key (e.g. 'post.posted'), case ('upcase' | 'capitalize'), default (fallback text),
+  en / es (literal text instead of key)
+{%- endcomment -%}
+{%- if include.key -%}
+  {%- assign _t_parts = include.key | split: '.' -%}
+  {%- assign _t_en = site.data.locales.en -%}
+  {%- assign _t_es = site.data.locales['es-ES'] -%}
+  {%- for _t_p in _t_parts -%}
+    {%- assign _t_en = _t_en[_t_p] -%}
+    {%- assign _t_es = _t_es[_t_p] -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- assign _t_en = include.en -%}
+  {%- assign _t_es = include.es -%}
+{%- endif -%}
+{%- assign _t_en = _t_en | default: include.default -%}
+{%- assign _t_es = _t_es | default: _t_en -%}
+{%- if include.case == 'upcase' -%}
+  {%- assign _t_en = _t_en | upcase -%}
+  {%- assign _t_es = _t_es | upcase -%}
+{%- elsif include.case == 'capitalize' -%}
+  {%- assign _t_en = _t_en | capitalize -%}
+  {%- assign _t_es = _t_es | capitalize -%}
+{%- endif -%}
+<span data-ui="en">{{ _t_en }}</span><span data-ui="es">{{ _t_es }}</span>
+{%- assign _t_en = nil -%}{%- assign _t_es = nil -%}

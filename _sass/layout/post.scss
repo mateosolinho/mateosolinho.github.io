@@ -47,7 +47,8 @@
 }
 
 h1 + .post-meta {
-  span + span::before {
+  /* [data-ui]: the EN/ES pair of a translated text is not a separate item */
+  span + span:not([data-ui])::before {
     @include dot;
   }
 

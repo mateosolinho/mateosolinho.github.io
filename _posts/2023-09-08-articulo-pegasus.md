@@ -1,11 +1,11 @@
 ---
 title: Spyware Pegasus
-date: 2023-09-08 15:30:00 +0800
-categories: [Ciberseguridad, Articulos]
-tags: [Spyware, Pegasus, CVE-2016-4655, CVE-2016-4656, CVE-2016-4657, CVE-2023-41064, CVE-2023-41061]
+lang: es
+date: 2023-09-08 15:30:00 +0200
+categories: [Cybersecurity]
+tags: [Malware, Real-World Incidents]
 image:
   path: /assets/img/post/articulo-pegasus/1.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 Vivimos en una época en la que la **tecnología** está omnipresente. Todo lo que usamos diariamente está conectado a la red y, por lo tanto, es vulnerable a **ataques cibernéticos** por parte de criminales.
@@ -20,11 +20,11 @@ Este caso es el del **Spyware Pegasus**, un programa que infecta dispositivos m�
 
 ![img](/assets/img/post/articulo-pegasus/7.jpg)
 
-## **¿Que es NSO Group?**
+## **¿Qué es NSO Group?**
 
 **NSO Technologies** es una empresa de tecnología conocida por ser los autores de este spyware, que permite la **vigilancia remota** de teléfonos móviles.
 
-![img](/assets/img/post/articulo-pegasus/2.jpg)
+![img](/assets/img/post/articulo-pegasus/2.webp)
 
 Los fundadores de **NSO** son exmiembros de la **Unidad 8200**, el Cuerpo de Inteligencia de Israel responsable de recopilar inteligencia de señales.
 
@@ -32,7 +32,7 @@ Esta misma empresa, a través del **Ministerio de Defensa israelí**, es la enca
 
 Este spyware se usa principalmente para el **espionaje** por parte de gobiernos a **periodistas**, **activistas**, **políticos**, **empresarios**, etc.
 
-## **¿Como fue descubierto el uso del malware?**
+## **¿Cómo fue descubierto el uso del malware?**
 
 ![img](/assets/img/post/articulo-pegasus/3.jpg)
 
@@ -56,7 +56,7 @@ Esta falla fue particularmente destacable porque, por lo general, este tipo de *
 
 El descubrimiento de esta falla permitió a los investigadores confirmar con certeza que se trataba del **software desarrollado por NSO Group**. Este hallazgo fue crucial para entender la magnitud del **espionaje** y el alcance del impacto del spyware en las víctimas.
 
-## **¿Como funciona Pegasus?**
+## **¿Cómo funciona Pegasus?**
 
 ![img](/assets/img/post/articulo-pegasus/5.jpg)
 
@@ -80,7 +80,7 @@ Una vez que el dispositivo está infectado, **Pegasus** concede al atacante **co
 
 ## **Casos en España**
 
-![img](/assets/img/post/articulo-pegasus/6.jpg)
+![img](/assets/img/post/articulo-pegasus/6.webp)
 
 En nuestro propio país, ha habido varios casos muy mediáticos sobre el uso de este software por parte del gobierno, pero sin duda el más polémico y conocido ha sido el **espionaje mediante Pegasus** de **65 abogados**, **académicos**, **periodistas** y **políticos** de los entornos independentistas vascos y catalanes.
 

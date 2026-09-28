@@ -1,11 +1,11 @@
 ---
 title: Granny - HTB Writeup
-date: 2023-09-10 19:00:00 +0800
-categories: [Ciberseguridad, Writeups, HTB]
-tags: [Writeup, HTB, Penetration Testing, Ethical Hacking, Webdav, RFI]
+lang: es
+date: 2023-09-10 19:00:00 +0200
+categories: [Cybersecurity]
+tags: [Hack The Box, Windows]
 image:
-  path: /assets/img/post/granny/vishnu-mohanan-pfR18JNEMv8-unsplash.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: /assets/img/post/granny/vishnu-mohanan-pfR18JNEMv8-unsplash.webp
 ---
 
 Granny es una máquina de dificultad `Easy` en la plataforma **Hack The Box**
@@ -30,7 +30,7 @@ Vamos a realizar un escaneo de **servicios** y **versiones** corriendo por este 
 nmap -sCV -p80 10.10.10.15 -oN versions
 ```
 
-![img](/assets/img/post/granny/772fc76a-3774-4bd5-baf7-7bbd0b259c64.png)
+![img](/assets/img/post/granny/772fc76a-3774-4bd5-baf7-7bbd0b259c64.webp)
 
 Gracias al conjunto de scripts básicos de reconocimiento que aplica el escaneo, podemos ver los tipos de peticiones que se pueden realizar en el servidor, además de que en el puerto `80` se ha detectado un `Webdav` además de un `IIS` (Servidor web que maneja solicitudes HTTP y HTTPS)
 
@@ -58,7 +58,7 @@ curl -s -X PUT http://10.10.10.15/cmdasp.txt -d @cmdasp.aspx
 
 > Subiremos el archivo en formato `.txt` ya que no podremos en formato `.aspx`
 
-Una vez el archivo ya subido aprovecharemos el metodo `MOVE` para cambiar la extensión de la **web shell** y poder ejecutarla:
+Una vez el archivo ya subido aprovecharemos el método `MOVE` para cambiar la extensión de la **web shell** y poder ejecutarla:
 
 ```bash
 curl -s -X MOVE -H "Destination:http://10.10.10.15/cmdasp.aspx" http://10.10.10.15/cmdasp.txt
@@ -150,4 +150,4 @@ Y ya tendremos acceso a la máquina como usuario privilegiado
 
 Podremos ver ambas **flag** en el ``Desktop`` del ``usuario`` y del ``administrator``
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adiós!*

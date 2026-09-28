@@ -20,7 +20,7 @@
     <div class="site-title">
       <a href="{{ '/' | relative_url }}">Mateo Soliño</a>
     </div>
-    <div class="site-subtitle fst-italic">{{ site.tagline }}</div>
+    <div class="site-subtitle fst-italic">{% include t.html key="site.tagline" %}</div>
   </div>
   <!-- .profile-wrapper -->
 
@@ -29,7 +29,7 @@
     <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
       <a href="{{ '/' | relative_url }}" class="nav-link">
         <i class="fa-fw fas fa-home"></i>
-        <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
+        <span>{% include t.html key="tabs.home" case="upcase" %}</span>
       </a>
     </li>
     <!-- the real tabs -->
@@ -39,21 +39,26 @@
           <i class="fa-fw {{ tab.icon }}"></i>
           {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
 
-          <span>{{ site.data.locales[include.lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+          {% capture _tab_key %}tabs.{{ tab_name }}{% endcapture %}
+          <span>{% include t.html key=_tab_key case="upcase" %}</span>
         </a>
       </li>
       <!-- .nav-item -->
     {% endfor %}
     <li class="nav-item">
-      <a href="../assets/CV_Mateo_Solino.pdf" class="nav-link" download>
+      <a href="{{ '/assets/CV_Mateo_Solino.pdf' | relative_url }}" class="nav-link" download>
         <i class="fa-fw fas fa-file-pdf"></i>
-        <span>DOWNLOAD CV</span>
+        <span>{% include t.html key="sidebar.download_cv" case="upcase" %}</span>
       </a>
     </li>
   </ul>
-  <!-- ul.nav.flex-column
+  <!-- ul.nav.flex-column -->
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+    <button type="button" class="ui-lang-toggle btn" {% include t-attr.html attr="aria-label" key="ui_lang.switch_label" %} {% include t-attr.html attr="title" key="ui_lang.switch_label" %}>
+      {% include t.html key="ui_lang.switch_to" %}
+    </button>
+
     {% unless site.theme_mode %}
       <button class="mode-toggle btn" aria-label="Switch Mode">
         <i class="fas fa-adjust"></i>

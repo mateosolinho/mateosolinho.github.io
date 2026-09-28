@@ -1,11 +1,11 @@
 ---
 title: Análisis y Visualización de Datos de Misiones Espaciales 1957-2020
-date: 2024-07-08 21:40:00 +0800
-categories: [Programación, Data Science]
-tags: [Data Science, Python, Pandas]
+lang: es
+date: 2024-07-08 21:40:00 +0200
+categories: [Projects]
+tags: [Data Analysis, Aerospace, Python]
 image:
   path: /assets/img/post/rocket_dataset/8.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 [Link Repositorio Github](https://github.com/mateosolinho/python/tree/master/projects/rocket_dataset)
@@ -262,7 +262,7 @@ Salida:
 
 ![img](/assets/img/post/rocket_dataset/2.png)
 
-En esta gráfica de barras podemos obervar que la organización que más misiones ha realizado ha sido **RVSN USSR**, empresa espacial **Rusa**.
+En esta gráfica de barras podemos observar que la organización que más misiones ha realizado ha sido **RVSN USSR**, empresa espacial **Rusa**.
 
 ***¿Cuántos lanzamientos se realizaron por año?***
 
@@ -281,7 +281,7 @@ Salida:
 
 ![img](/assets/img/post/rocket_dataset/3.png)
 
-En esta gráfica podemos obervar que la **los años con más actividad espacial son la década de 1970 y el año 2018**.
+En esta gráfica podemos observar que la **los años con más actividad espacial son la década de 1970 y el año 2018**.
 
 ***¿Qué meses son los más populares para los lanzamientos?***
 
@@ -319,7 +319,7 @@ Salida:
 
 Salida:
 
-En esta gráfica podemos observar que a partir de los **90s** el **precio de las misiones ha descendido drasticamente**.
+En esta gráfica podemos observar que a partir de los **90s** el **precio de las misiones ha descendido drásticamente**.
 
 ***¿Se han vuelto más seguras las misiones espaciales o las posibilidades de fracaso se han mantenido sin cambios?***
 
@@ -340,9 +340,9 @@ Usamos un gráfico de pastel para mostrar la **proporción de diferentes estados
 
 Salida:
 
-![img](/assets/img/post/rocket_dataset/7.png)
+![img](/assets/img/post/rocket_dataset/7.webp)
 
-En este grafico de pastel podemos observar que hasta **2020** gran parte de los lanzamientos **eran existosos (90%)**, pero aun así la cantidad de **fallos en vuelo es muy alto (7%)**.
+En este gráfico de pastel podemos observar que hasta **2020** gran parte de los lanzamientos **eran exitosos (90%)**, pero aun así la cantidad de **fallos en vuelo es muy alto (7%)**.
 
 ```python
 data_ms = df.pivot_table(index='Year', columns='Mission_Status', aggfunc='size', fill_value=0)

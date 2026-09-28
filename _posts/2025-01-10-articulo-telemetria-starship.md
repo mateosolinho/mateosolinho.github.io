@@ -1,11 +1,11 @@
 ---
 title: Rocket Launch Telemetry Processing Using OCR
-date: 2024-12-08 12:30:00 +0800
-categories: [Programación, Desarrollo de Software]
-tags: [OCR, Tesseract, Python, OpenCV, Python, DataScience]
+lang: en
+date: 2025-01-10 18:00:00 +0100
+categories: [Projects]
+tags: [Computer Vision, Data Analysis, Aerospace, Python]
 image:
   path: /assets/img/post/telemetria_starship/1.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 ## Introduction 
@@ -16,7 +16,7 @@ In this post, I’ll show you how these *data points* can be **incredibly intere
 
 I will also show you how the telemetry extraction program works, what its parts are and of course, how to use it yourself.
 
-![t](/assets/img/post/telemetria_starship/9.jpeg)
+![t](/assets/img/post/telemetria_starship/9.webp)
 
 ## Project Context
 
@@ -28,7 +28,7 @@ My goals for this project were to have a good *database* with the **telemetry** 
 
 Finally, I have managed to have the **largest accumulation of data in the Spanish community** to date, analyzing up to **6 frames** per second and having more than **10k lines** in some launches.
 
-![t](/assets/img/post/telemetria_starship/7.png)
+![t](/assets/img/post/telemetria_starship/7.webp)
 
 ![t](/assets/img/post/telemetria_starship/2.jpg)
 
@@ -578,9 +578,9 @@ All telemetry data is saved in an `.xlsx` file, this is joined to the data added
 
 Here is all the telemetry saved up to **Starship flight 6**: (Google Sheet Starship Telemetry)[https://docs.google.com/spreadsheets/d/1QW8VqAGvxSJnrbFE_ByTIGqtHqvjOaXR4vESa94xsOA/edit?usp=sharing]
 
-![t](/assets/img/post/telemetria_starship/4.jpg)
+![t](/assets/img/post/telemetria_starship/4.webp)
 
-![t](/assets/img/post/telemetria_starship/10.png)
+![t](/assets/img/post/telemetria_starship/10.webp)
 
 ### Information about the sheet
 
@@ -624,11 +624,11 @@ Using this tool we can do a lot of type of charts but we are **very limited**, t
 
 Below I share a couple of **screenshots** of the progress of the website, in the next few months / weeks it will undergo changes for its improvement:
 
-![t](/assets/img/post/telemetria_starship/5.png)
+![t](/assets/img/post/telemetria_starship/5.webp)
 
-![t](/assets/img/post/telemetria_starship/3.png)
+![t](/assets/img/post/telemetria_starship/3.webp)
 
-![t](/assets/img/post/telemetria_starship/6.png)
+![t](/assets/img/post/telemetria_starship/6.webp)
 
 ## Technical Challenges
 

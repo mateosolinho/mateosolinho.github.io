@@ -2,7 +2,7 @@
 <script type="text/javascript">
   (function () {
     function updateMermaid(event) {
-      if (event.source === window && event.data && event.data.direction === ModeToggle.ID) {
+      if (typeof ModeToggle !== 'undefined' && event.source === window && event.data && event.data.direction === ModeToggle.ID) {
         const mode = event.data.message;
 
         if (typeof mermaid === 'undefined') {

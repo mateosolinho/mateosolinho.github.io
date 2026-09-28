@@ -1,11 +1,11 @@
 ---
 title: Clasificación de Imágenes con una Red Neuronal
-date: 2024-07-05 12:20:00 +0800
-categories: [Programación, IA]
-tags: [Machine Learning, Data Science, TensorFlow, ANN, Red Neuronal, Aprendizaje Automático, IA]
+lang: es
+date: 2024-07-05 12:20:00 +0200
+categories: [Artificial Intelligence]
+tags: [Machine Learning, Neural Networks, TensorFlow, Computer Vision, Python]
 image:
   path: /assets/img/post/clasificacion_imagenes/red.png
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 [Link Repositorio Github](https://github.com/mateosolinho/python/tree/master/projects/clasificador_imagenes)
@@ -28,7 +28,7 @@ En este proyecto, utilizamos una `Red Neuronal Artificial (ANN)` para la tarea d
 
 ### ¿Por Qué Usar una ANN?
 
-1. **Simplitud y Eficiencia:** Las `ANN` son relativamente simples de construir y entender, lo que las hace ideales para tareas de clasificación básicas y como introducción al aprendizaje profundo.
+1. **Simplicidad y Eficiencia:** Las `ANN` son relativamente simples de construir y entender, lo que las hace ideales para tareas de clasificación básicas y como introducción al aprendizaje profundo.
 
 2. **Tamaño de las Imágenes:** Las imágenes de `28x28 píxeles` del `dataset Fashion MNIST` son lo suficientemente pequeñas para que una `ANN` pueda manejarlas eficientemente sin requerir la complejidad adicional de `redes neuronales convolucionales (CNN)`, que son más adecuadas para imágenes de mayor resolución.
 
@@ -425,4 +425,4 @@ Seleccionamos una imagen de prueba y realizamos una predicción individual para 
 
 Este ejercicio demuestra cómo construir y entrenar una red neuronal para la clasificación de imágenes de ropa utilizando el dataset Fashion MNIST. Hemos explorado desde la carga y preprocesamiento de datos hasta la visualización de predicciones, proporcionando una visión completa del flujo de trabajo en el aprendizaje profundo con TensorFlow.
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adiós!*

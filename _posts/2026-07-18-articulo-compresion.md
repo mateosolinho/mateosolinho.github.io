@@ -1,11 +1,11 @@
 ---
 title: Arquitecturas de la Invisibilidad > Viaje hacia la compresión de datos
-date: 2026-07-19 12:30:00 +0800
-categories: [Ciencias de la Computación, Desarrollo de Software]
-tags: [Compresion, Rust, Web, Datos]
+lang: es
+date: 2026-07-19 12:30:00 +0200
+categories: [Technology]
+tags: [Algorithms, Math, Computing History, Rust]
 image:
-  path: /assets/img/post/articulo_compresion/c.png
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: /assets/img/post/articulo_compresion/c.webp
 ---
 
 ## 1. Introducción y contexto histórico
@@ -46,7 +46,7 @@ Un impresor necesita muchas más piezas de las letras que usa constantemente que
 
 Con ese mapa, Vail hizo lo obvio en retrospectiva pero brillante en su momento, dio los códigos más cortos a las letras más frecuentes. 
 
-La "E", la letra más común del inglés, se quedó con el código más corto posible, un único punto. La "T", la segunda más común, un único guión. Las letras raras, como la "Q" o la "Z", se quedaron con secuencias largas de cuatro símbolos.
+La "E", la letra más común del inglés, se quedó con el código más corto posible, un único punto. La "T", la segunda más común, un único guion. Las letras raras, como la "Q" o la "Z", se quedaron con secuencias largas de cuatro símbolos.
 
 Setenta años antes de que naciera la teoría de la información, alguien ya había entendido intuitivamente su principio más importante, **no todos los símbolos merecen el mismo coste de representación**. Los frecuentes deberían costar poco, los raros pueden permitirse costar más, precisamente porque aparecen poco.
 
@@ -58,7 +58,7 @@ Lo que sigue a partir de aquí es una sucesión de personas resolviendo, cada ve
 
 ### 1948 — Claude Shannon pone la pregunta sobre papel
 
-![FBW](/assets/img/post/articulo_compresion/shannon.png)
+![FBW](/assets/img/post/articulo_compresion/shannon.webp)
 
 El salto más importante de toda esta historia no fue un algoritmo, fue un marco matemático. 
 

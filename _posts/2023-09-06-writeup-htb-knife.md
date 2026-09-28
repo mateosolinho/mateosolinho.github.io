@@ -1,11 +1,11 @@
 ---
 title: Knife - HTB Writeup
-date: 2023-09-08 03:20:00 +0800
-categories: [Ciberseguridad, Writeups, HTB]
-tags: [Writeup, HTB, Penetration Testing, Ethical Hacking, RCE, PHP Vulnerability]
+lang: es
+date: 2023-09-08 03:20:00 +0200
+categories: [Cybersecurity]
+tags: [Hack The Box, Linux]
 image:
-  path: /assets/img/post/knife/jimmy-chang-Q67YYjgXBfY-unsplash.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: /assets/img/post/knife/jimmy-chang-Q67YYjgXBfY-unsplash.webp
 ---
 
 **Knife** es una máquina de dificultad `Easy` en la plataforma **Hack The Box**.
@@ -74,7 +74,7 @@ En otra consola nos pondremos en escucha con `nc` por el puerto que hayamos indi
 nc -lvnp 443
 ```
 
-Y ya tendriamos acceso a la máquina víctima:
+Y ya tendríamos acceso a la máquina víctima:
 
 ![img](/assets/img/post/knife/1e64cb21-0ac4-46e6-8a25-3190cb332811.png)
 
@@ -108,4 +108,4 @@ uid=0(root) gid=0(root) groups=0(root)
 
 Y ya tendremos **acceso como root** a la máquina víctima.
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adiós!*

@@ -1,0 +1,121 @@
+/*
+  Source card (top of a post) and Readings tab
+*/
+
+.source-card {
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  border-left: 4px solid var(--prompt-key-icon-color);
+  border-radius: 0.625rem;
+  box-shadow: var(--card-shadow);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0 2rem;
+
+  .source-type {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--prompt-key-icon-color);
+    margin-bottom: 0.35rem;
+  }
+
+  .source-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-color);
+
+    a {
+      color: inherit;
+      border-bottom: none;
+    }
+  }
+
+  .source-meta {
+    color: var(--text-muted-color);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+  }
+
+  .source-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+
+    a {
+      font-size: 0.85rem;
+      padding: 0.2rem 0.65rem;
+      border: 1px solid var(--btn-border-color);
+      border-radius: 1rem;
+      color: var(--link-color);
+      border-bottom: 1px solid var(--btn-border-color);
+
+      &:hover {
+        background: var(--card-hovor-bg);
+      }
+
+      i {
+        margin-right: 0.25rem;
+      }
+    }
+  }
+
+  .source-tldr {
+    margin-top: 0.85rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--main-border-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+}
+
+#readings {
+  .readings-intro {
+    color: var(--text-muted-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .reading {
+    display: flex;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--main-border-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .reading-type {
+    flex: 0 0 2rem;
+    font-size: 1.1rem;
+    color: var(--prompt-key-icon-color);
+    padding-top: 0.15rem;
+  }
+
+  .reading-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .reading-title {
+    font-weight: 600;
+  }
+
+  .reading-source,
+  .reading-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted-color);
+  }
+
+  .reading-lang {
+    font-size: 0.7rem;
+    font-weight: 700;
+    border: 1px solid var(--btn-border-color);
+    border-radius: 0.3rem;
+    padding: 0 0.3rem;
+    margin-left: 0.4rem;
+  }
+}

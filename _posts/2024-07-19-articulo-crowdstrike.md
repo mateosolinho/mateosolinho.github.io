@@ -1,16 +1,16 @@
 ---
 title: Crisis Global de IT - Cómo una Actualización Defectuosa Causó el Mayor Apagón Cibernético de la Historia
-date: 2024-07-19 18:30:00 +0800
-categories: [Tecnología, Articulos]
-tags: [Ciberseguridad, CrowdStrike, Windows, BlueScreenOfDeath, Microsoft, Tecnología, IncidentesIT]
+lang: es
+date: 2024-07-19 18:30:00 +0200
+categories: [Cybersecurity]
+tags: [Real-World Incidents, Windows]
 image:
-  path: /assets/img/post/articulo_crowdstrike/12.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: /assets/img/post/articulo_crowdstrike/12.webp
 ---
 
 **¡Imagina despertar un día y encontrar que tu ordenador muestra una pantalla azul gigante, y que este problema está ocurriendo en todo el mundo!** Eso es exactamente lo que ha pasado el 19 de julio de 2024, cuando un error en una actualización de seguridad causó el **mayor apagón cibernético** de la historia. Desde **hospitales** hasta **aeropuertos**, casi todos los sistemas que usaban Windows se vieron afectados. ¡Sí, incluso muchos aviones tuvieron que aterrizar de emergencia!
 
-![img](/assets/img/post/articulo_crowdstrike/7.png)
+![img](/assets/img/post/articulo_crowdstrike/7.webp)
 
 **Entornos empresariales**, **el 911**, **hospitales**, **controladores aéreos**, **organizaciones públicas**, **gobiernos**, **bancos**, **aeropuertos**, **tiendas**, entre otros, se han visto afectados por este problema. Aunque mucha gente señala a **Windows** como la principal culpable de este apagón a nivel mundial, no es del todo correcto. Muchos expertos describen este acontecimiento como la **mayor falla simultánea de IT en toda la historia**.
 
@@ -20,7 +20,7 @@ Ayer, a las **06:32 UTC**, se comenzaron a reportar errores con un archivo `.sys
 
 ![img](/assets/img/post/articulo_crowdstrike/2.png)
 
-### ¿Que es CrowdStrike y que relacion tiene con Microsoft?
+### ¿Qué es CrowdStrike y qué relación tiene con Microsoft?
 
 **CrowdStrike** es una compañía de **ciberseguridad** especializada en la **detección** y **prevención de amenazas**.
 
@@ -32,13 +32,13 @@ En **2019**, la empresa se unió al programa **Microsoft Intelligent Security As
 
 ### ¿Qué es CrowdStrike Falcon?
 
-![img](/assets/img/post/articulo_crowdstrike/3.png)
+![img](/assets/img/post/articulo_crowdstrike/3.webp)
 
 **CrowdStrike Falcon Cloud Security** es una solución avanzada de **ciberseguridad** diseñada para proteger los **endpoints**, como ordenadores, servidores y teléfonos móviles en tiempo real.
 
 Desarrollada por **CrowdStrike**, esta plataforma está basada en la **nube** y se especializa en la **detección**, **prevención** y **respuesta ante amenazas cibernéticas**, ofreciendo una **defensa integral** contra una amplia gama de ataques.
 
-### ¿Cúal ha sido el causante del fallo?
+### ¿Cuál ha sido el causante del fallo?
 
 ![img](/assets/img/post/articulo_crowdstrike/8.png)
 
@@ -70,7 +70,7 @@ El usuario de Perpetualmaniac sugiere que podría ser un **movimiento estratégi
 
 ## Impacto en el Mundo
 
-![img](/assets/img/post/articulo_crowdstrike/9.jpg)
+![img](/assets/img/post/articulo_crowdstrike/9.webp)
 
 Este fallo crítico, denominado por muchos como el **mayor fallo IT en la historia**, ha causado una serie de consecuencias devastadoras. Entre los impactos más notables, se encuentra el problema con los **controladores aéreos en Estados Unidos**, que obligó a todos los aviones en vuelo a aterrizar de inmediato. Además, los aviones que estaban en tierra no pudieron despegar, paralizando el tráfico aéreo en todo el país.
 
@@ -94,7 +94,7 @@ Alejándonos del sector de la aviación y el transporte, también hemos visto pr
 
 El equipo no ha podido recibir información desde el muro de boxes, lo que ha afectado significativamente su capacidad para el desarrollo del Gran Premio.
 
-![Problemas en la Fórmula 1](/assets/img/post/articulo_crowdstrike/6.jpg)
+![Problemas en la Fórmula 1](/assets/img/post/articulo_crowdstrike/6.webp)
 
 ***
 

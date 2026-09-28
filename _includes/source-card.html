@@ -1,0 +1,73 @@
+{%- comment -%}
+  Card with the source a post summarises (paper, article...). Front matter:
+    source:
+      type: paper            # paper | article | post | talk | video | book
+      title: Attention Is All You Need
+      authors: Vaswani et al.
+      year: 2017
+      venue: NeurIPS         # conference, journal, site or author's blog (optional)
+      url: https://arxiv.org/abs/1706.03762
+      pdf: https://arxiv.org/pdf/1706.03762   # optional
+      code: https://github.com/...            # optional
+      tldr: One or two sentences with the key takeaway.
+{%- endcomment -%}
+{%- assign src = include.source -%}
+{%- assign src_type = src.type | default: 'article' -%}
+{%- case src_type -%}
+  {%- when 'paper' -%}{%- assign src_icon = 'fas fa-file-lines' -%}
+  {%- when 'post' -%}{%- assign src_icon = 'fas fa-rss' -%}
+  {%- when 'talk', 'video' -%}{%- assign src_icon = 'fas fa-circle-play' -%}
+  {%- when 'book' -%}{%- assign src_icon = 'fas fa-book' -%}
+  {%- else -%}{%- assign src_icon = 'far fa-newspaper' -%}
+{%- endcase -%}
+{%- capture src_type_key -%}source.types.{{ src_type }}{%- endcapture -%}
+
+<div class="source-card">
+  <div class="source-type">
+    <i class="{{ src_icon }} fa-fw"></i>
+    {% include t.html key=src_type_key default=src_type %}
+  </div>
+
+  <div class="source-title">
+    {% if src.url %}
+      <a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.title }}</a>
+    {% else %}
+      {{ src.title }}
+    {% endif %}
+  </div>
+
+  {% assign src_meta = '' | split: '' %}
+  {% if src.authors %}{% assign src_meta = src_meta | push: src.authors %}{% endif %}
+  {% if src.venue %}{% assign src_meta = src_meta | push: src.venue %}{% endif %}
+  {% if src.year %}{% assign src_meta = src_meta | push: src.year %}{% endif %}
+  {% if src_meta.size > 0 %}
+    <div class="source-meta">{{ src_meta | join: ' · ' }}</div>
+  {% endif %}
+
+  {% if src.url or src.pdf or src.code %}
+    <div class="source-links">
+      {% if src.url %}
+        <a href="{{ src.url }}" target="_blank" rel="noopener">
+          <i class="fas fa-arrow-up-right-from-square fa-fw"></i>{% include t.html key="source.original" %}
+        </a>
+      {% endif %}
+      {% if src.pdf %}
+        <a href="{{ src.pdf }}" target="_blank" rel="noopener">
+          <i class="far fa-file-pdf fa-fw"></i>{% include t.html key="source.pdf" %}
+        </a>
+      {% endif %}
+      {% if src.code %}
+        <a href="{{ src.code }}" target="_blank" rel="noopener">
+          <i class="fas fa-code fa-fw"></i>{% include t.html key="source.code" %}
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if src.tldr %}
+    <div class="source-tldr">
+      <strong>{% include t.html key="source.tldr" %}:</strong>
+      {{ src.tldr | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+    </div>
+  {% endif %}
+</div>

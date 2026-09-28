@@ -12,22 +12,21 @@
           <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
         {%- endcapture -%}
 
-        {{ site.data.locales[include.lang].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}
+        <span data-ui="en">{{ site.data.locales.en.meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}</span>
+        <span data-ui="es">{{ site.data.locales['es-ES'].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}</span>
       </p>
 
       <p>
         {{- '©' }}
         {{ 'now' | date: '%Y' }}
         <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
-        {% if site.data.locales[include.lang].copyright.brief %}
-          <span
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="{{ site.data.locales[include.lang].copyright.verbose }}"
-          >
-            {{- site.data.locales[include.lang].copyright.brief -}}
-          </span>
-        {% endif %}
+        <span
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          {% include t-attr.html attr="title" key="copyright.verbose" %}
+        >
+          {%- include t.html key="copyright.brief" -%}
+        </span>
       </p>
     </div>
   </div>

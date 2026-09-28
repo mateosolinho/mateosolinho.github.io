@@ -1,30 +1,30 @@
 ---
 title: Explorando el Código Fuente del Apollo 11 - Un Viaje al Corazón de la Computación Espacial
-date: 2024-07-31 20:00:00 +0800
-categories: [Tecnología, Articulos]
-tags: [Apollo 11, AGC, AGS, Computación Espacial, RocketScience, Tecnología Espacial]
+lang: es
+date: 2024-07-31 20:00:00 +0200
+categories: [Technology]
+tags: [Aerospace, Embedded Systems, Computing History]
 image:
   path: /assets/img/post/apollo11/2.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 Imagina tener que guiar a un **módulo espacial** a través del vasto vacío del espacio y aterrizarlo con precisión en la **superficie lunar**, todo mientras se trabaja con un ordenador con menos potencia que un moderno **teléfono móvil**. Este fue el desafío enfrentado por el **Apollo Guidance Computer (AGC)** durante la histórica misión **Apollo 11**, la cual llevó al primer humano a la superficie lunar.
 
 En este post, vamos a sumergirnos en el fascinante mundo del **hardware** y el **software** que hizo posible el alunizaje. Desde las _intrincadas rutinas de auto-verificación_ hasta las _complejas ecuaciones de guía lunar_, descubrirás cómo el código detrás del **AGC** no solo llevó al hombre a la Luna, sino que también marcó un hito en la historia de la _computación espacial_.
 
-![Foto de la misión Apollo](/assets/img/post/apollo11/1.jpg)
+![Foto de la misión Apollo](/assets/img/post/apollo11/1.webp)
 
 ## Historia del AGC
 
 Para entender el impacto del **Apollo Guidance Computer (AGC)** en la misión **Apollo 11**, primero debemos explorar su _historia_ y su _contexto_.
 
-![Foto del Apollo Guidance Computer (AGC)](/assets/img/post/apollo11/4.jpg)
+![Foto del Apollo Guidance Computer (AGC)](/assets/img/post/apollo11/4.webp)
 
 El **AGC**, desarrollado en el **MIT Instrumentation Laboratory** bajo la dirección de **Charles Stark Draper**, fue un avance revolucionario en la _computación espacial_. Su diseño _compacto_ y _robusto_ estaba destinado a soportar las rigurosas condiciones del espacio y a facilitar las complejas maniobras necesarias para una misión lunar exitosa.
 
 Uno de los nombres más destacados en el desarrollo del **AGC** es **Margaret Hamilton**, quien lideró el equipo de _ingenieros de software_. Su enfoque meticuloso en la ingeniería de software y su visión pionera no solo garantizaron el éxito de la misión **Apollo 11**, sino que también establecieron muchos de los **principios** de programación que hoy consideramos fundamentales.
 
-![Margaret Hamilton trabajando en el AGC](/assets/img/post/apollo11/5.jpg)
+![Margaret Hamilton trabajando en el AGC](/assets/img/post/apollo11/5.webp)
 
 ## Hardware del AGC
 
@@ -44,14 +44,14 @@ El **Apollo Guidance Computer (AGC)** fue una pieza fundamental del éxito de la
 
 - **Memoria Ram (Random Access Memory):** 2 KB
   
-  ![Imagen de núcleos magnéticos de RAM](/assets/img/post/apollo11/6.jpg)
+  ![Imagen de núcleos magnéticos de RAM](/assets/img/post/apollo11/6.webp)
 
   - **Tecnología:** La **RAM** del **AGC** estaba basada en _núcleos magnéticos_ (**magnetic core memory**), una tecnología _robusta_ y _no volátil_ que permitía mantener el estado incluso en caso de pérdida de energía.
   - **Función:** La **RAM** se utilizaba principalmente para almacenar _variables temporales_ y _datos intermedios_ necesarios para los _cálculos en tiempo real_. También se usaba para almacenar el _estado del programa_ y los _datos de navegación_.
 
 - **ROM (Read-Only Memory):** 36 KB
 
-  ![Diagrama del Core Rope Memory](/assets/img/post/apollo11/7.jpg)
+  ![Diagrama del Core Rope Memory](/assets/img/post/apollo11/7.webp)
 
   - **Tecnología:** La **ROM** utilizaba la tecnología **Core Rope Memory**, donde los _bits de datos_ se almacenaban en _núcleos magnéticos_ mediante _cables trenzados_. Esta tecnología ofrecía _alta densidad de almacenamiento_ y era _extremadamente resistente_ a fallos.
   - **Función:** La **ROM** contenía el _código de programa esencial_ para todas las fases de la misión, incluyendo _rutinas de navegación_, _control_ y _manejo de datos_. La estructura del software era _modular_, permitiendo _actualizaciones y modificaciones_ sin alterar el código base.
@@ -60,14 +60,14 @@ El **Apollo Guidance Computer (AGC)** fue una pieza fundamental del éxito de la
 
 - **Teclado y Pantalla (DSKY - Display and Keyboard):**
 
-  ![Imagen del DSKY](/assets/img/post/apollo11/9.png)
+  ![Imagen del DSKY](/assets/img/post/apollo11/9.webp)
 
   - **Interfaz de Usuario:** El **DSKY** consistía en una _pantalla de 7 segmentos_ para mostrar datos numéricos y una serie de _luces de estado_ para indicar diferentes modos y estados del sistema. El teclado permitía la entrada de comandos mediante un conjunto de _teclas numéricas_ y de _función_.
   - **Comunicaciones:** El **DSKY** se comunicaba con el **AGC** mediante un _bus de datos dedicado_, permitiendo la entrada y salida rápida y eficiente de información.
 
 - **Unidad de Navegación Inercial (INU - Inertial Navigation Unit):**
   
-  ![Diagrama de la Unidad de Navegación Inercial (INU)](/assets/img/post/apollo11/14.jpg)
+  ![Diagrama de la Unidad de Navegación Inercial (INU)](/assets/img/post/apollo11/14.webp)
 
   - **Componentes:** El **IMU** contenía _giroscopios_ y _acelerómetros_ que proporcionaban datos sobre la _orientación_ y _aceleración_ de la nave. Estos datos eran críticos para la _navegación_ y el _control de la trayectoria_.
   - **Integración:** El **AGC** integraba los datos del **IMU** con sus cálculos de navegación para determinar la _posición_ y _orientación_ precisas del **módulo lunar** y el **módulo de comando**.
@@ -171,7 +171,7 @@ El **Abort Guidance System (AGS)** fue un componente **crucial** del **Módulo L
 
 Su diseño _simplificado_, junto con su capacidad para manejar situaciones de _emergencia_, lo convirtió en una herramienta **vital** para la seguridad de las misiones **Apollo**. Aunque menos potente y preciso que el **AGC**, el **AGS** desempeñó un papel **esencial** en la estrategia de _redundancia_ y _gestión de riesgos_ del programa **Apollo**.
 
-## Codigo Fuente AGC
+## Código Fuente AGC
 
 En las siguientes secciones, exploraremos varios archivos de código fuente **clave** que ilustran cómo el **AGC** gestionaba tareas críticas como la _navegación_, el _control de actitud_, las _maniobras automáticas_ y las _rutinas de emergencia_.
 
@@ -960,7 +960,7 @@ Para entender cómo el **Módulo de Comando y Servicio (CSM)** del Apollo 11 man
 
     La subrutina `RECTIFY` establece una nueva órbita cónica cuando se detectan cambios significativos.
 
-    - **Reestablecimiento de Órbita:** Establece una nueva órbita cónica basada en los cálculos actuales de posición y velocidad.
+    - **Restablecimiento de Órbita:** Establece una nueva órbita cónica basada en los cálculos actuales de posición y velocidad.
 
     - **Reinicialización:** Reinicializa las variables y prepara el sistema para la siguiente etapa de integración.
   
@@ -1038,7 +1038,7 @@ Para entender cómo el **Módulo de Comando y Servicio (CSM)** del Apollo 11 man
 
 ## Influencia en Futuras Misiones Espaciales
 
-![CM](/assets/img/post/apollo11/22.jpg)
+![CM](/assets/img/post/apollo11/22.webp)
 
 1. **Innovaciones en Navegación y Control Espacial**
 
@@ -1058,7 +1058,7 @@ Para entender cómo el **Módulo de Comando y Servicio (CSM)** del Apollo 11 man
 
 ## Impacto y Legado del programa Apollo
 
-  ![CM](/assets/img/post/apollo11/23.jpg)
+  ![CM](/assets/img/post/apollo11/23.webp)
 
 1. **Pionero en la Informática Embebida**
 

@@ -1,11 +1,11 @@
 ---
 title: Jerry - HTB Writeup
-date: 2023-09-06 22:00:00 +0800
-categories: [Ciberseguridad, Writeups, HTB]
-tags: [Writeup, HTB, Penetration Testing, Ethical Hacking, Apache Tomcat, msfvenom, WAR File]
+lang: es
+date: 2023-09-06 22:00:00 +0200
+categories: [Cybersecurity]
+tags: [Hack The Box, Windows]
 image:
-  path: /assets/img/post/jerry/catherine-heath-i4W8OINLI_I-unsplash.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: /assets/img/post/jerry/catherine-heath-i4W8OINLI_I-unsplash.webp
 ---
 
 **Jerry** es una máquina de dificultad `Easy` en la plataforma **Hack The Box**
@@ -24,17 +24,17 @@ nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.10.95 -oG allPorts
 
 En la máquina, esta abierto solamente el puerto `8080`. Si introducimos la `URL` en el navegador junto con el puerto, podemos ver lo siguiente:
 
-![img](/assets/img/post/jerry/0701b41c-55c8-4188-ba3f-75cf0c92fbcc.png)
+![img](/assets/img/post/jerry/0701b41c-55c8-4188-ba3f-75cf0c92fbcc.webp)
 
 Podemos **loguearnos** en el servicio **Apache Tomcat** con las credenciales predeterminadas `tomcat:s3cret`:
 
-![img](/assets/img/post/jerry/658a5dde-829f-4032-8068-8d70f427a1e0.png)
+![img](/assets/img/post/jerry/658a5dde-829f-4032-8068-8d70f427a1e0.webp)
 
 Vemos que hay una sección donde podemos **subir archivos** `.war` , la cual usaremos para conseguir acceso al sistema:
 
 ![img](/assets/img/post/jerry/f13630bf-58f1-4988-bdea-0e9e224c5fc1.png)
 
-### Web Aplication Resource Files
+### Web Application Resource Files
 
 > Un archivo `WAR`, es un formato de archivo utilizado para **empaquetar y distribuir aplicaciones web** en la plataforma **Java**. Contiene todos los recursos necesarios para ejecutar una aplicación web en un solo archivo comprimido.
 
@@ -62,4 +62,4 @@ curl http://10.10.10.95:8000/rev_shell/mdeonxmbgy.jsp
 
 De esta manera, ya tendremos acceso completo a la máquina víctima, donde podremos encontrar las flags en el `Desktop` del usuario `administrator`
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adiós!*

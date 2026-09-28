@@ -1,0 +1,3 @@
+{%- comment -%} Category/tag name in both UI languages (Spanish names in `_data/locales/es-ES.yml` → term_names) {%- endcomment -%}
+{%- assign _tn_es = site.data.locales['es-ES'].term_names[include.name] | default: include.name -%}
+{%- if _tn_es == include.name -%}{{ include.name }}{%- else -%}<span data-ui="en">{{ include.name }}</span><span data-ui="es">{{ _tn_es }}</span>{%- endif -%}

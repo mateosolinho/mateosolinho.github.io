@@ -1,11 +1,11 @@
 ---
 title: Lame - HTB Writeup
-date: 2023-09-06 15:00:00 +0800
-categories: [Ciberseguridad, Writeups, HTB]
-tags: [Writeup, HTB, Penetration Testing, Ethical Hacking, SMB, FTP]
+lang: es
+date: 2023-09-06 15:00:00 +0200
+categories: [Cybersecurity]
+tags: [Hack The Box, Linux]
 image:
-  path: /assets/img/post/lame/luca-bravo-XJXWbfSo2f0-unsplash.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: /assets/img/post/lame/luca-bravo-XJXWbfSo2f0-unsplash.webp
 ---
 
 **Lame** es la primera máquina publicada en la plataforma de **Hack The Box**.
@@ -24,7 +24,7 @@ Utilizaremos la herramienta `nmap`, para enumerar los **puertos abiertos** en la
 nmap -p- -sS --min-rate 5000 -vvv -n -Pn 10.10.10.3 -oG allPorts
 ```
 
-![Desktop View](/assets/img/post/lame/nmap.png)
+![Desktop View](/assets/img/post/lame/nmap.webp)
 
 Los puertos abiertos que nos reporta nmap son los siguientes: `21, 22, 139, 445, 3632`.
 
@@ -34,7 +34,7 @@ Continuaremos con un análisis los **servicios** y **versiones** que se ejecutan
 nmap -sCV -p21,22,139,445,3632 10.10.10.3 -oN targeted
 ```
 
-![img](/assets/img/post/lame/f8e0e6a7-5272-4f67-8003-fd370c3fc23c.png)
+![img](/assets/img/post/lame/f8e0e6a7-5272-4f67-8003-fd370c3fc23c.webp)
 
 ## Explotación
 
@@ -44,13 +44,13 @@ Como podemos observar en la imagen anterior, `nmap` detecta que podemos realizar
 ftp 10.10.10.3
 ```
 
-> Podemos realizar la conexión sin indicandole como nombre `anonymous` y sin contraseña.
+> Podemos realizar la conexión sin indicándole como nombre `anonymous` y sin contraseña.
 
 ![img](/assets/img/post/lame/fa13380a-a002-4c6f-9700-d53ef320d03c.png)
 
 Y efectivamente, podemos hacer el **login** con el usuario `anonymous` dejando vacío el campo de la contraseña, pero, al realizar `dir` o `ls` para listar directorios y archivos, podremos observar que **no hay contenido**, por lo que obviamente, está vacío.
 
-De nuevo, observando la última imagen del escaneo utilizando `nmap`, podemos ver, que tambien esta máquina esta ejecutando un servcio `smb` por el puerto `445` . Gracias a la **herramienta** `searchsploit` vamos a ver si existe alguna **vulnerabilidad** para la versión `3.0.20` de `samba`.
+De nuevo, observando la última imagen del escaneo utilizando `nmap`, podemos ver, que también esta máquina esta ejecutando un servicio `smb` por el puerto `445` . Gracias a la **herramienta** `searchsploit` vamos a ver si existe alguna **vulnerabilidad** para la versión `3.0.20` de `samba`.
 
 ```bash
 searchsploit samba 3.0.20
@@ -90,7 +90,7 @@ nc -nlvp 443
 
 ![img](/assets/img/post/lame/43db9817-b863-4050-9abf-45af8a4d2bd6.png)
 
-> Con la intrusión ya tendremos acceso como usuario privilegiado, por lo que no es necesario realizar una Escalada de Pivilegios.
+> Con la intrusión ya tendremos acceso como usuario privilegiado, por lo que no es necesario realizar una Escalada de Privilegios.
 
 Y ya lo tendríamos, hemos conseguido **ganar acceso a la máquina víctima** como `root`.
 
@@ -98,4 +98,4 @@ Por último realizaremos un **tratamiento de la tty** para una mayor comodidad a
 
 Y finalmente ya tendremos acceso como usuario privilegiado en la máquina **Lame**, y ya podremos ver tanto la **user flag**, como la de **root flag**.
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adiós!*

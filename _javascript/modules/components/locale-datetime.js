@@ -15,7 +15,7 @@ class LocaleHelper {
   }
 
   static get locale() {
-    return $('html').attr('lang').substring(0, 2);
+    return $('html').attr('data-ui-lang') || 'en';
   }
 
   static getTimestamp(elem) {

@@ -1,11 +1,11 @@
 ---
 title: Clasificación de Imágenes con TensorFlow [ Comparación de Modelos Densos y Convolucionales ]
-date: 2024-07-06 21:40:00 +0800
-categories: [Programación, IA]
-tags: [Machine Learning, Data Science, TensorFlow, ANN, CNN, Aprendizaje Automático, IA]
+lang: es
+date: 2024-07-06 21:40:00 +0200
+categories: [Artificial Intelligence]
+tags: [Machine Learning, Neural Networks, TensorFlow, Computer Vision, Python]
 image:
   path: /assets/img/post/cats_vs_dogs/6.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 [Link Repositorio Github](https://github.com/mateosolinho/python/tree/master/projects/clasificador_perros_gatos)
@@ -22,7 +22,7 @@ El dataset Cats vs Dogs es un conjunto de datos de imágenes que contiene miles 
 
 ### Red Neuronal Densa (ANN)
 
-La `red neuronal densa (ANN)` es una red **totalmente conectada**, donde **cada neurona de una capa está conectada a cada neurona de la siguiente capa**. Esta rred es adecuada para tareas básicas de clasificación, aunque puede no ser tan efectiva para datos de imágenes más complejos como las `CNN`
+La `red neuronal densa (ANN)` es una red **totalmente conectada**, donde **cada neurona de una capa está conectada a cada neurona de la siguiente capa**. Esta red es adecuada para tareas básicas de clasificación, aunque puede no ser tan efectiva para datos de imágenes más complejos como las `CNN`
 
 #### Capas del Modelo Denso
 
@@ -322,15 +322,15 @@ for i, (imagen, etiqueta) in enumerate(datos['train'].take(25)):
   plt.imshow(imagen, cmap='gray')
 ```
 
-Importamos las librerias `tensorflow`, `tensorflow_datasets`, `matplotlib` y `cv2`, cargamos el dataset y preprocesamos las imágenes para que tengan un tamaño uniforme y se conviertan a escala de grises
+Importamos las librerías `tensorflow`, `tensorflow_datasets`, `matplotlib` y `cv2`, cargamos el dataset y preprocesamos las imágenes para que tengan un tamaño uniforme y se conviertan a escala de grises
 
-1. Utilizamos `tfds.load` paraq cargar el dataset `'cats_vs_dogs'`
+1. Utilizamos `tfds.load` para cargar el dataset `'cats_vs_dogs'`
 2. Redimensionamos las imágenes a 100x100 píxeles y las convertimos a escala de grises para simplificar el procesamiento.
-3. Mostramos algunas de imágenes del conjunto de datos para ver como se ven después del proprocesamiento.
+3. Mostramos algunas de imágenes del conjunto de datos para ver como se ven después del preprocesamiento.
 
 Salida:
 
-![img](/assets/img/post/cats_vs_dogs/1.png)
+![img](/assets/img/post/cats_vs_dogs/1.webp)
 
 ### Preparando los Datos de Entrenamiento
 
@@ -364,7 +364,7 @@ Preparamos los datos de entrenamiento redimensionando y normalizando las imágen
 
 ### Definiendo y Entrenando los Modelos
 
-#### Modelo Denso (Fully Conected)
+#### Modelo Denso (Fully Connected)
 
 ```python
 modeloDenso = tf.keras.models.Sequential([
@@ -483,7 +483,7 @@ Mostramos algunas imágenes del conjunto de datos después de la normalización 
 
 Salida:
 
-![img](/assets/img/post/cats_vs_dogs/2.png)
+![img](/assets/img/post/cats_vs_dogs/2.webp)
 
 ### Aumentación de Datos
 
@@ -515,7 +515,7 @@ for imagen, etiqueta in datagen.flow(X, y, batch_size=10, shuffle=False):
 
 Utilizamos `ImageDataGenerator` para aplicar aumentación de datos, lo que ayuda a mejorar la generalización del modelo.
 
-![img](/assets/img/post/cats_vs_dogs/3.png)
+![img](/assets/img/post/cats_vs_dogs/3.webp)
 
 ### Entrenando con Aumentación de Datos
 
@@ -905,7 +905,7 @@ Para desplegar el modelo en la web deberemos de seguir varios pasos:
 
   Y nos podremos conectar al localhost creado mediante: [localhost:8000/index.html](localhost:8000/index.html)
 
-* Por último, para poder utilzar cámara del móvil en la web deberemos usar un sitio con `HTTPS`, utilizaremos `NGROK` *[[Descarga NGROK]](https://ngrok.com/download)* para crear un túnel `HTTPS` y poder acceder a la cámara de la web desde el móvil
+* Por último, para poder utilizar cámara del móvil en la web deberemos usar un sitio con `HTTPS`, utilizaremos `NGROK` *[[Descarga NGROK]](https://ngrok.com/download)* para crear un túnel `HTTPS` y poder acceder a la cámara de la web desde el móvil
 
   Una vez instalado ejecutaremos lo siguiente en otra consola:
 
@@ -929,4 +929,4 @@ Este flujo de trabajo demuestra cómo aplicar técnicas de aumento de datos y ev
 
 ***Créditos del proyecto al canal de Youtube [Ringa Tech](https://www.youtube.com/@RingaTech)***
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adiós!*

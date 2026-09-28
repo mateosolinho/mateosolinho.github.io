@@ -1,16 +1,16 @@
 ---
 title: Beep - HTB Writeup
-date: 2023-09-07 14:13:00 +0800
-categories: [Ciberseguridad, Writeups, HTB]
-tags: [Writeup, HTB, Penetration Testing, Ethical Hacking, Elastix, LFI]
+lang: es
+date: 2023-09-07 14:13:00 +0200
+categories: [Cybersecurity]
+tags: [Hack The Box, Linux]
 image:
   path: /assets/img/post/beep/2d974a53-bec1-4055-8f91-b1a8ddc58da6_alta-libre-aspect-ratio_default_0.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
-**Beep** es un máquina de dificultad `Easy` en la plataforma **Hack The Box**
+**Beep** es una máquina de dificultad `Easy` en la plataforma **Hack The Box**
 
-La máquina **Beep** tiene un gran número de **servicios en ejecucción**, lo que puede ser tanto bueno como malo, ya puede ser dificil encontrar la manera correcta de ganar acceso a la máquina, pero lo bueno es que hay muchas maneras de realizar la intrusión y vulnerar la máquina
+La máquina **Beep** tiene un gran número de **servicios en ejecución**, lo que puede ser tanto bueno como malo, ya puede ser difícil encontrar la manera correcta de ganar acceso a la máquina, pero lo bueno es que hay muchas maneras de realizar la intrusión y vulnerar la máquina
 
 En este caso lo haremos de la manera que me parece más sencilla y fácil de entender, pero hay muchas maneras distintas de hacerlo. Vamos allá!
 
@@ -22,9 +22,9 @@ Como de costumbre para comenzar con la fase de reconocimiento, empezaremos reali
 nmap -p- -sS --min-rate 5000 -vvv -n -Pn -oG allPorts
 ```
 
-![img](/assets/img/post/beep/c36e782c-17fb-4f76-83f4-ceacf9ab3b12.png)
+![img](/assets/img/post/beep/c36e782c-17fb-4f76-83f4-ceacf9ab3b12.webp)
 
-Como comentabamos al principio, nos encontramos con un gran número de **servicios y puertos abiertos**
+Como comentábamos al principio, nos encontramos con un gran número de **servicios y puertos abiertos**
 
 Vamos a hacer un escaneo más exhaustivo de los **servicios y versiones** que se ejecutan en cada puerto *(vamos a hacer un escaneo de pocos puertos para que no se demore mucho)*
 
@@ -36,7 +36,7 @@ nmap -sCV -p22,25,80 10.10.10.7 -oN versions
 
 Podemos ver que hay en ejecución un servicio `HTTP` por el puerto `80`, veamos que encontramos:
 
-![img](/assets/img/post/beep/ea12d889-e6a7-4a6d-8c5c-9e05e99c32f1.png)
+![img](/assets/img/post/beep/ea12d889-e6a7-4a6d-8c5c-9e05e99c32f1.webp)
 
 Vemos que hay un panel de **inicio de sesión**, podemos buscar credenciales por defecto de este servicio, pero estas han sido cambiadas, así que vamos a buscar si podemos acceder de alguna otra manera
 
@@ -60,7 +60,7 @@ Si abrimos el archivo `.txt`, podremos observar que el servicio es **vulnerable*
 https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action
 ```
 
-![img](/assets/img/post/beep/36210f96-940c-43f0-913f-bd7772993135.png)
+![img](/assets/img/post/beep/36210f96-940c-43f0-913f-bd7772993135.webp)
 
 Vemos que si apuntamos a `/etc/amportal.conf` accederemos a un archivo de configuración del servicio `amportal`
 
@@ -76,9 +76,9 @@ Una vez logueados veremos la siguiente interfaz, haremos click en `Settings`
 
 ## **Explotación**
 
-Una vez en `Settings`, accederemos a `Company Details`, donde accederemos a un panel donde podremos **cambiar la foto de la empresa**, este será vulnerable al `LFI` que hablabamos anteriormente, por lo tanto vamos a crear un **archivo malicioso**
+Una vez en `Settings`, accederemos a `Company Details`, donde accederemos a un panel donde podremos **cambiar la foto de la empresa**, este será vulnerable al `LFI` que hablábamos anteriormente, por lo tanto vamos a crear un **archivo malicioso**
 
-![img](/assets/img/post/beep/d838263a-7cfd-4562-b529-f7197dfaf6c8.png)
+![img](/assets/img/post/beep/d838263a-7cfd-4562-b529-f7197dfaf6c8.webp)
 
 ![img](/assets/img/post/beep/9514ec5d-2f53-467d-b142-e4010bd4503e.png)
 
@@ -100,7 +100,7 @@ Como siempre, lo primero que haremos será `sudo -l` , para ver si hay algún `b
 
 ![img](/assets/img/post/beep/9505d4a3-3e5b-4c9c-853d-7b29e65572c6.png)
 
-Como vemos, **hay muchas opciones con las cuales probar** , pero nosotros lo intentaremos con el binario de `nmap`. Lo que haremos para conseguir una `consola` como `root` aprovechandonos de poder ejecutar el `binario` de nmap como un usuario privilegiado, es lo siguiente:
+Como vemos, **hay muchas opciones con las cuales probar** , pero nosotros lo intentaremos con el binario de `nmap`. Lo que haremos para conseguir una `consola` como `root` aprovechándonos de poder ejecutar el `binario` de nmap como un usuario privilegiado, es lo siguiente:
 
 ```bash
 sudo nmap --interactive
@@ -108,7 +108,7 @@ sudo nmap --interactive
 !bash
 ```
 
-> Al realizar el segundo paso veremos que no sucede nada visual, pero ya deberiamos tener acceso como root
+> Al realizar el segundo paso veremos que no sucede nada visual, pero ya deberíamos tener acceso como root
 
 ![img](/assets/img/post/beep/2fa43191-ce70-4ebc-b99f-d85cbdc9be1d.png)
 
@@ -118,4 +118,4 @@ Como podemos ver ya tendremos acceso como **usuario privilegiado**
 
 Y finalmente ya podremos ver la **root flag**
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adiós!*

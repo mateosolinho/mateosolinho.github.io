@@ -154,6 +154,7 @@ blockquote {
   @include prompt('info', '\f06a');
   @include prompt('warning', '\f06a');
   @include prompt('danger', '\f071');
+  @include prompt('key', '\f084');
 }
 
 kbd {
@@ -858,13 +859,20 @@ $btn-mb: 0.5rem;
       line-height: 1.75rem;
     }
 
-    .mode-toggle {
+    .mode-toggle,
+    .ui-lang-toggle {
       padding: 0;
       border: 0;
 
       @extend %button;
       @extend %sidebar-links;
       @extend %sidebar-link-hover;
+    }
+
+    .ui-lang-toggle {
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-right: $btn-gap;
     }
 
     .icon-border {
@@ -928,7 +936,7 @@ $btn-mb: 0.5rem;
       @extend %link-hover;
     }
 
-    span {
+    > span {
       &:not(:last-child) {
         &::after {
           content: '›';

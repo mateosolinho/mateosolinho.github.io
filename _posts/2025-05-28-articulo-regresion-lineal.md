@@ -1,11 +1,12 @@
 ---
 title: Linear Regression - Theory, Implementation and Analysis
-date: 2025-06-05 12:30:00 +0800
-categories: [Artificial Intelligence, Machine Learning]
-tags: [learning, AI, machine_learning, linear_regression, numpy, python]
+lang: en
+date: 2025-06-05 12:30:00 +0200
+categories: [Artificial Intelligence]
+tags: [Machine Learning, Math, Python]
+math: true
 image:
   path: /assets/img/post/regresion-lineal/regresion_lineal_curva.jpg
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
 ---
 
 `Linear regression` is one of the **most fundamental mathematical models** in `machine learning` of AI models, despite its simplicity, it is a **very important** technique to understand the **relationships between variables** and serves as a base for understanding and operating more complex models.

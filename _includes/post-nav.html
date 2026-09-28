@@ -5,14 +5,14 @@
     <a
       href="{{ site.baseurl }}{{ page.previous.url }}"
       class="btn btn-outline-primary"
-      prompt="{{ site.data.locales[include.lang].post.button.previous }}"
+      {% include t-attr.html attr="prompt" key="post.button.previous" %}
     >
       <p>{{ page.previous.title }}</p>
     </a>
   {% else %}
     <div
       class="btn btn-outline-primary disabled"
-      prompt="{{ site.data.locales[include.lang].post.button.previous }}"
+      {% include t-attr.html attr="prompt" key="post.button.previous" %}
     >
       <p>-</p>
     </div>
@@ -22,14 +22,14 @@
     <a
       href="{{ site.baseurl }}{{page.next.url}}"
       class="btn btn-outline-primary"
-      prompt="{{ site.data.locales[include.lang].post.button.next }}"
+      {% include t-attr.html attr="prompt" key="post.button.next" %}
     >
       <p>{{ page.next.title }}</p>
     </a>
   {% else %}
     <div
       class="btn btn-outline-primary disabled"
-      prompt="{{ site.data.locales[include.lang].post.button.next }}"
+      {% include t-attr.html attr="prompt" key="post.button.next" %}
     >
       <p>-</p>
     </div>

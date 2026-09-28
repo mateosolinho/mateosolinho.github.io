@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 4
+order: 5
 ---
 
 *Hello! My name is `Mateo`. I'm a junior software developer.*

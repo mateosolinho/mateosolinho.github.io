@@ -31,7 +31,8 @@
   or page.layout == 'category'
   or page.layout == 'tag'
 %}
-  {% assign locale = site.lang | split: '-' | first %}
+  <!-- Spanish dayjs locale for the bilingual UI (English is built in) -->
+  {% assign locale = 'es' %}
 
   {% assign urls = urls
     | append: ','
@@ -69,11 +70,12 @@
 <script defer src="{{ script | relative_url }}"></script>
 
 {% if page.math %}
-  <!-- MathJax -->
+  <!-- MathJax: only on posts with `math: true` -->
   <script>
     /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
     MathJax = {
       tex: {
+        tags: 'ams',
         /* start/end delimiter pairs for in-line math */
         inlineMath: [
           ['$', '$'],
@@ -84,10 +86,22 @@
           ['$$', '$$'],
           ['\\[', '\\]']
         ]
+      },
+      options: {
+        renderActions: {
+          addCss: [
+            200,
+            function () {
+              const style = document.createElement('style');
+              style.innerHTML = '.mjx-container { color: inherit; }';
+              document.head.appendChild(style);
+            },
+            ''
+          ]
+        }
       }
     };
   </script>
-  <script src="{{ site.data.origin[type].polyfill.js | relative_url }}"></script>
   <script id="MathJax-script" async src="{{ site.data.origin[type].mathjax.js | relative_url }}"></script>
 {% endif %}
 

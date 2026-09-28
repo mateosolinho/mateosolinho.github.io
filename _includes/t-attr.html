@@ -1,0 +1,17 @@
+{%- comment -%}
+  Bilingual attribute: `attr="EN" data-es-attr="ES"`. `ui-lang.html` swaps it on load.
+  Params: attr, key, suffix (appended to both, e.g. '...')
+{%- endcomment -%}
+{%- assign _ta_parts = include.key | split: '.' -%}
+{%- assign _ta_en = site.data.locales.en -%}
+{%- assign _ta_es = site.data.locales['es-ES'] -%}
+{%- for _ta_p in _ta_parts -%}
+  {%- assign _ta_en = _ta_en[_ta_p] -%}
+  {%- assign _ta_es = _ta_es[_ta_p] -%}
+{%- endfor -%}
+{%- assign _ta_es = _ta_es | default: _ta_en -%}
+{%- if include.case == 'capitalize' -%}
+  {%- assign _ta_en = _ta_en | capitalize -%}
+  {%- assign _ta_es = _ta_es | capitalize -%}
+{%- endif -%}
+{{ include.attr }}="{{ include.prefix }}{{ _ta_en | escape }}{{ include.suffix }}" data-es-{{ include.attr }}="{{ include.prefix }}{{ _ta_es | escape }}{{ include.suffix }}"

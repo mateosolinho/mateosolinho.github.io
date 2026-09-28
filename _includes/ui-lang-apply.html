@@ -1,0 +1,27 @@
+<!--
+  Apply the Spanish variants of translated attributes (`data-es-*`, see `t-attr.html`)
+  before the theme scripts (deferred) read them, and wire the language button.
+-->
+<script>
+  (function () {
+    var root = document.documentElement;
+
+    if (root.getAttribute('data-ui-lang') === 'es') {
+      document.querySelectorAll('*').forEach(function (el) {
+        Array.prototype.slice.call(el.attributes).forEach(function (attr) {
+          if (attr.name.indexOf('data-es-') === 0) {
+            el.setAttribute(attr.name.slice(8), attr.value);
+          }
+        });
+      });
+    }
+
+    document.querySelectorAll('.ui-lang-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-ui-lang') === 'es' ? 'en' : 'es';
+        try { localStorage.setItem('ui-lang', next); } catch (e) {}
+        location.reload();
+      });
+    });
+  })();
+</script>

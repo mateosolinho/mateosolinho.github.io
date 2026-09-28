@@ -5,7 +5,7 @@ theme: jekyll-theme-chirpy
 
 # Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
 # and doesn't have a custom domain.
-baseurl: "https://mateosolinho.github.io/"
+baseurl: ""
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
@@ -18,20 +18,18 @@ timezone: Europe/Madrid
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Portfolio de Mateo - Desarrollador de Software # the main title
+title: Mateo Soliño # the main title
 
 tagline: Exploring the world of programming, projects, tutorials, and experiences for tech enthusiasts. # it will display as the sub-title
 
-description: Explore innovative programming projects, tutorials, and personal experiences in web development, artificial intelligence, and more, perfect for tech enthusiasts and developers of all levels, Artificial Intelligence, Frontend, Backend, Cybersecurity... # used by seo meta and the atom feed
+description: Blog by Mateo Soliño, software engineer. Artificial intelligence, cybersecurity, personal projects and technology, with posts in Spanish and English. # used by seo meta and the atom feed
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://mateosolinho.github.io/"
+url: "https://mateosolinho.github.io"
 
 github:
   username: mateosolinho # change to your github username
 
-twitter:
-  username: LEOrbitSpace # change to your twitter username
 
 social:
   # Change to your full name.
@@ -46,7 +44,7 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: google92ff9aee3cf8f0aa.html
+google_site_verification: # token of the Search Console "HTML tag" method (not the file name)
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -109,7 +107,11 @@ assets:
     env: # [development|production]
 
 pwa:
-  enabled: true # the option for PWA feature
+  # Desactivado: el service worker servía las páginas desde caché y los posts nuevos no aparecían
+  enabled: false # the option for PWA feature
+
+# Publicar también posts con fecha futura (si no, Jekyll los omite hasta el siguiente build posterior a esa fecha)
+future: true
 
 paginate: 10
 

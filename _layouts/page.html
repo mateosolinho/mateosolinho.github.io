@@ -26,10 +26,9 @@ layout: default
     {% endcapture %}
 
       {% if page.layout == 'page' or page.collection == 'tabs' %}
-        {% assign tab_key = page.title | downcase %}
-        {% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
+        {% capture tab_key %}tabs.{{ page.title | downcase }}{% endcapture %}
         <h1 class="dynamic-title">
-          {{ title }}
+          {% include t.html key=tab_key default=page.title %}
         </h1>
         <div class="post-content">
           {{ _content }}

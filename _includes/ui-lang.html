@@ -1,0 +1,21 @@
+<!--
+  UI language (not the posts' language): browser language by default,
+  overridable with the sidebar button (stored in localStorage).
+-->
+<script>
+  (function () {
+    var lang;
+    try { lang = localStorage.getItem('ui-lang'); } catch (e) {}
+    if (lang !== 'es' && lang !== 'en') {
+      var langs = navigator.languages || [navigator.language || 'en'];
+      lang = /^(es|gl|ca|eu)\b/i.test(langs[0] || '') ? 'es' : 'en';
+    }
+    document.documentElement.setAttribute('data-ui-lang', lang);
+  })();
+</script>
+<style>
+  html:not([data-ui-lang='es']) [data-ui='es'],
+  html[data-ui-lang='es'] [data-ui='en'] {
+    display: none !important;
+  }
+</style>

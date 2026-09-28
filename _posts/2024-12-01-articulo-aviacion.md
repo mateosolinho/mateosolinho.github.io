@@ -1,11 +1,11 @@
 ---
 title: La Programación en la Aviación Moderna - De los Sistemas de Control a la Gestión del Vuelo
-date: 2024-12-08 12:30:00 +0800
-categories: [Tecnología, Articulos]
-tags: [Aviacion, TCAS, ECAM, EICAS, Aeroespacial, Tecnología]
+lang: es
+date: 2024-12-08 12:30:00 +0100
+categories: [Technology]
+tags: [Aerospace, Embedded Systems]
 image:
-  path: /assets/img/post/articulo_aviacion/plane1.png
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: /assets/img/post/articulo_aviacion/plane1.webp
 ---
 
 La aviación moderna ha experimentado una transformación radical gracias a la integración de **sistemas digitales avanzados**, que han hecho los vuelos más **seguros**, **eficientes** y **cómodos**. En el núcleo de esta evolución se encuentra la **programación**, una herramienta clave que ha permitido reemplazar los antiguos controles mecánicos con sistemas automatizados de alta precisión.
@@ -87,7 +87,7 @@ Dado que el **FBW** reemplaza controles críticos, su diseño se basa en **arqui
 
 #### Pruebas y Certificación
 
-![FBW](/assets/img/post/articulo_aviacion/4.png)
+![FBW](/assets/img/post/articulo_aviacion/4.webp)
 
 - Los sistemas **FBW** pasan por rigurosas **pruebas de software crítico** bajo normativas como **DO-178C**, que regula el desarrollo y certificación de software aeronáutico.
 - Las pruebas incluyen **simulaciones de fallos**, **condiciones extremas** y **análisis de confiabilidad** para garantizar la **robustez del sistema**.
@@ -126,7 +126,7 @@ Dado que el **FBW** reemplaza controles críticos, su diseño se basa en **arqui
 
 ## Flight Management System (FMS)
 
-![FBW](/assets/img/post/articulo_aviacion/6.jpg)
+![FBW](/assets/img/post/articulo_aviacion/6.webp)
 
 El **Flight Management System (FMS)** es uno de los sistemas más sofisticados e importantes de la aviación moderna, considerado el "cerebro" del avión por su capacidad para gestionar múltiples aspectos del vuelo de manera autónoma. Este sistema integra diversas fuentes para garantizar que cada vuelo sea lo más eficiente, seguro y predecible posible.
 
@@ -142,7 +142,7 @@ El FMS tiene como tarea central la **gestión del plan de vuelo**, optimizando l
 
 ### Optimización y Algoritmos de Consumo de Combustible
 
-![FBW](/assets/img/post/articulo_aviacion/7.jpg)
+![FBW](/assets/img/post/articulo_aviacion/7.webp)
 
 Uno de los aspectos más críticos del **FMS** es su capacidad para optimizar el consumo de combustible. Los algoritmos avanzados del sistema analizan en tiempo real factores como:
 
@@ -257,7 +257,7 @@ El **TCAS** (`Traffic Collision Avoidance System`) es un sistema crucial en la a
 
 ### Funcionamiento del TCAS
 
-![FBW](/assets/img/post/articulo_aviacion/12.png)
+![FBW](/assets/img/post/articulo_aviacion/12.webp)
 
 1. **Sensores y Transpondedores:**
 
@@ -288,7 +288,7 @@ El piloto recibe estas alertas a través de pantallas en la cabina, que indican 
 
 Uno de los mayores desafíos del `TCAS` es la sincronización de la información en zonas con varios aviones utilizando el sistema. Esta sincronización es crítica para evitar interferencias y garantizar que las alertas sean precisas y relevantes.
 
-1. **Múltiples Aeronaves en la Mismma Zona**:
+1. **Múltiples Aeronaves en la Misma Zona**:
 
     Cuando varias aeronaves están en las cercanías, pueden estar utilizando el sistema `TCAS`, lo que aumenta la complejidad de la gestión de la información. El sistema debe ser capaz de:
 
@@ -344,7 +344,7 @@ Los sistemas `ECAM` y `EICAS` no solo recopilan datos, sino que también present
 
 ### Caso de Estudio: Vuelo US Airways 1549
 
-![FBW](/assets/img/post/articulo_aviacion/14.jpg)
+![FBW](/assets/img/post/articulo_aviacion/14.webp)
 
 El sistema **`ECAM`** jugó un papel crucial durante el incidente del vuelo US Airways 1549. Cuando una bandada de aves inutilizó ambos motores, el sistema detectó inmediatamente la **pérdida de potencia** y proporcionó a la tripulación información clave sobre el estado de los motores. Esto permitió al capitán Chesley "Sully" Sullenberger y a su primer oficial tomar decisiones rápidas, como planear un **aterrizaje de emergencia** en el río Hudson, salvando la vida de todos a bordo.
 
@@ -389,7 +389,7 @@ La gestión de la **energía eléctrica** en los aviones modernos es un proceso 
 
 ### Redundancia en Sistemas Eléctricos
 
-![FBW](/assets/img/post/articulo_aviacion/16.jpg)
+![FBW](/assets/img/post/articulo_aviacion/16.webp)
 
 La **redundancia** es un principio esencial en el diseño de **sistemas eléctricos aeronáuticos**, dado que un **fallo eléctrico** puede tener consecuencias catastróficas, los aviones están equipados con **múltiples fuentes de energía** y **sistemas de respaldo**.
 
